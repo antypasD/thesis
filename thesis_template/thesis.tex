@@ -1,0 +1,353 @@
+%% A minimalistic template for a PhD thesis. Complies with University of Liverpool's Code of Practice at the time of creation.
+%% I would highly recommend to tinker with the template and make your thesis look the way you want it to look.
+\documentclass[12pt,twoside]{report}
+
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+%% Use \includeonly to compile only some of the chapters. This will keep cross-references and page numbering intact as if all files have been compiled. For example (notice the relative paths!):
+%\includeonly{./chapters/chapter1,./chapters/chapter3} 
+\usepackage{danudefs}
+%% Essential packages. Removing them might break the template.
+% \usepackage[headheight=15pt,inner=6cm,outer=2.8cm]{geometry} % The minimal margins as specified by Code of Practice.
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{setspace}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{emptypage}
+\RequirePackage{natbib}
+\usepackage{acronym} 
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage[document]{ragged2e}
+
+
+% custom packages here
+\usepackage{lipsum} 
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{microtype}
+\usepackage{tabularray}
+\usepackage{amssymb}
+\usepackage{CJKutf8}
+\usepackage{xurl}
+\usepackage[english,greek]{babel}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{collcell}
+\usepackage{xcolor}
+\usepackage{amsmath} 
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{bookmark}
+\usepackage[colorinlistoftodos]{todonotes}
+
+% custom commands
+\newcommand*\rot{\rotatebox{90}}
+\newcommand\XTOPIC{X-Topic}
+\newcommand\DATASET{\textsc{SuperTweetEval}}
+\newcommand\TweetNER{\textsc{TweetNER7}}
+\newcommand\TweetEmotion{\textsc{TweetEmotion}}
+\newcommand\TweetQG{\textsc{TweetQG}}
+\newcommand\TweetNERD{\textsc{TweetNERD}}
+\newcommand\TweetSentiment{\textsc{TweetSentiment}}
+\newcommand\TempoWiC{\textsc{TempoWiC}}
+\newcommand\TweetEmoji{\textsc{TweetEmoji100}}
+\newcommand\TweetIntimacy{\textsc{TweetIntimacy}}
+\newcommand\TweetQA{\textsc{TweetQA}}
+\newcommand\TweetTopic{\textsc{TweetTopic}}
+\newcommand\TweetHate{\textsc{TweetHate}}
+\newcommand\TweetSimilarity{\textsc{TweetSim}}
+\def\ccp#1{%
+    \pgfmathsetmacro\calc{(#1)*100/(100)}%
+    \edef\clrmacro{\noexpand\cellcolor{blue!\calc}}%
+    \clrmacro%
+    \ifdim \calc pt>50pt\color{white}\fi{#1}%
+}
+\def\ccp#1{%
+    \pgfmathsetmacro\calc{(#1)*100/(100)}%
+    \edef\clrmacro{\noexpand\cellcolor{blue!\calc}}%
+    \clrmacro%
+    \ifdim \calc pt>50pt\color{white}\fi{#1}%
+}
+
+\def\ccn#1{%
+    \pgfmathsetmacro\calc{(#1)*100/(100)}%
+    \edef\clrmacro{\noexpand\cellcolor{red!\calc}}%
+    \clrmacro%
+    \ifdim \calc pt>50pt\color{white}\fi{#1}%
+}
+
+
+\newif\ifrenderimages
+% Uncomment the next line to enable images
+\renderimagestrue
+
+% avg as a math operator is used to denote mean pooling
+\DeclareMathOperator*{\avg}{avg}
+% wrapping text in multicolumn
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% for citation commands in the .tex, authors can use:
+% \citep, \citet, and \citeyearpar for compatibility with natbib, or
+% \cite, \newcite, and \shortcite for compatibility with older ACL .sty files
+
+% to get "(Author Year)" with natbib
+\renewcommand\cite{\citep}	
+% to get "(Year)" with natbib    
+\newcommand\shortcite{\citeyearpar} 
+% to get "Author (Year)" with natbib    
+\newcommand\newcite{\citet}	
+
+%% Chapter headings, captions
+\usepackage{fix-cm}
+\RequirePackage[raggedright,sc]{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
+
+%% Insert your packages here:
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[Bjornstrup]{fncychap} % Fancy Chapter title
+\usepackage{latexsym}
+\usepackage{adjustbox}
+\DeclareMathOperator{\mean}{\mathrm{mean}}
+\usepackage[most]{tcolorbox}
+\usepackage{mathtools}
+\setcounter{secnumdepth}{3}  %%% number 
+\usepackage{soul}
+
+% colouring commands
+\lstnewenvironment{mypython}[1][]{\lstset{style=mypython,#1}}{}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+
+% ---------- Dashed cmidrule -------------------------------------
+\usepackage{arydshln}
+\makeatletter
+\def\adl@drawiv#1#2#3{%
+        \hskip.5\tabcolsep
+        \xleaders#3{#2.5\@tempdimb #1{1}#2.5\@tempdimb}%
+                #2\z@ plus1fil minus1fil\relax
+        \hskip.5\tabcolsep}
+\newcommand{\cdashlinelr}[1]{%
+  \noalign{\vskip\aboverulesep
+          \global\let\@dashdrawstore\adl@draw
+          \global\let\adl@draw\adl@drawiv}
+  \cdashline{#1}
+  \noalign{\global\let\adl@draw\@dashdrawstore
+          \vskip\belowrulesep}}
+\makeatother
+% -------------------------------------------------------------
+
+
+% ------------------------------------------------------------------
+% DB: This will rename subsection to Section when using \autoref
+\usepackage[english]{babel}
+\usepackage[breaklinks=true]{hyperref} % It is often advices to load hyperref last (there are exceptions).
+%%
+\addto\captionsenglish{%
+  \def\sectionname{\S\!}%
+  \def\subsectionname{\S\!}%
+  \def\subsubsectionname{\S\!}%
+}
+\addto\extrasenglish{%
+  \def\subsectionautorefname{\S\!}%
+  \def\sectionautorefname{\S\!}%
+  \def\subsubsectionautorefname{\S\!}%
+}
+
+
+\let\subsectionautorefname\sectionautorefname
+\let\subsubsectionautorefname\sectionautorefname
+% --------------------------------------------------------------------
+\hypersetup{colorlinks=true,
+            breaklinks=true,
+            linktocpage = true,
+            linkcolor=ForestGreen,
+            citecolor=RoyalBlue,
+            filecolor=black,
+            urlcolor=BrickRed
+            }
+
+% Format of list of figures and list of tables
+% \usepackage[titles]{tocloft}
+
+% % for table entries
+% \setlength{\cfttabnumwidth}{1.0cm} % change length to suit
+% \renewcommand{\cftfigfont}{Table }
+% \renewcommand{\cfttabpresnum}{TABLE }
+% % \renewcommand{\cfttabaftersnum}{.}
+
+% % for figure entries
+% \setlength{\cftfignumwidth}{1.0cm} % change length to suit
+% \renewcommand{\cfttabfont}{Figure }
+% \renewcommand{\cftfigpresnum}{FIGURE }
+% % \renewcommand{\cftfigaftersnum}{.}
+  
+% \usepackage{microtype} % Makes the text look "nicer". Try with and without and choose for yourself.
+\usepackage{lipsum}
+
+\makeatletter
+\def\numberline#1{%
+ \ifx\Hy@tocdestname\ltx@empty
+  \hb@xt@\@tempdima{#1\hfil}%
+ \else 
+ \hb@xt@\@tempdima{\hyper@linkstart{link}{\Hy@tocdestname}#1\hyper@linkend\hfil}%
+ \fi}
+            
+\newcommand{\Autoref}[1]{%
+  \begingroup%
+  \def\chapterautorefname{Chapter}%
+  \def\sectionautorefname{Section}%
+  \def\subsectionautorefname{Subsection}%
+  \autoref{#1}%
+  \endgroup%
+}
+%% Insert your commands here:
+
+
+% \onehalfspacing % As adviced by Code of Practice. 
+\linespread{1.5}
+
+\graphicspath{{./figures/}{../figures/}} % Location of the figures and graphics files so that you can insert them without specifying a path to the figures folder.
+
+\makeatletter
+% Insert your title and name.
+\title{
+Advancing Natural Language Processing for Understanding and Analysis of Social Media Content Dynamics
+} \let\Title\@title
+\author{Dimosthenis Antypas} \let\Author\@author
+\makeatother
+
+\begin{document}
+\ifrenderimages
+\selectlanguage{english}
+%% The title page uses the title and author name specified above. No need to edit title.tex. Note that the current month is at the bottom of the title page. Edit it manually, if you want to have some other month there.
+
+\pagestyle{empty}
+\include{title}
+\cleardoublepage
+
+%% In the preface, pages are numbered by roman numerals (i,ii,...) and in the header Author and Title.
+\pagenumbering{roman}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+% \fancyhead[LO,RE]{\Title}
+\fancyhead[LE,RO]{\Author}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[C]{\thepage}
+
+\begin{flushleft}
+\begin{spacing}{1.5}
+% \onehalfspacing
+
+% Contents
+% \addcontentsline{toc}{chapter}{Dedicate} % Add the acknowledgements to the table of contents.
+% \include{./chapters/dedicate}
+% \cleardoublepage
+
+% \addcontentsline{toc}{chapter}{Declaration} % Add the acknowledgements to the table of contents.
+% \include{./chapters/declaration}
+% \cleardoublepage
+
+
+\addcontentsline{toc}{chapter}{Abstract} % Add the abstract to the table of contents.
+\include{./chapters/abstract}
+\cleardoublepage
+
+
+\addcontentsline{toc}{chapter}{Acknowledgements} % Add the acknowledgements to the table of contents.
+\include{./chapters/acknowledgements}
+\cleardoublepage
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents} % Add the the table of contents to the table of contents.
+\clearpage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures} % Add the list of figures to the table of contents.
+\clearpage
+
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables} % Add the list of tables to the table of contents.
+\clearpage
+
+\addcontentsline{toc}{chapter}{Acronyms} % Add the acknowledgements to the table of contents.
+\include{./chapters/Acronyms}
+\cleardoublepage
+
+% You might need a similar construction to include the list of algorithms.
+
+\cleardoublepage
+
+%% In the thesis, pages are numbered with arabic numerals in the top outer corners (left top corner on even numbered pages, and right top corner on odd numbered pages) and alternatively Author and Chapter: Chapter name in the other top corner.
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+% \fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\nouppercase\leftmark}
+\fancyhead[RE]{\Author}
+% \fancyfoot{} % clear all footer fields
+
+% introduction
+\include{./chapters/chapter0-1}
+
+% background & related work
+\include{./chapters/chapter0-2}
+
+% % Part 1
+\part{NLP Methods for Social Media Analysis}
+\include{./chapters/chapter1-1}
+\include{./chapters/chapter1-2}
+\include{./chapters/chapter1-3}
+\include{./chapters/chapter1-4}
+
+% % Part 2
+\part{Applying NLP Models to Analyse Information Integrity}
+\include{./chapters/chapter2-1}
+\include{./chapters/chapter2-2}
+\include{./chapters/chapter2-3}
+
+
+\addtocontents{toc}{\protect\addvspace{2.25em plus 1pt}}
+\bookmarksetup{startatroot}
+% conclusion
+\include{./chapters/chapter0-3}
+
+\end{spacing}
+\end{flushleft}
+
+
+%% For references, I recommend using BiBTeX. The references are stored in references.bib.
+% \bibliographystyle{plain}
+\bibliographystyle{acl}
+\addcontentsline{toc}{chapter}{References} % Add the references to the table of contents.
+\bibliography{anthology,bib_custom}
+
+% appendix
+\include{./chapters/chapter0-4}
+
+
+%% It is also possible to use
+%\begin{thebibliography}{99}
+%\bibitem{}
+%\end{thebibliography}
+%% if desired.
+
+\fi
+\end{document}

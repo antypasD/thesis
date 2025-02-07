@@ -1,0 +1,387 @@
+\chapter{SuperTweetEval: A Challenging, Unified and Heterogeneous Benchmark for Social Media NLP Research}
+\label{ch:super-tweeteval}
+
+% \begin{abstract}
+% Despite its relevance, the maturity of NLP for social media pales in comparison with general-purpose models, metrics and benchmarks. This fragmented landscape makes it hard for the community to know, for instance, given a task, which is the best performing model and how it compares with others. To alleviate this issue, we introduce a unified benchmark for NLP evaluation in social media, {\DATASET}, which includes a heterogeneous set of tasks and datasets combined, adapted and constructed from scratch. We benchmarked the performance of a wide range of models on {\DATASET} and our results suggest that, despite the recent advances in language modelling, social media remains challenging.
+% \end{abstract}
+
+\section{Introduction}
+Building on the previous chapters \todo{expand on this}
+
+There is overwhelming evidence that general-purpose NLP systems suffer from a significant drop in performance when exposed to tasks in specialised domains. This has been shown in disparate domains such as the legal, medical and financial, to name a few. Specifically, for these domains, specialised language models (LMs) such as Legal-BERT, SciBERT, PubMedBERT, or BloombergGPT \cite{chalkidis2020legal,beltagy2019scibert,gu2021domain,wu2023bloomberggpt} have shown to exhibit lower perplexity and higher downstream performance across the board. The need for specialised LMs and corresponding evaluation benchmarks is exacerbated in social media, where instead of (or rather, in addition to) a specialised domain, an NLP system has to deal with idiosyncrasies such as emoji \cite{miller2017understanding,cappallo2018new,barbieri2017emojis}, poor capitalisation \cite{derczynski2015analysis}, vulgarisms and colloquialisms \cite{Camacho-Collados_Doval_Martínez-Cámara_Espinosa-Anke_Barbieri_Schockaert_2020}, fast language change \cite{del2019short,loureiro-etal-2022-timelms}, and dynamic and platform-specific communicative structures \cite{bastos2013gatekeeping}.
+
+Therefore, unsurprisingly, a strand of Twitter-specific NLP research has produced what we would consider now \textit{de-facto} models and datasets. On one hand, specialized LMs, either pre-trained on multilingual Twitter text alone \cite{nguyen2020bertweet,delucia-etal-2022-bernice,barbieri-etal-2022-xlm}, or including social engagements \cite{zhang2022twhin}; and on the other, joint Twitter-specific models \textit{and datasets} such as TweetEval \cite{barbieri-etal-2020-tweeteval}. However, one area where social media NLP research seems to be lacking behind is in matching with appropriate resources the current shift towards \ac{ICL} that \ac{LLMs} enable \cite{min2022metaicl}. Benchmarks such as TweetEval, while helpful, are constrained to tweet classification tasks, crucially neglecting sequence tagging, generation and question answering (QA), for instance, which not only are more diverse, but better test beds for \ac{LLMs} and comparing fine-tuning vs ICL \cite{liu2022few}.
+
+The contributions of this chapter can be summarized as follows. First, we introduce the {\DATASET} benchmark\footnote{{\DATASET} is available at the following link: \url{https://huggingface.co/datasets/cardiffnlp/super_tweeteval}}. {\DATASET} fills an important gap in the current NLP landscape by unifying diverse social media tasks and datasets beyond tweet classification (e.g., NER, question answering or tweet similarity) into one single benchmark, which we argue will contribute to faster and more replicable experiments on Twitter. Our second contribution is a suite of experiments that serve two purposes. First, to establish baselines using fine-tuned and ICL approaches, and second, for analysing and producing insights from our experimental results, namely that overall better performance is obtained with fine-tuned masked language models when compared to equally sized text generation architectures, and that zero and few-shot approaches generally struggle as they are not easily to adapt for certain social media tasks. 
+In sum, our results show that {\DATASET} is still challenging for general-purpose language models, regardless of their size and domain, and that specialised models are instead  more competitive. 
+
+\section{Related Work}
+The advent of general-purpose NLP systems (namely LMs) has led to a proliferation of unified benchmarks agglutinating diverse NLP tasks. The General Language Understanding Evaluation benchmark \cite[GLUE]{wang-etal-2018-glue} was one of the first efforts to provide a large-scale benchmark composed of diverse tasks such as natural language inference or textual similarity. GLUE was composed of relatively simple and homogeneous tasks, and saw automatic systems quickly reach human performance in some cases \cite{yang2019xlnet}. Because of this, SuperGLUE \cite{wang2019superglue} was developed with the same spirit but included a wider range of tasks and settings. Since then, other general-purpose benchmarks for language models, especially those of the new generation, have emerged, such as MMMU \cite{hendryckstest2021} and BIG-Bench \cite{srivastava2022beyond}.
+
+In terms of social media research, there are many tasks that require modelling textual content. TweetEval \cite{barbieri-etal-2020-tweeteval} was the first unified benchmark that agglutinated different tasks into the same benchmark. However, TweetEval is limited to tweet classification, including emotion recognition \cite{mohammad-etal-2018-semeval}, emoji prediction \cite{barbieri2018semeval}, irony detection \cite{van2018semeval}, hate speech detection \cite{basile2019semeval},  offensive language identification \cite{zampieri-etal-2019-semeval}, sentiment analysis \cite{rosenthal-etal-2017-semeval}, and stance detection \cite{mohammad-etal-2016-semeval}. Similar to the evolution of GLUE into SuperGLUE, the aim of this chapter and {\DATASET} is to construct a benchmark that is robust, large, and especially consisting of diverse tasks and settings for social media NLP research, and in particular, Twitter.
+
+\section{Datasets}
+{\DATASET} includes a variety of Twitter-specific NLP tasks. For each of them, we include a relevant dataset that can be used as a proxy to test the performance of models on that task\footnote{More details and justifications for the selection of datasets used in this benchmark are provided in Appendix \ref{appendix:SuperTweetEval-data_selection}.}. In this section, we describe the datasets used for each task, which we have split into three types: (1) existing datasets that have been included in the benchmark as they are; (2) datasets that have been adapted to suit the needs of the benchmark; and (3) datasets that we have constructed from scratch as part of this chapter, which did not exist in previous literature. 
+
+\subsection{Existing Datasets}
+\paragraph{Intimacy Analysis ({\TweetIntimacy})} Intimacy is an important social aspect of language communication \citep{pei2020quantifying}. We use the English subset of the \textsc{MINT} dataset \citep{pei2022semeval}, which contains 1,983 English tweets annotated with intimacy scores ranging from 1 to 5, with 1 meaning ``Not intimate at all'' and 5, ``Very intimate''. 
+
+\paragraph{Meaning-Shift Detection ({\TempoWiC})} This task focuses on the understanding of language evolution through time which, while a popular research topic \cite{luu-etal-2022-time, agarwal2022temporal}, remains a challenging problem, specifically in Twitter. In {\DATASET}, we utilise {\TempoWiC} \cite{loureiro-etal-2022-tempowic}, a dataset comprised of 3,294 tweets. Here, two tweets from different time periods and a target word are provided, and the goal is to recognise whether the target word's meaning is the same in the two tweets (binary classification).
+
+
+\paragraph{Sentiment Classification ({\TweetSentiment})} Sentiment analysis has been extensively studied both in general \cite{medhat2014sentiment, wankhade2022survey} and social media context \cite{barbieri2022xlm, marcec2022using}. In {\DATASET}, we utilise the data presented in the SemEval 2017 Task 4, subtask C \cite{rosenthal-etal-2017-semeval}. The data are formatted as a  "Topic Based Sentiment Analysis" task where each tweet is given a sentiment label on a 5-point scale ('strongly negative', 'negative', 'negative or neutral', 'positive', 'strongly positive') regarding a specific target. In total 43,011 tweets and 325 different topics are present.
+
+\paragraph{Emotion Classification ({\TweetEmotion})} Similar to sentiment analysis, emotion classification has been a popular topic of study \cite{kuvsen2017identifying, he2016exploring} and has been used to better understand users' behaviours and intentions in social media \cite{son2022emotion, corbett2022tweets}. For our use case, we utilise the English subset of the 2018 SemEval task 1: \textit{Affect in Tweets}, subtask: \textit{E-c}  \cite{mohammad-etal-2018-semeval}. A total of 7,168 tweets are present and are labelled with one or more emotions based on their context. The labels are selected from a taxonomy of 11 emotions (plus \textit{neutral} indicating the absence of emotion) such as \textit{anger}, \textit{fear}, and \textit{joy}.\footnote{Full list of emotions can be found in Appendix: Table \ref{appendix:SuperTweetEval-emotions_list}.}
+
+\paragraph{Topic Classification ({\TweetTopic})} Topic classification is a method commonly used to perform targeted analysis on social media data. This is a challenging task, due to the ever increasing amount of data produced in social platforms \cite{weller2015accepting, stieglitz2018social}. In {\DATASET} we use the multi-label setting of the {\TweetTopic} dataset \cite{antypas-etal-2022-twitter} for topic classification. The dataset consists of 6,837 tweets that have been assigned one or more topics. The taxonomy of topics used was selected by a team of social media experts from Snap Inc. and consists of 19 broad topics tailored for social media content such as \textit{sports} or \textit{music}.\footnote{Full list of topics can be found in Appendix: Table \ref{appendix:SuperTweetEval-topics_list}.}
+
+\paragraph{Question Answering ({\TweetQA})} As a generative task, we consider an abstract question answering (QA) task on Twitter. To this end, we rely on {\TweetQA} \cite{xiong-etal-2019-tweetqa}, which consists of a tweet and an answer as input, with the answer to the question as the output. Note that the answer may not be explicitly included in the tweet. The dataset contains 9,489/1,086/1,203 tweets for training/validation/test splits, respectively.
+
+\paragraph{NER ({\TweetNER})} For Name Entity Recognition (NER), we include the {\TweetNER} dataset \cite{ushio-etal-2022-named}. This dataset contains 6,837 tweets and seven different labels: \textit{person, location, corporation, creative work, group, product}, while also offering a temporal split (train and test splits stemming from different time periods).
+
+\subsection{Adapted Datasets}
+
+\paragraph{Named Entity Disambiguation ({\TweetNERD})} The original {\TweetNERD} dataset \cite{mishra2022tweetnerd} is a collection of tweets, a target phrase within the tweet and a Wikidata entity ID to which the target phrase refers in the context of tweet. To make the task more accessible for the evaluation of language models, we convert the dataset to a binary classification task: given the tweet, target phrase and a possible definition of the target phrase, the system's objective is to determine whether the provided definition aligns with the target phrase in the given context (positive) or not (negative).
+
+First, to obtain positive instances with matching definitions, we use the definition provided for the gold Wikidata item ID. Then, we associate a negative instance for each target word's positive instances. For this, a maximum of top 10 candidates were pulled from the Wikidata API by searching for the target phrase of a positive. Then, candidates with low page views were eliminated to remove noise, and negative instances were chosen randomly from the pool of candidate definitions.
+
+\paragraph{Hate Speech Detection ({\TweetHate})} The presence of hate speech in social media is an ever increasing problem, with hateful content being spread in various online communities \cite{udanor2019combating, walther2021us}. We utilise \textit{Measuring Hate Speech} \cite{sachdeva-etal-2022-measuring} which consists of 39,565  social media (YouTube, Reddit, Twitter) manually annotated comments. The coders were asked to annotate each entry on 10 different attributes such as the presence of sentiment, respect, insults, and others; and also indicate the target of the comment (e.g. age, disability). The authors use Rasch measurement theory \cite{rasch1960studies} to aggregate each annotator's rating for every label in a continuous value which then can be mapped to a binary value.
+
+For our needs, only entries extracted from Twitter were considered. Each tweet was assigned a label if at least two out of five annotators agreed on it. We opted out of a majority rule in order to acquire a dataset that can be used to train models capable of handling real-world, complex data \cite{mohammad-etal-2018-semeval,antypas-etal-2022-twitter}. A small amount of tweets with more than one label were discarded. The final dataset contains 7,168 tweets and 8 different labels\footnote{Full list of labels can be found in Appendix: Table \ref{appendix:SuperTweetEval-hate_list}.}. 
+
+\paragraph{Question Generation ({\TweetQG})} By leveraging the {\TweetQA} dataset, we re-frame it as a question generation (QG) task, where we use the tweet and the answer as the model input, while the question is the output.
+
+\subsection{New Datasets}
+In addition to the previous datasets that were directly integrated into the benchmark with minimal preprocessing or adapted from existing ones, we also constructed two additional datasets from scratch that complement the initial list of tasks and datasets. These are emoji prediction over 100 labels (Section \ref{sec:emoji_classication}) and tweet similarity (Section \ref{sec:tweet_similarity}).
+
+
+\subsubsection{Emoji Prediction ({\TweetEmoji})}
+\label{sec:emoji_classication}
+This task aims to expand on previous emoji classification problems with 20 classes \cite{barbieri-etal-2017-emojis, barbieri-etal-2018-semeval} by introducing a more challenging dataset with 100 different emojis ({\TweetEmoji}). {\TweetEmoji} consists of a more recent corpus, an important feature to consider in the ever evolving setting of social media, and takes into account a wider variety of emojis. {\TweetEmoji} considers tweets with only one emoji present at the end of the text which is removed and used as our label to create a multi-class classification setting.
+
+For the creation if the dataset, an existing large collection of tweets (37,083,959) \cite{loureiro-etal-2022-timelms} is taken into account to extract the hundred most frequent emoji. For each emoji selected, we collected 500 tweets every day for the time period between 01-01-2020 to 01-01-2023. In total 7,379,453 new tweets were gathered through the Twitter API utilising the \textit{Twarc} library \cite{twarc}.
+
+Following tweet collection, we filtered all entries that contained more than one emoji and entries where the emoji was not present at the end of the tweet. To avoid highly similar tweets that may have different emojis, we also removed near duplicated entries. This is accomplished by applying a normalisation step where (1) URLs and mentions are removed, and (2) entries that are considered duplicated based on their lemmatised form are ignored. Finally, colour variations of the heart, circle, and square emoji were ignored. All emojis present in {\TweetEmoji} and their distribution can be found in Figure \ref{appendix:SuperTweetEval-emojis-distribution} of the Appendix \ref{appendix:SuperTweetEval}.
+
+\subsubsection{Tweet Similarity ({\TweetSimilarity})}
+\label{sec:tweet_similarity}
+Given the importance of textual similarity dataset in NLP \cite{cer-etal-2017-semeval} and the lack of such datasets in social media, we decided to construct a new dataset focused on tweet similarity. Given two tweets as input, the tweet similarity task consists of assigning them a 0 to 5 score according to their similarity.
+
+\paragraph{Sampling} Similarly to the {\TempoWiC} tweet sampling procedure, we followed the approach of \newcite{chen-etal-2021-mitigating} to detect trending hashtags for the period between 2020 and 2021, based on the corpora collected for TimeLM \cite{loureiro-etal-2022-timelms}. Afterwards, we randomly selected a diverse set of hashtags and collected an additional sample of tweets featuring those hashtags (i.e., most common hashtag only appears on 25 pairs). The resulting dataset features 1,000 tweet pairs, with the inclusion of 20\% randomly paired tweets for completeness.
+
+\paragraph{Annotation} All the tweet pairs were then rated with by Likert-like scale by three independent annotators\footnote{Guidelines are available in Appendix \ref{appendix:SuperTweetEval-annotation}.}. All the annotators were native English speakers and were paid fairly through our institutional student job provider\footnote{To avoid breaking anonymity rules, more details about the annotators and compensation will be provided upon acceptance.}. The final inter-annotator, as measured by annotator pairwise Spearman correlation, was 0.70.
+
+\section{{\DATASET}: The Unified Benchmark}
+We convert all datasets presented in the previous section to the same JSON format, unifying them with the same notation, preprocessing and style. Table \ref{tab:SuperTweetEval-examples} provides an overview of each task and dataset while also providing example entries.
+
+
+\begin{table*}[t]
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{@{}lp{8cm}p{4.75cm}@{}}
+\toprule 
+Task (Dataset) & Example Input & Example Output \\
+\midrule
+\begin{tabular}[c]{@{}l@{}}NER\\({\TweetNER})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Winter solstice 2019 : A short day that 's long on ancient traditions\\ url via @CNN\_Travel\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}Winter solstice 2019: event\\ @CNN\_Travel: product\end{tabular} \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Emotion Classification\\ ({\TweetEmotion})\end{tabular} &
+  \multicolumn{1}{l}{\textbf{Tweet}: Whatever you decide to do make sure it makes you \#happy.} &
+  joy, love, optimism \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Question Generation\\ ({\TweetQG})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth (@darbooth) January 25, 2013\\ \textbf{Context}: vine\end{tabular}} &
+  what site does the link take you to? \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Name Entity Disambiguation\\ ({\TweetNERD})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: hella excited for ios 15 because siri reads notifications out loud to you [...]%if you are wearing headphones
+  \\ \textbf{Target}: siri\\ \textbf{Definition}: intelligent personal assistant on various Apple devices \end{tabular}} &
+  True \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Sentiment Classification\\ ({\TweetSentiment})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: \#ArianaGrande Ari By Ariana Grande 80\% Full url \#Singer \#Actress url\\ \textbf{Target}: \#ArianaGrande\end{tabular}} &
+  negative or neutral \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Meaning Shift Detection\\ ({\TempoWiC})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: The minute I can walk well I'm going to delta pot\\ \textbf{Tweet 2}: Then this new delta variant out  im vaccinated but stilllll likeee'\\ \textbf{Target}: delta\end{tabular}} &
+    False \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Emoji Classification\\ ({\TweetEmoji})\end{tabular} &
+  \multicolumn{1}{l}{\textbf{Tweet}: SpiderMAtS back at it} &
+  \includegraphics[height=0.32cm,width=0.32cm]{../figures/super-tweeteval/fire.png} \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Intimacy Analysis\\ ({\TweetIntimacy})\end{tabular} &
+  \multicolumn{1}{l}{\textbf{Tweet}: @user SKY scored 4 less runs just lol} &
+  1.20 \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Question Answering\\ ({\TweetQA})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth (@user) January 25, 2013\\ \textbf{Question}: which measurements of time are mentioned?\end{tabular}} &
+  years and seconds \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Topic Classification\\ ({\TweetTopic})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Sweet, \#IOWAvsISU is a nationally televised night game! Nebraska \\ getting bumped to @FOX\_Business is just a bonus.\end{tabular}} &
+  film\_tv\_\&\_video, sports \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Hate Speech Detection\\ ({\TweetHate})\end{tabular} &
+  \multicolumn{1}{l}{\textbf{Tweet}: Support Black Trans youth url} &
+  not\_hate \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Tweet Similarity\\ ({\TweetSimilarity})\end{tabular} &
+  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: I wish kayvee all the best \#bbnaija\\ \textbf{Tweet 2}: Sammie about to cry to the housemates all night \#bbnaija\end{tabular}} &
+  2.33 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Example input and output for each and dataset included in {\DATASET}.}
+\label{tab:SuperTweetEval-examples}
+\end{table*}
+
+\subsection{Preprocessing} 
+A common preprocessing pipeline is applied to all the collected datasets aiming to standardise them and provide a uniform and easy-to-use format. Firstly, all URL links are masked as \textit{\{URL\}}, both for privacy reasons, and for concentrating the focus of our tasks to the main text context of each tweet. Furthermore, all mentions of non-verified users are masked with \textit{@user} to maintain their anonymity. Finally, an attempt is made to unify features  and label/score naming to increase the datasets' ease-of-use.
+
+
+\subsection{Evaluation Metrics}
+\label{sec:evaluation_metrics}
+To unify evaluation metrics for a better understandability, we selected and converted all metrics in a percentage-based 0-100 scale, in which higher scores represent better model predictions.
+
+\paragraph{{\TweetSentiment}} \textit{Macro Averaged Mean Absolute Error} ($MAE^M$) \cite{baccianella2009evaluation} is selected as the evaluation metric for the Sentiment Classification task. To better integrate it in our benchmark, we use $1 - MAE^M$ as our score and cap the negative values to 0. In contrast to F1-scores, $MAE^M$ (also used in the original SemEval competition) takes into account the order of the labels and provides a better understanding of the performance of the models. 
+
+\paragraph{{\TweetEmotion}, {\TweetTopic} and {\TweetNER}} For the multi-label classification tasks of emotion and topic classification, the standard \textit{average macro-F1} score is used. Metrics like \textit{Accuracy} score, and \textit{Jaccard Index} were initially considered, however, macro-F1 will encourage the development of more precise and accurate models across classes. \textit{Average macro-F1} is also used for the NER task (similar to the {\TweetNER} original paper).
+
+\paragraph{{\TweetEmoji}} Considering the large number of labels present in the Emoji Classification task and  the fact that some of the emojis can be a close match for more than one entry, \textit{Accuracy at top 5} is selected as the official evaluation metric. 
+
+\paragraph{{\TweetSimilarity} \& {\TweetIntimacy}} For both regression tasks, Spearman's correlation \textit{r} is used as the main evaluation metric. This metric focuses on the relationship between predicted and actual ranks instead of the absolute errors between them (i.e. Mean Absolute Error). Negative values are also capped to 0.
+
+\paragraph{{\TweetNERD} \& {\TempoWiC}} For both binary classification tasks we use \textit{Accuracy} score. The classes in both datasets are relatively balanced (fully balanced in the case of {\TweetNERD}) and thus Accuracy provides a reliable metric.
+
+\paragraph{{\TweetHate}} In this task we utilise a combination of micro and macro \textit{F1} scores as an evaluation metric. Specifically, we first group all entries classified as hate speech as one class, and together with the not-hate class the micro-F1 score is calculated. Then, the macro-F1 for only the hate speech sub-classes is calculated. Finally, we report the average of these two scores. This "combined F1" score is selected because: (1) it weights heavily the most important decision (a tweet being hateful or not) and (2) does not penalise unfairly poor performance in low frequency hate speech sub-classes.
+
+\paragraph{{\TweetQA} \& {\TweetQG}} For the evaluation metrics of generative tasks, we employ the answer-span F1 score for {\TweetQA} following \newcite{rajpurkar-etal-2016-squad}, and METEOR \cite{denkowski-lavie-2014-meteor} for {\TweetQG}, which has been shown to be a well-correlated metric for QG \cite{ushio-etal-2022-generative}.
+
+
+\subsection{Statistics}
+\label{sec:statistics}
+Overall, {\DATASET} consists of 255,170 tweets across twelve different datasets. For each task, we consider the training/validation/test splits as presented in their resource paper (or in the model released by the authors of the papers). Exceptions are the {\TweetHate}, {\TweetSimilarity} and {\TweetEmoji} tasks where new data splits were created. Table \ref{tab:SuperTweetEval-data_distribution} displays the final distribution of tweets in each split  for each task.
+
+
+\begin{table}[t]
+\centering
+% \resizebox{\columnwidth}{!}{
+\begin{tabular}{lrrr}
+\toprule
+Task (Dataset) & Train & Valid. & Test \\ \midrule
+{\TweetNER}       & 4,616          & 576                 & 2,807         \\ 
+{\TweetEmotion}    & 6,838          & 886                 & 3,259         \\ 
+{\TweetQG}         & 9,489          & 1,086               & 1,203         \\ 
+{\TweetNERD}       & 20,164         & 4,100               & 20,075        \\ 
+{\TweetSentiment}  & 26,632         & 4,000               & 12,379        \\ 
+{\TempoWiC}        & 1,427          & 395                 & 1,472         \\ 
+{\TweetEmoji}      & 50,000         & 5,000               & 50,000        \\ 
+{\TweetIntimacy}   & 1,191          & 396                 & 396           \\ 
+{\TweetQA}         & 9,489          & 1,086               & 1,203         \\ 
+{\TweetTopic}      & 4,585          & 573                 & 1,679         \\ 
+{\TweetHate}       & 5,019          & 716                 & 1,433         \\ 
+{\TweetSimilarity} & 450            & 100                 & 450           \\ \bottomrule
+\end{tabular}
+% }
+\caption{Number of tweets in the train, validation (Valid.) and test splits for each of the tasks in {\DATASET}.}
+\label{tab:SuperTweetEval-data_distribution}
+\end{table}
+
+
+\section{Experimental Setting}
+For the evaluation, we rely on the datasets and splits presented in Section \ref{sec:statistics}. In particular, we evaluate all models on the test splits. Each dataset uses a different evaluation metric, as introduced in Section \ref{sec:evaluation_metrics}.
+
+\subsection{Naive Baselines}
+To establish a lower performance threshold for each task, naive baselines are also included. For the classification tasks ({\TweetEmotion}, {\TweetNERD}, {\TempoWiC}, {\TweetTopic}, {\TweetHate}, {\TweetEmoji}) a \textit{Majority} classifier (most frequent class in training) is employed. For the regression tasks, the naive model always outputs the average value of the training set  ({\TweetIntimacy}, {\TweetSimilarity}), and for Sentiment Classification (ordinal classification) the output is always 'negative or neutral’. Finally, for the text generation tasks of QA \& QG our naive model always returns the input text, and for the NER task it outputs random tokens assigned with random entities.
+
+
+\subsection{Fine-tuning}
+\paragraph{Model Selection} For the fine-tuning setting we consider eight different models\footnote{Details of the model can be found in the Appendix \ref{appendix:SuperTweetEval}: Table \ref{appendix:SuperTweetEval-model_details}.}: OPT \cite{zhang2022opt}, FlanT5 \cite{https://doi.org/10.48550/arxiv.2210.11416}, RoBERTa \cite{DBLP:journals/corr/abs-1907-11692}, and TimeLM \cite{loureiro-etal-2022-timelms}. The selection of the models was done based on: (1) their relatively small size, with the smallest model having 85 million parameters (FlanT5\textsubscript{SMALL}) and the largest 354 million (RoBERTa\textsubscript{LARGE}). (2) The architectures of the models and training process. FlanT5 is an encoder-decoder model trained with a text-to-text format; OPT is a decoder only model and its training corpus includes a large portion of Reddit data; and finally, RoBERTa, a traditional masked language model, and TimeLM which are based on the same architecture, but their training corpus (specialised on social media, and particularly Twitter) makes them an interesting candidate. For the NER task, only the results from the RoBERTa based models are reported since adapting OPT and FlanT5 for this task is not trivial, and hence this endeavour is left for future work.
+
+\paragraph{Training}  The implementations provided by HuggingFace \cite{wolf-etal-2020-transformers} are used to train and evaluate all language models, while we utilise Ray Tune \cite{liaw2018tune} for optimising the number of epochs, learning rate, warmup steps, and batch size hyper-parameters. The hyper-parameter optimisation is done by performing a random search over 10 different runs for each model.
+
+
+\begin{table}[t]
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{@{}lrrrrrrrrr@{}}
+\toprule
+ & FlanT5\textsubscript{SMALL} & FlanT5\textsubscript{BASE} & OPT\textsubscript{125M} & OPT\textsubscript{350M} & RoB\textsubscript{BASE} & RoB\textsubscript{LARGE} & TimeLM\textsubscript{BASE} & TimeLM\textsubscript{LARGE} & Naive \\ \midrule
+{\TempoWiC}         & 63.59 & 62.84 & 58.02 & 67.66 & 65.08 & 63.86 & 68.14 & \textbf{68.41} & 63.45 \\ 
+{\TweetEmoji}       & 1.77 & 0.75  & 32.18 & 31.51 & 31.56 & 34.09 & 33.45 & \textbf{35.64} & 8.55 \\ 
+{\TweetEmotion}     & 37.49 & 47.73 & 54.62 & 55.36 & 55.27 & 57.95 & 55.61 & \textbf{58.53} & 4.58 \\ 
+{\TweetHate}        & 55.01 & 69.48 & 76.31 & 76.67 & 71.09 & 82.32 & 79.38 & \textbf{82.54} & 35.45 \\ 
+{\TweetIntimacy}    & 45.92 & 56.90 & 45.83 & 41.06 & 52.44 & 22.28 & \textbf{68.95} & 58.53 & 3.73 \\ 
+{\TweetNER}         &  - & - & - & - & 59.10 & 60.00 & 58.20 & \textbf{60.40} & 2.12 \\ 
+{\TweetNERD}        & 76.70 & 54.79 & 83.04 & 84.11 & 83.19 & 84.92 & 83.95 & \textbf{85.30} & 50.00 \\ 
+{\TweetQA}          & 53.64 & \textbf{66.09} & 19.60 & 17.43 &-&-&-&-& 12.70 \\ 
+{\TweetQG}          & 10.73 & \textbf{44.04} & 3.97 & 3.79 &-&-&-&-& 25.36 \\ 
+{\TweetSentiment}   & 6.98 & 2.38 & 48.53 & 49.29 & 50.75 & 54.50 & 51.89 & \textbf{54.65} & 0.00 \\ 
+{\TweetSimilarity}  & 9.70 & 5.45 & 65.99 & 66.41 & 74.42 & 68.15 & 72.24 & \textbf{74.64} & 0.00 \\ 
+{\TweetTopic}       & 23.16 & 40.53 & 55.65 & 58.78 & 45.34 & 58.71 & 36.65 & \textbf{58.84} & 2.30 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{{\DATASET} individual task results of selected models in the fine-tuning setting.}
+\label{tab:finetuned_results}
+\end{table}
+
+
+\subsection{Zero \& Few Shot}
+Further to the \textit{fine-tune} experimental setting, two in-context learning settings are established: zero and few shot. Aiming to explore the challenges that arise when testing {\DATASET} in such settings, we select the larger versions of the FlanT5 models (FlanT5\textsubscript{XL} \& FlanT5\textsubscript{XXL}), OPT-IML\textsubscript{1.3B}\footnote{The IML version \cite{iyer2023optiml} is selected as it is trained in a similar way to FlanT5.} and also \texttt{text-ada-001} from OpenAI, a small version of GPT-3 \cite{brown2020language}, and \texttt{chat-gpt-3.5-turbo}\footnote{\url{https://openai.com/chatgpt}}, and are evaluated in each task. 
+
+In both settings, we prompt the models three times and report the average result of the runs. Specifically, in the few-shot setting we sample different examples extracted from the validation set of each task for each run. The number of examples sampled for few-shot was based on the given task. For regression and text generation tasks, we provide five random examples in each prompt, while for classification tasks we include one example per class with a maximum of five examples. The prompts used in our experiments are, in their majority, based on the instructions used in the FlanT5 \cite{https://doi.org/10.48550/arxiv.2210.11416}, and OPT-IML \cite{iyer2023optiml} papers\footnote{Detailed prompts for each task can be found in Appendix \ref{appendix:SuperTweetEval-prompts}.}.
+
+As a final note, we forfeit reporting the results of zero/few-shot settings on {\TweetNER} and {\TweetEmoji} as our initial experiments were unsuccessful. This is mainly due to: (1) limitations of the models themselves (e.g. FlanT5 models are not trained with emojis); (2) evaluation difficulties ({\TweetEmoji} is evaluated using Accuracy at top 5 which leads to complications on the few-shot setting as only one emoji is included in the gold standard); and (3) issues that arose with the prompts tested (see Section \ref{appendix:SuperTweetEval-emoji_prompt} in the Appendix \ref{appendix:SuperTweetEval}).
+
+\begin{table*}[t]
+\begin{tabular}{cc}
+    \begin{minipage}{.5\linewidth}
+        \scalebox{0.85}{
+            \begin{tabular}{llrr} \toprule
+             & Model & Zero-shot & Few-shot \\ \midrule
+            \multirow[c]{5}{*}{\rotatebox{90}{\TempoWiC}} & FlanT5\textsubscript{XL} & 58.22 & \textbf{66.33}\\
+             & FlanT5\textsubscript{XXL} & 38.09 & 65.71 \\
+             & OPT-IML\textsubscript{1.3B} & \textbf{62.14} & 60.33 \\
+             & \texttt{text-ada-001} & 33.26 & 39.29 \\
+             & \texttt{chat-gpt-3.5-turbo$^*$} & 64.95 & 68.34  \\
+            \cmidrule{1-4}
+            \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetEmo.}}} & FlanT5\textsubscript{XL} & 30.08 & 30.19 \\
+             & FlanT5\textsubscript{XXL} & \textbf{32.77} & \textbf{36.63} \\
+             & OPT-IML\textsubscript{1.3B} & 19.96 & 24.66 \\
+             & \texttt{text-ada-001} & 0.42 & 20.06 \\
+             & \texttt{chat-gpt-3.5-turbo$^*$} & 45.17 & 51.56 \\
+            \cmidrule{1-4}
+            \multirow[c]{5}{*}{\rotatebox{90}{\TweetHate}} & FlanT5\textsubscript{XL} & \textbf{51.05} & \textbf{54.87} \\
+             & FlanT5\textsubscript{XXL} & 41.37 & 43.74 \\
+             & OPT-IML\textsubscript{1.3B} & 28.46 & 23.10 \\
+             & \texttt{text-ada-001} & 35.45 & 29.94 \\
+             & \texttt{chat-gpt-3.5-turbo$^*$} & 63.42 & 57.9 \\
+            \cmidrule{1-4}
+            \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetInt.}}} & FlanT5\textsubscript{XL} & 28.22 & 28.98 \\
+             & FlanT5\textsubscript{XXL} & \textbf{29.96} & \textbf{29.68} \\
+             & OPT-IML\textsubscript{1.3B} & 0.00 & 1.94 \\
+             & \texttt{text-ada-001} & 3.17 & 0.92 \\
+             & \texttt{chat-gpt-3.5-turbo$^*$} & 41.82 & 53.17 \\
+            \cmidrule{1-4}
+            \multirow[c]{5}{*}{\rotatebox{90}{\TweetQA}} & FlanT5\textsubscript{XL} & 53.85 & 54.33 \\
+             & FlanT5\textsubscript{XXL} & \textbf{53.88} & \textbf{64.44} \\
+             & OPT-IML\textsubscript{1.3B} & 50.85 & 53.50 \\
+             & \texttt{text-ada-001} & 17.99 & 17.99 \\
+             & \texttt{chat-gpt-3.5-turbo$^*$} & 32.90 & 70.51 \\
+            \cmidrule{1-4}
+            \end{tabular}}
+    \end{minipage} &
+
+    \begin{minipage}{.5\linewidth}
+       \scalebox{0.85}{
+        \begin{tabular}{llrr} \toprule
+         & Model & Zero-shot & Few-shot \\ \midrule
+        \multirow[c]{5}{*}{\rotatebox{90}{\TweetNERD}} & FlanT5\textsubscript{XL} & 67.25 & 67.54 \\
+         & FlanT5\textsubscript{XXL} & \textbf{75.56} & \textbf{73.94} \\
+         & OPT-IML\textsubscript{1.3B} & 54.71 & 52.80 \\
+         & \texttt{text-ada-001} & 35.09 & 50.02 \\
+         & \texttt{chat-gpt-3.5-turbo$^*$} & 69.97 & 80.28 \\
+        \cmidrule{1-4}
+        \multirow[c]{5}{*}{\rotatebox{90}{\TweetQG}} & FlanT5\textsubscript{XL} & \textbf{21.76} & \textbf{22.15} \\
+         & FlanT5\textsubscript{XXL} & 21.05 & 21.87 \\
+         & OPT-IML\textsubscript{1.3B} & 20.34 & 14.51 \\
+         & \texttt{text-ada-001} & 19.09 & 14.49 \\
+         & \texttt{chat-gpt-3.5-turbo$^*$} & 23.25 & 33.3 \\
+        \cmidrule{1-4}
+        \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetSent.}}} & FlanT5\textsubscript{XL} & 0.50 & 6.44 \\
+         & FlanT5\textsubscript{XXL} & \textbf{28.30} & \textbf{25.72} \\
+         & OPT-IML\textsubscript{1.3B} & 18.84 & 11.09 \\
+         & \texttt{text-ada-001} & 0.00 & 0.00 \\
+         & \texttt{chat-gpt-3.5-turbo$^*$} & 42.99 & 41.22 \\
+        \cmidrule{1-4}
+        \multirow[c]{5}{*}{\rotatebox{90}{\TweetSimilarity}} & FlanT5\textsubscript{XL} & \textbf{59.46} & 54.29 \\
+         & FlanT5\textsubscript{XXL} & 56.76 & \textbf{61.69} \\
+         & OPT-IML\textsubscript{1.3B} & 43.91 & 9.92 \\
+         & \texttt{text-ada-001} & 0.00 & 8.71 \\
+         & \texttt{chat-gpt-3.5-turbo$^*$} & 68.94 & 57.74 \\
+        \cmidrule{1-4}
+        \multirow[c]{5}{*}{\rotatebox{90}{\TweetTopic}} & FlanT5\textsubscript{XL} & 36.16 & 34.73 \\
+         & FlanT5\textsubscript{XXL} & \textbf{36.25} & \textbf{37.35} \\
+         & OPT-IML\textsubscript{1.3B} & 13.43 & 8.59 \\
+         & \texttt{text-ada-001} & 0.00 & 4.16 \\
+         & \texttt{chat-gpt-3.5-turbo$^*$} & 54.77 & 48.31 \\
+        \cmidrule{1-4}
+        \end{tabular}}
+    \end{minipage} 
+\end{tabular}
+\caption{{\DATASET} zero \& few shot results. Best results for each task and setting are bolded. Chat-GPT results (marked with $^*$) are included for completeness. We refrained from highlighting ChatGPT results due to its closed and irreproducible nature, as well as the possibility to have been directly trained on some of the test sets.}
+\label{tab:zerofew_results}
+\end{table*}
+
+\section{Results}
+
+\paragraph{Fine-tuning}
+
+The results from the fine-tuning setting  (Table \ref{tab:finetuned_results}) provide an indication of the level of difficulty of each task. Not surprisingly, most models seem to perform relatively well on simpler datasets such as {\TweetHate} (best: 0.8254) and {\TweetNERD} (best: 0.8530). However, the majority of the tasks appear to still offer an adequate challenge, with the best performing overall model (TimeLM\textsubscript{LARGE}) achieving an average score of 0.63 across all tasks tested. Specifically, the most difficult tasks appear to be {\TweetEmoji} and {\TweetQG}, where all models perform below 0.5.
+
+Finally, regarding the models' architectures tested, our results indicate that the RoBERTa models (and specifically TimeLM\textsubscript{LARGE}) display a better performance across most tasks when compared to FlanT5 and OPT counterparts.
+
+
+\paragraph{Zero \& few shot}
+When considering the results of our zero/few shot experiments (Table \ref{tab:zerofew_results}), a clear trend is revealed where most models tested fail to achieve better, or even similar, results to those that were fine-tuned. Exception to this is \texttt{chat-gpt-3.5-turbo} which in some tasks such as {\TempoWiC} and {\TweetNERD} achieves similar, but still lower, performance to the fine-tuned models, while it also achieves the best score in the {\TweetQA}. However, its performance must be viewed with caution as due to its closed nature as there is a possibility that the GPT models may have already been trained on the datasets collected (including test splits) providing them an unfair advantage.
+
+The difference in performance, particularly in the regression and ordinal classification tasks of {\TweetIntimacy} and {\TweetSentiment}, is significant. The best performing model, FlanT5\textsubscript{XXL}, achieves, in a few-shot setting, scores of 29.96 and 25.72 in {\TweetIntimacy} and {\TweetSentiment} respectively, which is more than a 50\% drop in performance compared to the scores  achieved by the best performing fine-tuned model (68.95 and 54.65).\footnote{The goal of this paper is not to have the strongest models, but rather to evaluate models out-of-the-box. As such, there are tasks such as {\TweetEmoji} that are not easily solved by the selected zero/few shot models.}
+
+
+
+\begin{table}[t]
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{@{}llrrrrrrrrr@{}} \toprule
+Mode & Model  & Big-label & Disamb. & Generation & Multi-class & Multi-label & Regression & Target & Temporal & Temporal* \\ \midrule
+\multirow[t]{2}{*}{Zero-shot} & FlanT5\textsubscript{XXL} & - & 56.82 & 37.46 & 34.83 & 34.51 & 38.34 & 47.31 & - & 49.97 \\
+ & OPT-IML\textsubscript{1.3B} & - & 58.42 & 35.59 & 23.65 & 16.70 & 21.38 & 45.23 & - & 43.42 \\
+& \texttt{chat-gpt-3.5-turbo} & - & 67.46 & 32.47 & 53.20 &  49.97 & 51.25 & 59.30 & - & 63.23 \\
+\midrule
+\multirow[t]{2}{*}{Few-shot} & FlanT5\textsubscript{XXL} & - & 69.83 & 43.16 & 34.73 & 36.99 & 39.03 & 55.12 & - & 59.00 \\
+ & OPT-IML\textsubscript{1.3B} & - & 56.56 & 34.01 & 17.09 & 16.62 & 8.09 & 41.41 & - & 40.57 \\
+ & \texttt{chat-gpt-3.5-turbo} & - & 74.31 & 51.90 & 49.56 & 49.93 & 50.71 & 63.28 & - & 65.64 \\
+\midrule
+\multirow[t]{3}{*}{F. tuning} & FlanT5\textsubscript{BASE} & 20.64 & 58.82 & \textbf{55.06} & 35.93 & 44.13 & 21.58 & 40.00 & 47.59 & 52.72 \\
+ & OPT\textsubscript{350M} & 45.15 & 75.89 & 10.61 & 62.98 & 57.07 & 52.26 & 67.02 & 55.62 & 70.18 \\
+ & TimeLM\textsubscript{LARGE} & \textbf{47.24} & \textbf{76.86} & - & \textbf{68.59} & \textbf{58.68} & \textbf{62.61} & \textbf{69.45} & \textbf{67.78} & \textbf{70.85} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Aggregated results over each test cluster of the best zero-shot, few-shot and fine-tuning methods.}
+\label{tab:results_of_groups}
+\end{table}
+
+
+\section{Analysis}
+Aiming to acquire a better understanding of capabilities for the model, and also the challenges that the tasks present, we organise the tasks in smaller \textit{sub-benchmarks} or \textit{clusters} that are aimed at testing a particular feature, and investigate their performance. The clusters defined are created based on the nature of each task as well as the features that are present in them.
+
+\textbf{Temporal} (Due to the lack of zero/few-shot results for {\TweetNER}, we added the subset \textit{temporal*} that does not include NER.). For this cluster, all the datasets  that feature a temporal aspect are grouped together. In particular, we include those datasets that contain data splits from different time periods ({\TweetNER}, {\TempoWiC}, {\TweetTopic}, and {\TweetNERD}).
+  
+\textbf{Multi-label.} In this cluster we include the {\TweetTopic} and {\TweetEmotion} datasets, analysing the models' performance in multi-label classification.
+
+\textbf{Multi-class.} Similar to the previous cluster, we consider the {\TweetSentiment} and {\TweetHate} datasets to evaluate the models in single-label multi-class tweet classification.
+
+\textbf{Regression.} For this cluster, we include the two regression tasks of {\TweetSimilarity} and {\TweetIntimacy}, and also consider {\TweetSentiment} (ordinal classification).
+
+\textbf{Target-based.} We group all datasets that provide information regarding a target word or entity that is used in models' predictions ({\TweetSentiment}, {\TempoWiC} and {\TweetNERD}).
+
+\textbf{Big-label.} In this setting we include classification tasks (both multi and single label) that contain a high number of labels ({\TweetEmoji} with 100 labels and {\TweetTopic} with 19 labels).
+
+\textbf{Generation.} {\TweetQA} and {\TweetQG} were grouped together to create a setting for evaluating the generation capabilities of the models.
+
+\textbf{Disambiguation.} As a final cluster we consider the tasks {\TempoWiC} and {\TweetNERD}  which share the goal of understanding and differentiating the meaning of a term between two contexts. 
+
+
+For this analysis, we selected the two best performing models in zero and few shot settings (FlanT5\textsubscript{XXL}, OPT-IML\textsubscript{1.3B}) along with \texttt{chat-gpt-3.5-turbo}, and the best model of each architecture from the fine-tuning experiment (TimeLM\textsubscript{LARGE}, FlanT5\textsubscript{BASE}, and OPT\textsubscript{350M}). Table \ref{tab:results_of_groups} displays the results of each cluster. Although the comparison across clusters is not straightforward given the different evaluation metrics, the most challenging settings for all model tested appear to be the \textit{Big-label} and \textit{Multi-label} clusters where no score greater than 60 is achieved. Finally, the results again highlight that in-context learning models (both zero- and few-shot) generally underperform compared to smaller models fine-tuned on the full training set, with even ChatGPT failing to attain the best score in any of the test clusters. In general, the fine-tuned TimeLM\textsubscript{LARGE} model achieve the best results across all non-generation clusters, with the fine-tuned FLAN-T5 model achieving the best results on generation tasks.
+
+
+
+\section{Summary}
+In this chapter, we have presented a new social media \ac{NLP} benchmark, {\DATASET}. It goes beyond simple tweet classification,  including generative, sequence prediction, and regression tasks, in addition to challenging classification tasks. This benchmark is aimed at unifying Twitter-based evaluation protocols and provides a realistic assessment of models in this difficult and important domain. Our evaluation highlighted the challenging nature of the benchmark and the social media domain. In particular, the results show how recent \ac{LLMs} struggle with the specialised nature of this domain, with smaller but fine-tuned and more specialised models being more competitive overall. In addition to its evaluation purposes, it can also be used as the basis for multi-task learning, as well as for making use of already-trained models. 
+
+
+
+% \section*{Limitations}
+% The main issue of {\DATASET} is its lack of language variety, as it focuses on English only. By making this first English benchmark publicly available, we hope this can pave the way for future research to extend the benchmark for other languages. 
+
+% In terms of data, the benchmark only includes one dataset per task. We took this choice to both (1) make the benchmark simpler to understand, and (2) because for most tasks only a single dataset was available. As such, conclusions for individual tasks can be limiting. Also, for some tasks, it is hard to know the performance ceiling for models, often reported as human performance. While we could have attempted to provide an upper bound, we believe this is a challenging problem in itself, as also human performance estimates are often unreliable as a performance indicator \cite{tedeschi2023s}.
+
+% Finally, our evaluation is focused on a simple setting comparing language models in supervised and zero/few shot settings and only focused on a limited set of LLMs. We did not intend to provide a new model performing well on all tasks, but rather an assessment of current models in similar conditions. Because of this, we may have not provided the models with their optimal settings. We will release all the evaluation scripts so that other researchers can easily evaluate their model performance on {\DATASET}.
+
+
+% \section*{Ethics Statement}
+% Our work aims to contribute and extend research in social media and particularly on Twitter. We propose a unified benchmark that can be utilised to train and evaluate new social media models.
+% The datasets collected in {\DATASET} are under public licences and follow the rules of Twitter API. Moreover, given that the data presented includes user generated content we are committed to respecting the privacy of the users. This is achieved by applying the necessary preprossessing to remove user mentions (from non-verified users) and URLs that can be used to identify individuals. We also ensured that none of the dataset splits contain more than 50,000 tweets.
+% Finally, regarding the annotation of {\TweetSimilarity}, a fair payment was ensured to be paid for the annotators that took part in its collection.
+
+
