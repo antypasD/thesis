@@ -1,0 +1,105 @@
+\chapter{Introduction}\label{ch:intro} % Add a label in case you want to refer to the chapter.
+
+\ac{NLP} techniques along with specialised computational models have long been used to process and extract insights from textual data \cite{jones1994natural}. Early work focuses on techniques such as dictionary and/or rule based approaches for tasks such as sentiment analysis \cite{hutto2014vader} and hate speech detection \cite{gitari2015lexicon}. Before the emergence of more sophisticated embedding approaches, whether static or contextual, \ac{BoW} approaches have been widely used to represent textual features.
+
+Similar methodologies have been utilised when dealing with social media data \cite{pak-paroubek-2010-twitter, bifet2010sentiment}. However, there are still notable challenges in handling the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{}. Furthermore, it is crucial to recognize both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \ac{LLMs} \cite{}.
+
+Politics/Misinformation \todo{Expand on this}
+
+With the advent of \ac{PLMs} such as \textit{BERT}\cite{DBLP:journals/corr/abs-1810-04805} and more recently \ac{LLMs} like \textit{GPT-3} \cite{GPT3} processing and extracting insights from textual data has become easier.
+
+However, there still struggles on dealing with the heavily unstructured nature of social media content which can provide challenges even for the larger models available \cite{}. Finally, it is important to note the potential biases that existing models/tools/datasets but also the environmental impact \ac{LLMs} have.
+
+In our fast evolving world where social media has become such an integral part of our lives through which people shape opinions and influence each other it is crucial both from a business and scientific perspective to understand better how people interact and what drives them.
+
+In order to tackle the limitations above, we explore methodologies of leveraging pre-trained \ac{LMs} to recognize the lexical relationship ... \todo{fix this} in this thesis. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpus collected from \textit{X} and \textit{Reddit} to understand better human interactions regarding politics as well as misinformation and hate speech. The rest of this introductory chapter is organised as follows: \autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \autoref{ch1:contributions} outlines the contribution of research, \autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \autoref{ch1:outline} describes the structure of the thesis and summarises this introductory chapter.
+
+\section{Motivation} \label{ch1:motivation}
+This thesis aim to achieve  \ac{LM}
+
+A lot of tools in NLP but when apply in social media is bad / sometimes is important to work with peopel from social science
+\begin{enumerate}
+
+    \item \textbf{develop datasets and models}
+
+    \item \textbf{analyse behaviours specific for politics/misinformation}
+    
+\end{enumerate}
+
+
+\section{Contributions} \label{ch1:contributions}
+\subsection{Part 1: NLP Tools for Social Media Analysis}
+The first core contribution of the thesis focuses on developing and evaluating \ac{NLP} tools specifically designed for social media applications. The chapter begins with a study on Twitter Topic Classification which introduces a methodology for categorising topics in noisy Twitter data and demonstrates its effectiveness across diverse datasets. The next chapter extends the work into the development of multilingual topic classification models proceedings, showcasing advancements in analysing content across diverse languages and cultural contexts. Following this, it examines robust hate speech detection techniques and provides a comprehensive cross-dataset evaluation to improve the reliability of hate speech classifiers. The chapter then introduces SuperTweetEval, a benchmark which unifies and standardizes evaluation for social media \ac{NLP} tasks, addressing the fragmentation in the field. 
+
+
+
+\subsection{Part 2: Social Media Analysis }
+Building on the tools developed in the previous chapter, this section applies \ac{NLP} techniques to analyse social media dynamics. The first study investigates the role of sentiment in political communication, focusing on how negativity influences the spread of political messages on Twitter. This study provides multilingual insights into the interaction between sentiment and political engagement. The second study shifts focus to misinformation spreaders, offering a multi-faceted analysis of their behaviour and content characteristics. This work identifies key linguistic and structural patterns in misinformation dissemination. Lastly, the chapter explores how specific words can act as trigger points in online discussions, highlighting their role in escalating or steering conversations. This work emphasizes the nuanced relationship between language and social dynamics on Reddit.
+
+\section{Publications} \label{ch1:publications}
+The majority of the material in this thesis have been published in peer-reviewed conferences and journals, while the remaining material are under reviewed at peer-reviewed conferences. Below is a list of the core publications where the main contributions of the thesis have been published in the chronological order.
+
+\subsection{Core Publications}
+\subsubsection{NLP}
+
+\begin{itemize}
+    \item \underline{Dimosthenis Antypas}, Asahi Ushio, Jose Camacho-Collados, Vitor Silva, Leonardo Neves, and Francesco Barbieri. 2022. Twitter Topic Classification. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3386–3400, Gyeongju, Republic of Korea. International Committee on Computational Linguistics. \Autoref{ch:tweet-topic}
+    
+    \item \underline{Dimosthenis Antypas}, Asahi Ushio, Francesco Barbieri, and Jose Camacho-Collados. 2024. Multilingual Topic Classification in X: Dataset and Analysis. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 20136–20152, Miami, Florida, USA. Association for Computational Linguistics. \Autoref{ch:xtopic}
+    
+    \item  \underline{Dimosthenis Antypas} and Jose Camacho-Collados. 2023. Robust Hate Speech Detection in Social Media: A Cross-Dataset Empirical Evaluation. In The 7th Workshop on Online Abuse and Harms (WOAH), pages 231–242, Toronto, Canada. Association for Computational Linguistics. \Autoref{ch:hate-speech}
+
+    \item \underline{Dimosthenis Antypas}, Asahi Ushio, Francesco Barbieri, Leonardo Neves, Kiamehr Rezaee, Luis Espinosa-Anke, Jiaxin Pei, and Jose Camacho-Collados. 2023. SuperTweetEval: A Challenging, Unified and Heterogeneous Benchmark for Social Media NLP Research. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 12590–12607, Singapore. Association for Computational Linguistics. \Autoref{ch:super-tweeteval}   
+\end{itemize}
+
+
+\subsubsection{Social Media Analysis}
+\begin{itemize}
+    \item \underline{Dimosthenis Antypas}, Alun Preece, and Jose Camacho-Collados. 2023. Negativity spreads faster: A large-scale multilingual Twitter analysis on the role of sentiment in political communication. Online Social Networks and Media, 33:100242. \Autoref{ch:political}
+
+    \item \underline{Dimosthenis Antypas}, Alun Preece, and Jose Camacho-Collados. 2024. A Multi-Faceted NLP Analysis of Misinformation Spreaders in Twitter. In Proceedings of the 14th Workshop on Computational Approaches to Subjectivity, Sentiment, \& Social Media Analysis, pages 71–83, Bangkok, Thailand. Association for Computational Linguistics. \Autoref{ch:spreaders}
+
+    \item \underline{Dimosthenis Antypas}, Christian Arnold, Jose Camacho-Collados, Nedjma Ousidhoum, and Carla Perez Almendros. 2024. Words as Trigger Points in Social Media Discussions. \textit{Under Review in ICSWM 2025.} \Autoref{ch:triggers}
+\end{itemize}
+
+
+\subsection{Other publications}
+\subsubsection{Collaboration with public stakeholders}
+
+\begin{itemize}
+    
+    \item Jesús Gómez, Alberto Matilla-Molina, Ma Pilar Amado, \underline{Dimosthenis Antypas}, Jose Camacho-Collados, Carlos J. Máñez, Tomás Fernández-Villazala, Alicia Méndez-Sanchís, and Javier López. 2023. The interaction between offensive and hate speech on Twitter and relevant social events in Spain. In News Media and Hate Speech Promotion in Mediterranean Countries, pages 81–109. IGI Global.
+    
+    \item Mark Drakesmith, \underline{Dimosthenis Antypas}, Claire Brown, Jose Camacho-Collados, and Jiao Song. 2024. Towards a social media-based disease surveillance system for early detection of influenza-like illnesses: A Twitter case study in Wales. medRxiv. doi: 10.1101/2024-11.
+\end{itemize}
+
+% public health wales  (e.g. in conclusions we can argue the importance of the impact of our work poeple using models/datasets (e.g. huggingface downloads) 
+
+% Spanish hate speech paper (link it to motivation/conclusion). w
+
+% Dimos maybe just reference:  diana thiks (refer as part of the impact). 
+
+\subsubsection{Other papers related to social media}
+
+\begin{itemize}
+    \item \underline{Dimosthenis Antypas}, Jose Camacho-Collados, Alun Preece, and David Rogers. 2021. COVID-19 and Misinformation: A Large-Scale Lexical Analysis on Twitter. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: Student Research Workshop, pages 119–126, Online. Association for Computational Linguistics. \Autoref{ch:covid}
+    
+    \item David Tuxworth, \underline{Dimosthenis Antypas}, Luis Espinosa-Anke, Jose Camacho-Collados, Alun Preece, and David Rogers. 2021. Deriving disinformation insights from geolocalized Twitter callouts. In Proceedings of KDD 2021 - Workshop on Deriving Insights From User-Generated Text.
+
+    \item David Owen, \underline{Dimosthenis Antypas}, Athanasios Hassoulas, Antonio F. Pardiñas, Luis Espinosa-Anke, and Jose Camacho Collados. 2023. Enabling early health care intervention by detecting depression in users of web-based forums using language models: Longitudinal analysis and evaluation. JMIR AI 2, no. 1.
+    
+    \item Jose Camacho-collados, Kiamehr Rezaee, Talayeh Riahi, Asahi Ushio, Daniel Loureiro, \underline{Dimosthenis Antypas}, Joanne Boisson, Luis Espinosa Anke, Fangyu Liu, and Eugenio Martínez Cámara. 2022. TweetNLP: Cutting-Edge Natural Language Processing for Social Media. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38–49, Abu Dhabi, UAE. Association for Computational Linguistics.
+\end{itemize}
+
+
+\subsubsection{Other work}
+\begin{itemize}
+    \item Myung, Junho, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki Afina Putri, \underline{Dimosthenis Antypas}, Hsuvas Borkakoty et al. "BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages." \textit{Under Review in NeurIPS 2024 Datasets and Benchmarks Track.}
+
+    \item Joanne Boisson, Asahi Ushio, Hsuvas Borkakoty, Kiamehr Rezaee, \underline{Dimosthenis Antypas}, Zara Siddique, Nina White, and Jose Camacho-Collados. 2024. How Are Metaphors Processed by Language Models? The Case of Analogies. In Proceedings of the 28th Conference on Computational Natural Language Learning, pages 365–387, Miami, FL, USA. Association for Computational Linguistics.
+\end{itemize}
+
+
+\section{Thesis Outline and Summary} \label{ch1:outline}
+Social media platforms, especially X, present unique challenges and opportunities for \ac{NLP} research, such as addressing multilinguality, detecting harmful content, and understanding online discourse dynamics. The introduction also highlights the relevance of the presented work in real-world scenarios, including combating misinformation and promoting healthier online interactions. The chapter concludes by presenting the structure of the thesis and summarizing its core themes.
+
