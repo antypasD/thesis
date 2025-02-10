@@ -35,14 +35,14 @@
 \contentsline {paragraph}{Trend filtering.}{20}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Annotation}{20}{subsection.3.3.3}%
 \contentsline {paragraph}{Post-aggregation.}{21}{subsection.3.3.3}%
-\contentsline {paragraph}{Inter-annotator agreement.}{21}{table.caption.11}%
+\contentsline {paragraph}{Inter-annotator agreement.}{21}{table.caption.10}%
 \contentsline {subsection}{\numberline {3.3.4}Settings and temporal split}{22}{subsection.3.3.4}%
-\contentsline {paragraph}{Multi-label.}{22}{table.caption.12}%
-\contentsline {paragraph}{Single-label.}{23}{table.caption.12}%
+\contentsline {paragraph}{Multi-label.}{22}{table.caption.11}%
+\contentsline {paragraph}{Single-label.}{23}{table.caption.11}%
 \contentsline {subsection}{\numberline {3.3.5}Statistics}{23}{subsection.3.3.5}%
-\contentsline {paragraph}{Number of labels.}{24}{figure.caption.14}%
-\contentsline {paragraph}{Class distribution across time periods.}{25}{table.caption.15}%
-\contentsline {paragraph}{Topic features.}{25}{table.caption.15}%
+\contentsline {paragraph}{Number of labels.}{24}{figure.caption.13}%
+\contentsline {paragraph}{Class distribution across time periods.}{25}{table.caption.14}%
+\contentsline {paragraph}{Topic features.}{25}{table.caption.14}%
 \contentsline {section}{\numberline {3.4}Evaluation}{27}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Experimental setting}{27}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Results}{28}{subsection.3.4.2}%

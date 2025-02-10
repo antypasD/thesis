@@ -5,3 +5,5 @@
 *.lot
 *.fdb_latexmk
 *.toc
+*.lof
+thesis.lot
