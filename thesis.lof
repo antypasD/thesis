@@ -1,0 +1,47 @@
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Text filtering pipeline to reduce noise from the tweets and avoid near duplicates.}}{19}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Percentage of tweets that were annotated with a given topic (multi-label setting) for each time period.}}{24}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Percentage of tweets that were annotated with a given topic (single-label setting) for each time period.}}{25}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Relative (\%) differences in F1 scores when \textit {TimeLM-19} is trained in a temporal and in a random setting for the single-label setting. Negative values indicate that when using the temporal split the model's performance decreases. }}{31}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Confusion matrix of the TimeLM-19 results for the single-label setting. The values displayed are normalized by row.}}{32}{figure.caption.20}%
+\addvspace {10\p@ }
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Number of tweets per topic and language.}}{43}{figure.caption.23}%
+\addvspace {10\p@ }
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Weekly trend filtering to remove tweets that are irrelevant to the popular topics in each week.}}{79}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Ratio (\%) of tweets in each of top 15 trending keywords for every week.}}{79}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The instructions shown to the annotators during the annotation phase.}}{80}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Tweet classification annotation interface. Annotators are allowed to select multiple topics.}}{81}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces F1 performance of TimeLM-19 through time (single-label setting).}}{81}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Relative (\%) differences in F1 scores when \textit {TimeLM-19} is trained in a temporal and in a random setting for the multi-label setting. Negative values indicate that when using the temporal split the model's performance decreases. }}{82}{figure.caption.34}%
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Confusion-matrix of TimeLM-19 (multi-label setting).}}{116}{figure.caption.35}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Overlap between topics across all languages. Darker color indicates higher overlap}}{117}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces F1 scores (macro average) of the best overall performing model (\textit {xlmt\_large}) in each setting and language.}}{118}{figure.caption.40}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Emojis distribution for each split.}}{119}{figure.caption.47}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Sentiment comparison between \textit {PAN} dataset and the \textit {XGB} models' predictions.}}{120}{figure.caption.55}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Topic distribution comparison between the \textit {PAN} dataset and the predictions from the \textit {XGB} model.}}{120}{figure.caption.56}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Emotion \bbl@greek@ampersand Hate speech results for \textit {PAN} dataset and \textit {XGB} model.}}{121}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Absolute count of posts before and after each trigger point.}}{122}{figure.caption.58}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Average controversiality per thread in the Temporal and Semantic settings and their respective treatment groups, for the trigger point \textit {Rwanda}.}}{123}{figure.caption.59}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Rwanda Treatment and Control distributions of comments in the Semantic and Temporal settings.}}{124}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Distribution of negatively charged comments in the Treatment and Control (Space) groups.}}{125}{figure.caption.61}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Distribution of anger and non-anger comments for the treatment and control (space) groups of \textit {Vaccine} trigger word.}}{126}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Testing the Parallel Trends Assumption with event studies. Individual studies in grey, their time-wise mean in purple.}}{127}{figure.caption.63}%

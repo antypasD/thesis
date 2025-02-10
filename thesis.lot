@@ -1,0 +1,48 @@
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Number of total tweets after each step.}}{21}{table.caption.11}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Sample tweets for each setting studied (top: multi-label; bottom: single-label).}}{23}{table.caption.12}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces General lexical statistics for each class. The averages of the length of tweet, punctuation count, upper/lower case ratio (upl/low), hashtags count, mentions count, emojis count are reported along with their standard deviation. Frequency metrics are normalized based on the text length. The last two columns correspond to the lexical diversity (mtld) and total number of tweets.}}{26}{table.caption.15}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Macro average Precision (Pr), Recall (Rec), F1, and accuracy results in \textsc {TweetTopic}(temporal split). Jaccard Index (JI) is reported for the multi-label setting. }}{29}{table.caption.17}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Macro average F1 scores for the multi-label setting when using temporal (temp) and random (rand) split. Highlighted with bold is the best score for each model.}}{30}{table.caption.18}%
+\addvspace {10\p@ }
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {table}{\numberline {4.1}{\ignorespaces Example of tweets present in each language subset of X-Topic.}}{37}{table.caption.22}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Annotator agreement in each language subset of {X-Topic} and {\textsc {TweetTopic}}, as well as the average number of topics (\textit {AVG Topics}) assigned to each tweet.}}{44}{table.caption.24}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces F1 scores (macro \bbl@greek@ampersand micro average) for each setting tested in 5-fold cross validation. Fine-tuned models are evaluated on different settings depending on the used training data. \textit {TweetTopic:} {\textsc {TweetTopic}} was used for training; \textit {Target:} the respective language subset of {X-Topic} was used for training; \textit {All:} all language subsets of {X-Topic} were used. The best result for each language is bolded, and underlined scores indicate statistically significant difference with respect to the second best score.}}{50}{table.caption.25}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Topics with the highest occurrences of False Negatives errors (topic, error \%). The results of \textit {xlmt-large} when trained on {\textsc {TweetTopic}} and \textit {All}, and of \textit {gpt-4o} in the \textit {few-shot} setting are displayed.}}{53}{table.caption.26}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Average macro Precision and Recall scores. Results from the few-shot setting are considered for \textit {chat-gpt} and \textit {gpt-4o}. For the \textit {bernice} and \textit {xlm\_t} results we considered models trained on {\textsc {TweetTopic}} and {X-Topic} }}{55}{table.caption.28}%
+\addvspace {10\p@ }
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {table}{\numberline {6.1}{\ignorespaces Number of remaining tweets for each preprocessing step for every language.}}{92}{table.caption.36}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Number of Parameters in different language models used.}}{92}{table.caption.38}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Macro and F1 scores for each language for the SuperCTM model.}}{95}{table.caption.39}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Precision (Pr), Recall (Rec), and F1 scores for each topic achieved by \textit {xlmt\_large} trained on \textit {TweetTopic} and \textit {All languages}.}}{96}{table.caption.41}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Precision (Pr), Recall (Rec), and F1 scores for each topic achieved by \textit {gpt-4o} in the few-shot setting.}}{97}{table.caption.42}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Best hyper-parameters for models trained on the combined datasets for the binary and multiclass settings.}}{98}{table.caption.43}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces Emotions present in {\textsc {TweetEmotion}}.}}{100}{table.caption.44}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces Topics present in {\textsc {TweetTopic}}.}}{101}{table.caption.45}%
+\contentsline {table}{\numberline {6.9}{\ignorespaces Classes present in {\textsc {TweetHate}}.}}{101}{table.caption.46}%
+\contentsline {table}{\numberline {6.10}{\ignorespaces Number of parameters, link to implementation, and reference for each model used in our experiments.}}{103}{table.caption.48}%
+\contentsline {table}{\numberline {6.11}{\ignorespaces Number of MP tweets collected through 2021.}}{108}{table.caption.49}%
+\contentsline {table}{\numberline {6.12}{\ignorespaces Percentage of tweets that include hashtags (\#), mentions (@), emojis, and URLs in \textit {2021 Devolved Dataset}. The upper to low case ratio (upp/low) average of tweets texts is also reported.}}{108}{table.caption.50}%
+\contentsline {table}{\numberline {6.13}{\ignorespaces Average F1 scores along with the average of F1 scores of positive and negative classes (F1\textsuperscript {PN}) when trained/evaluated with cross-validation (CV) and on the $\sim $900/100 train/test split. The results displayed are the averages of three runs. Training domain indicates the data used for training the models. `In' domain indicates models trained on the labelled data collected (Section \ref {sec:annotation}), `Out' indicates the model has been finetuned on other sentiment analysis datasets (see Section \ref {sec:expsetting}). Finally, `Mono' indicates that the model was trained with data from only one language, while `Multi' shows models that were trained with data from all available languages.}}{110}{table.caption.51}%
+\contentsline {table}{\numberline {6.14}{\ignorespaces Coefficients for the OLS model when using tweets from the combined 2021 UK, Spain, Greece parliaments and for each individual parliament. Dependent variable is the retweet count while XLM-T's softmax scores (negative and positive sentiment) are utilised (sent score) as independent variables. $*$ indicates p-value $< 0.05$ }}{111}{table.caption.52}%
+\contentsline {table}{\numberline {6.15}{\ignorespaces Coefficients for the Poisson Regression and zero inflated Poisson Regression when using tweets from the combined 2021 UK, Spain, Greece parliaments and for each individual parliament. Dependent variable is the retweet count while the independent variables \textit {neg} and \textit {pos} indicate the sentiment according to XLM-T results. $*$ indicates p-value $< 0.05$ }}{111}{table.caption.53}%
+\contentsline {table}{\numberline {6.16}{\ignorespaces Comparative results of F1 scores and accuracy for various feature combinations using the XGB classifier on the \textit {PAN} dataset. \textit {s: sentiment, e: emotion, t: topic}}}{113}{table.caption.54}%
