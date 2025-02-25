@@ -1,83 +1,20 @@
-\begin{thebibliography}{132}
+\begin{thebibliography}{38}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{Abuzayed and Al-Khalifa(2021)}]{abuzayed2021bert}
-Abeer Abuzayed and Hend Al-Khalifa. 2021.
-\newblock Bert for arabic topic modeling: An experimental study on bertopic technique.
-\newblock \emph{Procedia Computer Science}, 189:191--194.
-
-\bibitem[{Anderson et~al.(2020)Anderson, Barthel, Perrin, and Vogels}]{anderson2020blacklivesmatter}
-Monica Anderson, Michael Barthel, Andrew Perrin, and Emily~A Vogels. 2020.
-\newblock \# blacklivesmatter surges on twitter after george floyd’s death.
-
-\bibitem[{Angelov(2020)}]{angelov2020top2vec}
-Dimo Angelov. 2020.
-\newblock \href {http://arxiv.org/abs/2008.09470} {Top2vec: Distributed representations of topics}.
-
-\bibitem[{Ansari et~al.(2020)Ansari, Aziz, Siddiqui, Mehra, and Singh}]{ansari2020analysis}
-Mohd~Zeeshan Ansari, Mohd-Bilal Aziz, MO~Siddiqui, H~Mehra, and KP~Singh. 2020.
-\newblock Analysis of political sentiment orientations on twitter.
-\newblock \emph{Procedia computer science}, 167:1821--1828.
-
-\bibitem[{Antypas et~al.(2022)Antypas, Ushio, Camacho-Collados, Silva, Neves, and Barbieri}]{antypas-etal-2022-twitter}
-Dimosthenis Antypas, Asahi Ushio, Jose Camacho-Collados, Vitor Silva, Leonardo Neves, and Francesco Barbieri. 2022.
-\newblock \href {https://aclanthology.org/2022.coling-1.299} {{T}witter topic classification}.
-\newblock In \emph{Proceedings of the 29th International Conference on Computational Linguistics}, pages 3386--3400, Gyeongju, Republic of Korea. International Committee on Computational Linguistics.
-
-\bibitem[{Arias et~al.(2015)Arias, Mart{\'\i}nez, Hincapie, Granada et~al.}]{arias2015ieee}
-Andr{\'e}s Arias, Luis~H Mart{\'\i}nez, Ricardo~A Hincapie, Mauricio Granada, et~al. 2015.
-\newblock An ieee xplore database literature review regarding the interaction between electric vehicles and power grids.
-\newblock \emph{2015 IEEE PES Innovative Smart Grid Technologies Latin America (ISGT LATAM)}, pages 673--678.
-
-\bibitem[{Artstein and Poesio(2008)}]{artstein2008inter}
-Ron Artstein and Massimo Poesio. 2008.
-\newblock Inter-coder agreement for computational linguistics.
-\newblock \emph{Computational linguistics}, 34(4):555--596.
-
-\bibitem[{Ashktorab et~al.(2014)Ashktorab, Brown, Nandi, and Culotta}]{ashktorab2014tweedr}
-Zahra Ashktorab, Christopher Brown, Manojit Nandi, and Aron Culotta. 2014.
-\newblock Tweedr: Mining twitter to inform disaster response.
-\newblock In \emph{ISCRAM}, pages 269--272. Citeseer.
-
-\bibitem[{Auxier and Anderson(2021)}]{auxier2021social}
-Brooke Auxier and Monica Anderson. 2021.
-\newblock Social media use in 2021.
-\newblock \emph{Pew Research Center}, 1:1--4.
+\bibitem[{Allcott and Gentzkow(2017)}]{allcott2017social}
+Hunt Allcott and Matthew Gentzkow. 2017.
+\newblock Social media and fake news in the 2016 election.
+\newblock \emph{Journal of economic perspectives}, 31(2):211--236.
 
 \bibitem[{Balabantaray et~al.(2012)Balabantaray, Mohammad, and Sharma}]{balabantaray2012multi}
 Rakesh~C Balabantaray, Mudasir Mohammad, and Nibha Sharma. 2012.
 \newblock Multi-class twitter emotion classification: A new approach.
 \newblock \emph{International Journal of Applied Information Systems}, 4(1):48--53.
 
-\bibitem[{Baldwin et~al.(2013)Baldwin, Cook, Lui, MacKinlay, and Wang}]{baldwin2013noisy}
-Timothy Baldwin, Paul Cook, Marco Lui, Andrew MacKinlay, and Li~Wang. 2013.
-\newblock How noisy social media text, how diffrnt social media sources?
-\newblock In \emph{Proceedings of the Sixth International Joint Conference on Natural Language Processing}, pages 356--364.
-
-\bibitem[{Banda et~al.(2021)Banda, Tekumalla, Wang, Yu, Liu, Ding, Artemova, Tutubalina, and Chowell}]{banda2021large}
-Juan~M Banda, Ramya Tekumalla, Guanyu Wang, Jingyuan Yu, Tuo Liu, Yuning Ding, Ekaterina Artemova, Elena Tutubalina, and Gerardo Chowell. 2021.
-\newblock A large-scale covid-19 twitter chatter dataset for open scientific research—an international collaboration.
-\newblock \emph{Epidemiologia}, 2(3):315--324.
-
-\bibitem[{Barbieri et~al.(2022)Barbieri, Espinosa~Anke, and Camacho-Collados}]{barbieri-etal-2022-xlm}
-Francesco Barbieri, Luis Espinosa~Anke, and Jose Camacho-Collados. 2022.
-\newblock \href {https://aclanthology.org/2022.lrec-1.27} {{XLM}-{T}: Multilingual language models in {T}witter for sentiment analysis and beyond}.
-\newblock In \emph{Proceedings of the Thirteenth Language Resources and Evaluation Conference}, pages 258--266, Marseille, France. European Language Resources Association.
-
-\bibitem[{Barbieri et~al.(2014)Barbieri, Saggion, and Ronzano}]{barbieri-etal-2014-modelling}
-Francesco Barbieri, Horacio Saggion, and Francesco Ronzano. 2014.
-\newblock \href {https://doi.org/10.3115/v1/W14-2609} {Modelling sarcasm in {T}witter, a novel approach}.
-\newblock In \emph{Proceedings of the 5th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis}, pages 50--58, Baltimore, Maryland. Association for Computational Linguistics.
-
 \bibitem[{Basile et~al.(2019)Basile, Bosco, Fersini, Nozza, Patti, Rangel~Pardo, Rosso, and Sanguinetti}]{basile-etal-2019-semeval}
 Valerio Basile, Cristina Bosco, Elisabetta Fersini, Debora Nozza, Viviana Patti, Francisco~Manuel Rangel~Pardo, Paolo Rosso, and Manuela Sanguinetti. 2019.
 \newblock \href {https://doi.org/10.18653/v1/S19-2007} {{S}em{E}val-2019 task 5: Multilingual detection of hate speech against immigrants and women in {T}witter}.
 \newblock In \emph{Proceedings of the 13th International Workshop on Semantic Evaluation}, pages 54--63, Minneapolis, Minnesota, USA. Association for Computational Linguistics.
-
-\bibitem[{Batrinca and Treleaven(2015)}]{batrinca2015social}
-Bogdan Batrinca and Philip~C Treleaven. 2015.
-\newblock Social media analytics: a survey of techniques, tools and platforms.
-\newblock \emph{Ai \& Society}, 30(1):89--116.
 
 \bibitem[{Bianchi et~al.(2021)Bianchi, Terragni, Hovy, Nozza, and Fersini}]{bianchi-etal-2021-cross}
 Federico Bianchi, Silvia Terragni, Dirk Hovy, Debora Nozza, and Elisabetta Fersini. 2021.
@@ -89,21 +26,6 @@ Albert Bifet and Eibe Frank. 2010.
 \newblock Sentiment knowledge discovery in twitter streaming data.
 \newblock In \emph{International conference on discovery science}, pages 1--15. Springer.
 
-\bibitem[{Blei et~al.(2003)Blei, Ng, and Jordan}]{lda}
-David~M. Blei, Andrew~Y. Ng, and Michael~I. Jordan. 2003.
-\newblock Latent dirichlet allocation.
-\newblock \emph{J. Mach. Learn. Res.}, 3(null):993–1022.
-
-\bibitem[{Bojanowski et~al.(2016)Bojanowski, Grave, Joulin, and Mikolov}]{bojanowski2016enriching}
-Piotr Bojanowski, Edouard Grave, Armand Joulin, and Tomas Mikolov. 2016.
-\newblock Enriching word vectors with subword information.
-\newblock \emph{arXiv preprint arXiv:1607.04606}.
-
-\bibitem[{Bojanowski et~al.(2017)Bojanowski, Grave, Joulin, and Mikolov}]{bojanowski-etal-2017-enriching}
-Piotr Bojanowski, Edouard Grave, Armand Joulin, and Tomas Mikolov. 2017.
-\newblock \href {https://doi.org/10.1162/tacl_a_00051} {Enriching word vectors with subword information}.
-\newblock \emph{Transactions of the Association for Computational Linguistics}, 5:135--146.
-
 \bibitem[{Brown et~al.(2020{\natexlab{a}})Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal, Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert{-}Voss, Krueger, Henighan, Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Sigler, Litwin, Gray, Chess, Clark, Berner, McCandlish, Radford, Sutskever, and Amodei}]{GPT3}
 Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert{-}Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020{\natexlab{a}}.
 \newblock Language models are few-shot learners.
@@ -113,74 +35,24 @@ Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla
 Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020{\natexlab{b}}.
 \newblock \href {http://arxiv.org/abs/2005.14165} {Language models are few-shot learners}.
 
-\bibitem[{Bubeck et~al.(2023)Bubeck, Chandrasekaran, Eldan, Gehrke, Horvitz, Kamar, Lee, Lee, Li, Lundberg et~al.}]{bubeck2023sparks}
-S{\'e}bastien Bubeck, Varun Chandrasekaran, Ronen Eldan, Johannes Gehrke, Eric Horvitz, Ece Kamar, Peter Lee, Yin~Tat Lee, Yuanzhi Li, Scott Lundberg, et~al. 2023.
-\newblock Sparks of artificial general intelligence: Early experiments with gpt-4.
-\newblock \emph{arXiv preprint arXiv:2303.12712}.
-
-\bibitem[{Camacho-collados et~al.(2022)Camacho-collados, Rezaee, Riahi, Ushio, Loureiro, Antypas, Boisson, Espinosa~Anke, Liu, and Mart{\'\i}nez~C{\'a}mara}]{camacho-collados-etal-2022-tweetnlp}
-Jose Camacho-collados, Kiamehr Rezaee, Talayeh Riahi, Asahi Ushio, Daniel Loureiro, Dimosthenis Antypas, Joanne Boisson, Luis Espinosa~Anke, Fangyu Liu, and Eugenio Mart{\'\i}nez~C{\'a}mara. 2022.
-\newblock \href {https://aclanthology.org/2022.emnlp-demos.5} {{T}weet{NLP}: Cutting-edge natural language processing for social media}.
-\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: System Demonstrations}, pages 38--49, Abu Dhabi, UAE. Association for Computational Linguistics.
-
-\bibitem[{Camacho-Collados et~al.(2022)Camacho-Collados, Rezaee, Riahi, Ushio, Loureiro, Antypas, Boisson, Espinosa-Anke, Liu, Mart{\'\i}nez-C{\'a}mara et~al.}]{camacho2022tweetnlp}
-Jose Camacho-Collados, Kiamehr Rezaee, Talayeh Riahi, Asahi Ushio, Daniel Loureiro, Dimosthenis Antypas, Joanne Boisson, Luis Espinosa-Anke, Fangyu Liu, Eugenio Mart{\'\i}nez-C{\'a}mara, et~al. 2022.
-\newblock Tweetnlp: Cutting-edge natural language processing for social media.
-\newblock \emph{arXiv preprint arXiv:2206.14774}.
+\bibitem[{Cambria and White(2014)}]{cambria2014jumping}
+Erik Cambria and Bebo White. 2014.
+\newblock Jumping nlp curves: A review of natural language processing research.
+\newblock \emph{IEEE Computational intelligence magazine}, 9(2):48--57.
 
 \bibitem[{Card et~al.(2017)Card, Tan, and Smith}]{card2017neural}
 Dallas Card, Chenhao Tan, and Noah~A Smith. 2017.
 \newblock Neural models for documents with metadata.
 \newblock \emph{arXiv preprint arXiv:1705.09296}.
 
-\bibitem[{Chakravarthi(2020)}]{chakravarthi2020hopeedi}
-Bharathi~Raja Chakravarthi. 2020.
-\newblock Hopeedi: A multilingual hope speech detection dataset for equality, diversity, and inclusion.
-\newblock In \emph{Proceedings of the Third Workshop on Computational Modeling of People's Opinions, Personality, and Emotion's in Social Media}, pages 41--53. Association for Computational Linguistics.
-
-\bibitem[{Chowdhury et~al.(2020)Chowdhury, Caragea, and Caragea}]{chowdhury2020cross}
-Jishnu~Ray Chowdhury, Cornelia Caragea, and Doina Caragea. 2020.
-\newblock Cross-lingual disaster-related multi-label tweet classification with manifold mixup.
-\newblock In \emph{Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: Student Research Workshop}, pages 292--298.
-
-\bibitem[{Chua and Banerjee(2016)}]{chua2016linguistic}
-Alton~YK Chua and Snehasish Banerjee. 2016.
-\newblock Linguistic predictors of rumor veracity on the internet.
-\newblock In \emph{Proceedings of the International MultiConference of Engineers and Computer Scientists}, volume~1, page 387. Nanyang Technological University Singapore.
-
-\bibitem[{Chung et~al.(2022{\natexlab{a}})Chung, Hou, Longpre, Zoph, Tay, Fedus, Li, Wang, Dehghani, Brahma, Webson, Gu, Dai, Suzgun, Chen, Chowdhery, Narang, Mishra, Yu, Zhao, Huang, Dai, Yu, Petrov, Chi, Dean, Devlin, Roberts, Zhou, Le, and Wei}]{https://doi.org/10.48550/arxiv.2210.11416}
-Hyung~Won Chung, Le~Hou, Shayne Longpre, Barret Zoph, Yi~Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, Albert Webson, Shixiang~Shane Gu, Zhuyun Dai, Mirac Suzgun, Xinyun Chen, Aakanksha Chowdhery, Sharan Narang, Gaurav Mishra, Adams Yu, Vincent Zhao, Yanping Huang, Andrew Dai, Hongkun Yu, Slav Petrov, Ed~H. Chi, Jeff Dean, Jacob Devlin, Adam Roberts, Denny Zhou, Quoc~V. Le, and Jason Wei. 2022{\natexlab{a}}.
+\bibitem[{Chung et~al.(2022)Chung, Hou, Longpre, Zoph, Tay, Fedus, Li, Wang, Dehghani, Brahma, Webson, Gu, Dai, Suzgun, Chen, Chowdhery, Narang, Mishra, Yu, Zhao, Huang, Dai, Yu, Petrov, Chi, Dean, Devlin, Roberts, Zhou, Le, and Wei}]{https://doi.org/10.48550/arxiv.2210.11416}
+Hyung~Won Chung, Le~Hou, Shayne Longpre, Barret Zoph, Yi~Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, Albert Webson, Shixiang~Shane Gu, Zhuyun Dai, Mirac Suzgun, Xinyun Chen, Aakanksha Chowdhery, Sharan Narang, Gaurav Mishra, Adams Yu, Vincent Zhao, Yanping Huang, Andrew Dai, Hongkun Yu, Slav Petrov, Ed~H. Chi, Jeff Dean, Jacob Devlin, Adam Roberts, Denny Zhou, Quoc~V. Le, and Jason Wei. 2022.
 \newblock \href {https://doi.org/10.48550/ARXIV.2210.11416} {Scaling instruction-finetuned language models}.
-
-\bibitem[{Chung et~al.(2022{\natexlab{b}})Chung, Hou, Longpre, Zoph, Tay, Fedus, Li, Wang, Dehghani, Brahma et~al.}]{chung2022scaling}
-Hyung~Won Chung, Le~Hou, Shayne Longpre, Barret Zoph, Yi~Tay, William Fedus, Eric Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, et~al. 2022{\natexlab{b}}.
-\newblock Scaling instruction-finetuned language models.
-\newblock \emph{arXiv preprint arXiv:2210.11416}.
-
-\bibitem[{Conneau et~al.(2019)Conneau, Khandelwal, Goyal, Chaudhary, Wenzek, Guzm{\'{a}}n, Grave, Ott, Zettlemoyer, and Stoyanov}]{DBLP:journals/corr/abs-1911-02116}
-Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary, Guillaume Wenzek, Francisco Guzm{\'{a}}n, Edouard Grave, Myle Ott, Luke Zettlemoyer, and Veselin Stoyanov. 2019.
-\newblock \href {http://arxiv.org/abs/1911.02116} {Unsupervised cross-lingual representation learning at scale}.
-\newblock \emph{CoRR}, abs/1911.02116.
-
-\bibitem[{Daouadi et~al.(2021)Daouadi, Reba{\"\i}, and Amous}]{daouadi2021optimizing}
-Kheir~Eddine Daouadi, Rim~Zghal Reba{\"\i}, and Ikram Amous. 2021.
-\newblock Optimizing semantic deep forest for tweet topic classification.
-\newblock \emph{Information Systems}, 101:101801.
 
 \bibitem[{Davidson et~al.(2017)Davidson, Warmsley, Macy, and Weber}]{davidson2017automated}
 Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber. 2017.
 \newblock Automated hate speech detection and the problem of offensive language.
 \newblock In \emph{Proceedings of the international AAAI conference on web and social media}, volume~11, pages 512--515.
-
-\bibitem[{DeLucia et~al.(2022)DeLucia, Wu, Mueller, Aguirre, Resnik, and Dredze}]{delucia-etal-2022-bernice}
-Alexandra DeLucia, Shijie Wu, Aaron Mueller, Carlos Aguirre, Philip Resnik, and Mark Dredze. 2022.
-\newblock \href {https://aclanthology.org/2022.emnlp-main.415} {Bernice: A multilingual pre-trained encoder for {T}witter}.
-\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing}, pages 6191--6205, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.
-
-\bibitem[{Demszky et~al.(2020)Demszky, Movshovitz-Attias, Ko, Cowen, Nemade, and Ravi}]{demszky-etal-2020-goemotions}
-Dorottya Demszky, Dana Movshovitz-Attias, Jeongwoo Ko, Alan Cowen, Gaurav Nemade, and Sujith Ravi. 2020.
-\newblock \href {https://doi.org/10.18653/v1/2020.acl-main.372} {{G}o{E}motions: A dataset of fine-grained emotions}.
-\newblock In \emph{Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics}, pages 4040--4054, Online. Association for Computational Linguistics.
 
 \bibitem[{Derczynski et~al.(2017)Derczynski, Nichols, van Erp, and Limsopatham}]{derczynski-etal-2017-results}
 Leon Derczynski, Eric Nichols, Marieke van Erp, and Nut Limsopatham. 2017.
@@ -192,30 +64,6 @@ Jacob Devlin, Ming{-}Wei~Chang andG Kenton~Lee, and Kristina Toutanova. 2018.
 \newblock \href {http://arxiv.org/abs/1810.04805} {{BERT:} pre-training of deep bidirectional transformers for language understanding}.
 \newblock \emph{CoRR}, abs/1810.04805.
 
-\bibitem[{Dhingra et~al.(2016)Dhingra, Zhou, Fitzpatrick, Muehl, and Cohen}]{tweet2vec}
-Bhuwan Dhingra, Zhong Zhou, Dylan Fitzpatrick, Michael Muehl, and William Cohen. 2016.
-\newblock \href {http://anthology.aclweb.org/P16-2044} {Tweet2vec: Character-based distributed representations for social media}.
-\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)}, pages 269--274, Berlin, Germany. Association for Computational Linguistics.
-
-\bibitem[{Egger and Yu(2022)}]{egger2022topic}
-R~Egger and J~Yu. 2022.
-\newblock A topic modeling comparison between lda, nmf, top2vec, and bertopic to demystify twitter posts.
-\newblock \emph{Front. Sociol. 7: 886498. doi: 10.3389/fsoc}.
-
-\bibitem[{Eid et~al.(2020)Eid, Nusairat, Alkailani, and Al-Ghadeer}]{eid2020internet}
-M~Eid, N~Nusairat, Mahmud Alkailani, and H~Al-Ghadeer. 2020.
-\newblock Internet users’ attitudes towards social media advertisements: The role of advertisement design and users’ motives.
-\newblock \emph{Management Science Letters}, 10(10):2361--2370.
-
-\bibitem[{El~Akrouchi et~al.(2021)El~Akrouchi, Benbrahim, and Kassou}]{el2021end}
-Manal El~Akrouchi, Houda Benbrahim, and Ismail Kassou. 2021.
-\newblock End-to-end lda-based automatic weak signal detection in web news.
-\newblock \emph{Knowledge-Based Systems}, 212:106650.
-
-\bibitem[{Eurostat(2021)}]{eurostat}
-Eurostat. 2021.
-\newblock \href {https://ec.europa.eu/eurostat/web/products-eurostat-news/-/edn-20210630-1} {Do you participate in social networks?}
-
 \bibitem[{Founta et~al.(2018)Founta, Djouvas, Chatzakou, Leontiadis, Blackburn, Stringhini, Vakali, Sirivianos, and Kourtellis}]{founta2018large}
 Antigoni Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gianluca Stringhini, Athena Vakali, Michael Sirivianos, and Nicolas Kourtellis. 2018.
 \newblock Large scale crowdsourcing and characterization of twitter abusive behavior.
@@ -226,69 +74,15 @@ Njagi~Dennis Gitari, Zhang Zuping, Hanyurwimfura Damien, and Jun Long. 2015.
 \newblock A lexicon-based approach for hate speech detection.
 \newblock \emph{International Journal of Multimedia and Ubiquitous Engineering}, 10(4):215--230.
 
-\bibitem[{Greene and Cunningham(2006)}]{greene2006practical}
-Derek Greene and P{\'a}draig Cunningham. 2006.
-\newblock Practical solutions to the problem of diagonal dominance in kernel document clustering.
-\newblock In \emph{Proceedings of the 23rd international conference on Machine learning}, pages 377--384.
-
-\bibitem[{Griffiths et~al.(2003)Griffiths, Jordan, Tenenbaum, and Blei}]{griffiths2003hierarchical}
-Thomas Griffiths, Michael Jordan, Joshua Tenenbaum, and David Blei. 2003.
-\newblock Hierarchical topic models and the nested chinese restaurant process.
-\newblock \emph{Advances in neural information processing systems}, 16.
-
 \bibitem[{Grimminger and Klinger(2021)}]{grimminger-klinger-2021-hate}
 Lara Grimminger and Roman Klinger. 2021.
 \newblock \href {https://aclanthology.org/2021.wassa-1.18} {Hate towards the political opponent: A {T}witter corpus study of the 2020 {US} elections on the basis of offensive speech and stance detection}.
 \newblock In \emph{Proceedings of the Eleventh Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis}, pages 171--180, Online. Association for Computational Linguistics.
 
-\bibitem[{Grootendorst(2022)}]{bertopic}
-Maarten Grootendorst. 2022.
-\newblock \href {https://doi.org/10.48550/ARXIV.2203.05794} {Bertopic: Neural topic modeling with a class-based tf-idf procedure}.
-
-\bibitem[{Hazaa et~al.(2023)Hazaa, Ba-Alwi, and Albared}]{tujnas.v6i6.1329}
-M.~A.~S. Hazaa, F.~M. Ba-Alwi, and M.~Albared. 2023.
-\newblock \href {https://doi.org/10.59167/tujnas.v6i6.1329} {A proposed model for focused crawling and automatic text classification of online crime web pages}.
-\newblock \emph{Thamar University Journal of Natural \& Applied Sciences}, 6:65--81.
-
-\bibitem[{He and Garcia(2009)}]{tkde.2008.239}
-H.~He and E.~Garcia. 2009.
-\newblock \href {https://doi.org/10.1109/tkde.2008.239} {Learning from imbalanced data}.
-\newblock \emph{IEEE Transactions on Knowledge and Data Engineering}, 21:1263--1284.
-
-\bibitem[{Hermida(2012)}]{hermida2012social}
-Alfred Hermida. 2012.
-\newblock Social journalism: Exploring how social media is shaping journalism.
-\newblock \emph{The handbook of global online journalism}, 12:309--328.
-
-\bibitem[{Hersh et~al.(1994)Hersh, Buckley, Leone, and Hickam}]{hersh1994ohsumed}
-William Hersh, Chris Buckley, TJ~Leone, and David Hickam. 1994.
-\newblock Ohsumed: An interactive retrieval evaluation and new large test collection for research.
-\newblock In \emph{SIGIR’94}, pages 192--201. Springer.
-
-\bibitem[{Hu et~al.(2021{\natexlab{a}})Hu, Jones, Zhang, and Zhang}]{hu2021rise}
-Danqi Hu, Charles~M Jones, Valerie Zhang, and Xiaoyan Zhang. 2021{\natexlab{a}}.
-\newblock The rise of reddit: How social media affects retail investors and short-sellers’ roles in price discovery.
-\newblock \emph{Available at SSRN 3807655}.
-
-\bibitem[{Hu et~al.(2021{\natexlab{b}})Hu, Wang, Luo, Zhang, Huang, Yan, Liu, Ly, Kacker, She et~al.}]{hu2021revealing}
-Tao Hu, Siqin Wang, Wei Luo, Mengxi Zhang, Xiao Huang, Yingwei Yan, Regina Liu, Kelly Ly, Viraj Kacker, Bing She, et~al. 2021{\natexlab{b}}.
-\newblock Revealing public opinion towards covid-19 vaccines with twitter data in the united states: spatiotemporal perspective.
-\newblock \emph{Journal of Medical Internet Research}, 23(9):e30854.
-
-\bibitem[{Huang et~al.(2013)Huang, Peng, Li, and Lee}]{huang2013sentiment}
-Shu Huang, Wei Peng, Jingxuan Li, and Dongwon Lee. 2013.
-\newblock Sentiment and topic analysis on social media: a multi-task multi-label classification approach.
-\newblock In \emph{Proceedings of the 5th annual ACM web science conference}, pages 172--181.
-
 \bibitem[{Hutto and Gilbert(2014)}]{hutto2014vader}
 Clayton Hutto and Eric Gilbert. 2014.
 \newblock Vader: A parsimonious rule-based model for sentiment analysis of social media text.
 \newblock In \emph{Proceedings of the international AAAI conference on web and social media}, volume~8, pages 216--225.
-
-\bibitem[{Imran et~al.(2016)Imran, Mitra, and Castillo}]{imran2016twitter}
-Muhammad Imran, Prasenjit Mitra, and Carlos Castillo. 2016.
-\newblock Twitter as a lifeline: Human-annotated twitter corpora for nlp of crisis-related messages.
-\newblock \emph{arXiv preprint arXiv:1605.05894}.
 
 \bibitem[{Iyer et~al.(2023)Iyer, Lin, Pasunuru, Mihaylov, Simig, Yu, Shuster, Wang, Liu, Koura, Li, O'Horo, Pereyra, Wang, Dewan, Celikyilmaz, Zettlemoyer, and Stoyanov}]{iyer2023optiml}
 Srinivasan Iyer, Xi~Victoria Lin, Ramakanth Pasunuru, Todor Mihaylov, Daniel Simig, Ping Yu, Kurt Shuster, Tianlu Wang, Qing Liu, Punit~Singh Koura, Xian Li, Brian O'Horo, Gabriel Pereyra, Jeff Wang, Christopher Dewan, Asli Celikyilmaz, Luke Zettlemoyer, and Ves Stoyanov. 2023.
@@ -304,77 +98,13 @@ Karen~Sparck Jones. 1994.
 \newblock Natural language processing: a historical review.
 \newblock \emph{Current issues in computational linguistics: in honour of Don Walker}, pages 3--16.
 
-\bibitem[{Kausar et~al.(2021)Kausar, Tahir, and Mehmood}]{kausar2021hashcat}
-Soufia Kausar, Bilal Tahir, and Muhammad~Amir Mehmood. 2021.
-\newblock Hashcat: A novel approach for the topic classification of multilingual twitter trends.
-\newblock In \emph{2021 International Conference on Frontiers of Information Technology (FIT)}, pages 212--217. IEEE.
-
-\bibitem[{Khaldarova and Pantti(2016)}]{khaldarova2016fake}
-Irina Khaldarova and Mervi Pantti. 2016.
-\newblock Fake news: The narrative battle over the ukrainian conflict.
-\newblock \emph{Journalism practice}, 10(7):891--901.
-
-\bibitem[{Krippendorff(2011)}]{krippendorff2011computing}
-Klaus Krippendorff. 2011.
-\newblock Computing krippendorff's alpha-reliability.
-
-\bibitem[{Lang(1995)}]{lang1995newsweeder}
-Ken Lang. 1995.
-\newblock Newsweeder: Learning to filter netnews.
-\newblock In \emph{Machine Learning Proceedings 1995}, pages 331--339. Elsevier.
-
-\bibitem[{Lazaridou et~al.(2021)Lazaridou, Kuncoro, Gribovskaya, Agrawal, Liska, Terzi, Gimenez, de~Masson~d'Autume, Kocisky, Ruder et~al.}]{lazaridou2021mind}
-Angeliki Lazaridou, Adhi Kuncoro, Elena Gribovskaya, Devang Agrawal, Adam Liska, Tayfun Terzi, Mai Gimenez, Cyprien de~Masson~d'Autume, Tomas Kocisky, Sebastian Ruder, et~al. 2021.
-\newblock Mind the gap: Assessing temporal generalization in neural language models.
-\newblock \emph{Advances in Neural Information Processing Systems}, 34.
-
-\bibitem[{Lewis et~al.(2004)Lewis, Yang, Russell-Rose, and Li}]{lewis2004rcv1}
-David~D Lewis, Yiming Yang, Tony Russell-Rose, and Fan Li. 2004.
-\newblock Rcv1: A new benchmark collection for text categorization research.
-\newblock \emph{Journal of machine learning research}, 5(Apr):361--397.
-
-\bibitem[{Li and McCallum(2006)}]{li2006pachinko}
-Wei Li and Andrew McCallum. 2006.
-\newblock Pachinko allocation: Dag-structured mixture models of topic correlations.
-\newblock In \emph{Proceedings of the 23rd international conference on Machine learning}, pages 577--584.
-
-\bibitem[{Liaw et~al.(2018)Liaw, Liang, Nishihara, Moritz, Gonzalez, and Stoica}]{liaw2018tune}
-Richard Liaw, Eric Liang, Robert Nishihara, Philipp Moritz, Joseph~E Gonzalez, and Ion Stoica. 2018.
-\newblock Tune: A research platform for distributed model selection and training.
-\newblock \emph{arXiv preprint arXiv:1807.05118}.
-
-\bibitem[{Lim et~al.(2015)Lim, Hwang, Kim, and Biocca}]{lim2015social}
-Joon~Soo Lim, YoungChan Hwang, Seyun Kim, and Frank~A Biocca. 2015.
-\newblock How social media engagement leads to sports channel loyalty: Mediating roles of social presence and channel commitment.
-\newblock \emph{Computers in Human Behavior}, 46:158--167.
-
-\bibitem[{Lipton et~al.(2014)Lipton, Elkan, and Naryanaswamy}]{lipton-mldiscovery}
-Z.~C. Lipton, C.~Elkan, and B.~Naryanaswamy. 2014.
-\newblock \href {https://doi.org/10.1007/978-3-662-44851-9_15} {Optimal thresholding of classifiers to maximize f1 measure}.
-\newblock \emph{Machine Learning and Knowledge Discovery in Databases}, pages 225--239.
-
-\bibitem[{Liu et~al.(2019)Liu, Ott, Goyal, Du, Joshi, Chen, Levy, Lewis, Zettlemoyer, and Stoyanov}]{DBLP:journals/corr/abs-1907-11692}
-Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019.
-\newblock \href {http://arxiv.org/abs/1907.11692} {Roberta: {A} robustly optimized {BERT} pretraining approach}.
-\newblock \emph{CoRR}, abs/1907.11692.
-
-\bibitem[{Llewellyn and Cram(2016)}]{llewellyn2016brexit}
-Clare Llewellyn and Laura Cram. 2016.
-\newblock Brexit? analyzing opinion on the uk-eu referendum within twitter.
-\newblock In \emph{Tenth International AAAI Conference on Web and Social Media}.
-
 \bibitem[{Loshchilov and Hutter(2017)}]{loshchilov2017decoupled}
 Ilya Loshchilov and Frank Hutter. 2017.
 \newblock Decoupled weight decay regularization.
 \newblock \emph{arXiv preprint arXiv:1711.05101}.
 
-\bibitem[{Loureiro et~al.(2022{\natexlab{a}})Loureiro, Barbieri, Neves, Anke, and Camacho-Collados}]{loureiro2022timelms}
-Daniel Loureiro, Francesco Barbieri, Leonardo Neves, Luis~Espinosa Anke, and Jose Camacho-Collados. 2022{\natexlab{a}}.
-\newblock Timelms: Diachronic language models from twitter.
-\newblock \emph{arXiv preprint arXiv:2202.03829}.
-
-\bibitem[{Loureiro et~al.(2022{\natexlab{b}})Loureiro, Barbieri, Neves, Espinosa~Anke, and Camacho-collados}]{loureiro-etal-2022-timelms}
-Daniel Loureiro, Francesco Barbieri, Leonardo Neves, Luis Espinosa~Anke, and Jose Camacho-collados. 2022{\natexlab{b}}.
+\bibitem[{Loureiro et~al.(2022)Loureiro, Barbieri, Neves, Espinosa~Anke, and Camacho-collados}]{loureiro-etal-2022-timelms}
+Daniel Loureiro, Francesco Barbieri, Leonardo Neves, Luis Espinosa~Anke, and Jose Camacho-collados. 2022.
 \newblock \href {https://doi.org/10.18653/v1/2022.acl-demo.25} {{T}ime{LM}s: Diachronic language models from {T}witter}.
 \newblock In \emph{Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics: System Demonstrations}, pages 251--260, Dublin, Ireland. Association for Computational Linguistics.
 
@@ -383,65 +113,15 @@ Thomas Mandl, Sandip Modha, Prasenjit Majumder, Daksh Patel, Mohana Dave, Chinta
 \newblock Overview of the hasoc track at fire 2019: Hate speech and offensive content identification in indo-european languages.
 \newblock In \emph{Proceedings of the 11th forum for information retrieval evaluation}, pages 14--17.
 
-\bibitem[{Martin and Johnson(2015)}]{martin2015more}
-Fiona Martin and Mark Johnson. 2015.
-\newblock More efficient topic modelling through a noun only approach.
-\newblock In \emph{Proceedings of the Australasian Language Technology Association Workshop 2015}, pages 111--115.
-
 \bibitem[{Mathew et~al.(2021)Mathew, Saha, Yimam, Biemann, Goyal, and Mukherjee}]{mathew2021hatexplain}
 Binny Mathew, Punyajoy Saha, Seid~Muhie Yimam, Chris Biemann, Pawan Goyal, and Animesh Mukherjee. 2021.
 \newblock Hatexplain: A benchmark dataset for explainable hate speech detection.
 \newblock In \emph{Proceedings of the AAAI conference on artificial intelligence}, volume~35, pages 14867--14875.
 
-\bibitem[{Mcauliffe and Blei(2007)}]{mcauliffe2007supervised}
-Jon Mcauliffe and David Blei. 2007.
-\newblock Supervised topic models.
-\newblock \emph{Advances in neural information processing systems}, 20.
-
-\bibitem[{McCarthy and Jarvis(2010)}]{mccarthy2010mtld}
-Philip~M McCarthy and Scott Jarvis. 2010.
-\newblock Mtld, vocd-d, and hd-d: A validation study of sophisticated approaches to lexical diversity assessment.
-\newblock \emph{Behavior research methods}, 42(2):381--392.
-
-\bibitem[{Mikolov et~al.(2018)Mikolov, Grave, Bojanowski, Puhrsch, and Joulin}]{mikolov2018advances}
-Tomas Mikolov, Edouard Grave, Piotr Bojanowski, Christian Puhrsch, and Armand Joulin. 2018.
-\newblock Advances in pre-training distributed word representations.
-\newblock In \emph{Proceedings of the International Conference on Language Resources and Evaluation (LREC 2018)}.
-
-\bibitem[{Mohammad et~al.(2018)Mohammad, Bravo-Marquez, Salameh, and Kiritchenko}]{mohammad2018semeval}
-Saif Mohammad, Felipe Bravo-Marquez, Mohammad Salameh, and Svetlana Kiritchenko. 2018.
-\newblock Semeval-2018 task 1: Affect in tweets.
-\newblock In \emph{Proceedings of the 12th international workshop on semantic evaluation}, pages 1--17.
-
-\bibitem[{Morgan and Van~Keulen(2014)}]{morgan2014information}
-Mena Badieh~Habib Morgan and Maurice Van~Keulen. 2014.
-\newblock Information extraction for social media.
-\newblock In \emph{Proceedings of the Third Workshop on Semantic Web and Information Extraction}, pages 9--16.
-
 \bibitem[{Muennighoff et~al.(2022)Muennighoff, Wang, Sutawika, Roberts, Biderman, Scao, Bari, Shen, Yong, Schoelkopf et~al.}]{muennighoff2022crosslingual}
 Niklas Muennighoff, Thomas Wang, Lintang Sutawika, Adam Roberts, Stella Biderman, Teven~Le Scao, M~Saiful Bari, Sheng Shen, Zheng-Xin Yong, Hailey Schoelkopf, et~al. 2022.
 \newblock Crosslingual generalization through multitask finetuning.
 \newblock \emph{arXiv preprint arXiv:2211.01786}.
-
-\bibitem[{Muhammad et~al.(2023)Muhammad, Abdulmumin, Yimam, Adelani, Ahmad, Ousidhoum, Ayele, Mohammad, Beloucif, and Ruder}]{muhammad2023semeval}
-Shamsuddeen~Hassan Muhammad, Idris Abdulmumin, Seid~Muhie Yimam, David~Ifeoluwa Adelani, Ibrahim~Sa’id Ahmad, Nedjma Ousidhoum, Abinew~Ali Ayele, Saif Mohammad, Meriem Beloucif, and Sebastian Ruder. 2023.
-\newblock Semeval-2023 task 12: Sentiment analysis for african languages (afrisenti-semeval).
-\newblock In \emph{Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)}, pages 2319--2337.
-
-\bibitem[{National(2019)}]{thenationalThisMany}
-The National. 2019.
-\newblock {T}his is how many tweets have mentioned {B}rexit since the referendum --- thenational.scot.
-\newblock [Accessed 17-May-2022].
-
-\bibitem[{Nguyen et~al.(2020)Nguyen, Vu, and Nguyen}]{bertweet}
-Dat~Quoc Nguyen, Thanh Vu, and Anh~Tuan Nguyen. 2020.
-\newblock {BERTweet: A pre-trained language model for English Tweets}.
-\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations}, pages 9--14.
-
-\bibitem[{Nugroho et~al.(2020)Nugroho, Paris, Nepal, Yang, and Zhao}]{nugroho2020survey}
-Robertus Nugroho, Cecile Paris, Surya Nepal, Jian Yang, and Weiliang Zhao. 2020.
-\newblock A survey of recent methods on deriving topics from twitter: algorithm to evaluation.
-\newblock \emph{Knowledge and information systems}, 62(7):2485--2519.
 
 \bibitem[{Ousidhoum et~al.(2019)Ousidhoum, Lin, Zhang, Song, and Yeung}]{ousidhoum-etal-2019-multilingual}
 Nedjma Ousidhoum, Zizheng Lin, Hongming Zhang, Yangqiu Song, and Dit-Yan Yeung. 2019.
@@ -453,44 +133,15 @@ Alexander Pak and Patrick Paroubek. 2010.
 \newblock \href {http://www.lrec-conf.org/proceedings/lrec2010/pdf/385_Paper.pdf} {{T}witter as a corpus for sentiment analysis and opinion mining}.
 \newblock In \emph{Proceedings of the Seventh International Conference on Language Resources and Evaluation ({LREC}'10)}, Valletta, Malta. European Language Resources Association (ELRA).
 
-\bibitem[{Passonneau(2006)}]{passonneau2006measuring}
-Rebecca Passonneau. 2006.
-\newblock Measuring agreement on set-valued items (masi) for semantic and pragmatic annotation.
-
-\bibitem[{Pereira et~al.(2018)Pereira, Plastino, Zadrozny, and Merschmann}]{pereira2018correlation}
-Rafael~B Pereira, Alexandre Plastino, Bianca Zadrozny, and Luiz~HC Merschmann. 2018.
-\newblock Correlation analysis of performance measures for multi-label classification.
-\newblock \emph{Information Processing \& Management}, 54(3):359--369.
-
-\bibitem[{Poesio and Artstein(2005)}]{poesio2005reliability}
-Massimo Poesio and Ron Artstein. 2005.
-\newblock The reliability of anaphoric annotation, reconsidered: Taking ambiguity into account.
-\newblock In \emph{Proceedings of the workshop on frontiers in corpus annotations ii: Pie in the sky}, pages 76--83.
-
-\bibitem[{Ramage et~al.(2011)Ramage, Manning, and Dumais}]{ramage2011partially}
-Daniel Ramage, Christopher~D Manning, and Susan Dumais. 2011.
-\newblock Partially labeled topic models for interpretable text mining.
-\newblock In \emph{Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining}, pages 457--465.
-
 \bibitem[{Rane and Kumar(2018)}]{8377739}
 Ankita Rane and Anand Kumar. 2018.
 \newblock \href {https://doi.org/10.1109/COMPSAC.2018.00114} {Sentiment classification system of twitter data for us airline service analysis}.
 \newblock In \emph{2018 IEEE 42nd Annual Computer Software and Applications Conference (COMPSAC)}, volume~01, pages 769--773.
 
-\bibitem[{Resnik et~al.(2015)Resnik, Armstrong, Claudino, Nguyen, Nguyen, and Boyd-Graber}]{resnik2015beyond}
-Philip Resnik, William Armstrong, Leonardo Claudino, Thang Nguyen, Viet-An Nguyen, and Jordan Boyd-Graber. 2015.
-\newblock Beyond lda: exploring supervised topic modeling for depression-related language in twitter.
-\newblock In \emph{Proceedings of the 2nd workshop on computational linguistics and clinical psychology: from linguistic signal to clinical reality}, pages 99--107.
-
 \bibitem[{Rijhwani and Preotiuc-Pietro(2020)}]{rijhwani-preotiuc-pietro-2020-temporally}
 Shruti Rijhwani and Daniel Preotiuc-Pietro. 2020.
 \newblock \href {https://doi.org/10.18653/v1/2020.acl-main.680} {Temporally-informed analysis of named entity recognition}.
 \newblock In \emph{Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics}, pages 7605--7617, Online. Association for Computational Linguistics.
-
-\bibitem[{Rosen-Zvi et~al.(2004)Rosen-Zvi, Griffiths, Steyvers, and Smyth}]{rosen2004author}
-Michal Rosen-Zvi, Thomas Griffiths, Mark Steyvers, and Padhraic Smyth. 2004.
-\newblock The author-topic model for authors and documents.
-\newblock In \emph{Proceedings of the 20th conference on Uncertainty in artificial intelligence}, pages 487--494.
 
 \bibitem[{Saad and Yang(2019)}]{saad2019twitter}
 Shihab~Elbagir Saad and Jing Yang. 2019.
@@ -507,80 +158,15 @@ Mattia Samory, Indira Sen, Julian Kohne, Fabian Fl{\"o}ck, and Claudia Wagner. 2
 \newblock “call me sexist, but...”: Revisiting sexism detection using psychological scales and adversarial samples.
 \newblock In \emph{Proceedings of the International AAAI Conference on Web and Social Media}, volume~15, pages 573--584.
 
-\bibitem[{Scao et~al.(2022)Scao, Fan, Akiki, Pavlick, Ili{\'c}, Hesslow, Castagn{\'e}, Luccioni, Yvon, Gall{\'e} et~al.}]{scao2022bloom}
-Teven~Le Scao, Angela Fan, Christopher Akiki, Ellie Pavlick, Suzana Ili{\'c}, Daniel Hesslow, Roman Castagn{\'e}, Alexandra~Sasha Luccioni, Fran{\c{c}}ois Yvon, Matthias Gall{\'e}, et~al. 2022.
-\newblock Bloom: A 176b-parameter open-access multilingual language model.
-\newblock \emph{arXiv preprint arXiv:2211.05100}.
-
-\bibitem[{Schlichtkrull et~al.(2023)Schlichtkrull, Ousidhoum, and Vlachos}]{schlichtkrull2023intended}
-Michael Schlichtkrull, Nedjma Ousidhoum, and Andreas Vlachos. 2023.
-\newblock The intended uses of automated fact-checking artefacts: Why, how and who.
-\newblock \emph{arXiv preprint arXiv:2304.14238}.
-
-\bibitem[{Selvaperumal and Suruliandi(2014)}]{selvaperumal2014short}
-P~Selvaperumal and A~Suruliandi. 2014.
-\newblock A short message classification algorithm for tweet classification.
-\newblock In \emph{2014 International Conference on Recent Trends in Information Technology}, pages 1--3. IEEE.
-
-\bibitem[{Silveira et~al.(2021)Silveira, Fernandes, Neto, Furtado, and Pimentel~Filho}]{silveira2021topic}
-Raquel Silveira, CG~Fernandes, Jo{\~a}o A~Monteiro Neto, Vasco Furtado, and Jos{\'e}~Ernesto Pimentel~Filho. 2021.
-\newblock Topic modelling of legal documents via legal-bert.
-\newblock \emph{Proceedings http://ceur-ws org ISSN}, 1613:0073.
-
-\bibitem[{Steinskog et~al.(2017)Steinskog, Therkelsen, and Gamb{\"a}ck}]{steinskog-etal-2017-twitter}
-Asbj{\o}rn Steinskog, Jonas Therkelsen, and Bj{\"o}rn Gamb{\"a}ck. 2017.
-\newblock \href {https://aclanthology.org/W17-0210} {{T}witter topic modeling by tweet aggregation}.
-\newblock In \emph{Proceedings of the 21st Nordic Conference on Computational Linguistics}, pages 77--86, Gothenburg, Sweden. Association for Computational Linguistics.
-
-\bibitem[{Steyvers and Griffiths(2007)}]{steyvers2007probabilistic}
-Mark Steyvers and Tom Griffiths. 2007.
-\newblock Probabilistic topic models.
-\newblock \emph{Handbook of latent semantic analysis}, 427(7):424--440.
-
-\bibitem[{Stieglitz et~al.(2018)Stieglitz, Mirbabaie, Ross, and Neuberger}]{stieglitz2018social}
-Stefan Stieglitz, Milad Mirbabaie, Bj{\"o}rn Ross, and Christoph Neuberger. 2018.
-\newblock Social media analytics--challenges in topic discovery, data collection, and data preparation.
-\newblock \emph{International journal of information management}, 39:156--168.
-
-\bibitem[{Stier et~al.(2018)Stier, Bleier, Lietz, and Strohmaier}]{stier2018election}
-Sebastian Stier, Arnim Bleier, Haiko Lietz, and Markus Strohmaier. 2018.
-\newblock Election campaigning on social media: Politicians, audiences, and the mediation of political communication on {Facebook} and {Twitter}.
-\newblock \emph{Political communication}, 35(1):50--74.
-
 \bibitem[{Strapparava and Mihalcea(2007)}]{strapparava2007semeval}
 Carlo Strapparava and Rada Mihalcea. 2007.
 \newblock Semeval-2007 task 14: Affective text.
 \newblock In \emph{Proceedings of the fourth international workshop on semantic evaluations (SemEval-2007)}, pages 70--74.
 
-\bibitem[{Tajbakhsh and Bagherzadeh(2019)}]{tajbakhsh2019semantic}
-Mir~Saman Tajbakhsh and Jamshid Bagherzadeh. 2019.
-\newblock Semantic knowledge lda with topic vector for recommending hashtags: Twitter use case.
-\newblock \emph{Intelligent Data Analysis}, 23(3):609--622.
-
-\bibitem[{Tsoumakas et~al.(2009)Tsoumakas, Katakis, and Vlahavas}]{tsoumakas2009mining}
-Grigorios Tsoumakas, Ioannis Katakis, and Ioannis Vlahavas. 2009.
-\newblock Mining multi-label data.
-\newblock \emph{Data mining and knowledge discovery handbook}, pages 667--685.
-
-\bibitem[{Vadivukarassi et~al.(2019)Vadivukarassi, Puviarasan, and Aruna}]{vadivukarassi2019comparison}
-M~Vadivukarassi, N~Puviarasan, and P~Aruna. 2019.
-\newblock A comparison of supervised machine learning approaches for categorized tweets.
-\newblock In \emph{International Conference on Intelligent Data Communication Technologies and Internet of Things (ICICI) 2018}, pages 422--430. Springer.
-
-\bibitem[{V{\'e}ronis(1998)}]{veronis1998study}
-Jean V{\'e}ronis. 1998.
-\newblock A study of polysemy judgements and inter-annotator agreement.
-\newblock In \emph{Programme and advanced papers of the Senseval workshop}, pages 2--4. Citeseer.
-
 \bibitem[{Vidgen et~al.(2020)Vidgen, Hale, Guest, Margetts, Broniatowski, Waseem, Botelho, Hall, and Tromble}]{vidgen-etal-2020-detecting}
 Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall, and Rebekah Tromble. 2020.
 \newblock \href {https://doi.org/10.18653/v1/2020.alw-1.19} {Detecting {E}ast {A}sian prejudice on social media}.
 \newblock In \emph{Proceedings of the Fourth Workshop on Online Abuse and Harms}, pages 162--172, Online. Association for Computational Linguistics.
-
-\bibitem[{Wang et~al.(2017)Wang, Liakata, Zubiaga, and Procter}]{10.1007/978-3-319-67256-4_30}
-B.~Wang, M.~Liakata, A.~Zubiaga, and R.~Procter. 2017.
-\newblock \href {https://doi.org/10.1007/978-3-319-67256-4_30} {A hierarchical topic modelling approach for tweet clustering}.
-\newblock \emph{Lecture Notes in Computer Science}, pages 378--390.
 
 \bibitem[{Waseem(2016)}]{waseem-2016-racist}
 Zeerak Waseem. 2016.
@@ -592,41 +178,6 @@ Zeerak Waseem and Dirk Hovy. 2016.
 \newblock \href {https://doi.org/10.18653/v1/N16-2013} {Hateful symbols or hateful people? predictive features for hate speech detection on {T}witter}.
 \newblock In \emph{Proceedings of the {NAACL} Student Research Workshop}, pages 88--93, San Diego, California. Association for Computational Linguistics.
 
-\bibitem[{Weller(2015)}]{weller2015accepting}
-Katrin Weller. 2015.
-\newblock Accepting the challenges of social media research.
-\newblock \emph{Online Information Review}.
-
-\bibitem[{Wenzek et~al.(2020)Wenzek, Lachaux, Conneau, Chaudhary, Guzm{\'a}n, Joulin, and Grave}]{wenzek-etal-2020-ccnet}
-Guillaume Wenzek, Marie-Anne Lachaux, Alexis Conneau, Vishrav Chaudhary, Francisco Guzm{\'a}n, Armand Joulin, and Edouard Grave. 2020.
-\newblock \href {https://aclanthology.org/2020.lrec-1.494} {{CCN}et: Extracting high quality monolingual datasets from web crawl data}.
-\newblock In \emph{Proceedings of the Twelfth Language Resources and Evaluation Conference}, pages 4003--4012, Marseille, France. European Language Resources Association.
-
-\bibitem[{Wohn and Na(2011)}]{wohn2011tweeting}
-D~Yvette Wohn and Eun-Kyung Na. 2011.
-\newblock Tweeting about tv: Sharing television viewing experiences via social media message streams.
-\newblock \emph{First Monday}.
-
-\bibitem[{Wolf et~al.(2020)Wolf, Debut, Sanh, Chaumond, Delangue, Moi, Cistac, Rault, Louf, Funtowicz, Davison, Shleifer, von Platen, Ma, Jernite, Plu, Xu, Le~Scao, Gugger, Drame, Lhoest, and Rush}]{wolf-etal-2020-transformers}
-Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le~Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander Rush. 2020.
-\newblock \href {https://doi.org/10.18653/v1/2020.emnlp-demos.6} {Transformers: State-of-the-art natural language processing}.
-\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations}, pages 38--45, Online. Association for Computational Linguistics.
-
-\bibitem[{Wolf et~al.(2019)Wolf, Debut, Sanh, Chaumond, Delangue, Moi, Cistac, Rault, Louf, Funtowicz et~al.}]{wolf2019huggingface}
-Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, R{\'e}mi Louf, Morgan Funtowicz, et~al. 2019.
-\newblock Huggingface's transformers: State-of-the-art natural language processing.
-\newblock \emph{arXiv preprint arXiv:1910.03771}.
-
-\bibitem[{Xue et~al.(2020)Xue, Constant, Roberts, Kale, Al-Rfou, Siddhant, Barua, and Raffel}]{xue2020mt5}
-Linting Xue, Noah Constant, Adam Roberts, Mihir Kale, Rami Al-Rfou, Aditya Siddhant, Aditya Barua, and Colin Raffel. 2020.
-\newblock mt5: A massively multilingual pre-trained text-to-text transformer.
-\newblock \emph{arXiv preprint arXiv:2010.11934}.
-
-\bibitem[{Yang et~al.(2021)Yang, Wang, Pierce, Vaish, Shi, and Shah}]{Yang_Wang_Pierce_Vaish_Shi_Shah_2021}
-Qi~Yang, Weinan Wang, Lucas Pierce, Rajan Vaish, Xiaolin Shi, and Neil Shah. 2021.
-\newblock \href {https://ojs.aaai.org/index.php/ICWSM/article/view/18107} {Online communication shifts in the midst of the covid-19 pandemic: A case study on snapchat}.
-\newblock \emph{Proceedings of the International AAAI Conference on Web and Social Media}, 15(1):830--840.
-
 \bibitem[{Zampieri et~al.(2019)Zampieri, Malmasi, Nakov, Rosenthal, Farra, and Kumar}]{zampieri-etal-2019-predicting}
 Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, and Ritesh Kumar. 2019.
 \newblock \href {https://doi.org/10.18653/v1/N19-1144} {Predicting the type and target of offensive posts in social media}.
@@ -635,20 +186,5 @@ Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, an
 \bibitem[{Zhang et~al.(2022)Zhang, Roller, Goyal, Artetxe, Chen, Chen, Dewan, Diab, Li, Lin, Mihaylov, Ott, Shleifer, Shuster, Simig, Koura, Sridhar, Wang, and Zettlemoyer}]{zhang2022opt}
 Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher Dewan, Mona Diab, Xian Li, Xi~Victoria Lin, Todor Mihaylov, Myle Ott, Sam Shleifer, Kurt Shuster, Daniel Simig, Punit~Singh Koura, Anjali Sridhar, Tianlu Wang, and Luke Zettlemoyer. 2022.
 \newblock \href {http://arxiv.org/abs/2205.01068} {Opt: Open pre-trained transformer language models}.
-
-\bibitem[{Zhao et~al.(2011)Zhao, Jiang, Weng, He, Lim, Yan, and Li}]{zhao2011comparing}
-Wayne~Xin Zhao, Jing Jiang, Jianshu Weng, Jing He, Ee-Peng Lim, Hongfei Yan, and Xiaoming Li. 2011.
-\newblock Comparing twitter and traditional media using topic models.
-\newblock In \emph{European conference on information retrieval}, pages 338--349. Springer.
-
-\bibitem[{Zhuravskaya et~al.(2020)Zhuravskaya, Petrova, and Enikolopov}]{zhuravskaya2020political}
-Ekaterina Zhuravskaya, Maria Petrova, and Ruben Enikolopov. 2020.
-\newblock Political effects of the internet and social media.
-\newblock \emph{Annual Review of Economics}, 12:415--438.
-
-\bibitem[{Zubiaga et~al.(2018)Zubiaga, Aker, Bontcheva, Liakata, and Procter}]{10.1145/3161603}
-A.~Zubiaga, A.~Aker, K.~Bontcheva, M.~Liakata, and R.~Procter. 2018.
-\newblock \href {https://doi.org/10.1145/3161603} {Detection and resolution of rumours in social media}.
-\newblock \emph{ACM Computing Surveys}, 51:1--36.
 
 \end{thebibliography}

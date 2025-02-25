@@ -1,10 +1,10 @@
 \chapter{Introduction}\label{ch:intro} % Add a label in case you want to refer to the chapter.
+\ac{NLP} techniques, along with specialized computational models, have long been used to process, manipulate, and extract insights from textual data \cite{jones1994natural,cambria2014jumping}. Early work focused on techniques such as dictionary or rule-based approaches, as well as traditional \ac{ML} models like \ac{SVMs}, regression models, and decision trees, which often utilized \ac{BoW} approaches to represent textual features. However, with the advent of \ac{PLMs} such as \textit{BERT} \cite{DBLP:journals/corr/abs-1810-04805} and more recently \ac{LLMs} like \textit{GPT-3} \cite{GPT3}, processing and extracting insights from textual data has become easier.
 
-\ac{NLP} techniques along with specialised computational models have long been used to process and extract insights from textual data \cite{jones1994natural}. Early work focuses on techniques such as dictionary and/or rule based approaches for tasks such as sentiment analysis \cite{hutto2014vader} and hate speech detection \cite{gitari2015lexicon}. Before the emergence of more sophisticated embedding approaches, whether static or contextual, \ac{BoW} approaches have been widely used to represent textual features.
+Independently on the level of sophistication of the tehcnique used, NLP researchesrs have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, topic classification \cite{} among others. 
+Even though these tasks have been studied for a long time, the advent of social media has brought new challenges and opportunities for NLP research.
 
 Similar methodologies have been utilised when dealing with social media data \cite{pak-paroubek-2010-twitter, bifet2010sentiment}. However, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{}. Furthermore, it is crucial to recognize both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \ac{LLMs} \cite{}.
-
-With the advent of \ac{PLMs} such as \textit{BERT}\cite{DBLP:journals/corr/abs-1810-04805} and more recently \ac{LLMs} like \textit{GPT-3} \cite{GPT3} processing and extracting insights from textual data has become easier.
 
 However, there still struggles on dealing with the heavily unstructured nature of social media content which can provide challenges even for the larger models available \cite{}. Finally, it is important to note the potential biases that existing models/tools/datasets but also the environmental impact \ac{LLMs} have.
 
@@ -100,4 +100,13 @@ The majority of the material in this thesis have been published in peer-reviewed
 
 \section{Thesis Outline and Summary} \label{ch1:outline}
 Social media platforms, especially X, present unique challenges and opportunities for \ac{NLP} research, such as addressing multilinguality, detecting harmful content, and understanding online discourse dynamics. The introduction also highlights the relevance of the presented work in real-world scenarios, including combating misinformation and promoting healthier online interactions. The chapter concludes by presenting the structure of the thesis and summarizing its core themes.
+
+\section{General Notes}
+The research included in the thesis has been approved by Cardiff University's ethics comitee and also follows the guidelines of ACL code of ethics\footnote{https://www.acm.org/code-of-ethics}.
+
+\textbf{Models.} In some chapters\todo{which chapters}, the models presented are described as \ac{sota}. While this statement may not hold true at the time of writing this thesis, the models were the best performing ones at the time of their respective publications.
+
+\textbf{Annotations.} For the datasets\todo{which chapters} collected all annotators were paid at least minimum wage for their work.  
+
+\textbf{Privacy.} In all chapters\todo{which chapters}, the privacy of the users whose data is used is protected. All data is anonymized and aggregated to ensure that no individual can be identified. Handles and URLs are removed from the data collected to prevent any potential identification of users. 
 
