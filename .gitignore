@@ -6,4 +6,6 @@
 *.fdb_latexmk
 *.toc
 *.lof
-thesis.lot
+*.pdf
+*.gz
+*.toc
