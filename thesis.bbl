@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{40}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Allcott and Gentzkow(2017)}]{allcott2017social}
@@ -16,15 +16,15 @@ Valerio Basile, Cristina Bosco, Elisabetta Fersini, Debora Nozza, Viviana Patti,
 \newblock \href {https://doi.org/10.18653/v1/S19-2007} {{S}em{E}val-2019 task 5: Multilingual detection of hate speech against immigrants and women in {T}witter}.
 \newblock In \emph{Proceedings of the 13th International Workshop on Semantic Evaluation}, pages 54--63, Minneapolis, Minnesota, USA. Association for Computational Linguistics.
 
+\bibitem[{Bender et~al.(2021)Bender, Gebru, McMillan-Major, and Shmitchell}]{bender2021dangers}
+Emily~M Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021.
+\newblock On the dangers of stochastic parrots: Can language models be too big?
+\newblock In \emph{Proceedings of the 2021 ACM conference on fairness, accountability, and transparency}, pages 610--623.
+
 \bibitem[{Bianchi et~al.(2021)Bianchi, Terragni, Hovy, Nozza, and Fersini}]{bianchi-etal-2021-cross}
 Federico Bianchi, Silvia Terragni, Dirk Hovy, Debora Nozza, and Elisabetta Fersini. 2021.
 \newblock \href {https://doi.org/10.18653/v1/2021.eacl-main.143} {Cross-lingual contextualized topic models with zero-shot learning}.
 \newblock In \emph{Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume}, pages 1676--1683, Online. Association for Computational Linguistics.
-
-\bibitem[{Bifet and Frank(2010)}]{bifet2010sentiment}
-Albert Bifet and Eibe Frank. 2010.
-\newblock Sentiment knowledge discovery in twitter streaming data.
-\newblock In \emph{International conference on discovery science}, pages 1--15. Springer.
 
 \bibitem[{Brown et~al.(2020{\natexlab{a}})Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal, Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert{-}Voss, Krueger, Henighan, Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Sigler, Litwin, Gray, Chess, Clark, Berner, McCandlish, Radford, Sutskever, and Amodei}]{GPT3}
 Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert{-}Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020{\natexlab{a}}.
@@ -64,10 +64,20 @@ Jacob Devlin, Ming{-}Wei~Chang andG Kenton~Lee, and Kristina Toutanova. 2018.
 \newblock \href {http://arxiv.org/abs/1810.04805} {{BERT:} pre-training of deep bidirectional transformers for language understanding}.
 \newblock \emph{CoRR}, abs/1810.04805.
 
+\bibitem[{Eisenstein(2013)}]{eisenstein2013bad}
+Jacob Eisenstein. 2013.
+\newblock What to do about bad language on the internet.
+\newblock In \emph{Proceedings of the 2013 conference of the North American Chapter of the association for computational linguistics: Human language technologies}, pages 359--369.
+
 \bibitem[{Founta et~al.(2018)Founta, Djouvas, Chatzakou, Leontiadis, Blackburn, Stringhini, Vakali, Sirivianos, and Kourtellis}]{founta2018large}
 Antigoni Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadis, Jeremy Blackburn, Gianluca Stringhini, Athena Vakali, Michael Sirivianos, and Nicolas Kourtellis. 2018.
 \newblock Large scale crowdsourcing and characterization of twitter abusive behavior.
 \newblock In \emph{Proceedings of the international AAAI conference on web and social media}, volume~12.
+
+\bibitem[{Gain et~al.(2023)Gain, Appicharla, Chennabasavaraj, Garera, Ekbal, and Chelliah}]{gain-etal-2023-reference}
+Baban Gain, Ramakrishna Appicharla, Soumya Chennabasavaraj, Nikesh Garera, Asif Ekbal, and Muthusamy Chelliah. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.findings-emnlp.16} {Reference free domain adaptation for translation of noisy questions with question specific rewards}.
+\newblock In \emph{Findings of the Association for Computational Linguistics: EMNLP 2023}, pages 207--221, Singapore. Association for Computational Linguistics.
 
 \bibitem[{Gitari et~al.(2015)Gitari, Zuping, Damien, and Long}]{gitari2015lexicon}
 Njagi~Dennis Gitari, Zhang Zuping, Hanyurwimfura Damien, and Jun Long. 2015.
@@ -128,11 +138,6 @@ Nedjma Ousidhoum, Zizheng Lin, Hongming Zhang, Yangqiu Song, and Dit-Yan Yeung. 
 \newblock \href {https://doi.org/10.18653/v1/D19-1474} {Multilingual and multi-aspect hate speech analysis}.
 \newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)}, pages 4675--4684, Hong Kong, China. Association for Computational Linguistics.
 
-\bibitem[{Pak and Paroubek(2010)}]{pak-paroubek-2010-twitter}
-Alexander Pak and Patrick Paroubek. 2010.
-\newblock \href {http://www.lrec-conf.org/proceedings/lrec2010/pdf/385_Paper.pdf} {{T}witter as a corpus for sentiment analysis and opinion mining}.
-\newblock In \emph{Proceedings of the Seventh International Conference on Language Resources and Evaluation ({LREC}'10)}, Valletta, Malta. European Language Resources Association (ELRA).
-
 \bibitem[{Rane and Kumar(2018)}]{8377739}
 Ankita Rane and Anand Kumar. 2018.
 \newblock \href {https://doi.org/10.1109/COMPSAC.2018.00114} {Sentiment classification system of twitter data for us airline service analysis}.
@@ -186,5 +191,10 @@ Marcos Zampieri, Shervin Malmasi, Preslav Nakov, Sara Rosenthal, Noura Farra, an
 \bibitem[{Zhang et~al.(2022)Zhang, Roller, Goyal, Artetxe, Chen, Chen, Dewan, Diab, Li, Lin, Mihaylov, Ott, Shleifer, Shuster, Simig, Koura, Sridhar, Wang, and Zettlemoyer}]{zhang2022opt}
 Susan Zhang, Stephen Roller, Naman Goyal, Mikel Artetxe, Moya Chen, Shuohui Chen, Christopher Dewan, Mona Diab, Xian Li, Xi~Victoria Lin, Todor Mihaylov, Myle Ott, Sam Shleifer, Kurt Shuster, Daniel Simig, Punit~Singh Koura, Anjali Sridhar, Tianlu Wang, and Luke Zettlemoyer. 2022.
 \newblock \href {http://arxiv.org/abs/2205.01068} {Opt: Open pre-trained transformer language models}.
+
+\bibitem[{Zhang et~al.(2015)Zhang, Zhao, and LeCun}]{zhang2015character}
+Xiang Zhang, Junbo Zhao, and Yann LeCun. 2015.
+\newblock Character-level convolutional networks for text classification.
+\newblock \emph{Advances in neural information processing systems}, 28.
 
 \end{thebibliography}
