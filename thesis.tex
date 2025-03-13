@@ -242,7 +242,10 @@ Advancing Natural Languages Processing for Understanding and Analysis %of Social
 
 \pagestyle{empty}
 \include{title}
-\cleardoublepage
+%  \clearpage  % Use clearpage instead of cleardoublepage to avoid empty pages
+\newpage       
+\thispagestyle{empty}
+\mbox{}   
 
 %% In the preface, pages are numbered by roman numerals (i,ii,...) and in the header Author and Title.
 \pagenumbering{roman}
@@ -257,24 +260,19 @@ Advancing Natural Languages Processing for Understanding and Analysis %of Social
 \begin{spacing}{1.5}
 % \onehalfspacing
 
-% Contents
-% \addcontentsline{toc}{chapter}{Dedicate} % Add the acknowledgements to the table of contents.
-% \include{./chapters/dedicate}
-% \cleardoublepage
-
 % \addcontentsline{toc}{chapter}{Declaration} % Add the acknowledgements to the table of contents.
-% \include{./chapters/declaration}
-% \cleardoublepage
+% \include{./chapters/declaration} 
+% \clearpage
 
 
 % \addcontentsline{toc}{chapter}{Abstract} % Add the abstract to the table of contents.
 % \include{./chapters/abstract}
-% \cleardoublepage
+% \clearpage
 
-
-% \addcontentsline{toc}{chapter}{Acknowledgements} % Add the acknowledgements to the table of contents.
-% \include{./chapters/acknowledgements}
-% \cleardoublepage
+% % Contents
+% \addcontentsline{toc}{chapter}{Dedicate} % Add the acknowledgements to the table of contents.
+% \include{./chapters/dedicate}
+% \clearpage
 
 % \tableofcontents
 % \addcontentsline{toc}{chapter}{Contents} % Add the the table of contents to the table of contents.
@@ -284,18 +282,17 @@ Advancing Natural Languages Processing for Understanding and Analysis %of Social
 % \addcontentsline{toc}{chapter}{List of Figures} % Add the list of figures to the table of contents.
 % \clearpage
 
-
 % \listoftables
 % \addcontentsline{toc}{chapter}{List of Tables} % Add the list of tables to the table of contents.
 % \clearpage
 
 \addcontentsline{toc}{chapter}{Acronyms} % Add the acknowledgements to the table of contents.
 \include{./chapters/Acronyms}
-\cleardoublepage
-
-% You might need a similar construction to include the list of algorithms.
-
-\cleardoublepage
+\cleardoublepage   
+\newpage       
+\thispagestyle{empty}
+\mbox{}    
+\clearpage
 
 %% In the thesis, pages are numbered with arabic numerals in the top outer corners (left top corner on even numbered pages, and right top corner on odd numbered pages) and alternatively Author and Chapter: Chapter name in the other top corner.
 \pagenumbering{arabic}
@@ -310,11 +307,11 @@ Advancing Natural Languages Processing for Understanding and Analysis %of Social
 \include{./chapters/chapter0-1}
 
 % background & related work
-% \include{./chapters/chapter0-2}
+\include{./chapters/chapter0-2}
 
 % % % Part 1
 \part{NLP Methods for Social Media Analysis}
-% \include{./chapters/chapter1-1}
+\include{./chapters/chapter1-1}
 % \include{./chapters/chapter1-2}
 % \include{./chapters/chapter1-3}
 % \include{./chapters/chapter1-4}
@@ -342,7 +339,7 @@ Advancing Natural Languages Processing for Understanding and Analysis %of Social
 \bibliography{anthology,bib_custom}
 
 % appendix
-\include{./chapters/chapter0-4}
+% \include{./chapters/chapter0-4}
 
 \fi
 \end{document}

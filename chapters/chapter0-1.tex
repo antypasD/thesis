@@ -1,21 +1,41 @@
 \chapter{Introduction}\label{ch:intro} % Add a label in case you want to refer to the chapter.
-\ac{NLP} techniques, along with specialized computational models, have long been used to process, manipulate, and extract insights from textual data \cite{jones1994natural,cambria2014jumping}. Early work focused on techniques such as dictionary or rule-based approaches, as well as traditional \ac{ML} models like \acp{SVM}, regression models, and decision trees, which often utilized \ac{BoW} approaches to represent textual features. However, with the advent of \acp{PLM} such as \textit{BERT} \cite{DBLP:journals/corr/abs-1810-04805} and more recently \acp{LLM} like \textit{GPT-3} \cite{GPT3}, the landscape of text analysis has been revolutionized. These models have dramatically enhanced our ability to capture contextual and semantic relationships, and linguistic patterns in text, enabling more sophisticated and accurate extraction of insights from diverse textual sources. \todo[]{rethink last sentence. also maybe add a reference?}
 
-Independently on the level of sophistication of the tehcnique used, NLP researchesrs have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, and topic classification \cite{zhang2015character} among others. Even though these tasks have been studied for a long time, the advent of social media has brought new challenges and opportunities for NLP research. With the introduction of larger models the same tasks are reframed in a more challenging way for example searching for the target of sentiment or hate speech instead of only identfying the polarity of the text.
+\ac{NLP} techniques, along with specialized computational models, have long been used to process, manipulate, and extract insights from textual data \cite{jones1994natural,cambria2014jumping}. Early work focused on techniques such as dictionary or rule-based approaches, as well as traditional \ac{ML} models like \acp{SVM}, regression models, and decision trees, which often utilized \ac{BoW} approaches to represent textual features. With the advent of \acp{PLM} such as \textit{BERT} \cite{DBLP:journals/corr/abs-1810-04805} and more recently \acp{LLM} like \textit{GPT-3} \cite{GPT3}, the landscape of text analysis has been revolutionized. 
 
-%Similar methodologies have been utilised when dealing with social media data \cite{pak-paroubek-2010-twitter, bifet2010sentiment}. 
+Independently on the level of sophistication of the tehcnique used, \ac{NLP} researchers have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, and topic classification \cite{zhang2015character} among others. Even though these tasks have been studied for a long time, the rising popularity of social media has brought new challenges and opportunities for \ac{NLP} research. 
 
-\todo{don't focus only on misinformation}
-However, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. Furthermore, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
+With the introduction of larger and more competent models, the same problems are reframed in a more challenging ways; for example searching for the target of sentiment or hate speech instead of only identfying the polarity of the text. \todo{maybe add references here}. These models have dramatically enhanced our ability to capture contextual and semantic relationships, and linguistic patterns in text, enabling more sophisticated and accurate extraction of insights from diverse textual sources. \todo[]{rethink last sentence. also maybe add a reference?}
+
+% Similar methodologies have been utilised when dealing with social media data \cite{pak-paroubek-2010-twitter, bifet2010sentiment}. 
 
 % However, there still struggles on dealing with the heavily unstructured nature of social media content which can provide challenges even for the larger models available \cite{}. Finally, it is important to note the potential biases that existing models/tools/datasets but also the environmental impact \acp{LLM} have.
 
-In our fast evolving world where social media has become such an integral part of our lives through which people shape opinions and influence each other it is crucial both from a business and scientific perspective to understand better how people interact and what drives them. 
+In our fast evolving world, social media has become an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}.
 
-In order to tackle the limitations above, we explore methodologies of leveraging \acp{PLM} to recognize the lexical relationship ... \todo{fix this} in this thesis. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpus collected from \textit{Twitter} and \textit{Reddit} to understand better human interactions regarding politics as well as misinformation and hate speech. The rest of this introductory chapter is organised as follows: \autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \autoref{ch1:contributions} outlines the contribution of research, \autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \autoref{ch1:outline} describes the structure of the thesis and summarises this introductory chapter.
+As populations shape opinions and influence each other through these platforms, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
 
+In particular, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. \todo{fix this}Furthermore, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
+
+In order to tackle the limitations above, we explore methodologies of leveraging \acp{PLM} to recognize the lexical relationship  \todo{fix this} in this thesis. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpora collected from \textit{Twitter} and \textit{Reddit} to understand better human interactions regarding politics as well as misinformation and hate speech. The rest of this introductory chapter is organised as follows: \autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \autoref{ch1:contributions} outlines the contribution of research, \autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \autoref{ch1:outline} describes the structure of the thesis and summarises this introductory chapter.
+
+\clearpage
 \section{Motivation} \label{ch1:motivation}
-This thesis aim to achieve  \ac{LM}
+\ac{NLP} methodologies are essential for understanding human interactions  especially in the context of political discourse and dissemination of misinformation and hate speech. For example, \ac{ML} models are used by social platforms, such as Facebook \cite{schroepfer2021update}, to detect harmful content and protect users from online abuse. Similarly, researchers have developed tools to analyse political communication on Twitter \cite{barbera2015birds}, track the spread of misinformation \cite{shu2017fake}, and understand the dynamics of online discussions \cite{zhang2018conversations}. 
+
+%However, these models often struggle to capture the nuances of social media content, which can be noisy, informal, and context-dependent. This is particularly true for political discourse, where the use of sarcasm, irony, and other forms of indirect language can make it difficult to interpret the sentiment and intent of a message.
+
+
+...  Many hate speech detection models ... Other applications ....
+
+
+Due to the nature of social media content that often contains noisy, informal, and often context-dependent data, many of the aforementioned applications rely on specialised datasets to perform well. These datasets are often collected from social media platforms, such as \textit{Twitter} and \textit{Reddit}, and annotated by human coders to provide ground truth labels for training and evaluation. However, the quality and reliability of these datasets can vary significantly, depending on the annotation process and the expertise of the annotators. This can lead to biases and inaccuracies in the models trained on these datasets, limiting their generalisability and effectiveness in real-world scenarios. At the same time 
+
+% This thesis aims to fill gaps in existing literature by procuring new datasets and developing models that are specifically designed for social media applications. The research presented in this thesis focuses on three core areas: (1) developing and evaluating \ac{NLP} tools for social media analysis, (2) applying these tools to analyse social media dynamics, and (3) investigating the role of sentiment, misinformation, and hate speech in online interactions. By addressing these areas, the thesis aims to provide new insights into the dynamics of social media communication and contribute to the development of more effective tools for understanding and combating harmful online behaviours.
+
+
+
+\section{Contributions} \label{ch1:contributions}
+This thesis aim to achieve the goal of \textbf{???} and developing \textbf{????}. To this end, the thesis makes a number of noticeable contributions as listed below:
 
 A lot of tools in NLP but when apply in social media is bad / sometimes is important to work with peopel from social science
 \begin{enumerate}
@@ -27,19 +47,19 @@ A lot of tools in NLP but when apply in social media is bad / sometimes is impor
 \end{enumerate}
 
 
-\section{Contributions} \label{ch1:contributions}
 \subsection{Part 1: NLP Tools for Social Media Analysis}
 The first core contribution of the thesis focuses on developing and evaluating \ac{NLP} tools specifically designed for social media applications. The chapter begins with a study on Twitter Topic Classification which introduces a methodology for categorising topics in noisy Twitter data and demonstrates its effectiveness across diverse datasets. The next chapter extends the work into the development of multilingual topic classification models proceedings, showcasing advancements in analysing content across diverse languages and cultural contexts. Following this, it examines robust hate speech detection techniques and provides a comprehensive cross-dataset evaluation to improve the reliability of hate speech classifiers. The chapter then introduces SuperTweetEval, a benchmark which unifies and standardizes evaluation for social media \ac{NLP} tasks, addressing the fragmentation in the field. 
 
 
-
-\subsection{Part 2: Social Media Analysis }
+\subsection{Part 2: Social Media Analysis}
 Building on the tools developed in the previous chapter, this section applies \ac{NLP} techniques to analyse social media dynamics. The first study investigates the role of sentiment in political communication, focusing on how negativity influences the spread of political messages on Twitter. This study provides multilingual insights into the interaction between sentiment and political engagement. The second study shifts focus to misinformation spreaders, offering a multi-faceted analysis of their behaviour and content characteristics. This work identifies key linguistic and structural patterns in misinformation dissemination. Lastly, the chapter explores how specific words can act as trigger points in online discussions, highlighting their role in escalating or steering conversations. This work emphasizes the nuanced relationship between language and social dynamics on Reddit.
 
 \section{Publications} \label{ch1:publications}
 The majority of the material in this thesis have been published in peer-reviewed conferences and journals, while the remaining material are under reviewed at peer-reviewed conferences. Below is a list of the core publications where the main contributions of the thesis have been published in the chronological order.
 
 \subsection{Core Publications}
+Below is a list of the core publications where the main contributions of the thesis
+have been published in the chronological order.
 \subsubsection{NLP}
 
 \begin{itemize}
@@ -100,16 +120,22 @@ The majority of the material in this thesis have been published in peer-reviewed
 \end{itemize}
 
 
+\section{Ethics and Privacy}
+The research included in the thesis has been approved by Cardiff University's ethics comitee and also follows the guidelines of ACL code of ethics\footnote{https://www.acm.org/code-of-ethics}.
+
+Specifically, as our research focuses on socia media we have taken caution while collecting data used in our experiments to adhere to the afromentioned ethic rules. Firstly, all the data were collected using the official \acp{API} provided by \textit{Twitter} and \textit{Reddit}. Moreover, the privacy of the users whose data is used is protected by masking user handles and \acp{URL} to prevent any potential identification of users. Exceptions are data colleted from  verified\footnote{As defined by the legacy verified policy of Twitter in https://help.x.com/en/managing-your-account/legacy-verification-policy.} \textit{Twitter} users which are already public figures such as politicians, celebrites, and goverment employees.
+
+Finally, regarding the annotations conducted, all coders were paid at least minimum wage for their work, and no personal identifying information was collected. This applies to the manual data labeling for \TweetTopic and \XTOPIC, as described in Chapters \ref{ch:tweet-topic} and \ref{ch:xtopic} respectively.
+
+\section{Naming conventions}
+
+\textbf{Models.} In Chapters \ref{ch:political} and \ref{ch:spreaders}, the models used are described as \ac{SoTA}. While this statement may not hold true at the time of writing this thesis, they were the best-performing models when the experiments were conducted.
+
+\textbf{Twitter.} A lot of the data used were collected from \textit{X} while it was known as \textit{Twitter} through the use of it's now defunct academic \ac{API}. In the thesis we will refer to the platform as \textit{Twitter} to reflect the time of the data collection and research done. Exception being Chapter \ref{ch:xtopic} where the data was collected from \textit{X} and we will refer to the platform as \textit{X}.
+
 \section{Thesis Outline and Summary} \label{ch1:outline}
-Social media platforms, especially X, present unique challenges and opportunities for \ac{NLP} research, such as addressing multilinguality, detecting harmful content, and understanding online discourse dynamics. The introduction also highlights the relevance of the presented work in real-world scenarios, including combating misinformation and promoting healthier online interactions. The chapter concludes by presenting the structure of the thesis and summarizing its core themes.
+In this section, we provide an overview of the structure of the thesis and summarise the core themes of each chapter.
 
-\section{General Notes}
-\textbf{Ethics.} The research included in the thesis has been approved by Cardiff University's ethics comitee and also follows the guidelines of ACL code of ethics\footnote{https://www.acm.org/code-of-ethics}.
+In the next chapter (Chapter \ref{ch:background-and-related-work}), we will discuss the relevant literature and methodologies related to the research presented in this thesis. We will review existing work on key topics such as sentiment analysis, hate speech detection, misinformation analysis, and topic classification, and provide a brief, high-level introduction to computational models like \acp{LM}.
 
-\textbf{Models.} In some chapters\todo{which chapters}, the models presented are described as \ac{sota}. While this statement may not hold true at the time of writing this thesis, the models were the best performing ones at the time of their respective publications.
 
-\textbf{Annotations.} For the datasets\todo{which chapters} collected all annotators were paid at least minimum wage for their work.  
-
-\textbf{Privacy.} In all chapters\todo{which chapters}, the privacy of the users whose data is used is protected. All data is anonymized and aggregated to ensure that no individual can be identified. Handles and URLs are removed from the data collected to prevent any potential identification of users. 
-
-\textbf{Naming.} A lot of the data used in this thesis were collected from \textit{X} while it was known as \textit{Twitter} through the use of the now defunct academic \ac{API}. In this thesis, we refer to the platform as \textit{Twitter} to reflect the time of the data collection and research done.
