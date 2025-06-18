@@ -1,23 +1,41 @@
 \setlength{\headheight}{14.49998pt} % Adjust the height of the header
 \chapter{Introduction}\label{ch:intro} % Add a label in case you want to refer to the chapter.
 
-\ac{NLP} techniques, along with specialized computational models, have long been used to process, manipulate, and extract insights from textual data \cite{jones1994natural,cambria2014jumping}. Early work focused on techniques such as dictionary or rule-based approaches, as well as traditional \ac{ML} models like \acp{SVM}, regression models, and decision trees, which often utilized \ac{BoW} approaches to represent textual features. With the advent of \acp{PLM} such as \textit{BERT} \cite{DBLP:journals/corr/abs-1810-04805} and more recently \acp{LLM} like \textit{GPT-3} \cite{GPT3}, the landscape of text analysis has been revolutionized. 
+The rise of social media platforms have transformed the way people communicate and interact online, leading to new challenges and opportunities for \ac{NLP} research. Platforms like \textit{Twitter} and \textit{Reddit}, have grown to be an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}, and are seen as key sources of real-time information, public opinion, and social dynamics, making them valuable data sources for understanding human behavior and societal trends \cite{barbera2015birds,shu2017fake}. 
 
-Independently on the level of sophistication of the tehcnique used, \ac{NLP} researchers have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, and topic classification \cite{zhang2015character} among others. Even though these tasks have been extensively studied, the rising popularity of social media has brought new challenges and opportunities for \ac{NLP} research. 
 
-With the introduction of larger and more competent models, the same problems are reframed in a more challenging ways; for example searching for the target of sentiment or hate speech instead of only identfying the polarity of the text \cite{sun-etal-2019-aspect}. These models have dramatically enhanced our ability to capture contextual and semantic relationships, and linguistic patterns in text, enabling more sophisticated and accurate extraction of insights from diverse textual sources. \todo[inline]{rethink last sentence. also maybe add a reference?}
+In contrast to traditional \ac{NLP} techniques that often rely on structured and formal text, social media data is characterised by its unstructured, noisy, and informal nature. This poses unique challenges for \ac{NLP} applications, as the language used in social media is often context-dependent, contains slang and abbreviations, and may include non-standard grammar and spelling \cite{eisenstein2013bad,gain-etal-2023-reference}.
+
+%As populations shape opinions and influence each other through these platforms, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
+
+%In particular, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. \todo{fix this}Furthermore, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
+
+
+%Independently on the level of sophistication of the tehcnique used, \ac{NLP} researchers have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, and topic classification \cite{zhang2015character} among others. Even though these tasks have been extensively studied, the rising popularity of social media has brought new challenges and opportunities for \ac{NLP} research. 
+
+%With the introduction of larger and more competent models, the same problems are reframed in a more challenging ways; for example searching for the target of sentiment or hate speech instead of only identfying the polarity of the text \cite{sun-etal-2019-aspect}. These models have dramatically enhanced our ability to capture contextual and semantic relationships, and linguistic patterns in text, enabling more sophisticated and accurate extraction of insights from diverse textual sources. \todo[inline]{rethink last sentence. also maybe add a reference?}
 
 % Similar methodologies have been utilised when dealing with social media data \cite{pak-paroubek-2010-twitter, bifet2010sentiment}. 
 
 % However, there still struggles on dealing with the heavily unstructured nature of social media content which can provide challenges even for the larger models available \cite{}. Finally, it is important to note the potential biases that existing models/tools/datasets but also the environmental impact \acp{LLM} have.
 
-In our fast evolving world, social media has become an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}.
+%In our fast evolving world, social media has become an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}.
 
-As populations shape opinions and influence each other through these platforms, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
+%As populations shape opinions and influence each other through these platforms, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
 
-In particular, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. \todo{fix this}Furthermore, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
+%In particular, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. \todo{fix this}Furthermore, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
 
-In order to tackle the limitations above, we explore methodologies of leveraging \acp{PLM} to recognize the lexical relationship  \todo{fix this} in this thesis. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpora collected from \textit{Twitter} and \textit{Reddit} to understand better human interactions regarding politics as well as misinformation and hate speech. The rest of this introductory chapter is organised as follows: \autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \autoref{ch1:contributions} outlines the contribution of research, \autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \autoref{ch1:outline} describes the structure of the thesis and summarises this introductory chapter.
+% Issues:
+% lack of context
+% syntactical/grammatical errors
+% short text 
+% slang
+% emojis
+% informal language
+% noisy data (e.g. typos, abbreviations, etc.)
+% fast evolving language
+
+In order to tackle the limitations above, we explore existing methodologies and resources that work on understanding complex social interactions on social media. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpora collected from \textit{Twitter} and \textit{Reddit} to understand better human interactions regarding politics discourse, and misinformation and hate speech proliferation. The rest of this introductory chapter is organised as follows: \autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \autoref{ch1:contributions} outlines the contribution of research, \autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \autoref{ch1:outline} describes the structure of the thesis and summarises this introductory chapter.
 
 \clearpage
 \section{Motivation} \label{ch1:motivation}
@@ -28,34 +46,24 @@ In order to tackle the limitations above, we explore methodologies of leveraging
 
 
 % ...  Many hate speech detection models ... Other applications ....
-Many hate speech detection models rely on supervised learning techniques, which require large amounts of annotated data to train effectively. However, the availability of high-quality annotated datasets for hate speech detection is limited, and existing datasets often suffer from biases and inconsistencies \cite{davidson2017automated}. This can lead to models that are not generalisable across different contexts or languages, limiting their effectiveness in real-world applications. Other applications, such as misinformation detection and sentiment analysis, also face similar challenges in terms of data availability and quality. For example, misinformation detection models often rely on large-scale datasets of social media posts, which can be difficult to obtain and may not accurately reflect the diversity of online content \cite{shu2017fake}. Similarly, sentiment analysis models often struggle to capture the nuances of social media language, which can vary significantly across different platforms and user demographics \cite{barbieri2020multilingual}.
+Many hate speech detection models rely on supervised learning techniques, which require large amounts of annotated data to train effectively. However, the availability of high-quality annotated datasets for hate speech detection is limited, and existing datasets often suffer from biases and inconsistencies \cite{davidson2017automated}. This can lead to models that are not generalisable across different contexts or languages, limiting their effectiveness in real-world applications. Other applications, such as misinformation detection and sentiment analysis, also face similar challenges in terms of data availability and quality. For example, misinformation detection models often rely on large-scale datasets of social media posts, which can be difficult to obtain and may not accurately reflect the diversity of online content \cite{shu2017fake}. Similarly, sentiment analysis models often struggle to capture the nuances of social media language, which can vary significantly across different platforms and user demographics \cite{barbieri-etal-2022-xlm}.
 
+Due to the heavily unstructured content often shared  in social media content, many of the aforementioned applications rely on specialised datasets to perform well. These datasets are often collected from social media platforms, such as \textit{Twitter} and \textit{Reddit}, and annotated by human coders to provide ground truth labels for training and evaluation. However, the quality and reliability of these datasets can vary significantly, depending on the annotation process and the expertise of the annotators \cite{klie2024analyzing}. This can lead to biases and inaccuracies in the models trained on these datasets, limiting their generalisability and effectiveness in real-world scenarios. 
 
-Due to the nature of social media content that often contains noisy, informal, and often context-dependent data, many of the aforementioned applications rely on specialised datasets to perform well. These datasets are often collected from social media platforms, such as \textit{Twitter} and \textit{Reddit}, and annotated by human coders to provide ground truth labels for training and evaluation. However, the quality and reliability of these datasets can vary significantly, depending on the annotation process and the expertise of the annotators \cite{klie2024analyzing}. This can lead to biases and inaccuracies in the models trained on these datasets, limiting their generalisability and effectiveness in real-world scenarios. At the same time 
-
-% This thesis aims to fill gaps in existing literature by procuring new datasets and developing models that are specifically designed for social media applications. The research presented in this thesis focuses on three core areas: (1) developing and evaluating \ac{NLP} tools for social media analysis, (2) applying these tools to analyse social media dynamics, and (3) investigating the role of sentiment, misinformation, and hate speech in online interactions. By addressing these areas, the thesis aims to provide new insights into the dynamics of social media communication and contribute to the development of more effective tools for understanding and combating harmful online behaviours.
-
+The proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. Finally, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
 
 
 \section{Contributions} \label{ch1:contributions}
-This thesis aim to achieve the goal of \textbf{???} and developing \textbf{????}. To this end, the thesis makes a number of noticeable contributions as listed below:
+This thesis aims to fill gaps in existing literature by procuring new datasets and developing models that are specifically designed for social media applications. The research presented in this thesis focuses on two core areas: (1) developing and evaluating \ac{NLP} resources for social media analysis; (2) applying these resources to analyse social media dynamics in the context of politics discourse, and misinformation and hate speech propagation. By addressing these areas, the thesis aims to provide new insights into the dynamics of social media communication and contribute to the development of more effective tools for understanding and combating harmful online behaviours. To this end, the thesis makes a number of noticeable contributions as listed below:
 
-A lot of tools in NLP but when apply in social media is bad / sometimes is important to work with peopel from social science
-\begin{enumerate}
-
-    \item \textbf{develop datasets and models}
-
-    \item \textbf{analyse behaviours specific for politics/misinformation}
-    
-\end{enumerate}
-
-
-\subsection{Part 1: NLP Tools for Social Media Analysis}
+\textbf{Part 1: Modeling Approaches for Social Media Language Understanding} \\ 
 The first core contribution of the thesis focuses on developing and evaluating \ac{NLP} tools specifically designed for social media applications. The chapter begins with a study on Twitter Topic Classification which introduces a methodology for categorising topics in noisy Twitter data and demonstrates its effectiveness across diverse datasets. The next chapter extends the work into the development of multilingual topic classification models proceedings, showcasing advancements in analysing content across diverse languages and cultural contexts. Following this, it examines robust hate speech detection techniques and provides a comprehensive cross-dataset evaluation to improve the reliability of hate speech classifiers. The chapter then introduces SuperTweetEval, a benchmark which unifies and standardizes evaluation for social media \ac{NLP} tasks, addressing the fragmentation in the field. 
 
 
-\subsection{Part 2: Social Media Analysis}
+\textbf{Part 2: Analysing Harmful and Political Dynamics in Social Media} \\
 Building on the tools developed in the previous chapter, this section applies \ac{NLP} techniques to analyse social media dynamics. The first study investigates the role of sentiment in political communication, focusing on how negativity influences the spread of political messages on Twitter. This study provides multilingual insights into the interaction between sentiment and political engagement. The second study shifts focus to misinformation spreaders, offering a multi-faceted analysis of their behaviour and content characteristics. This work identifies key linguistic and structural patterns in misinformation dissemination. Lastly, the chapter explores how specific words can act as trigger points in online discussions, highlighting their role in escalating or steering conversations. This work emphasizes the nuanced relationship between language and social dynamics on Reddit.
+    
+It is worth noting that during the development of the aforementioned resources, there was a consistent effort to collaborate with experts from other fields, such as social sciences and healthcare, and to incorporate their feedback in order to address real-world problems through our research. Notable examples include: (1) collaboration with experts from \textit{Public Health Wales}, where our models were used to help identify early signs of influenza \cite{drakesmith2024towards}; (2) collaboration with the \textit{Spanish National Office Against Hate Crime} \cite{gomez2023interaction} to investigate offensive language and hate speech related to Spanish national events; and (3) collaboration with colleagues from the \textit{School of Earth and Environmental Sciences} to apply sentiment analysis for post-disaster recovery assessment after earthquakes \cite{su17114967}. Additionally, the impact of the work conducted in this thesis is reflected in the widespread adoption of the datasets and models introduced, with more than a million downloads on the Hugging Face platform.\footnote{\url{https://huggingface.co/}}
 
 \section{Publications} \label{ch1:publications}
 The majority of the material in this thesis have been published in peer-reviewed conferences and journals, while the remaining material are under reviewed at peer-reviewed conferences. Below is a list of the core publications where the main contributions of the thesis have been published in the chronological order.
@@ -63,8 +71,8 @@ The majority of the material in this thesis have been published in peer-reviewed
 \subsection{Core Publications}
 Below is a list of the core publications where the main contributions of the thesis
 have been published in the chronological order.
-\subsubsection{NLP}
 
+\subsubsection{Modeling Approaches for Social Media Language Understanding}
 \begin{itemize}
     \item \underline{Dimosthenis Antypas}, Asahi Ushio, Jose Camacho-Collados, Vitor Silva, Leonardo Neves, and Francesco Barbieri. 2022. Twitter Topic Classification. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3386–3400, Gyeongju, Republic of Korea. International Committee on Computational Linguistics. \Autoref{ch:tweet-topic}
     
@@ -76,7 +84,7 @@ have been published in the chronological order.
 \end{itemize}
 
 
-\subsubsection{Social Media Analysis}
+\subsubsection{Analysing Harmful and Political Dynamics in Social Media}
 \begin{itemize}
     \item \underline{Dimosthenis Antypas}, Alun Preece, and Jose Camacho-Collados. 2023. Negativity spreads faster: A large-scale multilingual Twitter analysis on the role of sentiment in political communication. Online Social Networks and Media, 33:100242. \Autoref{ch:political}
 
@@ -90,21 +98,15 @@ have been published in the chronological order.
 \subsubsection{Collaboration with public stakeholders}
 
 \begin{itemize}
-    
     \item Jesús Gómez, Alberto Matilla-Molina, Ma Pilar Amado, \underline{Dimosthenis Antypas}, Jose Camacho-Collados, Carlos J. Máñez, Tomás Fernández-Villazala, Alicia Méndez-Sanchís, and Javier López. 2023. The interaction between offensive and hate speech on Twitter and relevant social events in Spain. In News Media and Hate Speech Promotion in Mediterranean Countries, pages 81–109. IGI Global.
     
-    \item Mark Drakesmith, \underline{Dimosthenis Antypas}, Claire Brown, Jose Camacho-Collados, and Jiao Song. 2025. Towards a social media-based disease surveillance system for early detection of influenza-like illnesses: A Twitter case study in Wales. In Proceedings of the Tenth Workshop on Noisy and User-generated Text (W-NUT 2025)\todo{update this}. 
-
+    \item Mark Drakesmith, \underline{Dimosthenis Antypas}, Claire Brown, Jose Camacho-Collados, and Jiao Song. 2025. Towards a social media-based disease surveillance system for early detection of influenza-like illnesses: A Twitter case study in Wales. In Proceedings of the Tenth Workshop on Noisy and User-generated Text (W-NUT 2025).
+    
+    \item Diana Contreras, \underline{Dimosthenis Antypas}, Javier Hervas, Sean Wilkinson, Jose Camacho-Collados, Philippe Garnier, and Cécile Cornou. 2025. Post-disaster recovery assessment using sentiment analysis of English-language tweets: A tenth-anniversary case study of the 2010 Haiti earthquake. Sustainability 17, no. 11: 4967.
 \end{itemize}
 
-% public health wales  (e.g. in conclusions we can argue the importance of the impact of our work poeple using models/datasets (e.g. huggingface downloads) 
 
-% Spanish hate speech paper (link it to motivation/conclusion). w
-
-% Dimos maybe just reference:  diana thiks (refer as part of the impact). 
-
-\subsubsection{Other papers related to social media}
-
+\subsubsection{Social media focused}
 \begin{itemize}
     \item \underline{Dimosthenis Antypas}, Jose Camacho-Collados, Alun Preece, and David Rogers. 2021. COVID-19 and Misinformation: A Large-Scale Lexical Analysis on Twitter. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: Student Research Workshop, pages 119–126, Online. Association for Computational Linguistics. \Autoref{ch:covid}
     
@@ -127,7 +129,7 @@ have been published in the chronological order.
 \section{Ethics and Privacy}
 The research included in the thesis has been approved by Cardiff University's ethics comitee and also follows the guidelines of ACL code of ethics\footnote{https://www.acm.org/code-of-ethics}.
 
-Specifically, as our research focuses on socia media we have taken caution while collecting data used in our experiments to adhere to the afromentioned ethic rules. Firstly, all the data were collected using the official \acp{API} provided by \textit{Twitter} and \textit{Reddit}. Moreover, the privacy of the users whose data is used is protected by masking user handles and \acp{URL} to prevent any potential identification of users. Exceptions are data colleted from  verified\footnote{As defined by the legacy verified policy of Twitter in https://help.x.com/en/managing-your-account/legacy-verification-policy.} \textit{Twitter} users which are already public figures such as politicians, celebrites, and goverment employees.
+Specifically, as our research focuses on socia media we have taken caution while collecting data used in our experiments to adhere to the aforementioned ethic rules. Firstly, all the data were collected using the official \acp{API} provided by \textit{Twitter} and \textit{Reddit}. Moreover, the privacy of the users whose data is used is protected by masking user handles and \acp{URL} to prevent any potential identification of users. Exceptions are data colleted from  verified\footnote{As defined by the legacy verified policy of Twitter in https://help.x.com/en/managing-your-account/legacy-verification-policy.} \textit{Twitter} users which are already public figures such as politicians, celebrites, and goverment employees.
 
 Finally, regarding the annotations conducted, all coders were paid at least minimum wage for their work, and no personal identifying information was collected. This applies to the manual data labeling for \TweetTopic and \XTOPIC, as described in Chapters \ref{ch:tweet-topic} and \ref{ch:xtopic} respectively.
 
@@ -141,12 +143,10 @@ Finally, regarding the annotations conducted, all coders were paid at least mini
 In this section, we provide an overview of the structure of the thesis and summarise the core themes of each chapter.
 
 
-The first set of chapters are preliminary chapters to re-
-view the literature of relational representation learning and LMs (Chapter \ref{ch:intro} and
-Chapter \ref{ch:background-and-related-work}). The second set of chapters focus on .... . We present our study to understand ....
-tion without fine-tuning, and discuss the relat (\ref{ch:tweet-topic}). 
-...
+The first set of chapters are preliminary chapters to review the literature of relational representation learning and LMs (Chapter \ref{ch:intro} and
+Chapter \ref{ch:background-and-related-work}). The second set of chapters focus on identifying limitations in existing resources related to social media \ac{NLP} and proposing solutions. Mainly we present our study for topic classification in \textit{Twitter} (Chapter \ref{ch:tweet-topic}), and our multilingual extension to this work (Chapter \ref{ch:xtopic}). Following this we introduce an ensemble of models and datasets related to hate speech detection (Chapter \ref{ch:hate-speech}), and a benchmark for social media \ac{NLP} tasks (Chapter \ref{ch:super-tweeteval}) which builds upon our previous work. 
 
+The final part of the thesis focuses on applying the aforementioned resources to understand complex social interactions in social media. Chapter \ref{ch:political} introduces a study on the role of sentiment in political communication, followed by an analysis of misinformation spreaders (Chapter \ref{ch:spreaders}), and finally we investigate how specific words can act as trigger points in online discussions (Chapter \ref{ch:triggers}). Finally, we conclude the thesis with a summary of the contributions and future work (Chapter \ref{ch:conclusion}).
 
 In the next chapter (Chapter \ref{ch:background-and-related-work}), we will discuss the relevant literature and methodologies related to the research presented in this thesis. We will review existing work on key topics such as sentiment analysis, hate speech detection, misinformation analysis, and topic classification, and provide a brief, high-level introduction to computational models like \acp{LM}.
 
