@@ -1,8 +1,9 @@
 \chapter{Twitter Topic Classification}
 \label{ch:tweet-topic}
 
-
+%\begin{abstract}
 Social media platforms host discussions about a wide variety of topics that arise everyday. Making sense of all the content and organising it into categories is an arduous task. A common way to deal with this issue is relying on topic modeling, but topics discovered using this technique are difficult to interpret and can differ from corpus to corpus. In this chapter, we present a new task based on tweet topic classification and release two associated datasets\footnote{\url{https://huggingface.co/datasets/cardiffnlp/tweet_topic_single}}\footnote{\url{https://huggingface.co/datasets/cardiffnlp/tweet_topic_multi}}. Given a wide range of topics covering the most important discussion points in social media, we provide training and testing data from recent time periods that can be used to evaluate tweet classification models. Moreover, we perform a quantitative evaluation and analysis of current general- and domain-specific language models on the task, which provide more insights on the challenges and nature of the task. 
+% \end{abstract}
 
 \section{Introduction}
 
@@ -217,7 +218,6 @@ The topics \textit{celebrity \& pop culture} and \textit{music} have the highest
 Finally, topics that can be considered more accessible to the general public such as \textit{fashion \& style}, \textit{family}, and \textit{relationships} achieve a relatively low lexical diversity score (98.8, 112.7, 111.9) while more specialized or advanced topics such as \textit{travel \& adventure}, \textit{business \& entrepreneurs} and \textit{fitness \& health} display higher lexical diversity (173.1, 159.0, 168.5).
 
 \section{Evaluation}\label{evaluation}
-% In this section, we present our experimental results.
 
 \subsection{Experimental setting}
 \noindent \textbf{Datasets.} We perform experiments in our tweet classification annotated datasets. In particular, our experiments are based on two settings, single-label and multi-label (see Section \ref{settings} for details).
