@@ -12,6 +12,7 @@
 % Propably of some research questions, summary of contributions (what were the gaps in the exisitng literature).
 % intro: questions (could be bigger questions) + contributions of knowledge (could answer part of the questions and add the others) + summary of the thesis
 % can I write a sentence that says "The first/best ...."? we created model/system/dataset that 
+
 \documentclass[12pt,twoside]{report}
 
 \setlength{\parskip}{\baselineskip}
@@ -274,7 +275,6 @@
 % \include{./chapters/declaration} 
 % \clearpage
 
-
 % \addcontentsline{toc}{chapter}{Abstract} % Add the abstract to the table of contents.
 % \include{./chapters/abstract}
 % \clearpage
@@ -314,29 +314,29 @@
 % \fancyfoot{} % clear all footer fields
 
 % introduction
-% \include{./chapters/chapter0-1}
+\include{./chapters/chapter0-1}
 
 % background & related work
-% \include{./chapters/chapter0-2}
+\include{./chapters/chapter0-2}
 
 % % % Part 1
-\part{?Modelling Approaches for Social Media Language Understanding?}
+% \part{Modelling Approaches for Social Media Language Understanding}
 % \include{./chapters/chapter1-1}
 % \include{./chapters/chapter1-2}
 % \include{./chapters/chapter1-3}
 % \include{./chapters/chapter1-4}
 
 % % % Part 2
-\part{Analysing Harmful and Political Dynamics in Social Media}
-\include{./chapters/chapter2-1}
-\include{./chapters/chapter2-2}
-\include{./chapters/chapter2-3}
+% \part{Analysing Harmful and Political Dynamics in Social Media}
+% \include{./chapters/chapter2-1}
+% \include{./chapters/chapter2-2}
+% \include{./chapters/chapter2-3}
 
 
-% \addtocontents{toc}{\protect\addvspace{2.25em plus 1pt}}
-% \bookmarksetup{startatroot}
+\addtocontents{toc}{\protect\addvspace{2.25em plus 1pt}}
+\bookmarksetup{startatroot}
 % conclusion
-\include{./chapters/chapter0-3}
+% \include{./chapters/chapter0-3}
 
 \end{spacing}
 \end{flushleft}
@@ -349,7 +349,7 @@
 \bibliography{bib_custom}%,anthology}
 
 % appendix
-\include{./chapters/chapter0-4}
+% \include{./chapters/chapter0-4}
 
 \fi
 \end{document}
