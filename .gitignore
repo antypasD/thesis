@@ -6,7 +6,6 @@
 *.fdb_latexmk
 *.toc
 *.lof
-*.pdf
 *.gz
 *.toc
 thesis.bbl
