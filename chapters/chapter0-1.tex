@@ -1,15 +1,11 @@
 \setlength{\headheight}{14.49998pt} % Adjust the height of the header
 \chapter{Introduction}\label{ch:intro} % Add a label in case you want to refer to the chapter.
 
-The rise of social media platforms have transformed the way people communicate and interact online, leading to new challenges and opportunities for \ac{NLP} research. Platforms like \textit{Twitter} and \textit{Reddit}, have grown to be an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}, and are seen as key sources of real-time information, public opinion, and social dynamics, making them valuable data sources for understanding human behavior and societal trends \cite{barbera2015birds,shu2017fake}. 
+The rise of social media platforms have transformed the way people communicate and interact online. Platforms like \textit{Twitter} and \textit{Reddit}, have grown to be an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}, and are seen as key sources of real-time information, public opinion, and social dynamics, making them valuable data sources for understanding human behavior and societal trends \cite{barbera2015birds,shu2017fake}. As populations shape opinions and influence each other through these platforms \cite{ausat2023role}, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
 
+% , leading to new challenges and opportunities for \ac{NLP} research
 
 %In contrast to traditional \ac{NLP} techniques that often rely on structured and formal text, social media data is characterised by its unstructured, noisy, and informal nature. This poses unique challenges for \ac{NLP} applications, as the language used in social media is often context-dependent, contains slang and abbreviations, and may include non-standard grammar and spelling \cite{eisenstein2013bad,gain-etal-2023-reference}.
-
-%As populations shape opinions and influence each other through these platforms, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
-
-%In particular, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. \todo{fix this}Furthermore, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
-
 
 %Independently on the level of sophistication of the tehcnique used, \ac{NLP} researchers have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, and topic classification \cite{zhang2015character} among others. Even though these tasks have been extensively studied, the rising popularity of social media has brought new challenges and opportunities for \ac{NLP} research. 
 
@@ -22,9 +18,6 @@ The rise of social media platforms have transformed the way people communicate a
 %In our fast evolving world, social media has become an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}.
 
 %As populations shape opinions and influence each other through these platforms, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
-
-%In particular, the proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarization and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. \todo{fix this}Furthermore, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
-
 
 % \ac{NLP} in social media often comes with 
 % Issues:
@@ -162,8 +155,8 @@ In this section, we provide an overview of the structure of the thesis and summa
 
 \begin{figure}
     \centering
-    \includegraphics[width=10.5cm]{../figures/thesis_diagram.png}
-    \caption{Outline of the thesis. The grey color indicates connections between chapters of Part 1 and Part 2. \todo[inline]{WIP: (color code TweetTopic and Hate speech maybe?)}}
+    \includegraphics[width=12.5cm]{../figures/thesis_diagram.pdf}
+    \caption{Outline of the thesis. The chapter number is indicated in brackets. The grey color indicates connections between chapters of Part 1 and Part 2.}
     \label{fig:thesis-outline}
 \end{figure}
 
@@ -171,16 +164,18 @@ In this section, we provide an overview of the structure of the thesis and summa
 \begin{figure}
     \centering
     \includegraphics[width=10.5cm]{../figures/thesis_timeline.pdf}
-    \caption{Timeline of papers publications along with major advancments in \ac{NLP}.\todo[inline]{WIP}}
+    \caption{Timeline of papers publications along with major events in \ac{NLP} field.}
     \label{fig:thesis-timeline}
 \end{figure}
 
 
-The first set of chapters are preliminary chapters to review the literature of relational representation learning and LMs (Chapter \ref{ch:intro} and
-Chapter \ref{ch:background}). The second set of chapters focus on identifying limitations in existing resources related to social media \ac{NLP} and proposing solutions. Mainly we present our study for topic classification in \textit{Twitter} (Chapter \ref{ch:tweet-topic}), and our multilingual extension to this work (Chapter \ref{ch:xtopic}). Following this we introduce an ensemble of models and datasets related to hate speech detection (Chapter \ref{ch:hate-speech}), and a benchmark for social media \ac{NLP} tasks (Chapter \ref{ch:super-tweeteval}) which builds upon our previous work. 
+The first set of chapters are preliminary chapters to review the literature of relational representation learning and LMs (\Autoref{ch:intro} and
+\Autoref{ch:background}). The second set of chapters focus on identifying limitations in existing resources related to social media \ac{NLP} and proposing solutions. Mainly we present our study for topic classification in \textit{Twitter} (\Autoref{ch:tweet-topic}), and our multilingual extension to this work (\Autoref{ch:xtopic}). Following this we introduce an ensemble of models and datasets related to hate speech detection (\Autoref{ch:hate-speech}), and a benchmark for social media \ac{NLP} tasks (\Autoref{ch:super-tweeteval}) which builds upon our previous work. 
 
-The final part of the thesis focuses on applying the aforementioned resources to understand complex social interactions in social media. Chapter \ref{ch:political} introduces a study on the role of sentiment in political communication, followed by an analysis of misinformation spreaders (Chapter \ref{ch:spreaders}), and finally we investigate how specific words can act as trigger points in online discussions (Chapter \ref{ch:triggers}). Finally, we conclude the thesis with a summary of the contributions and future work (Chapter \ref{ch:conclusion}).
+The final part of the thesis focuses on applying the aforementioned resources to understand complex social interactions in social media. \Autoref{ch:political} introduces a study on the role of sentiment in political communication, followed by an analysis of misinformation spreaders (\Autoref{ch:spreaders}), and finally we investigate how specific words can act as trigger points in online discussions (\Autoref{ch:triggers}). Finally, we conclude the thesis with a summary of the contributions and future work (\Autoref{ch:conclusion}).
 
-In the next chapter (Chapter \ref{ch:background-and-related-work}), we will discuss the relevant literature and methodologies related to the research presented in this thesis. We will review existing work on key topics such as sentiment analysis, hate speech detection, misinformation analysis, and topic classification, and provide a brief, high-level introduction to computational models like \acp{LM}.
+As a temporal reference for this thesis, Figure \ref{fig:thesis-timeline} presents a high-level timeline of the publications that form part of this work, along with major events in the field of \ac{NLP}, such as the release of key models and significant developments like the shutdown of the Twitter API. Although this thesis primarily focuses on utilising smaller \acp{LM}, the work conducted after the release of ChatGPT and open-source models like LLaMA incorporates results from these models and often compares their performance as well.
+
+In the next chapter (\Autoref{ch:background}), we will discuss the relevant literature and methodologies related to the research presented in this thesis. We will review existing work on key topics such as sentiment analysis, hate speech detection, misinformation analysis, and topic classification, and provide a brief, high-level introduction to computational models like \acp{LM}.
 
 
