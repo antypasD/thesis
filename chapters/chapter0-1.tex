@@ -3,7 +3,10 @@
 
 The rise of social media platforms have transformed the way people communicate and interact online. Platforms like \textit{Twitter} and \textit{Reddit}, have grown to be an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}, and are seen as key sources of real-time information, public opinion, and social dynamics, making them valuable data sources for understanding human behavior and societal trends \cite{barbera2015birds,shu2017fake}. As populations shape opinions and influence each other through these platforms \cite{ausat2023role}, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
 
-% , leading to new challenges and opportunities for \ac{NLP} research
+This need becomes even more apparent in the context of political discourse, given how easily voters can be influenced and manipulated through targeted social media campaigns \citet{goodwin2023political}. For example, \citet{zhang2025trump} demonstrate how President Trump’s often incendiary posts on Twitter and Truth Social amplified social media user engagement and attracted increased news media attention. Similar studies on other major political events, such as Brexit \cite{mora2021influence}, highlight the pivotal role social media platforms play in shaping how information spreads through networks, facilitating content generation, and influencing user behaviour.
+
+
+% leading to new challenges and opportunities for \ac{NLP} research
 
 %In contrast to traditional \ac{NLP} techniques that often rely on structured and formal text, social media data is characterised by its unstructured, noisy, and informal nature. This poses unique challenges for \ac{NLP} applications, as the language used in social media is often context-dependent, contains slang and abbreviations, and may include non-standard grammar and spelling \cite{eisenstein2013bad,gain-etal-2023-reference}.
 
@@ -13,11 +16,7 @@ The rise of social media platforms have transformed the way people communicate a
 
 % Similar methodologies have been utilised when dealing with social media data \cite{pak-paroubek-2010-twitter, bifet2010sentiment}. 
 
-% However, there still struggles on dealing with the heavily unstructured nature of social media content which can provide challenges even for the larger models available \cite{}. Finally, it is important to note the potential biases that existing models/tools/datasets but also the environmental impact \acp{LLM} have.
 
-%In our fast evolving world, social media has become an integral part of the lives of millions of people, with approximately 63\% of the population using a social media platform daily \footnote{https://www.statista.com/statistics/617136/digital-population-worldwide/}.
-
-%As populations shape opinions and influence each other through these platforms, it has become crucial, from both business and scientific perspectives, to better understand how people interact and what factors drive their behaviors online.
 
 % \ac{NLP} in social media often comes with 
 % Issues:
@@ -29,6 +28,8 @@ The rise of social media platforms have transformed the way people communicate a
 % informal language
 % noisy data (e.g. typos, abbreviations, etc.)
 % fast evolving language
+Despite their potential, analysing social media data poses numerous challenges for the field of \ac{NLP}. User-generated content on these platforms often lacks context and is highly informal, containing slang, emojis, abbreviations, typos, and other forms of noisy data. Moreover, language usage on social media evolves rapidly, making it difficult for static models and lexicons to keep pace. These characteristics demand robust, adaptive, and context-aware approaches to effectively process and interpret the vast and dynamic stream of social media text.
+
 
 In order to tackle the limitations above, we explore existing methodologies and resources that work on understanding complex social interactions on social media. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpora collected from \textit{Twitter} and \textit{Reddit} to understand better human interactions regarding politics discourse, and misinformation and hate speech proliferation. The rest of this introductory chapter is organised as follows: \autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \autoref{ch1:contributions} outlines the contribution of research, \autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \autoref{ch1:outline} describes the structure of the thesis and summarises this introductory chapter.
 
