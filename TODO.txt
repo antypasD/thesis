@@ -13,7 +13,7 @@
 ## 24 June
 refrain from using framework and say more about established approaches.
 
-renumber I.1, 1.2, 1.3, II.1, 2.2, 2.3 the main contributions
+****renumber I.1, 1.2, 1.3, II.1, 2.2, 2.3 the main contributions****
 
 after the motivations
 
@@ -27,21 +27,21 @@ HINT:  how to use NLP in social media and break down (exmaples of models/data/an
 
 how we do X, x is a gap my contribution is hwo to do x
 
-# redo timeline start, end my PhD (add bert, ROberta before). Twitter API is on february different time
+****# redo timeline start, end my PhD (add bert, ROberta before). Twitter API is on february different time****
 
-		
+
+
 # double check if it was Kirill the editorial when aasahi, carla submitted
 
 # Fix: capitalisation issues in references, duplicaiton in references-
 
-# fix diagram: add names in Figure 1.1.
+****# fix diagram: add names in Figure 1.1.****
 
 # before each meeting share a pdf and say what I have done.
 
-
 # copy paste the abstract and change it /modify it to link stuff/to make sense.
 
-# Put that at the end of Part 1 . maybe small subsection for impact (summary of how our models our used: downloads, and checks citations on where have been used, mostly to show this can be usefull for many things) (remove the addiitonally, .... and put it in part 1 end).
+****# Put that at the end of Part 1 . maybe small subsection for impact (summary of how our models our used: downloads, and checks citations on where have been used, mostly to show this can be usefull for many things) (remove the addiitonally, .... and put it in part 1 end).****
 
 
 # put some context in publications e.g. public stakeholders add some info, social media (change title of section) add some context. a paragrpah or two. (not in the core but all the others) the more we can connect to our thesis the better (e.g. hate speech). summary but summary connected to our thesis.

@@ -53,6 +53,7 @@
 \usepackage{subcaption}
 \usepackage{rotating}
 \usepackage{bookmark}
+\usepackage{enumitem}
 \usepackage[colorinlistoftodos]{todonotes}
 
 % custom commands
@@ -71,6 +72,8 @@
 \newcommand\TweetTopic{\textsc{TweetTopic}}
 \newcommand\TweetHate{\textsc{TweetHate}}
 \newcommand\TweetSimilarity{\textsc{TweetSim}}
+\newcommand\PARTONE{Modeling Approaches for Social Media Language Understanding}
+\newcommand\PARTTWO{Analysing Harmful and Political Dynamics in Social Media}
 \def\ccp#1{%
     \pgfmathsetmacro\calc{(#1)*100/(100)}%
     \edef\clrmacro{\noexpand\cellcolor{blue!\calc}}%
@@ -307,14 +310,14 @@ Language Models for Social Media Discourse
 % \include{./chapters/chapter0-2}
 
 % % % Part 1
-\part{Modelling Approaches for Social Media Language Understanding}
+\part{\PARTONE}
 \include{./chapters/chapter1-1}
 \include{./chapters/chapter1-2}
 \include{./chapters/chapter1-3}
 \include{./chapters/chapter1-4}
 
 % % % Part 2
-\part{Analysing Harmful and Political Dynamics in Social Media}
+\part{\PARTTWO}
 \include{./chapters/chapter2-1}
 \include{./chapters/chapter2-2}
 \include{./chapters/chapter2-3}
