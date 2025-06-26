@@ -1,0 +1,53 @@
+% TODO: thinks to consider:
+% create a diagram with connected papers/ chapters
+% e.g. tools papers
+% twitter topic -> xtopic
+% hate speech -> super tweetveal, spreaders, triggers
+% Questions: why we do we make this choices?, why do we did this stuff? Why do took this approach?
+% put the narrative together and think about the presentation VIVA 10 min?  e.g. The questions was this , we learned this.
+% timeline of the research (?)e.g. explains why we did not use  LLMs (bert, twitter shutdown, gpt3), explain encoder vs decoder models why we still used them ( it is one of the takeaways of the thesis).
+% Propably of some research questions, summary of contributions (what were the gaps in the exisitng literature).
+% intro: questions (could be bigger questions) + contributions of knowledge (could answer part of the questions and add the others) + summary of the thesis
+% can I write a sentence that says "The first/best ...."? we created model/system/dataset that 
+
+## 24 June
+refrain from using framework and say more about established approaches.
+
+renumber I.1, 1.2, 1.3, II.1, 2.2, 2.3 the main contributions
+
+after the motivations
+
+# Look at the contributiosn
+
+add  research questions/research problem (hierarchical)/ hypothesis based on the contributions (solutions) after Motivation.
+
+Questions can be bigger we do not have to solve everything.
+
+HINT:  how to use NLP in social media and break down (exmaples of models/data/analysis).
+
+how we do X, x is a gap my contribution is hwo to do x
+
+# redo timeline start, end my PhD (add bert, ROberta before). Twitter API is on february different time
+
+		
+# double check if it was Kirill the editorial when aasahi, carla submitted
+
+# Fix: capitalisation issues in references, duplicaiton in references-
+
+# fix diagram: add names in Figure 1.1.
+
+# before each meeting share a pdf and say what I have done.
+
+
+# copy paste the abstract and change it /modify it to link stuff/to make sense.
+
+# Put that at the end of Part 1 . maybe small subsection for impact (summary of how our models our used: downloads, and checks citations on where have been used, mostly to show this can be usefull for many things) (remove the addiitonally, .... and put it in part 1 end).
+
+
+# put some context in publications e.g. public stakeholders add some info, social media (change title of section) add some context. a paragrpah or two. (not in the core but all the others) the more we can connect to our thesis the better (e.g. hate speech). summary but summary connected to our thesis.
+
+explicity say these are not part of the thesis...
+
+# said what was my role in general  (e.g. in some cases tweettopic asahi was coauthor, and chris in triggers) (in the core papers).
+
+# add sensitive content paper (maybe on public stakeholders?)
