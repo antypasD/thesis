@@ -47,7 +47,7 @@ The proliferation of social media platforms has created unprecedented challenges
 \section{Contributions} \label{ch1:contributions}
 
 \todo{ADD questions/problem}
-This thesis aims to fill gaps in existing literature by procuring new resources and establishing frameworks that are specifically designed for social media applications. The research presented in this thesis focuses on two core areas: (1) developing and evaluating \ac{NLP} resources for social media analysis; and (2) applying these resources through clearly defined frameworks to analyse social media dynamics in the context of politics discourse, misinformation spread and hate speech propagation. By addressing these areas, the thesis aims to provide new insights into the dynamics of social media communication and contribute to the development of more effective tools for understanding and combating harmful online behaviours. To this end, the thesis makes a number of noticeable contributions as listed below:
+This thesis aims to fill gaps in existing literature by procuring new resources and establishing methodologies specifically designed for social media applications. The research presented in this thesis focuses on two core areas: (I) developing and evaluating \ac{NLP} resources for social media analysis; and (II) applying these resources through well-defined approaches to analyse social media dynamics in the context of politics discourse, misinformation spread and hate speech propagation. By addressing these areas, the thesis aims to provide new insights into the dynamics of social media communication and contribute to the development of more effective tools for understanding and combating harmful online behaviours. To this end, the thesis makes a number of noticeable contributions as listed below:
 
 \subsection{Part 1: \PARTONE}
 The first core contribution of the thesis focuses on developing and evaluating \ac{NLP} tools specifically designed for social media applications. 
@@ -68,22 +68,24 @@ We use the resources developed and insights extracted in the previous chapters t
 
 \begin{enumerate}[label=II.\arabic*]
     \item \textbf{Politics and Negativity.} We conduct a large-scale analysis of posts by politicians from eight different parliaments across five languages (including English, Spanish, and Greek) to investigate how negatively charged tweets tend to spread more widely and rapidly than neutral or positive ones. To achieve this, we train domain-specific sentiment analysis models and develop a systematic approach to quantify and track the diffusion of such content. Further details are provided in \Autoref{ch:political}.
-    \item \textbf{Profiling Misinformation Spreaders.} We propose a framework to profile users who frequently share misinformation on social media. By leveraging our previously developed models for topic classification and hate speech detection, along with sentiment and emotion analysis, we systematically analyse a large number of user accounts to uncover behavioural patterns and content characteristics associated with misinformation spread. Further details are provided in \Autoref{ch:spreaders}.
-    \item \textbf{Trigger Points Analysis.} Trigger points are a relatively new concept referring to specific words or phrases that can provoke strong emotional reactions in discourse. We propose a framework for systematically identifying potential trigger points using various lexical features, focusing mainly on sentiment, emotion, and the presence of hate speech. Unlike previous qualitative studies that introduced the notion of trigger points, our approach adopts a quantitative perspective. Further details are provided in \Autoref{ch:triggers}.
+    \item \textbf{Profiling Misinformation Spreaders.} We present a methodology to profile users who frequently share misinformation on social media. By leveraging our previously developed models for topic classification and hate speech detection, along with sentiment and emotion analysis, we systematically analyse a large number of user accounts to uncover behavioural patterns and content characteristics associated with misinformation spread. Further details are provided in \Autoref{ch:spreaders}.
+    \item \textbf{Trigger Points Analysis.} Trigger points are a relatively new concept referring to specific words or phrases that can provoke strong emotional reactions in discourse. We propose an approach for systematically identifying potential trigger points using various lexical features, focusing mainly on sentiment, emotion, and the presence of hate speech. Unlike previous qualitative studies that introduced the notion of trigger points, our approach adopts a quantitative perspective. Further details are provided in \Autoref{ch:triggers}.
 \end{enumerate}
 
 %the first study investigates the role of sentiment in political communication, focusing on how negativity influences the spread of political messages on Twitter. This study provides multilingual insights into the interaction between sentiment and political engagement. The second study shifts focus to misinformation spreaders, offering a multi-faceted analysis of their behaviour and content characteristics. This work identifies key linguistic and structural patterns in misinformation dissemination. Lastly, the chapter explores how specific words can act as trigger points in online discussions, highlighting their role in escalating or steering conversations. This work emphasizes the nuanced relationship between language and social dynamics on Reddit.
 
-Throughout this work, we provide detailed and transparent methodologies and frameworks that are not only robust but also easy to replicate and adapt. The approaches we introduce are designed to be easily applicable to other datasets and platforms beyond Twitter and Reddit, enabling researchers and practitioners to extend our analyses to a wide range of social media sources and related contexts.
+Throughout this work, we provide detailed and transparent methodologies and approaches that are not only robust but also easy to replicate and adapt. The approaches we introduce are designed to be easily applicable to other datasets and platforms beyond Twitter and Reddit, enabling researchers and practitioners to extend our analyses to a wide range of social media sources and related contexts.
 
-Finally, it is worth noting that there was a consistent effort to collaborate with experts from other fields, such as social sciences and healthcare, and to incorporate their feedback in order to address real-world problems through our research. Notable examples include: (1) collaboration with experts from \textit{Public Health Wales}, where our models were used to help identify early signs of influenza \cite{drakesmith2024towards}; (2) collaboration with the \textit{Spanish National Office Against Hate Crime} \cite{gomez2023interaction} to investigate offensive language and hate speech related to Spanish national events; and (3) collaboration with colleagues from the \textit{School of Earth and Environmental Sciences} to apply sentiment analysis for post-disaster recovery assessment after earthquakes \cite{su17114967}.
+Finally, it is worth noting that there was a consistent effort to collaborate with experts from other fields, such as social sciences and healthcare, and to incorporate their feedback in order to address real-world problems `through our research. % Notable examples include: (1) collaboration with experts from \textit{Public Health Wales}, where our models were used to help identify early signs of influenza \cite{drakesmith2024towards}; (2) collaboration with the \textit{Spanish National Office Against Hate Crime} \cite{gomez2023interaction} to investigate offensive language and hate speech related to Spanish national events; and (3) collaboration with colleagues from the \textit{School of Earth and Environmental Sciences} to apply sentiment analysis for post-disaster recovery assessment after earthquakes \cite{su17114967}.
 
 \section{Publications} \label{ch1:publications}
 The majority of the material in this thesis have been published in peer-reviewed conferences and journals, while the remaining material are under reviewed at peer-reviewed conferences. Below is a list of the core publications where the main contributions of the thesis have been published in the chronological order.
 
+\todo{For the following subsections and when referencing the papers in text maybe it is better to use the citation instead of the list number?}
+
 \subsection{Core Publications}
 Below is a list of the core publications where the main contributions of the thesis
-have been published in the chronological order. All the publications have been led by myself however, in two of them (1) and (7)  the second co-author provided substansial work. Mainly in the (1) Asahi Ushio collected the raw data as well created the instructions for annotators to code the entries and in the (7) Christian Arnold primarly led the statistical analysis conducted.
+have been published in chronological order. The majority of these the publications have been led by myself. However, in two cases, pecifically publications (1) and (7), the second co-author made substantial contributions. In publication (1), Asahi Ushio was responsible for collecting the raw data and designing the annotation guidelines used to create the {\TweetTopic} dataset (\Autoref{ch:tweet-topic}). In publication (7), Christian Arnold developed the statistical framework employed to examine the effect of trigger points (\Autoref{ch:triggers}).
 
 \subsubsection{\PARTONE}
 \begin{enumerate}
@@ -113,13 +115,13 @@ The following publications are not formally part of this thesis. However, they p
 \subsubsection{Collaboration with public stakeholders}
 During the duration of this thesis there were opportunities to collaborate with various public stakeholders addressing challenges arising from social media usage. These collaborations resulted in several publications, showcasing the real-world applicability of our methods.
  
-The first paper (1) emerged from a collaboration with the Spanish National Office Against Hate Crimes. It's aim was to examine potential temporal trends in hate speech on Twitter, particularly around Spanish national holidays (e.g., Labour Day). My role focused on adapting our existing hate speech detection models to achieve robust performance in the Spanish language.
+The first paper (8) emerged from a collaboration with the Spanish National Office Against Hate Crimes. It's aim was to examine potential temporal trends in hate speech on Twitter, particularly around Spanish national holidays (e.g., Labour Day). My role focused on adapting our existing hate speech detection models to achieve robust performance in the Spanish language.
 
-The second paper (2) was produced in collaboration with Public Health Wales. This work aimed to develop a framework for the early detection of influenza outbreaks using Twitter data. My primary contribution involved curating suitable datasets and training RoBERTa-based models capable of identifying tweets that reported influenza-like symptoms, either from a first-person perspective or in general.
+The second paper (9) was produced in collaboration with Public Health Wales. This work aimed to develop an approach for early detection of influenza outbreaks using Twitter data. My primary contribution involved curating suitable datasets and training RoBERTa-based models capable of identifying tweets that reported influenza-like symptoms, either from a first-person perspective or in general.
 
-Another collaboration (3) included colleagues from the School of Earth and Environmental Sciences and aimed to provide post-disaster recovery assessment in the case of earthquakes by utilising sentiment analysis on relevant tweets. Using our expertise on the area we managed to train tailored and domain specific classifiers which out performed the initial, paid, service that was being used for sentiment analysis.
+Another collaboration (10) included colleagues from the School of Earth and Environmental Sciences and aimed to provide post-disaster recovery assessment in the case of earthquakes by utilising sentiment analysis on relevant tweets. Using our expertise on the area we managed to train tailored and domain specific classifiers which out performed the initial, paid, service that was being used for sentiment analysis.
 
-Finally, a collaboration with researchers from Snap Inc. (4) resulted in the development and public release of a dataset specifically designed for the detection of sensitive content on social media, along with accompanying detection models. My primary contributions to this project involved coordinating the collection and aggregation of annotations, as well as training and evaluating the \acp{LM} employed in the study.
+Finally, a collaboration with researchers from Snap Inc. (11) resulted in the development and public release of a dataset specifically designed for the detection of sensitive content on social media, along with accompanying detection models. My primary contributions to this project involved coordinating the collection and aggregation of annotations, as well as training and evaluating the \acp{LM} employed in the study.
 
 \begin{enumerate}[start=8]
     \item Jesús Gómez, Alberto Matilla-Molina, Ma Pilar Amado, \underline{Dimosthenis Antypas}, Jose Camacho-Collados, Carlos J. Máñez, Tomás Fernández-Villazala, Alicia Méndez-Sanchís, and Javier López. 2023. The interaction between offensive and hate speech on Twitter and relevant social events in Spain. In News Media and Hate Speech Promotion in Mediterranean Countries, pages 81–109. IGI Global.
@@ -132,8 +134,15 @@ Finally, a collaboration with researchers from Snap Inc. (4) resulted in the dev
 \end{enumerate}
 
 
-\subsubsection{Social media}
-Apart from public stakeholders... 
+\subsubsection{Complementary Studies on Social Media\todo[inlinepar]{title WIP} }
+
+In addition to collaborations with public stakeholders, several projects were undertaken that, while adjacent to the main goals of this thesis, are not part of its core contributions. Specifically, in work (12), we conducted a large-scale analysis of Twitter data, collecting a substantial corpus of tweets related to the COVID-19 pandemic. From this, we extracted and annotated a labelled dataset aimed at identifying pandemic-related misinformation and developed binary classifiers for misinformation detection.
+
+Work (13) focused on classifying Twitter posts by geographic origin (European vs. non-European) and deriving insights from these groups using comparative techniques such as lexical specificity and word embedding models. My main contribution to this study involved the analysis of the collected corpus, particularly through the use of lexical specificity metrics \cite{camacho2016nasari}.
+
+Work (14) utilised Reddit data, and aimed to develop classifiers capable of detecting early signs of depression in user posts. My involvement centered on exploring model architectures capable of handling long-form textual input, which was a significant challenge at the time.
+
+Finally, work (15) was part of a large collaborative effort that resulted in the development of the TweetNLP Python library. This toolkit facilitates working with Twitter data by offering easy-to-use implementations for tasks such as sentiment analysis, topic classification, and question answering. My contributions primarily involved integrating models I had previously developed, such as those for topic classification and hate speech detection, into the library.
 
 
 \begin{enumerate}[start=12]
@@ -147,11 +156,11 @@ Apart from public stakeholders...
 \end{enumerate}
 
 
-\subsubsection{Other work}[start=16]
-Finally, ... 
+\subsubsection{Other work}
+The previous work discussed has been largely adjacent to the core focus of this thesis, particularly with an emphasis on social media. In addition to this, I contributed to other projects that are less directly related. Specifically, in project (16), I was involved in the development of BLEnD, a benchmark designed to evaluate the cultural diversity of \acp{LLM}. This was achieved by introducing manually annotated question pairs covering everyday cultural knowledge from 16 countries and in 13 languages. My role focused on collecting and ensuring the quality of the Greek questions. In project (17), a large-scale study investigating how \acp{LM} process metaphors and analogies, I contributed to the creation of parts of the datasets used for model evaluation.
 
 
-\begin{enumerate}
+\begin{enumerate}[start=16]
     \item Myung, Junho, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki Afina Putri, \underline{Dimosthenis Antypas}, Hsuvas Borkakoty et al. "BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages." \textit{Under Review in NeurIPS 2024 Datasets and Benchmarks Track.}
 
     \item Joanne Boisson, Asahi Ushio, Hsuvas Borkakoty, Kiamehr Rezaee, \underline{Dimosthenis Antypas}, Zara Siddique, Nina White, and Jose Camacho-Collados. 2024. How Are Metaphors Processed by Language Models? The Case of Analogies. In Proceedings of the 28th Conference on Computational Natural Language Learning, pages 365–387, Miami, FL, USA. Association for Computational Linguistics.
