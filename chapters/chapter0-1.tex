@@ -8,7 +8,11 @@ This need becomes even more apparent in the context of political discourse, give
 
 % leading to new challenges and opportunities for \ac{NLP} research
 
-%In contrast to traditional \ac{NLP} techniques that often rely on structured and formal text, social media data is characterised by its unstructured, noisy, and informal nature. This poses unique challenges for \ac{NLP} applications, as the language used in social media is often context-dependent, contains slang and abbreviations, and may include non-standard grammar and spelling \cite{eisenstein2013bad,gain-etal-2023-reference}.
+
+To effectively leverage this rich but chaotic data, \ac{NLP} provides an essential set of tools for extracting, structuring, and analyzing textual content from social media. Standard tasks include sentiment analysis, topic modeling, and entity recognition, which help quantify emotional tone, uncover underlying themes, and identify key actors within discussions. Recent advances in neural architectures, such as transformers, enable deeper contextual understanding and have paved the way for more nuanced tasks, including stance detection, misinformation tracking, and aspect-based sentiment analysis. These methods allow researchers to convert raw, unstructured posts into structured formats that support downstream analysis.\todonote[inline]{add citations}
+
+Furthermore, social media data allows for tracking of user behaviour, discourse evolution, and community dynamics. Through the use of \ac{NLP} techinques it becomes possible to detect coordinated campaigns, assess the spread of narratives, or evaluate public reactions over time. These insights are increasingly valuable in fields such as computational social science, marketing, and policy analysis, where understanding the connections between language, behaviour, and influence is crucial. The intersection of \ac{NLP} and social media offers significant opportunities for both methodological innovation and impactful, real-world applications.\todonote[inline]{add citations}
+
 
 %Independently on the level of sophistication of the tehcnique used, \ac{NLP} researchers have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, and topic classification \cite{zhang2015character} among others. Even though these tasks have been extensively studied, the rising popularity of social media has brought new challenges and opportunities for \ac{NLP} research. 
 
@@ -16,6 +20,7 @@ This need becomes even more apparent in the context of political discourse, give
 
 % Similar methodologies have been utilised when dealing with social media data \cite{pak-paroubek-2010-twitter, bifet2010sentiment}. 
 
+% In contrast to traditional \ac{NLP} techniques that often rely on structured and formal text, social media data is characterised by its unstructured, noisy, and informal nature. This poses unique challenges for \ac{NLP} applications, as the language used in social media is often context-dependent, contains slang and abbreviations, and may include non-standard grammar and spelling \cite{eisenstein2013bad,gain-etal-2023-reference}.
 
 
 % \ac{NLP} in social media often comes with 
@@ -28,7 +33,8 @@ This need becomes even more apparent in the context of political discourse, give
 % informal language
 % noisy data (e.g. typos, abbreviations, etc.)
 % fast evolving language
-Despite their potential, analysing social media data poses numerous challenges for the field of \ac{NLP}. User-generated content on these platforms often lacks context and is highly informal, containing slang, emojis, abbreviations, typos, and other forms of noisy data. Moreover, language usage on social media evolves rapidly, making it difficult for static models and lexicons to keep pace. These characteristics demand robust, adaptive, and context-aware approaches to effectively process and interpret the vast and dynamic stream of social media text.
+
+Despite their potential, analysing social media data poses numerous challenges for the field of \ac{NLP}. User-generated content on these platforms often lacks context and is highly informal, containing slang, emojis, abbreviations, typos, and other forms of noisy data \cite{eisenstein2013bad,gain-etal-2023-reference}. Moreover, language usage on social media evolves rapidly, making it difficult for static models and lexicons to keep pace. These characteristics demand robust, adaptive, and context-aware approaches to effectively process and interpret the vast and dynamic stream of social media text.
 
 
 In order to tackle the limitations above, we explore existing methodologies and resources that work on understanding complex social interactions on social media. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpora collected from \textit{Twitter} and \textit{Reddit} to understand better human interactions regarding politics discourse, and misinformation and hate speech proliferation. The rest of this introductory chapter is organised as follows: \autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \autoref{ch1:contributions} outlines the contribution of research, \autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \autoref{ch1:outline} describes the structure of the thesis and summarises this introductory chapter.
