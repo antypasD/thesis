@@ -7,7 +7,7 @@ This need becomes even more apparent in the context of political discourse, give
 
 To effectively leverage this rich but chaotic data, \ac{NLP} provides an essential set of tools for extracting, structuring, and analyzing textual content from social media. Standard tasks include sentiment analysis\cite{zimbra2018state}, topic modeling \cite{egger2022topic}, and entity recognition \cite{nasar2021named}, which help quantify emotional tone, uncover underlying themes, and identify key actors within discussions. Recent advances in neural architectures, such as transformers \cite{subakan2021attention}, enable deeper contextual understanding and have paved the way for more nuanced tasks, including stance detection \cite{aldayel2021stance}, misinformation tracking \cite{hayawi2022anti}, and aspect-based sentiment analysis \cite{brauwers2022survey}. These methods allow researchers to convert raw, unstructured posts into structured formats that support downstream analysis.
 
-Furthermore, social media data allows for tracking of user behaviour, discourse evolution, and community dynamics \cite{feuerriegel2025using}. Through the use of \ac{NLP} techniques it becomes possible to detect coordinated campaigns, assess the spread of narratives, or evaluate public reactions over time. These insights are increasingly valuable in fields such as computational social science, marketing, and policy analysis, where understanding the connections between language, behaviour, and influence is crucial. The intersection of \ac{NLP} and social media offers significant opportunities for both methodological innovation and impactful, real-world applications.\todo[inline]{add citations}
+Furthermore, social media data allows for tracking of user behaviour, discourse evolution, and community dynamics \cite{feuerriegel2025using, arazzi2023importance}. Through the use of \ac{NLP} techniques it becomes possible to detect coordinated campaigns, assess the spread of narratives, or evaluate public reactions over time \cite{luceri2024leveraging}. These insights are increasingly valuable in fields such as computational social science, marketing, and policy analysis, where understanding the connections between language, behaviour, and influence is crucial. The intersection of \ac{NLP} and social media offers significant opportunities for both methodological innovation and impactful, real-world applications.
 
 
 %Independently on the level of sophistication of the tehcnique used, \ac{NLP} researchers have tried to solve tasks such as sentiment analysis \cite{hutto2014vader}, hate speech detection \cite{gitari2015lexicon}, and topic classification \cite{zhang2015character} among others. Even though these tasks have been extensively studied, the rising popularity of social media has brought new challenges and opportunities for \ac{NLP} research. 
@@ -65,7 +65,11 @@ The first core contribution of the thesis focuses on developing and evaluating \
 
 A common observation across all three contributions is that smaller, specialised models, such as RoBERTa, can perform as well as, and often outperform, larger \acp{LLM} like GPT-4 on the evaluated tasks when fine-tuned. This observation is primarily due to the specialised training data: the models we evaluated are frequently trained on large corpora of social media content, making them better suited for domain-specific language use and nuances. Additionally, their architectural design contributes to this advantage. Unlike generative \acp{LLM}, which are based on a decoder architecture, smaller \acp{PLM} typically employ an encoder architecture, which is inherently more effective for discriminative tasks such as classification. Encoders focus on learning contextual representations of input sequences, which allows for precise feature extraction and robust classification performance which is particularly important for tasks like topic classification and hate speech detection, where subtle linguistic cues and contextual dependencies are critical.
 
-The impact of this thesis is evidenced by the widespread adoption of the released datasets and models. For instance, the topic classification resources introduced in Chapters \ref{ch:tweet-topic} and \ref{ch:xtopic} have accumulated over 400,000 downloads on the Hugging Face platform\footnote{\url{https://huggingface.co/collections/cardiffnlp/tweettopic-65eb2a0eada92a05d3d103ce}}, highlighting their practical value and community uptake. Similarly, our hate speech classifier (\Autoref{ch:hate-speech}) has demonstrated performance comparable to, or surpassing, established tools such as Google’s Perspective API\footnote{\url{https://perspectiveapi.com/}} and OpenAI’s Moderation system\footnote{\url{https://platform.openai.com/docs/guides/moderation}}, as shown by \citet{shen2025hatebench}. It has also been adopted by researchers like \citet{arun2024x} to examine the temporal dynamics of hate speech on Twitter.
+The impact of this thesis is evidenced by the widespread adoption of the released datasets and models. For instance, the topic classification resources introduced in Chapters \ref{ch:tweet-topic} and \ref{ch:xtopic} have accumulated over 1,200,000 downloads on the Hugging Face platform\footnote{\url{https://huggingface.co/collections/cardiffnlp/tweettopic-65eb2a0eada92a05d3d103ce}}, while our hate speech classifier (\Autoref{ch:hate-speech}) has more than 1,400,000 downloads\footnote{\url{https://huggingface.co/cardiffnlp/twitter-roberta-base-hate-latest/settings}}, highlighting their practical value and community uptake.
+
+Apart from the wide adoption of the resources, the models and datasets have been used in various studies from different domains. For example, they have informed research in tourism studies, where \citet{lee2025framing} employed our topic classification model to perform a targeted investigation on online hostility directed at tourists in the context of over-tourism debates. Similarly, our hate speech classifier (\Autoref{ch:hate-speech}) has demonstrated performance comparable to, or surpassing, established tools such as Google’s Perspective API\footnote{\url{https://perspectiveapi.com/}} and OpenAI’s Moderation system\footnote{\url{https://platform.openai.com/docs/guides/moderation}}, as shown by \citet{shen2025hatebench}. It has also been adopted by researchers to examine the temporal dynamics of hate speech on Twitter \citet{arun2024x}, and to investigate correlations between hate speech and crime statistics \cite{bicakci2025big}.
+
+This interdisciplinary application underscores the utility of robust \ac{NLP} tools in social science and humanities contexts, as evidenced by citations our papers have achieved across computer science, linguistics, political science, psychology, business, environmental science, medicine, and philosophy\footnote{According to data from \url{https://www.semanticscholar.org/}}.
 
 
 \subsection{Part 2: \PARTTWO}
@@ -81,7 +85,9 @@ We use the resources developed and insights extracted in the previous chapters t
 
 Throughout this work, we provide detailed and transparent methodologies and approaches that are not only robust but also easy to replicate and adapt. The approaches we introduce are designed to be easily applicable to other datasets and platforms beyond Twitter and Reddit, enabling researchers and practitioners to extend our analyses to a wide range of social media sources and related contexts.
 
-Finally, it is worth noting that there was a consistent effort to collaborate with experts from other fields, such as social sciences and healthcare, and to incorporate their feedback in order to address real-world problems `through our research. % Notable examples include: (1) collaboration with experts from \textit{Public Health Wales}, where our models were used to help identify early signs of influenza \cite{drakesmith2024towards}; (2) collaboration with the \textit{Spanish National Office Against Hate Crime} \cite{gomez2023interaction} to investigate offensive language and hate speech related to Spanish national events; and (3) collaboration with colleagues from the \textit{School of Earth and Environmental Sciences} to apply sentiment analysis for post-disaster recovery assessment after earthquakes \cite{su17114967}.
+Finally, it is worth noting that there was a consistent effort to collaborate with experts from other fields, such as social sciences and healthcare, and to incorporate their feedback in order to address real-world problems `through our research. These interdisciplinary collaborations,  as seen in \Autoref{ch1:sec:collaboration}, highlight the practical relevance of our work.
+
+% Notable examples include: (1) collaboration with experts from \textit{Public Health Wales}, where our models were used to help identify early signs of influenza \cite{drakesmith2024towards}; (2) collaboration with the \textit{Spanish National Office Against Hate Crime} \cite{gomez2023interaction} to investigate offensive language and hate speech related to Spanish national events; and (3) collaboration with colleagues from the \textit{School of Earth and Environmental Sciences} to apply sentiment analysis for post-disaster recovery assessment after earthquakes \cite{su17114967}.
 
 \section{Publications} \label{ch1:publications}
 The majority of the material in this thesis have been published in peer-reviewed conferences and journals, while the remaining material are under reviewed at peer-reviewed conferences. Below is a list of the core publications where the main contributions of the thesis have been published in the chronological order.
@@ -92,7 +98,7 @@ The majority of the material in this thesis have been published in peer-reviewed
 Below is a list of the core publications where the main contributions of the thesis
 have been published in chronological order. The majority of these the publications have been led by myself. However, in two cases, pecifically publications (1) and (7), the second co-author made substantial contributions. In publication (1), Asahi Ushio was responsible for collecting the raw data and designing the annotation guidelines used to create the {\TweetTopic} dataset (\Autoref{ch:tweet-topic}). In publication (7), Christian Arnold developed the statistical framework employed to examine the effect of trigger points (\Autoref{ch:triggers}).
 
-\subsubsection{\PARTONE}
+\subsubsection{Part 1: \PARTONE}
 \begin{enumerate}
     \item \underline{Dimosthenis Antypas}, Asahi Ushio, Jose Camacho-Collados, Vitor Silva, Leonardo Neves, and Francesco Barbieri. 2022. Twitter Topic Classification. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3386–3400, Gyeongju, Republic of Korea. International Committee on Computational Linguistics. \Autoref{ch:tweet-topic}
     
@@ -104,7 +110,7 @@ have been published in chronological order. The majority of these the publicatio
 \end{enumerate}
 
 
-\subsubsection{\PARTTWO}
+\subsubsection{Part 2: \PARTTWO}
 \begin{enumerate}[start=5]
     \item \underline{Dimosthenis Antypas}, Alun Preece, and Jose Camacho-Collados. 2023. Negativity spreads faster: A large-scale multilingual Twitter analysis on the role of sentiment in political communication. Online Social Networks and Media, 33:100242. \Autoref{ch:political}
 
@@ -115,9 +121,9 @@ have been published in chronological order. The majority of these the publicatio
 
 
 \subsection{Other Publications}
-The following publications are not formally part of this thesis. However, they provide strong supporting evidence of the practical utility of our work and reinforce our central claim that there are significant limitations in the current \ac{NLP} landscape, particularly when dealing with social media data and its complexities.
+The following publications are not formally part of this thesis. However, they illustrate the applicability of the research in diverse real-world scenarios, particularly in handling the nuances of social media data. They also highlight the interdisciplinary relevance of our work as they connect \ac{NLP} with social sciences, health care, and disaster management.
 
-\subsubsection{Collaboration with public stakeholders}
+\subsubsection{Collaboration with public stakeholders}\label{ch1:sec:collaboration}
 During the duration of this thesis there were opportunities to collaborate with various public stakeholders addressing challenges arising from social media usage. These collaborations resulted in several publications, showcasing the real-world applicability of our methods.
  
 The first paper (8) emerged from a collaboration with the Spanish National Office Against Hate Crimes. It's aim was to examine potential temporal trends in hate speech on Twitter, particularly around Spanish national holidays (e.g., Labour Day). My role focused on adapting our existing hate speech detection models to achieve robust performance in the Spanish language.
@@ -139,7 +145,7 @@ Finally, a collaboration with researchers from Snap Inc. (11) resulted in the de
 \end{enumerate}
 
 
-\subsubsection{Complementary Studies on Social Media\todo[inlinepar]{title WIP} }
+\subsubsection{Complementary Studies on Social Media}
 
 In addition to collaborations with public stakeholders, several projects were undertaken that, while adjacent to the main goals of this thesis, are not part of its core contributions. Specifically, in work (12), we conducted a large-scale analysis of Twitter data, collecting a substantial corpus of tweets related to the COVID-19 pandemic. From this, we extracted and annotated a labelled dataset aimed at identifying pandemic-related misinformation and developed binary classifiers for misinformation detection.
 
@@ -190,7 +196,7 @@ In this section, we provide an overview of the structure of the thesis and summa
 
 \begin{figure}
     \centering
-    \includegraphics[width=12.5cm]{../figures/thesis_diagram.pdf}
+    \includegraphics[width=\textwidth]{../figures/thesis_diagram.pdf}
     \caption{Outline of the thesis. The chapter number is indicated in brackets. The grey color indicates connections between chapters of Part 1 and Part 2.}
     \label{fig:thesis-outline}
 \end{figure}
@@ -198,7 +204,7 @@ In this section, we provide an overview of the structure of the thesis and summa
 
 \begin{figure}
     \centering
-    \includegraphics[width=10.5cm]{../figures/thesis_timeline.pdf}
+    \includegraphics[width=\textwidth]{../figures/thesis_timeline.pdf}
     \caption{Timeline of papers publications along with major events in \ac{NLP} field.}
     \label{fig:thesis-timeline}
 \end{figure}
