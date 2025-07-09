@@ -4,35 +4,10 @@
 This chapter provides the theoretical and methodological foundation of the thesis, covering the evolution of \ac{NLP} tools and their applications to social media data. It explores the challenges of processing noisy, heterogeneous text from platforms like Twitter and discusses existing work on key areas such as hate speech detection, misinformation analysis, and multilingual topic classification. By situating the thesis within the broader research landscape, this chapter demonstrates how the presented contributions advance the state of the art.
 
 
-\section{Language Models}
-\subsection{LMs}
-MLM give examples
-\subsection{LLMs}
+\section{LMs}
+\acp{LM} are fundamental to \ac{NLP}, aiming to capture the statistical properties of language and predict the probability of a sequence of words. Their evolution has significantly impacted the capabilities of NLP systems, especially in handling complex human language.
 
-
-\section{Platforms Reddit/Twitter}
-\subsection{Specialised LMs}
-
-\section{Tasks}
-\subsection{Sentiment Analysis}
-\subsection{Emotion Detection}
-\subsection{Topic Classification}
-\subsection{Hate Speech Detection}
-
-\section{Misinformation \& Polarisation}
-
-
-% TODO examples of task
-* section
-Introduce to the people what the task is a about (link to chapters).
-
-
-This chapter provides the theoretical and methodological foundation of the thesis, covering the evolution of Natural Language Processing (NLP) tools and their applications to social media data. It explores the challenges of processing noisy, heterogeneous text from platforms like Twitter and discusses existing work on key areas such as hate speech detection, misinformation analysis, and multilingual topic classification. By situating the thesis within the broader research landscape, this chapter demonstrates how the presented contributions advance the state of the art.
-
-1.1 Language Models
-
-Language Models (LMs) are fundamental to NLP, aiming to capture the statistical properties of language and predict the probability of a sequence of words. Their evolution has significantly impacted the capabilities of NLP systems, especially in handling complex human language.
-
+\subsection{MLMs}
 1.1.1 Traditional Language Models and Masked Language Models (MLMs)
 
 Early LMs were often based on statistical methods, such as N-gram models, which predict the next word based on the previous N-1 words. These models, while foundational, suffered from limitations in capturing long-range dependencies and semantic meaning.
@@ -51,8 +26,8 @@ Examples of MLMs:
 
 These MLMs, due to their ability to understand context from both left and right, significantly improved performance on tasks like text classification, question answering, and named entity recognition.
 
-1.1.2 Large Language Models (LLMs)
 
+\subsection{LLMs}
 Large Language Models (LLMs) represent the pinnacle of current NLP advancements. They are characterized by their massive scale (billions or trillions of parameters), training on vast and diverse datasets (encompassing text and sometimes code, images, etc.), and their ability to perform a wide range of tasks with remarkable fluency and coherence, often in a zero-shot or few-shot learning setting.
 
 Key characteristics of LLMs:
@@ -75,13 +50,12 @@ Examples of LLMs:
 
 LLMs have pushed the boundaries of what's possible in NLP, enabling more sophisticated and nuanced understanding and generation of human language.
 
-1.2 Platforms: Reddit/Twitter and Specialised LMs
-
+\section{Platforms: Reddit - Twitter and Specialised \acp{LM}}
 Social media platforms like Reddit and Twitter present unique linguistic characteristics and challenges for NLP due to their informal nature, user-generated content, character limits (on Twitter), prevalent use of slang, emojis, hashtags, mentions, and often noisy data.
 
-The direct application of LMs trained on standard, clean text (like books or news articles) often underperforms on social media data. This necessitates either extensive data preprocessing or, more effectively, the development of Specialised Language Models.
 
-Specialised LMs for Social Media:
+\subsection{Specialised \acp{LM} for Social Media:}
+The direct application of LMs trained on standard, clean text (like books or news articles) often underperforms on social media data. This necessitates either extensive data preprocessing or, more effectively, the development of Specialised Language Models.
 
 These models are typically:
 
@@ -117,16 +91,8 @@ The challenges of noisy, heterogeneous social media text include:
 
     Bias in Data: Social media data can reflect societal biases, leading to biased model outputs if not addressed carefully.
 
-1.3 Tasks
-
-NLP tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
-
-1.3.1 Sentiment Analysis
-
-Sentiment analysis (also known as opinion mining) aims to determine the emotional tone or overall sentiment expressed in a piece of text (e.g., positive, negative, neutral). On social media, this is crucial for understanding public opinion towards brands, products, events, or political figures.
-
-Challenges on Social Media:
-
+    
+    \subsubsection{Challenges on Social Media??}
     Sarcasm and Irony: Difficult to detect as the literal meaning contradicts the intended sentiment.
 
     Implicit Sentiment: Sentiment can be expressed subtly rather than explicitly through sentiment-laden words.
@@ -137,6 +103,13 @@ Challenges on Social Media:
 
     Emojis and Hashtags: These often convey strong sentiment and need to be incorporated into analysis.
 
+    \section{Tasks}
+
+    NLP tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
+
+\subsection{Sentiment Analysis}
+Sentiment analysis (also known as opinion mining) aims to determine the emotional tone or overall sentiment expressed in a piece of text (e.g., positive, negative, neutral). On social media, this is crucial for understanding public opinion towards brands, products, events, or political figures.
+
 Approaches:
 
     Lexicon-based: Using pre-defined dictionaries of words and their associated sentiment scores.
@@ -145,17 +118,16 @@ Approaches:
 
     Deep Learning (Modern): Employing RNNs, LSTMs, and especially Transformers (e.g., BERT-based models fine-tuned for sentiment analysis) that can capture complex contextual patterns.
 
-1.3.2 Emotion Detection
-
+\subsection{Emotion Detection}
 While sentiment analysis typically classifies text into broad categories (positive/negative/neutral), emotion detection aims for a more granular understanding of human emotions, identifying specific emotions like anger, joy, sadness, fear, surprise, disgust, etc. This is particularly relevant for understanding emotional responses to events or content on social media.
 
 Challenges on Social Media:
 
-    Similar to sentiment analysis, but with the added complexity of distinguishing between finer emotional nuances.
+Similar to sentiment analysis, but with the added complexity of distinguishing between finer emotional nuances.
 
-    Lack of large, diverse datasets labeled with fine-grained emotions.
+Lack of large, diverse datasets labeled with fine-grained emotions.
 
-    Cultural and linguistic variations in emotion expression.
+Cultural and linguistic variations in emotion expression.
 
 Approaches:
 
@@ -163,7 +135,8 @@ Approaches:
 
     Lexicon-based methods for specific emotion words or phrases.
 
-1.3.3 Topic Classification
+
+\subsection{Topic Classification}
 
 Topic classification (or text categorization) assigns one or more predefined categories or topics to a given text. On social media, this helps in organizing vast amounts of information, identifying trending discussions, or filtering content based on specific themes.
 
@@ -184,8 +157,7 @@ Approaches:
     Deep Learning: Transformer-based models fine-tuned on labeled social media data for specific topic categories have shown superior performance.
 
     Multilingual Topic Classification: Requires either language identification and separate models for each language, or multilingual embeddings and models capable of handling code-switched text.
-
-1.3.4 Hate Speech Detection
+\subsection{Hate Speech Detection}
 
 Hate speech detection is a critical application of NLP on social media, aiming to identify content that expresses hatred or encourages violence towards individuals or groups based on attributes like race, ethnicity, religion, gender, sexual orientation, etc. This is a highly sensitive and challenging task due to its subjective nature and the evolving tactics of hate speech perpetrators.
 
@@ -215,13 +187,14 @@ Approaches:
 
     Ethical Considerations: Crucial for responsible development and deployment, including mitigating bias, ensuring transparency, and considering potential for censorship or chilling effects on free speech.
 
-1.4 Misinformation & Polarisation
+
+\subsection{Misinformation \& Polarisation}
 
 The spread of misinformation (unintentional falsehoods) and disinformation (intentional falsehoods) and its role in fostering polarisation on social media platforms pose significant societal challenges. NLP plays a crucial role in analyzing and combating these phenomena.
 
 Misinformation and Disinformation Analysis:
 
-    Detection: Identifying false or misleading content. This often involves:
+Detection: Identifying false or misleading content. This often involves:
 
         Fact-checking: Verifying claims against reliable sources (challenging to automate fully).
 
@@ -249,7 +222,7 @@ Polarisation Analysis:
 
     Disagreement and Deliberation: Studying how online discussions devolve into unproductive arguments versus constructive dialogue.
 
-Challenges in Misinformation & Polarisation:
+Challenges in Misinformation \& Polarisation:
 
     "Truth" Definition: The ground truth for misinformation can be ambiguous or rapidly change.
 
@@ -276,3 +249,7 @@ Approaches:
     Large Language Models: Their ability to reason, summarize, and understand complex contexts is being explored for tasks like fact-checking assistance and generating counter-narratives. However, LLMs can also generate convincing misinformation, highlighting the dual-use nature of the technology.
 
 By addressing these core areas, your thesis will effectively demonstrate its contribution to advancing the state of the art in NLP for social media analysis. Remember to cite relevant foundational and recent works for each point you make. Good luck!
+
+% % TODO examples of task
+% * section
+% Introduce to the people what the task is a about (link to chapters).
