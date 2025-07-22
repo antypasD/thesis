@@ -4,44 +4,35 @@
 This chapter provides the theoretical and methodological foundation of the thesis, covering the evolution of \ac{NLP} tools and their applications to social media data. It explores the challenges of processing noisy, heterogeneous text from platforms like Twitter and discusses existing work on key areas such as hate speech detection, misinformation analysis, and multilingual topic classification. By situating the thesis within the broader research landscape, this chapter demonstrates how the presented contributions advance the state of the art.
 
 
-\section{\acp{LM}}
+\section{Language Models}
 \acp{LM} are fundamental to \ac{NLP}, aiming to capture the statistical properties of language and predict the probability of a sequence of words. Their evolution has significantly impacted the capabilities of NLP systems, especially in handling complex human language.
 
-\subsection{Traditional \acp{LM} and \acp{MLM}.}
+\subsection{Traditional Language Models and Masked Language Models.}
 
 Early \acp{LM} were often based on statistical methods, such as N-gram models, which predict the next word based on the previous N-1 words \cite{buck2014n}. These models, while foundational, suffered from limitations in capturing long-range dependencies and semantic meaning.
 
 The advent of neural networks revolutionized \acp{LM}. \acp{RNN} and their variants like \acp{LSTM} and \acp{GRU} could process sequential data and capture some contextual information \cite{yu2019review, dey2017gate}. However, they still struggled with long-term dependencies and lacked efficient parallelization during training \cite{sherstinsky2020fundamentals}.
 
+\acp{MLM} emerged with the rise of the Transformer architecture \cite{subakan2021attention}. Unlike traditional \acp{LM} that predict the next word, \acp{MLM} are trained by masking a percentage of the tokens in the input and then predicting those masked tokens based on the context provided by the unmasked tokens as seen in Figure \ref{fig:bert_architecture} \cite{BERT}. This bidirectional training allows them to learn richer, contextualized representations of words. These models are trained on large corpora, such as Wikipedia dumps and the Common Crawl \footnote{https://commoncrawl.org}, enabling them to capture complex linguistic patterns and relationships making them highly effective for various downstream tasks.
 
-\acp{MLM} emerged with the rise of the Transformer architecture \cite{subakan2021attention}. Unlike traditional \acp{LM} that predict the next word, \acp{MLM} are trained by masking a percentage of the tokens in the input and then predicting those masked tokens based on the context provided by the unmasked tokens \cite{}. This bidirectional training allows them to learn richer, contextualized representations of words. These models are trained on large corpora, such as Wikipedia dumps and the Common Crawl \cite{}, enabling them to capture complex linguistic patterns and relationships making them highly effective for various downstream tasks \cite{}.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{../figures/chapter 2/bert_architecture.jpg}
+    \caption{Example of \ac{MLM} objective for training in \ac{BERT}.}
+    \label{fig:bert_architecture}
+\end{figure}
 
+Most contemporary \acp{MLM} are based on the \ac{BERT} architecture, which is an encoder-based model leveraging bidirectional self-attention mechanisms to capture contextual information from both the left and right of each token \cite{BERT}. Extensions to \ac{BERT} include \ac{RoBERTa}, which optimises the pre-training process and introduces larger datasets, longer training, and XLM-R, which extends \ac{RoBERTa} to multilingual settings \cite{liu2019roberta, conneau2019unsupervised}.One of the main benefits of these models is that their knowledge can be utilised in various downstream tasks with minimal modifications. Also, due to their encoder architecture which allows them to understand context from both left and right, they display significantly improved performance when fine-tuned on tasks like text classification, question answering, and named entity recognition \cite{}.
 
-% % TODO say about architecture encoder, decoder, encoder-decoder
+\acp{MLM} have become the backbone of many state-of-the-art \ac{NLP} systems, enabling significant advancements in understanding and generating human language. They are particularly effective for tasks that require deep contextual understanding, such as sentiment analysis, named entity recognition, and question answering.
 
-
-Examples of \acp{MLM} include:
-\begin{itemize}
-    \item ELMo \cite{}(Embeddings from Language Models): Developed by AllenNLP, ELMo uses a two-layer bidirectional LSTM to generate word embeddings that capture context-dependent meanings. It was one of the first models to demonstrate the effectiveness of deep contextualized word representations.
-
-    \item BERT \cite{}(Bidirectional Encoder Representations from Transformers): Introduced by Google, BERT was a groundbreaking MLM that achieved state-of-the-art results on various NLP tasks. Its pre-training on large text corpora (like Wikipedia and BookCorpus) allowed it to learn deep bidirectional representations.
-
-    \item RoBERTa \cite{}(Robustly Optimized BERT Pretraining Approach): An optimized version of BERT, RoBERTa improved performance by training with more data, larger batches, and longer sequences, and by removing the next sentence prediction objective.
-    
-    \item XLM-R \cite{} extends RoBERTa to multilingual settings and performs strongly on cross-lingual benchmarks. 
-\end{itemize}
-
-These MLMs, due to their ability to understand context from both left and right, significantly improved performance on tasks like text classification, question answering, and named entity recognition \cite{}.
-
-% TODO maybe add figure of BERT architecture/mlm taks
-
-\subsection{\acp{LLM}}
+\subsection{Large Language Models}
 \acp{LLM} represent the pinnacle of current \ac{NLP} advancements. They are characterized by their massive scale (billions or trillions of parameters) compared to hundreds of millions usually for \acp{MLM} and similarly to them training on vast and diverse datasets encompassing text, code, as well as other modalities like images, and their ability to perform a wide range of tasks with remarkable fluency and coherence, often in a zero-shot or few-shot learning setting \cite{}.
 
 The majority of \acp{LLM} are also based on the Transformer architecture, but in contrast with smaller \acp{MLM} they are typically decoder-only models \cite{}, meaning they generate text by predicting the next token in a sequence without the bidirectional context used in \acp{MLM}. This allows them to excel in generative tasks, such as text completion, summarization \cite{}. Furthermore, as \acp{LLM} scale, they exhibit "emergent abilities" – capabilities that are not explicitly trained for but appear at certain model sizes, such as in-context learning or complex reasoning \cite{}.
 
 
-Examples of LLMs:
+Examples of \acp{LLMs}:
 \begin{itemize}
     \item  GPT Series (Generative Pre-trained Transformer): Developed by OpenAI, particularly GPT-3 and GPT-4, are well-known for their impressive generative capabilities and wide range of applications.
 
@@ -56,14 +47,14 @@ Examples of LLMs:
 %     Fine-tuning and Prompt Engineering: While powerful out-of-the-box, LLMs can be fine-tuned on smaller, task-specific datasets to improve performance on particular applications. Prompt engineering has also become a critical skill for guiding LLMs to perform desired tasks. % finetuning for LMs
 
 
-\section{Platforms: Reddit - Twitter and Specialised \acp{LM}}
+\section{Social media platforms and Specialised \acp{LM}}
 
 Social media platforms like Reddit and Twitter serve as rich sources of real-time, user-generated content. In general Twitter is based a form where each user can reply to another using things like posts, retweets, replies, threads, .. and is  characterized by short texts (280 characters). On the other hand Reddit consists of longer, threaded discussions across topic-specific communities (subreddits), offering more contextual and hierarchical information. Despite these differences, both platforms exhibit domain-specific language and are often used to study online discourse, opinion dynamics, and harmful content.
 
 At the same time these platforms present unique linguistic characteristics and challenges for \acp{NLP} due to their informal nature, user-generated content, character limits, prevalent use of slang, emojis, hashtags, mentions, and often noisy data.
 
 
-\subsection{Specialised \acp{LM} for Social Media}
+\subsection{Specialised Language Models for Social Media}
 The direct application of \acp{LM} trained on standard, clean text (like books or news articles) often underperforms on social media data. This necessitates either extensive data preprocessing or, more effectively, the development of Specialised Language Models \cite{}.
 
 Such models are typically  pre-trained or fine-tuned on large corpora of social media data which allows the models to learn the specific linguistic patterns, vocabulary, and nuances prevalent on these platforms. Specifically they are designed to handle noise and they might incorporate specific strategies to deal with typos, grammatical errors, abbreviations, and informal language. Aware of platform-specific features Models can be designed to explicitly leverage hashtags, mentions, retweets, replies, and other structural elements of social media posts.
