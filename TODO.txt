@@ -61,3 +61,17 @@ how we do X, x is a gap my contribution is hwo to do x
 - miisnformation in gneral it is a problem , it has been framed liek that ...
 in our case we check... (maybe two sections?)
 
+######
+remove specialised lms from title
+
+subsection Twitter
+subsection Reddit
+
+at the end of subsections mention specialised models for each platform
+
+* keep in my mind that this is background for the rest of the thesis
+
+* rethink/rephrase: at the challenges only address that we address to this thesis 
+
+
+generic lms -> specialised models -> specialised tasks.
