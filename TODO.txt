@@ -75,3 +75,12 @@ at the end of subsections mention specialised models for each platform
 
 
 generic lms -> specialised models -> specialised tasks.
+
+Don't call the section tasks!
+
+spcialist tasks that are applicable to social media platforms but only to social media platforms
+
+nlp applicaitons fror social media.
+
+rethink intro of background introduce each section (of the three).
+
