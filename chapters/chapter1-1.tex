@@ -59,7 +59,7 @@ This step allowed us to collect tweets with a similar distribution to topics in 
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=7.5cm]{../figures/tweet-topic/text_filtering.png}
+    \includegraphics[width=\textwidth]{../figures/tweet-topic/text_filtering.png}
     \caption{Text filtering pipeline to reduce noise from the tweets and avoid near duplicates.}
     \label{fig:filtering}
 \end{figure}
@@ -157,7 +157,8 @@ More specifically: \textit{gaming} and \textit{sports} (35\% overlap) were group
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=7.5cm]{../figures/tweet-topic/class_distribution.png}
+    \scalebox{0.8}{
+    \includegraphics[width=\textwidth]{../figures/tweet-topic/class_distribution.png}}
     \caption{Percentage of tweets that were annotated with a given topic (multi-label setting) for each time period.}
     \label{fig:class_dist_multilabel}
 \end{figure}
@@ -168,7 +169,8 @@ The final set of annotated tweets is 11,267 and 6,997 for the multi-label and si
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=6.5cm]{../figures/tweet-topic/class_distribution_multiclass.png}
+    \scalebox{0.8}{
+    \includegraphics[width=\textwidth]{../figures/tweet-topic/class_distribution_multiclass.png}}
     \caption{Percentage of tweets that were annotated with a given topic (single-label setting) for each time period.}
     \label{fig:class_dist_singleclass}
 \end{figure}
@@ -177,7 +179,7 @@ The final set of annotated tweets is 11,267 and 6,997 for the multi-label and si
 with 35\% and 12\% of the tweets having two and three labels respectively. This coder behaviour (i.e. preferring to select only one class) can be observed on similar multi-label annotation tasks \cite{veronis1998study,poesio2005reliability}.
 
 
-\begin{table*}[ht]
+\begin{table}[ht]
 \adjustbox{max width=\textwidth}{%
 \begin{tabular}{|l|c|c|c|c|c|c|c||c|}
 \hline
@@ -206,7 +208,7 @@ youth \& student life    & 202.0 \textpm 62.4 & 5.9 \textpm 3.2 & 0.1 \textpm 0.
 \caption{General lexical statistics for each class. The averages of the length of tweet, punctuation count, upper/lower case ratio (upl/low), hashtags count, mentions count, emojis count are reported along with their standard deviation. Frequency metrics are normalized based on the text length.
 The last two columns correspond to the lexical diversity (mtld) and total number of tweets.}
 \label{tab:corpus_statistics}
-\end{table*}
+\end{table}
 
 
 \paragraph{Class distribution across time periods.} We note that the distribution of classes between the two time periods studied remains largely similar in both settings with the largest difference being in the \textit{music} and \textit{news \& social concern} classes being 3.5\% more populous in 2019/20. This observation suggests that our curated topics are broad enough to be relatively robust to temporal trends.
@@ -393,7 +395,7 @@ In this section, we analyse two important aspects of the \TweetTopic dataset, ma
 
 The strong performance of TimeLM-21 provided evidence regarding the importance of an up-to-date training corpus. We continue our investigation by training the same set of models on a random split of the data (i.e., both training and test sets with tweets from 2019 to 2021). To make the results comparable, we created training and test sizes of the same size as the original temporal split.\footnote{While the distribution of labels may naturally be altered, this change is minimal, as we can recall from Figures \ref{fig:class_dist_multilabel} and \ref{fig:class_dist_singleclass}.} 
 
-\begin{table*}[t]
+\begin{table}[t]
 \adjustbox{max width=\textwidth}{%
 \begin{tabular}{|l|cc|cc|cc|cc|cc|cc|cc|cc|}
 \hline
@@ -783,11 +785,12 @@ youth \& student life &
 \end{tabular}}%
 \caption{Macro average F1 scores for the multi-label setting when using temporal (temp) and random (rand) split. Highlighted with bold is the best score for each model.}
 \label{tab:f1_temporal-random}
-\end{table*}
+\end{table}
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=7.5cm]{../figures/tweet-topic/performance_diff_single.png}
+    \scalebox{0.8}{
+    \includegraphics[width=\textwidth]{../figures/tweet-topic/performance_diff_single.png}}
     \caption{Relative (\%) differences in F1 scores when \textit{TimeLM-19} is trained in a temporal and in a random setting for the single-label setting. Negative values indicate that when using the temporal split the model's performance decreases. }
     \label{fig:performance_diff_single}
 \end{figure}
@@ -803,7 +806,7 @@ fast evolving vocabulary. In contrast, \textit{business \& entrepreneurs} does n
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=7.5cm]{../figures/tweet-topic/troberta2019_confusion.png}
+    \includegraphics[width=\textwidth]{../figures/tweet-topic/troberta2019_confusion.png}
     \caption{Confusion matrix of the TimeLM-19 results for the single-label setting. The values displayed are normalized  by row.}
     \label{fig:confusion_matrix}
 \end{figure}
