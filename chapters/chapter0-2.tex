@@ -21,7 +21,8 @@ For example, the embedding for the word bank in “he sat by the river bank” w
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{../figures/chapter 2/bert_architecture.jpg}
+     \scalebox{0.8}{
+    \includegraphics[width=\textwidth]{../figures/chapter2/bert_architecture.jpg}}
     \caption{Example of \ac{MLM} objective for training in \ac{BERT}.}
     \label{fig:bert_architecture}
 \end{figure}
@@ -36,30 +37,33 @@ Encoder-decoder models represent a distinct approach in language modeling, parti
 
 Encoder-decoder models became popular with the introduction of \ac{T5} \cite{raffel2020exploring}. \ac{T5} casts  \ac{NLP} problems, such as summarisation, machine translation, and question asnwering, into a unified text-to-text format. It is pretrained on the \ac{C4} corpus\cite{JMLR:v21:20-074}  using a span corruption objective, where spans of text are masked and replaced with unique sentinel tokens, and the model learns to reconstruct the missing spans which enables it to develop robust representations for both understanding and generation. 
 
+\begin{figure}[h]
+    \centering
+    \scalebox{0.8}{\includegraphics[width=\textwidth]{../figures/chapter2/t5_architecture.png}}
+    \caption{Example of \ac{T5} finetuning for a summarisation task.}
+    \label{fig:t5_architecture}
+\end{figure}
+
 An extension of \ac{T5}, \ac{Flan-T5} \cite{chung2024scaling}, further improves performance through instruction tuning \cite{wei2021finetuned} on a wide variety of tasks and datasets which enhances it's zero-shot and few-shot generalization capabilities. Another notable encoder-decoder model is \ac{BART} \cite{lewis2019bart}, which is trained on a denoising autoencoder objectivewhere the model learns to reconstruct original text from corrupted input. \ac{BART} combines the strengths of both \acp{MLM} and autoregressive models, making it effective for tasks like summarisation and translation.
 
-Encoder-decoder models are widely used in tasks where the input and output differ significantly in structure or length. Common applications include machine translation, text summarization, question answering, and question generation. They can also be adapted for text generation tasks, producing coherent and contextually relevant text from prompts. However, these models are generally more complex and computationally intensive than \acp{MLM}, and they not always outperform encoder-only models on tasks that do not involve sequence generation \cite{gasparetto2022survey}. At the same time, they often lag behind decoder-only models, such as \acp{LLM}, in open-ended text generation tasks \cite{saattrup-nielsen-etal-2025-encoder}.
+Encoder-decoder models are widely used in tasks where the input and output differ significantly in structure or length, and similarly to \acp{MLM} they can be further finetuned for specific applications. Common use cases include machine translation, text summarization, question answering, and question generation. They can also be adapted for text generation tasks, producing coherent and contextually relevant text from prompts. However, these models are generally more complex and computationally intensive than \acp{MLM}, and they not always outperform encoder-only models on tasks that do not involve sequence generation \cite{gasparetto2022survey}. At the same time, they often lag behind decoder-only models, such as \acp{LLM}, in open-ended text generation tasks \cite{saattrup-nielsen-etal-2025-encoder}.
 
 
 \subsection{Large Language Models}
-\acp{LLM} represent the pinnacle of current \ac{NLP} advancements. They are characterized by their massive scale (billions or trillions of parameters) compared to hundreds of millions usually for \acp{MLM} and similarly to them training on vast and diverse datasets encompassing text, code, as well as other modalities like images, and their ability to perform a wide range of tasks with remarkable fluency and coherence, often in a zero-shot or few-shot learning setting \cite{}.
+\acp{LLM} represent the most recent advancement in language modeling, building upon the foundations laid by \acp{MLM} and encoder-decoder models. They are characterized by their massive scale, often containing hundreds of billions of parameters, and their ability to perform a wide range of tasks with remarkable performamce, often in a zero-shot or few-shot learning setting \cite{wang2020generalizing}. Unlike traditional \acp{LM}, which are typically trained on specific tasks or datasets, \acp{LLM} are pretrained on vast and diverse datasets encompassing text, code, and other modalities like images.
 
-The majority of \acp{LLM} are also based on the Transformer architecture, but in contrast with smaller \acp{MLM} they are typically decoder-only models \cite{}, meaning they generate text by predicting the next token in a sequence without the bidirectional context used in \acp{MLM}. This allows them to excel in generative tasks, such as text completion, summarization \cite{}. Furthermore, as \acp{LLM} scale, they exhibit "emergent abilities" – capabilities that are not explicitly trained for but appear at certain model sizes, such as in-context learning or complex reasoning \cite{}.
+Architecturally, most \acp{LLM} are based on the Transformer decoder-only design and are trained using an autoregressive objective \cite{GPT3}where, given a sequence of tokens, the model learns to predict the next token in a left-to-right manner. In contrast to bidirectional models like \ac{BERT}, decoder-only models do not have access to future tokens during training, which makes them suited for generative tasks such as text completion, dialogue, summarization, and code generation.
 
+Modern \acp{LLM} are capable to perform tasks based purely on natural language instructions, making \textit{prompt engineering} a critical aspect of their effective use \cite{reynolds2021prompt}. % Prompt engineering involves crafting input prompts that guide the model's behaviour toward producing the desired output. This technique has become increasingly important. The quality and structure of prompts can significantly affect model performance, especially in open-ended or multi-step reasoning tasks \cite{reynolds2021prompt}. 
+Moreover, similarly to smaller \acp{LM} their performance on specific tasks can often be further improved through finetuning. This is typically applied to smaller versions of the models using techniques like \ac{QLoRA} \cite{dettmers2023qlora}, which enables efficient adaptation with limited computational resources.
 
-Examples of \acp{LLMs}:
-\begin{itemize}
-    \item  GPT Series (Generative Pre-trained Transformer): Developed by OpenAI, particularly GPT-3 and GPT-4, are well-known for their impressive generative capabilities and wide range of applications.
+Several notable \acp{LLM} have significantly advanced the field of \ac{NLP}. For example, OpenAI's GPT series, starting with GPT-2 \cite{radford2019language}, demonstrated the potential of large-scale unsupervised pretraining and autoregressive text generation. Its succesors, GPT-3 \cite{brown2020language} and GPT-4 \cite{achiam2023gpt} further scaled up the model size and training data, achieving impressive performance on a wide range of tasks with few-shot and zero-shot learning capabilities. 
 
-    \item  PaLM (Pathways Language Model): Google's dense decoder-only Transformer model, known for its strong performance on various language tasks.
-    % use qwen instead of PaLM
+Alongside proprietary models, several open-sourced \acp{LLM} have been introduceded. Meta's \ac{LLaMA} family \cite{touvron2023llama,touvron2023llama2} offers models that are computationally efficient and accessible to the research community, with versions as small as 1 billion parameters. Other prominent open-source alternatives include Mistral 7B and Mixtral \cite{jiang2024mixtral}—a mixture-of-experts model using sparse attention to activate only a subset of its parameters during inference—and Qwen \cite{qwen}, a high-performing model widely adopted in academia due to its open availability and strong benchmark results.
 
-    \item  Llama Series: Developed by Meta, the Llama models (e.g., Llama 2, Llama 3) have gained significant traction, especially in the open-source community, due to their strong performance and accessibility for research and development.
-\end{itemize}
+These models showcase that decoder-only architectures when scaled massively are able to achieve broad generalization across \ac{NLP} tasks with minimal supervision.
 
-\acp{LLM} have pushed the boundaries of what's possible in NLP, enabling more sophisticated and nuanced understanding and generation of human language.
-
-%     Fine-tuning and Prompt Engineering: While powerful out-of-the-box, LLMs can be fine-tuned on smaller, task-specific datasets to improve performance on particular applications. Prompt engineering has also become a critical skill for guiding LLMs to perform desired tasks. % finetuning for LMs
+However, despite their impressive capabilities, \acp{LLM} pose significant challenges. These include high computational costs, issues related to interpretability, and the risk of generating biased or harmful content \cite{ferrara2023should,george2023environmental}. While decoder-only \acp{LLM} excel in generative and open-ended tasks, encoder-only models, such as those based on the \ac{BERT} architecture, remain highly competitive and often superior for certain structured tasks, like text classification and \ac{NER}, where their bidirectional context is advantageous. Moreover, encoder-based models tend to be more efficient to train and deploy for such applications.
 
 
 \section{Social media platforms}
