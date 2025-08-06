@@ -35,7 +35,7 @@ One of the main benefits of these models is that their knowledge can be utilised
 
 Encoder-decoder models represent a distinct approach in language modeling, particularly effective for sequence-to-sequence tasks. These architectures consist of two components: (i) an encoder that processes the input sequence and compresses its information into a latent representation, and (ii) a decoder that generates an output sequence based on this representation. This architecture is well-suited for tasks where the output differs in form or length from the input, such as translation, summarization, and question generation. Similar to \acp{MLM}, encoder-decoder models are also be pretrained on large corpora, while leveraging self-attention mechanisms in both the encoder and decoder stacks which allows them to learn  bidirectional representations in the encoder while simultaneously training the decoder to generate sequences from noisy or incomplete inputs. 
 
-Encoder-decoder models became popular with the introduction of \ac{T5} \cite{raffel2020exploring}. \ac{T5} casts  \ac{NLP} problems, such as summarisation, machine translation, and question asnwering, into a unified text-to-text format. It is pretrained on the \ac{C4} corpus\cite{JMLR:v21:20-074}  using a span corruption objective, where spans of text are masked and replaced with unique sentinel tokens, and the model learns to reconstruct the missing spans which enables it to develop robust representations for both understanding and generation. 
+Encoder-decoder models became popular with the introduction of \ac{T5} \cite{raffel2020exploring}. \ac{T5} casts  \ac{NLP} problems, such as summarisation, machine translation, and question asnwering, into a unified text-to-text format. It is pretrained on the \ac{C4} corpus\cite{JMLR:v21:20-074}  using a span corruption objective, where spans of text are masked and replaced with unique sentinel tokens, and the model learns to reconstruct the missing spans which enables it to develop robust representations for both understanding and generation (Figure \ref{fig:t5_architecture}). 
 
 \begin{figure}[h]
     \centering
@@ -67,59 +67,91 @@ However, despite their impressive capabilities, \acp{LLM} pose significant chall
 
 
 \section{Social media platforms}
+% Social media platforms have become a primary source of real-time, user-generated content, offering rich data for \ac{NLP} applications. Platforms like Twitter and Reddit provide unique linguistic characteristics and challenges due to their informal nature, user-generated content, character limits, and prevalent use of slang, emojis, hashtags, mentions, and often noisy data.... Give examples of existing platforms why we select Twitter and Reddit as case studies?
 
-Social media platforms like Reddit and Twitter serve as rich sources of real-time, user-generated content. In general Twitter is based a form where each user can reply to another using things like posts, retweets, replies, threads, .. and is  characterized by short texts (280 characters). On the other hand Reddit consists of longer, threaded discussions across topic-specific communities (subreddits), offering more contextual and hierarchical information. Despite these differences, both platforms exhibit domain-specific language and are often used to study online discourse, opinion dynamics, and harmful content.
+% Social media platforms like Reddit and Twitter serve as rich sources of real-time, user-generated content. In general Twitter is based a form where each user can reply to another using things like posts, retweets, replies, threads, .. and is  characterized by short texts (280 characters). On the other hand Reddit consists of longer, threaded discussions across topic-specific communities (subreddits), offering more contextual and hierarchical information. Despite these differences, both platforms exhibit domain-specific language and are often used to study online discourse, opinion dynamics, and harmful content.
 
-At the same time these platforms present unique linguistic characteristics and challenges for \acp{NLP} due to their informal nature, user-generated content, character limits, prevalent use of slang, emojis, hashtags, mentions, and often noisy data.
+% At the same time these platforms present unique linguistic characteristics and challenges for \acp{NLP} due to their informal nature, user-generated content, character limits, prevalent use of slang, emojis, hashtags, mentions, and often noisy data.
 
+
+% \subsection{Specialised Language Models for Social Media}
+% The direct application of \acp{LM} trained on standard, clean text (like books or news articles) often underperforms on social media data. This necessitates either extensive data preprocessing or, more effectively, the development of Specialised Language Models \cite{}.
+
+% Such models are typically  pre-trained or fine-tuned on large corpora of social media data which allows the models to learn the specific linguistic patterns, vocabulary, and nuances prevalent on these platforms. Specifically they are designed to handle noise and they might incorporate specific strategies to deal with typos, grammatical errors, abbreviations, and informal language. Aware of platform-specific features Models can be designed to explicitly leverage hashtags, mentions, retweets, replies, and other structural elements of social media posts.
+
+% Examples of specialised LMs:
+% \begin{itemize}
+%     \item BERTweet \cite{nguyen2020bertweet}, a RoBERTa-based model pretrained on 850M English tweets, achieving strong results on sentiment analysis and hate speech detection.
+    
+%     \item RedBERT, pretrained on Reddit data, captures stylistic and topical nuances of Reddit posts.
+
+%     \item   TwitterRoberta
+
+%     \item Bernice 
+% \end{itemize}
+
+% Models trained on domain-specific social media datasets: Many researchers pre-train or fine-tune models on large collections of tweets, Reddit posts, or other platform-specific data to improve performance on tasks relevant to those platforms, such as hate speech detection or stance detection.
+
+% The challenges of noisy, heterogeneous social media text include:
+
+% Informal Language: Slang, abbreviations (e.g., "lol", "brb"), typos, and non-standard grammar.
+
+% Contextual Ambiguity: Short posts often lack sufficient context for accurate interpretation. Sarcasm and irony are particularly difficult to detect.
+
+% Emojis and Emoticons: These visual cues carry significant emotional and semantic information.
+
+% Hashtags and Mentions: These serve as both content and metadata, indicating topics or directed communication.
+
+% Multilinguality and Code-Switching: Users often mix languages within a single post.
+
+% Data Volume and Velocity: The sheer volume and speed of social media data generation make real-time processing and analysis challenging.
+
+% Evolving Language: New slang, trends, and memes emerge rapidly, requiring models to constantly adapt.
+
+% Bias in Data: Social media data can reflect societal biases, leading to biased model outputs if not addressed carefully.
+
+% Sarcasm and Irony: Difficult to detect as the literal meaning contradicts the intended sentiment.
+
+% Implicit Sentiment: Sentiment can be expressed subtly rather than explicitly through sentiment-laden words.
+
+% Context Dependency: The same word can have different sentiment in different contexts.
+
+% Short and Noisy Text: Limited text length and informal language make it harder to extract clear sentiment signals.
+
+% Emojis and Hashtags: These often convey strong sentiment and need to be incorporated into analysis.
+
+
+Social media platforms have become central to the study of natural language in real world environments, offering vast amounts of real-time, user-generated content. These platforms differ significantly from traditional text sources such as books, news articles, or formal documents. Their informal, dynamic, and highly contextual nature presents unique opportunities and challenges for \ac{NLP} research and applications \cite{mustofa2025use}. A lot of these paltforms focus on different modalities, for example, Instagram emphasises photos and videos, while others like Snapchat are inherently multimodal. In contrast, Twitter and Reddit have emerged as particularly rich sources of linguistic data and are widely used in computational social science and NLP research. This is primarily because text is the dominant medium of communication on these platforms, and they used to offer relatively easy access to data through official \acp{API}. This thesis focuses on these two platforms due to their complementary structures and modes of interaction.
+
+Twitter is structured around short, standalone messages called "tweets," which are constrained to 280 characters. Although tweets are restricted in length, they often convey substantial information and sentiment, enhanced by the use of hashtags, mentions, emojis, and embedded media. User interactions take the form of replies, retweets, and quote tweets, which together create loosely connected conversational threads. The character limit encourages users to be linguistically inventive, resulting in the widespread use of slang, abbreviations, and non-standard grammatical constructions.
+
+Reddit, in contrast, is a forum-based platform organized into topic-specific communities known as \textit{subreddits}. Posts on Reddit can be significantly longer than tweets and often initiate threaded discussions that allow for deeper, hierarchical conversations (\ref{fig:reddit_example}). This structure offers richer context and more coherent discourse patterns.
+
+
+\begin{figure}[h]
+    \centering
+    \scalebox{0.6}{\includegraphics[width=\textwidth]{../figures/chapter2/reddit_example.png}}
+    \caption{An example of a Reddit thread from r/learningprogramming subreddit.}
+    \label{fig:reddit_example}
+\end{figure}
+
+Although Reddit and Twitter differ in format and interaction design, they exhibit several common linguistic characteristics: both are informal, rapidly evolving, and rely on similar engagement mechanisms such as upvotes and likes. These features shape the type and tone of user-generated content, making both platforms valuable for studying opinion formation, discourse dynamics, and online social behaviour.
 
 \subsection{Specialised Language Models for Social Media}
-The direct application of \acp{LM} trained on standard, clean text (like books or news articles) often underperforms on social media data. This necessitates either extensive data preprocessing or, more effectively, the development of Specialised Language Models \cite{}.
 
-Such models are typically  pre-trained or fine-tuned on large corpora of social media data which allows the models to learn the specific linguistic patterns, vocabulary, and nuances prevalent on these platforms. Specifically they are designed to handle noise and they might incorporate specific strategies to deal with typos, grammatical errors, abbreviations, and informal language. Aware of platform-specific features Models can be designed to explicitly leverage hashtags, mentions, retweets, replies, and other structural elements of social media posts.
+The direct application of \acp{LM} trained on formal or curated text corpora often fails to generalize effectively to social media data. Social media text presents a wide range of linguistic challenges for \ac{NLP} due to its informal and dynamic nature. It often features slang, abbreviations (e.g., "brb", "smh"), and non-standard grammar, which deviate from conventional language norms. Posts frequently lack sufficient context, leading to ambiguity in interpretation, particularly when sarcasm or irony is involved. Additionally, platform-specific metadata such as emojis, hashtags, and mentions play an important role in conveying meaning and identifying topics. Multilinguality and code-switching are also common, with users often blending languages or dialects within a single post. Language on these platforms evolves rapidly, with new slang and trends emerging constantly, requiring models to adapt over time. Social media content also reflects societal biases and may include toxic or harmful language, posing ethical and technical challenges. Furthermore, the short and often noisy nature of posts—particularly on platforms like Twitter—demands robust pre-processing or tailored model architectures. 
 
-Examples of specialised LMs:
-\begin{itemize}
-    \item BERTweet \cite{nguyen2020bertweet}, a RoBERTa-based model pretrained on 850M English tweets, achieving strong results on sentiment analysis and hate speech detection.
-    
-    \item RedBERT, pretrained on Reddit data, captures stylistic and topical nuances of Reddit posts.
+These challenges have led to the development of specialised language models that are pre-trained or fine-tuned on large-scale social media corpora to capture the idiosyncrasies of online discourse \cite{nguyen2020bertweet}.
 
-    \item   TwitterRoberta
+These models are explicitly designed to handle the noise and variability inherent in social media. They often incorporate strategies for addressing spelling errors, abbreviations, emojis, and platform-specific syntax (e.g., hashtags, mentions, retweet markers). By learning from in-domain data, these models are better equipped to understand the linguistic norms, stylistic features, and emergent expressions characteristic of social platforms.
 
-    \item Bernice 
-\end{itemize}
+Popular examples of specialised language models include BERTweet \cite{nguyen2020bertweet}, a RoBERTa-based model trained exclusively on 850M English tweets.  Twitter-RoBERTa \cite{loureiro-etal-2022-timelms}, which continues training from RoBERTa checkpoint using a large tweet corpora. 
+Bernice \cite{delucia2022bernice} a multilingual social media model designed to handle cross-lingual and code-switched content, often observed on platforms like Twitter. And DialoGPT \cite{zhang2019dialogpt} A conversational response generation model built by fine‑tuning GPT‑2 on approximately 147 million Reddit comment exchanges. In particaular for the case of Twitter we do not need large context so roberta is good too... 
 
-Models trained on domain-specific social media datasets: Many researchers pre-train or fine-tune models on large collections of tweets, Reddit posts, or other platform-specific data to improve performance on tasks relevant to those platforms, such as hate speech detection or stance detection.
+Training language models on domain-specific social media data significantly improves their performance on downstream tasks such as hate speech detection, stance classification, and misinformation detection \cite{}.
 
-The challenges of noisy, heterogeneous social media text include:
 
-Informal Language: Slang, abbreviations (e.g., "lol", "brb"), typos, and non-standard grammar.
-
-Contextual Ambiguity: Short posts often lack sufficient context for accurate interpretation. Sarcasm and irony are particularly difficult to detect.
-
-Emojis and Emoticons: These visual cues carry significant emotional and semantic information.
-
-Hashtags and Mentions: These serve as both content and metadata, indicating topics or directed communication.
-
-Multilinguality and Code-Switching: Users often mix languages within a single post.
-
-Data Volume and Velocity: The sheer volume and speed of social media data generation make real-time processing and analysis challenging.
-
-Evolving Language: New slang, trends, and memes emerge rapidly, requiring models to constantly adapt.
-
-Bias in Data: Social media data can reflect societal biases, leading to biased model outputs if not addressed carefully.
-
-Sarcasm and Irony: Difficult to detect as the literal meaning contradicts the intended sentiment.
-
-Implicit Sentiment: Sentiment can be expressed subtly rather than explicitly through sentiment-laden words.
-
-Context Dependency: The same word can have different sentiment in different contexts.
-
-Short and Noisy Text: Limited text length and informal language make it harder to extract clear sentiment signals.
-
-Emojis and Hashtags: These often convey strong sentiment and need to be incorporated into analysis.
-
-\section{Tasks}
+\section{nlp applicaitons for social media}
 
 \ac{NLP} tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
 
