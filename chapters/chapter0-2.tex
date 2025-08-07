@@ -157,55 +157,53 @@ Popular examples of specialised language models include: (i) BERTweet \cite{nguy
 Bernice \cite{delucia2022bernice} a multilingual social media model designed to handle cross-lingual and code-switched content; and  (iv) DialoGPT \cite{zhang2019dialogpt} A conversational response generation model built by fine‑tuning GPT‑2 on approximately 147 million Reddit comment exchanges. These examples reflect a common trend: RoBERTa is the backbone architecture for many social media-specific models. This is largely due to its robustness, relatively low computational requirements for large-scale pretraining, and the fact that its main limitation, a short maximum context length of 512 tokens, is not a major drawback for short-form social media text. Specialized models trained on domain-specific social media data consistently outperform their general-purpose counterparts and, in some tasks, match or surpass \acp{LLM} in downstream applications such as hate speech detection, stance classification, and misinformation detection \cite{}.
 
 
-\section{NLP Applicaitons for Social Media}
+\section{NLP Applications for Social Media}
+
+\ac{NLP} applications for social media ...
+\ac{NLP} tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
+
+
+In this section, we explore core \ac{NLP} tasks applied to social media data and that are significant for this thesis, highlighting their importance and the unique challenges they present. These applications include sentiment analysis, emotion detection, topic classification, hate speech detection, and misinformation analysis (Table \ref{tab:task_examples}). Each of them plays a crucial role in understanding user-generated content and extracting valuable insights from the vast amount of data available on social media platforms.
+
+
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|p{8cm}|l|}
+\begin{tabular}{|c|p{8cm}|c|}
 \hline
-\textbf{Task} & \textbf{Post} & \textbf{Label} \\
+\textbf{Task} & \centering \textbf{Post} & \textbf{Label} \\
 \hline
-Sentiment Analysis & Just got a promotion at work! Feeling on top of the world 😎🔥 \#Blessed & Positive \\
+Sentiment Analysis & Just got a promotion at work! Feeling on top of the world  \#Blessed & Positive \\
 \hline
-Emotion Detection & Can't believe he forgot my bday AGAIN... smh 🙄 & Anger \\
+Emotion Detection & Can't believe he forgot my bday AGAIN... smh  & Anger \\
 \hline
-Hate Speech Detection & Go back to where u came from. Ppl like u don’t belong here 💩 & Hate Speech \\
+Hate Speech Detection & Go back to where u came from. Ppl like u don’t belong here & Hate Speech \\
 \hline
-Topic Classification & The new iPhone cam is insane 📸 but battery still trash lol \#TechTalk & Technology \\
+Topic Classification & The new iPhone cam is insane but battery still trash lol \#TechTalk & Technology \\
 \hline
 \end{tabular}
-\caption{Examples of social media posts across different classification tasks, including hashtags and slang.}
+\caption{Examples of social media posts across different classification tasks.}
 \label{tab:task_examples}
 \end{table}
 
-\ac{NLP} tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
 
 \subsection{Sentiment Analysis}
-Sentiment analysis (also known as opinion mining) aims to determine the emotional tone or overall sentiment expressed in a piece of text (e.g., positive, negative, neutral). On social media, this is crucial for understanding public opinion towards brands, products, events, or political figures. 
+Sentiment analysis aims to determine the emotional tone or overall sentiment expressed in a piece of text. It is commonly framed as a multi-class classification task, where a model classifies a given text as negative, neutral, or positive based on its sentiment \cite{mejova2009sentiment}. Alternative approaches include aspect-based sentiment analysis, where the model assesses the sentiment of a text towards a specific target or entity \cite{zhang2022survey}. Sentiment analysis can also be modeled as an ordinal regression task, where the model assigns a score on a predefined scale (e.g., 0 to 5), with 0 representing the most negative and 5 the most positive sentiment \cite{saad2019twitter}.
 
-Sentiment analysis involves classifying text according to its affective polarity—positive, negative, or neutral. Social media sentiment analysis is complicated by sarcasm, slang, and domain-specific terminology.
+On social media, sentiment analysis is crucial for understanding public opinion toward brands, products, events, or political figures. For example, \citet{matalon2021using} applied sentiment analysis to examine opinion inversion in political tweets related to the Israeli-Palestinian conflict. Similarly, \citet{rodriguez2021sentiment} analyzed Twitter posts mentioning Spanish political parties to study sentiment dynamics over time. \citet{alaparthi2021bert} used sentiment analysis to investigate public attitudes toward COVID-19 vaccines on Twitter.
 
-can be regression, can be aspect based
+Other researchers have explored the use of sentiment analysis in brand monitoring and customer feedback. \citet{chowdhury2024sentiment} proposed a framework for analysing customer reviews on social media to help businesses understand customer satisfaction and improve their products or services. Similarly, \citet{chamlertwat2012discovering} demonstrated how sentiment analysis can be used to extract consumer insights from social media data, enabling companies to adapt their strategies based on public opinion.
 
-In this thesis we utilise heavily sentiment analysis to extract insights from social media posts mainly in Chapters \ref{ch:political}, \ref{ch:spreaders} ,and \ref{ch:triggers}.
+Sentiment analysis has also been employed to assess public reactions to major events, such as natural disasters or political elections. For instance, \citet{willson2021twitter} used sentiment analysis to examine Twitter reactions to the 2019–2020 Australian bushfires, revealing regional and temporal variations in sentiment. Similarly, \citet{behl2021twitter} applied sentiment analysis to tweets related to the COVID-19 pandemic, helping identify user concerns and needs during the crisis and illustrating how social media can inform disaster response strategies.
+
+In this thesis, sentiment analysis, framed as a multi-class problem,  is used extensively to extract insights into users' opinions and attitudes on various topics discussed on social media. This is particularly prominent in Chapters~\ref{ch:political}, \ref{ch:spreaders}, and \ref{ch:triggers}.
 
 \subsection{Emotion Detection}
-usually multiclass, multilabel, but can aslo be seen as regression 
-
-While sentiment analysis typically classifies text into broad categories (positive/negative/neutral), emotion detection aims for a more granular understanding of human emotions, identifying specific emotions like anger, joy, sadness, fear, surprise, disgust, etc. This is particularly relevant for understanding emotional responses to events or content on social media.
-
-Beyond sentiment polarity, emotion detection aims to identify specific emotional states (e.g., anger, joy, sadness). Annotated corpora such as GoEmotions \cite{demszky2020goemotions} have enabled supervised learning in this space. However, emotional nuance and subjectivity make this task challenging, especially in multilingual settings.
-
-Challenges on Social Media:
-
-Similar to sentiment analysis, but with the added complexity of distinguishing between finer emotional nuances.
-
-Lack of large, diverse datasets labeled with fine-grained emotions.
-
-Cultural and linguistic variations in emotion expression.
 
 
-Chapters \ref{ch:spreaders}, and \ref{ch:triggers}.
+Examples, ...
+
+In this thesis, emotion detection, framed as multi-label task, is utilised in Chapters \ref{ch:spreaders}, and \ref{ch:triggers} as part of our analysis to extract isnights from users about the emotional status.
 
 \subsection{Topic Modelling}
 
