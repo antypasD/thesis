@@ -157,7 +157,7 @@ Popular examples of specialised language models include: (i) BERTweet \cite{nguy
 Bernice \cite{delucia2022bernice} a multilingual social media model designed to handle cross-lingual and code-switched content; and  (iv) DialoGPT \cite{zhang2019dialogpt} A conversational response generation model built by fine‑tuning GPT‑2 on approximately 147 million Reddit comment exchanges. These examples reflect a common trend: RoBERTa is the backbone architecture for many social media-specific models. This is largely due to its robustness, relatively low computational requirements for large-scale pretraining, and the fact that its main limitation, a short maximum context length of 512 tokens, is not a major drawback for short-form social media text. Specialized models trained on domain-specific social media data consistently outperform their general-purpose counterparts and, in some tasks, match or surpass \acp{LLM} in downstream applications such as hate speech detection, stance classification, and misinformation detection \cite{}.
 
 
-\section{nlp applicaitons for social media}
+\section{NLP Applicaitons for Social Media}
 
 \begin{table}[h]
 \centering
@@ -181,22 +181,17 @@ Topic Classification & The new iPhone cam is insane 📸 but battery still trash
 \ac{NLP} tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
 
 \subsection{Sentiment Analysis}
-Sentiment analysis (also known as opinion mining) aims to determine the emotional tone or overall sentiment expressed in a piece of text (e.g., positive, negative, neutral). On social media, this is crucial for understanding public opinion towards brands, products, events, or political figures.
+Sentiment analysis (also known as opinion mining) aims to determine the emotional tone or overall sentiment expressed in a piece of text (e.g., positive, negative, neutral). On social media, this is crucial for understanding public opinion towards brands, products, events, or political figures. 
 
 Sentiment analysis involves classifying text according to its affective polarity—positive, negative, or neutral. Social media sentiment analysis is complicated by sarcasm, slang, and domain-specific terminology.
 
-%TODO table with examples
-Approaches:
-
-    Lexicon-based: Using pre-defined dictionaries of words and their associated sentiment scores.
-
-    Machine Learning (Traditional): Training classifiers (e.g., Naive Bayes, SVM) on labeled data with features like N-grams, TF-IDF.
-
-    Deep Learning (Modern): Employing RNNs, LSTMs, and especially Transformers (e.g., BERT-based models fine-tuned for sentiment analysis) that can capture complex contextual patterns.
+can be regression, can be aspect based
 
 In this thesis we utilise heavily sentiment analysis to extract insights from social media posts mainly in Chapters \ref{ch:political}, \ref{ch:spreaders} ,and \ref{ch:triggers}.
 
 \subsection{Emotion Detection}
+usually multiclass, multilabel, but can aslo be seen as regression 
+
 While sentiment analysis typically classifies text into broad categories (positive/negative/neutral), emotion detection aims for a more granular understanding of human emotions, identifying specific emotions like anger, joy, sadness, fear, surprise, disgust, etc. This is particularly relevant for understanding emotional responses to events or content on social media.
 
 Beyond sentiment polarity, emotion detection aims to identify specific emotional states (e.g., anger, joy, sadness). Annotated corpora such as GoEmotions \cite{demszky2020goemotions} have enabled supervised learning in this space. However, emotional nuance and subjectivity make this task challenging, especially in multilingual settings.
@@ -209,16 +204,12 @@ Lack of large, diverse datasets labeled with fine-grained emotions.
 
 Cultural and linguistic variations in emotion expression.
 
-Approaches:
-
-    Often relies on annotated datasets (e.g., GoEmotions, EmoContext) and deep learning models, particularly those based on Transformer architectures, which are well-suited for capturing the subtle linguistic cues associated with different emotions.
-
-    Lexicon-based methods for specific emotion words or phrases.
-
 
 Chapters \ref{ch:spreaders}, and \ref{ch:triggers}.
 
 \subsection{Topic Modelling}
+
+Topic modelling, unsupervised, lda and variations, BertTOpic,... why bad?
 
 Topic classification (or text categorization) assigns one or more predefined categories or topics to a given text. On social media, this helps in organizing vast amounts of information, identifying trending discussions, or filtering content based on specific themes.
 
@@ -232,19 +223,12 @@ Challenges on Social Media:
 
     Multilingual Content: Discussing the same topic across different languages.
 
-Approaches:
-
-    Traditional Machine Learning: Classifiers trained on features like bag-of-words or TF-IDF.
-
-    Topic Modeling: Unsupervised methods like Latent Dirichlet Allocation (LDA) or Non-negative Matrix Factorization (NMF) can discover underlying topics in a corpus. However, these often struggle with very short texts.
-
-    Deep Learning: Transformer-based models fine-tuned on labeled social media data for specific topic categories have shown superior performance.
-
-    Multilingual Topic Classification: Requires either language identification and separate models for each language, or multilingual embeddings and models capable of handling code-switched text.
 
 Chapters \ref{ch:tweettopic}, \ref{ch:x-topic},\ref{ch:spreaders},
 
 \subsection{Hate Speech Detection}
+
+binary, multiclass, multilabel
 
 Hate speech detection is a critical application of NLP on social media, aiming to identify content that expresses hatred or encourages violence towards individuals or groups based on attributes like race, ethnicity, religion, gender, sexual orientation, etc. This is a highly sensitive and challenging task due to its subjective nature and the evolving tactics of hate speech perpetrators.
 
@@ -262,22 +246,11 @@ Challenges on Social Media:
 
     Multilingualism: Hate speech manifests differently in various languages and cultures.
 
-Approaches:
-
-    Rule-based Systems: Using keywords and pattern matching, but easily circumvented.
-
-    Machine Learning: Training classifiers on various linguistic features (n-grams, sentiment lexicons, parts-of-speech tags).
-
-    Deep Learning: Particularly effective, using CNNs, LSTMs, and Transformer models (e.g., BERT, RoBERTa fine-tuned for hate speech detection). These models can capture complex semantic and syntactic patterns.
-
-    Multi-modal Approaches: Combining text with image or video analysis (though primarily text-focused in most research).
-
-    Weak Supervision/Semi-supervised Learning: Leveraging large amounts of unlabeled data, or noisy labels (e.g., from user reports) to augment smaller, carefully annotated datasets.
-
-    Ethical Considerations: Crucial for responsible development and deployment, including mitigating bias, ensuring transparency, and considering potential for censorship or chilling effects on free speech.
 
 
 \subsection{Misinformation \& Polarisation}
+
+detection, fact checkinng/verification
 
 The spread of misinformation (unintentional falsehoods) and disinformation (intentional falsehoods) and its role in fostering polarisation on social media platforms pose significant societal challenges. NLP plays a crucial role in analyzing and combating these phenomena.
 
