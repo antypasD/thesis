@@ -298,13 +298,14 @@ Asegúrese de marcar al menos un tema en cada texto.
 Table \ref{tab:preprocessing_steps} displays the number of remaining tweets in each preprocessing step for each language. The steps are: 1) language detection (ftext), 2) removal of incomplete/abusing tweets, 3) deduplication, 4) removal of tweets with high ammount of mentions and emojis, and 5) removal of tweets containing URLs.
 
 \begin{table*}[]
+\resizebox{\textwidth}{!}{
 \begin{tabular}{c|cccccc}
    & Total   & ftext   & incomplete/abusing & deduplication & mentions/emojis & URLS    \\ \hline
 en & 225,400 & 217,491 & 208,442            & 193,560       & 178,841         & 81,929  \\ \hline
 es & 225,350 & 218,163 & 197,617            & 186,266       & 178,060         & 110,669 \\ \hline
 ja & 455,846 & 455,846 & 438,080            & 407,589       & 383,669         & 207,472 \\ \hline
 gr & 225,300 & 218,461 & 214,031            & 206,147       & 203,947         & 30,858 
-\end{tabular}
+\end{tabular}}
 \caption{Number of remaining tweets for each preprocessing step for every language.}
 \label{tab:preprocessing_steps}
 \end{table*}
@@ -424,6 +425,7 @@ Tables \ref{tab:xlmt-details} and \ref{tab:gpt-4o-details} display detail result
 \end{figure*}
 
 \begin{table*}[]
+\resizebox{\textwidth}{!}{
 \begin{tabular}{l|ccc|ccc|ccc|ccc}
 \textbf{} &
   \multicolumn{3}{c|}{\textbf{en}} &
@@ -462,12 +464,13 @@ science \& technology     & 66 & 68 & 67 & 90 & 65 & 71 & 38 & 33 & 34 & 63 & 33
 sports                    & 87 & 93 & 90 & 84 & 79 & 81 & 81 & 73 & 75 & 95 & 92 & 93 \\
 travel \& adventure       & 68 & 50 & 57 & 63 & 32 & 39 & 65 & 56 & 60 & 27 & 29 & 25 \\
 youth \& student life     & 46 & 31 & 37 & 64 & 37 & 44 & 87 & 76 & 78 & 31 & 12 & 17
-\end{tabular}
+\end{tabular}}
 \caption{Precision (Pr), Recall (Rec), and F1 scores for each topic achieved by  \textit{xlmt\_large} trained on  \textit{TweetTopic} and \textit{All languages}.}
 \label{tab:xlmt-details}
 \end{table*}
 
 \begin{table*}[]
+\resizebox{\textwidth}{!}{
 \begin{tabular}{l|ccc|ccc|ccc|ccc}
  & \multicolumn{3}{c|}{en} & \multicolumn{3}{c|}{es} & \multicolumn{3}{c|}{gr} & \multicolumn{3}{c}{ja} \\ \hline
 \textit{topic} & Pr & Rec & F1 & Pr & Rec & F1 & Pr & Rec & F1 & Pr & Rec & F1 \\ \hline
@@ -490,7 +493,7 @@ science \& technology & 69 & 62 & 65 & 30 & 60 & 40 & 60 & 29 & 36 & 20 & 35 & 2
 sports & 88 & 96 & 92 & 73 & 88 & 80 & 93 & 95 & 94 & 79 & 85 & 82 \\
 travel \& adventure & 59 & 52 & 54 & 50 & 42 & 45 & 37 & 42 & 35 & 66 & 67 & 63 \\
 youth \& student life & 47 & 34 & 39 & \multicolumn{1}{l}{22} & \multicolumn{1}{l}{15} & \multicolumn{1}{l|}{17} & 35 & 12 & 18 & 52 & 49 & 49
-\end{tabular}
+\end{tabular}}
 \caption{Precision (Pr), Recall (Rec), and F1 scores for each topic achieved by  \textit{gpt-4o} in the few-shot setting.}
 \label{tab:gpt-4o-details}
 \end{table*}

@@ -223,85 +223,163 @@ In both settings, we prompt the models three times and report the average result
 
 As a final note, we forfeit reporting the results of zero/few-shot settings on {\TweetNER} and {\TweetEmoji} as our initial experiments were unsuccessful. This is mainly due to: (1) limitations of the models themselves (e.g. FlanT5 models are not trained with emojis); (2) evaluation difficulties ({\TweetEmoji} is evaluated using Accuracy at top 5 which leads to complications on the few-shot setting as only one emoji is included in the gold standard); and (3) issues that arose with the prompts tested (see Section \ref{appendix:SuperTweetEval-emoji_prompt} in the Appendix \ref{appendix:SuperTweetEval}).
 
-\begin{table*}[t]
-\begin{tabular}{cc}
-    \begin{minipage}{.5\linewidth}
-        \scalebox{0.85}{
-            \begin{tabular}{llrr} \toprule
-             & Model & Zero-shot & Few-shot \\ \midrule
-            \multirow[c]{5}{*}{\rotatebox{90}{\TempoWiC}} & FlanT5\textsubscript{XL} & 58.22 & \textbf{66.33}\\
-             & FlanT5\textsubscript{XXL} & 38.09 & 65.71 \\
-             & OPT-IML\textsubscript{1.3B} & \textbf{62.14} & 60.33 \\
-             & \texttt{text-ada-001} & 33.26 & 39.29 \\
-             & \texttt{chat-gpt-3.5-turbo$^*$} & 64.95 & 68.34  \\
-            \cmidrule{1-4}
-            \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetEmo.}}} & FlanT5\textsubscript{XL} & 30.08 & 30.19 \\
-             & FlanT5\textsubscript{XXL} & \textbf{32.77} & \textbf{36.63} \\
-             & OPT-IML\textsubscript{1.3B} & 19.96 & 24.66 \\
-             & \texttt{text-ada-001} & 0.42 & 20.06 \\
-             & \texttt{chat-gpt-3.5-turbo$^*$} & 45.17 & 51.56 \\
-            \cmidrule{1-4}
-            \multirow[c]{5}{*}{\rotatebox{90}{\TweetHate}} & FlanT5\textsubscript{XL} & \textbf{51.05} & \textbf{54.87} \\
-             & FlanT5\textsubscript{XXL} & 41.37 & 43.74 \\
-             & OPT-IML\textsubscript{1.3B} & 28.46 & 23.10 \\
-             & \texttt{text-ada-001} & 35.45 & 29.94 \\
-             & \texttt{chat-gpt-3.5-turbo$^*$} & 63.42 & 57.9 \\
-            \cmidrule{1-4}
-            \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetInt.}}} & FlanT5\textsubscript{XL} & 28.22 & 28.98 \\
-             & FlanT5\textsubscript{XXL} & \textbf{29.96} & \textbf{29.68} \\
-             & OPT-IML\textsubscript{1.3B} & 0.00 & 1.94 \\
-             & \texttt{text-ada-001} & 3.17 & 0.92 \\
-             & \texttt{chat-gpt-3.5-turbo$^*$} & 41.82 & 53.17 \\
-            \cmidrule{1-4}
-            \multirow[c]{5}{*}{\rotatebox{90}{\TweetQA}} & FlanT5\textsubscript{XL} & 53.85 & 54.33 \\
-             & FlanT5\textsubscript{XXL} & \textbf{53.88} & \textbf{64.44} \\
-             & OPT-IML\textsubscript{1.3B} & 50.85 & 53.50 \\
-             & \texttt{text-ada-001} & 17.99 & 17.99 \\
-             & \texttt{chat-gpt-3.5-turbo$^*$} & 32.90 & 70.51 \\
-            \cmidrule{1-4}
-            \end{tabular}}
-    \end{minipage} &
+% \begin{table*}[t]
+% \begin{tabular}{cc}
+%     \begin{minipage}{.5\linewidth}
+%         \scalebox{0.85}{
+%             \begin{tabular}{llrr} \toprule
+%              & Model & Zero-shot & Few-shot \\ \midrule
+%             \multirow[c]{5}{*}{\rotatebox{90}{\TempoWiC}} & FlanT5\textsubscript{XL} & 58.22 & \textbf{66.33}\\
+%              & FlanT5\textsubscript{XXL} & 38.09 & 65.71 \\
+%              & OPT-IML\textsubscript{1.3B} & \textbf{62.14} & 60.33 \\
+%              & \texttt{text-ada-001} & 33.26 & 39.29 \\
+%              & \texttt{chat-gpt-3.5-turbo$^*$} & 64.95 & 68.34  \\
+%             \cmidrule{1-4}
+%             \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetEmo.}}} & FlanT5\textsubscript{XL} & 30.08 & 30.19 \\
+%              & FlanT5\textsubscript{XXL} & \textbf{32.77} & \textbf{36.63} \\
+%              & OPT-IML\textsubscript{1.3B} & 19.96 & 24.66 \\
+%              & \texttt{text-ada-001} & 0.42 & 20.06 \\
+%              & \texttt{chat-gpt-3.5-turbo$^*$} & 45.17 & 51.56 \\
+%             \cmidrule{1-4}
+%             \multirow[c]{5}{*}{\rotatebox{90}{\TweetHate}} & FlanT5\textsubscript{XL} & \textbf{51.05} & \textbf{54.87} \\
+%              & FlanT5\textsubscript{XXL} & 41.37 & 43.74 \\
+%              & OPT-IML\textsubscript{1.3B} & 28.46 & 23.10 \\
+%              & \texttt{text-ada-001} & 35.45 & 29.94 \\
+%              & \texttt{chat-gpt-3.5-turbo$^*$} & 63.42 & 57.9 \\
+%             \cmidrule{1-4}
+%             \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetInt.}}} & FlanT5\textsubscript{XL} & 28.22 & 28.98 \\
+%              & FlanT5\textsubscript{XXL} & \textbf{29.96} & \textbf{29.68} \\
+%              & OPT-IML\textsubscript{1.3B} & 0.00 & 1.94 \\
+%              & \texttt{text-ada-001} & 3.17 & 0.92 \\
+%              & \texttt{chat-gpt-3.5-turbo$^*$} & 41.82 & 53.17 \\
+%             \cmidrule{1-4}
+%             \multirow[c]{5}{*}{\rotatebox{90}{\TweetQA}} & FlanT5\textsubscript{XL} & 53.85 & 54.33 \\
+%              & FlanT5\textsubscript{XXL} & \textbf{53.88} & \textbf{64.44} \\
+%              & OPT-IML\textsubscript{1.3B} & 50.85 & 53.50 \\
+%              & \texttt{text-ada-001} & 17.99 & 17.99 \\
+%              & \texttt{chat-gpt-3.5-turbo$^*$} & 32.90 & 70.51 \\
+%             \cmidrule{1-4}
+%             \end{tabular}}
+%     \end{minipage} &
 
-    \begin{minipage}{.5\linewidth}
-       \scalebox{0.85}{
-        \begin{tabular}{llrr} \toprule
-         & Model & Zero-shot & Few-shot \\ \midrule
-        \multirow[c]{5}{*}{\rotatebox{90}{\TweetNERD}} & FlanT5\textsubscript{XL} & 67.25 & 67.54 \\
-         & FlanT5\textsubscript{XXL} & \textbf{75.56} & \textbf{73.94} \\
-         & OPT-IML\textsubscript{1.3B} & 54.71 & 52.80 \\
-         & \texttt{text-ada-001} & 35.09 & 50.02 \\
-         & \texttt{chat-gpt-3.5-turbo$^*$} & 69.97 & 80.28 \\
-        \cmidrule{1-4}
-        \multirow[c]{5}{*}{\rotatebox{90}{\TweetQG}} & FlanT5\textsubscript{XL} & \textbf{21.76} & \textbf{22.15} \\
-         & FlanT5\textsubscript{XXL} & 21.05 & 21.87 \\
-         & OPT-IML\textsubscript{1.3B} & 20.34 & 14.51 \\
-         & \texttt{text-ada-001} & 19.09 & 14.49 \\
-         & \texttt{chat-gpt-3.5-turbo$^*$} & 23.25 & 33.3 \\
-        \cmidrule{1-4}
-        \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetSent.}}} & FlanT5\textsubscript{XL} & 0.50 & 6.44 \\
-         & FlanT5\textsubscript{XXL} & \textbf{28.30} & \textbf{25.72} \\
-         & OPT-IML\textsubscript{1.3B} & 18.84 & 11.09 \\
-         & \texttt{text-ada-001} & 0.00 & 0.00 \\
-         & \texttt{chat-gpt-3.5-turbo$^*$} & 42.99 & 41.22 \\
-        \cmidrule{1-4}
-        \multirow[c]{5}{*}{\rotatebox{90}{\TweetSimilarity}} & FlanT5\textsubscript{XL} & \textbf{59.46} & 54.29 \\
-         & FlanT5\textsubscript{XXL} & 56.76 & \textbf{61.69} \\
-         & OPT-IML\textsubscript{1.3B} & 43.91 & 9.92 \\
-         & \texttt{text-ada-001} & 0.00 & 8.71 \\
-         & \texttt{chat-gpt-3.5-turbo$^*$} & 68.94 & 57.74 \\
-        \cmidrule{1-4}
-        \multirow[c]{5}{*}{\rotatebox{90}{\TweetTopic}} & FlanT5\textsubscript{XL} & 36.16 & 34.73 \\
-         & FlanT5\textsubscript{XXL} & \textbf{36.25} & \textbf{37.35} \\
-         & OPT-IML\textsubscript{1.3B} & 13.43 & 8.59 \\
-         & \texttt{text-ada-001} & 0.00 & 4.16 \\
-         & \texttt{chat-gpt-3.5-turbo$^*$} & 54.77 & 48.31 \\
-        \cmidrule{1-4}
-        \end{tabular}}
-    \end{minipage} 
+%     \begin{minipage}{.5\linewidth}
+%        \scalebox{0.85}{
+%         \begin{tabular}{llrr} \toprule
+%          & Model & Zero-shot & Few-shot \\ \midrule
+%         \multirow[c]{5}{*}{\rotatebox{90}{\TweetNERD}} & FlanT5\textsubscript{XL} & 67.25 & 67.54 \\
+%          & FlanT5\textsubscript{XXL} & \textbf{75.56} & \textbf{73.94} \\
+%          & OPT-IML\textsubscript{1.3B} & 54.71 & 52.80 \\
+%          & \texttt{text-ada-001} & 35.09 & 50.02 \\
+%          & \texttt{chat-gpt-3.5-turbo$^*$} & 69.97 & 80.28 \\
+%         \cmidrule{1-4}
+%         \multirow[c]{5}{*}{\rotatebox{90}{\TweetQG}} & FlanT5\textsubscript{XL} & \textbf{21.76} & \textbf{22.15} \\
+%          & FlanT5\textsubscript{XXL} & 21.05 & 21.87 \\
+%          & OPT-IML\textsubscript{1.3B} & 20.34 & 14.51 \\
+%          & \texttt{text-ada-001} & 19.09 & 14.49 \\
+%          & \texttt{chat-gpt-3.5-turbo$^*$} & 23.25 & 33.3 \\
+%         \cmidrule{1-4}
+%         \multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetSent.}}} & FlanT5\textsubscript{XL} & 0.50 & 6.44 \\
+%          & FlanT5\textsubscript{XXL} & \textbf{28.30} & \textbf{25.72} \\
+%          & OPT-IML\textsubscript{1.3B} & 18.84 & 11.09 \\
+%          & \texttt{text-ada-001} & 0.00 & 0.00 \\
+%          & \texttt{chat-gpt-3.5-turbo$^*$} & 42.99 & 41.22 \\
+%         \cmidrule{1-4}
+%         \multirow[c]{5}{*}{\rotatebox{90}{\TweetSimilarity}} & FlanT5\textsubscript{XL} & \textbf{59.46} & 54.29 \\
+%          & FlanT5\textsubscript{XXL} & 56.76 & \textbf{61.69} \\
+%          & OPT-IML\textsubscript{1.3B} & 43.91 & 9.92 \\
+%          & \texttt{text-ada-001} & 0.00 & 8.71 \\
+%          & \texttt{chat-gpt-3.5-turbo$^*$} & 68.94 & 57.74 \\
+%         \cmidrule{1-4}
+%         \multirow[c]{5}{*}{\rotatebox{90}{\TweetTopic}} & FlanT5\textsubscript{XL} & 36.16 & 34.73 \\
+%          & FlanT5\textsubscript{XXL} & \textbf{36.25} & \textbf{37.35} \\
+%          & OPT-IML\textsubscript{1.3B} & 13.43 & 8.59 \\
+%          & \texttt{text-ada-001} & 0.00 & 4.16 \\
+%          & \texttt{chat-gpt-3.5-turbo$^*$} & 54.77 & 48.31 \\
+%         \cmidrule{1-4}
+%         \end{tabular}}
+%     \end{minipage} 
+% \end{tabular}
+% \caption{{\DATASET} zero \& few shot results. Best results for each task and setting are bolded. Chat-GPT results (marked with $^*$) are included for completeness. We refrained from highlighting ChatGPT results due to its closed and irreproducible nature, as well as the possibility to have been directly trained on some of the test sets.}
+% \label{tab:zerofew_results}
+% \end{table*}
+\begin{table*}[t]
+\centering
+\scalebox{0.65}{
+\begin{tabular}{@{}cc@{}}
+% LEFT TABLE
+\begin{tabular}{llrr} \toprule
+ & Model & Zero-shot & Few-shot \\ \midrule
+\multirow[c]{5}{*}{\rotatebox{90}{\TempoWiC}} & FlanT5\textsubscript{XL} & 58.22 & \textbf{66.33}\\
+ & FlanT5\textsubscript{XXL} & 38.09 & 65.71 \\
+ & OPT-IML\textsubscript{1.3B} & \textbf{62.14} & 60.33 \\
+ & \texttt{text-ada-001} & 33.26 & 39.29 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 64.95 & 68.34  \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetEmo.}}} & FlanT5\textsubscript{XL} & 30.08 & 30.19 \\
+ & FlanT5\textsubscript{XXL} & \textbf{32.77} & \textbf{36.63} \\
+ & OPT-IML\textsubscript{1.3B} & 19.96 & 24.66 \\
+ & \texttt{text-ada-001} & 0.42 & 20.06 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 45.17 & 51.56 \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\TweetHate}} & FlanT5\textsubscript{XL} & \textbf{51.05} & \textbf{54.87} \\
+ & FlanT5\textsubscript{XXL} & 41.37 & 43.74 \\
+ & OPT-IML\textsubscript{1.3B} & 28.46 & 23.10 \\
+ & \texttt{text-ada-001} & 35.45 & 29.94 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 63.42 & 57.9 \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetInt.}}} & FlanT5\textsubscript{XL} & 28.22 & 28.98 \\
+ & FlanT5\textsubscript{XXL} & \textbf{29.96} & \textbf{29.68} \\
+ & OPT-IML\textsubscript{1.3B} & 0.00 & 1.94 \\
+ & \texttt{text-ada-001} & 3.17 & 0.92 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 41.82 & 53.17 \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\TweetQA}} & FlanT5\textsubscript{XL} & 53.85 & 54.33 \\
+ & FlanT5\textsubscript{XXL} & \textbf{53.88} & \textbf{64.44} \\
+ & OPT-IML\textsubscript{1.3B} & 50.85 & 53.50 \\
+ & \texttt{text-ada-001} & 17.99 & 17.99 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 32.90 & 70.51 \\
 \end{tabular}
+&
+% RIGHT TABLE
+\begin{tabular}{llrr} \toprule
+ & Model & Zero-shot & Few-shot \\ \midrule
+\multirow[c]{5}{*}{\rotatebox{90}{\TweetNERD}} & FlanT5\textsubscript{XL} & 67.25 & 67.54 \\
+ & FlanT5\textsubscript{XXL} & \textbf{75.56} & \textbf{73.94} \\
+ & OPT-IML\textsubscript{1.3B} & 54.71 & 52.80 \\
+ & \texttt{text-ada-001} & 35.09 & 50.02 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 69.97 & 80.28 \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\TweetQG}} & FlanT5\textsubscript{XL} & \textbf{21.76} & \textbf{22.15} \\
+ & FlanT5\textsubscript{XXL} & 21.05 & 21.87 \\
+ & OPT-IML\textsubscript{1.3B} & 20.34 & 14.51 \\
+ & \texttt{text-ada-001} & 19.09 & 14.49 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 23.25 & 33.3 \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\textsc{TweetSent.}}} & FlanT5\textsubscript{XL} & 0.50 & 6.44 \\
+ & FlanT5\textsubscript{XXL} & \textbf{28.30} & \textbf{25.72} \\
+ & OPT-IML\textsubscript{1.3B} & 18.84 & 11.09 \\
+ & \texttt{text-ada-001} & 0.00 & 0.00 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 42.99 & 41.22 \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\TweetSimilarity}} & FlanT5\textsubscript{XL} & \textbf{59.46} & 54.29 \\
+ & FlanT5\textsubscript{XXL} & 56.76 & \textbf{61.69} \\
+ & OPT-IML\textsubscript{1.3B} & 43.91 & 9.92 \\
+ & \texttt{text-ada-001} & 0.00 & 8.71 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 68.94 & 57.74 \\
+\cmidrule{1-4}
+\multirow[c]{5}{*}{\rotatebox{90}{\TweetTopic}} & FlanT5\textsubscript{XL} & 36.16 & 34.73 \\
+ & FlanT5\textsubscript{XXL} & \textbf{36.25} & \textbf{37.35} \\
+ & OPT-IML\textsubscript{1.3B} & 13.43 & 8.59 \\
+ & \texttt{text-ada-001} & 0.00 & 4.16 \\
+ & \texttt{chat-gpt-3.5-turbo$^*$} & 54.77 & 48.31 \\
+\end{tabular}
+\end{tabular}
+} % end scalebox
 \caption{{\DATASET} zero \& few shot results. Best results for each task and setting are bolded. Chat-GPT results (marked with $^*$) are included for completeness. We refrained from highlighting ChatGPT results due to its closed and irreproducible nature, as well as the possibility to have been directly trained on some of the test sets.}
 \label{tab:zerofew_results}
 \end{table*}
+
+
 
 \section{Results}
 

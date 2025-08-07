@@ -4,6 +4,7 @@
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{0.2em} % set paragraph spacing
 
 %% Use \includeonly to compile only some of the chapters. This will keep cross-references and page numbering intact as if all files have been compiled. For example (notice the relative paths!):
 %\includeonly{./chapters/chapter1,./chapters/chapter3} 
@@ -304,17 +305,17 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 \fancyfoot{} % clear all footer fields
 
 % introduction
-\include{./chapters/chapter0-1}
+% \include{./chapters/chapter0-1}
 
 % % background & related work
-\include{./chapters/chapter0-2}
+% \include{./chapters/chapter0-2}
 
 % % % Part 1
 \part{\PARTONE}
 % \include{./chapters/chapter1-1}
-\include{./chapters/chapter1-2}
-% \include{./chapters/chapter1-3}
-% \include{./chapters/chapter1-4}
+% \include{./chapters/chapter1-2}
+\include{./chapters/chapter1-3}
+\include{./chapters/chapter1-4}
 
 % % % Part 2
 % \part{\PARTTWO}
@@ -326,7 +327,7 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 \addtocontents{toc}{\protect\addvspace{2.25em plus 1pt}}
 \bookmarksetup{startatroot}
 % conclusion
-% \include{./chapters/chapter0-3}
+\include{./chapters/chapter0-3}
 
 \end{spacing}
 \end{flushleft}
@@ -339,7 +340,7 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 \bibliography{bib_custom}%,anthology}
 
 % appendix
-% \include{./chapters/chapter0-4}
+\include{./chapters/chapter0-4}
 
 \fi
 \end{document}

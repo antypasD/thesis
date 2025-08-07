@@ -1,7 +1,7 @@
 \chapter{Background}
 \label{ch:background}
 
-This chapter provides the theoretical and methodological foundation of the thesis, covering the evolution of \ac{NLP} tools and their applications to social media data. It explores the challenges of processing noisy, heterogeneous text from platforms like Twitter and discusses existing work on key areas such as hate speech detection, misinformation analysis, and multilingual topic classification. By situating the thesis within the broader research landscape, this chapter demonstrates how the presented contributions advance the state of the art.
+This chapter provides a high level overview of the theoretical and methodological foundation of the thesis, covering the evolution of \acp{LM} and their applications to social media data. It explores the challenges of processing noisy, heterogeneous text from platforms like Twitter and discusses existing work on key areas such as hate speech detection, misinformation analysis, and multilingual topic classification. By situating the thesis within the broader research landscape, this chapter demonstrates how the presented contributions advance the state of the art.
 
 
 \section{Language Models}
@@ -29,7 +29,7 @@ For example, the embedding for the word bank in “he sat by the river bank” w
 
 Most contemporary \acp{MLM} are based on the \ac{BERT} architecture, which is an encoder-based model leveraging bidirectional self-attention mechanisms to capture contextual information from both the left and right of each token \cite{BERT}. Extensions to \ac{BERT} include \ac{RoBERTa}, which optimises the pre-training process and introduces larger datasets, longer training, and XLM-R, which extends \ac{RoBERTa} to multilingual settings \cite{liu2019roberta, conneau2019unsupervised}.
 
-One of the main benefits of these models is that their knowledge can be utilised in various downstream tasks with minimal modifications. Also, due to their encoder architecture which allows them to understand context from both left and right, they display significantly improved performance when fine-tuned on tasks like text classification, question answering, and named entity recognition \cite{yang-etal-2023-glue}.\acp{MLM} have become the backbone of many state-of-the-art \ac{NLP} systems, enabling significant advancements in understanding and generating human language. They are particularly effective for tasks that require deep contextual understanding, such as sentiment analysis \cite{alaparthi2021bert}, hate speech detection \cite{mozafari2019bert}, and misinformation detection \cite{kaliyar2021fakebert}.
+One of the main benefits of these models is that their knowledge can be utilised in various downstream tasks with minimal modifications. Also, due to their encoder architecture which allows them to understand context from both left and right, they display significantly improved performance when fine-tuned on tasks like text classification, question answering, and named entity recognition \cite{yang-etal-2023-glue}. \acp{MLM} have become the backbone of many state-of-the-art \ac{NLP} systems, enabling significant advancements in understanding and generating human language. They are particularly effective for tasks that require deep contextual understanding, such as sentiment analysis \cite{alaparthi2021bert}, hate speech detection \cite{mozafari2019bert}, and misinformation detection \cite{kaliyar2021fakebert}.
 
 \subsection{Encoder-Decoder Models}
 
@@ -235,6 +235,26 @@ Tasks related to polarisation can include echo chamber detection, opinion dynami
 
 
 In this thesis we look at both misinformation and polarisation effects, specifically in Chapter \ref{ch:spreaders} by investigating user profiles likely to share misinformation, and in Chapters \ref{ch:political} \ref{ch:triggers} focuses on polarisation in social discourse.
+
+
+\section{Conclusion?}
+% Change tile probalby
+
+do not do bullet pointss.
+
+in Backgorund make an observation about the end of each section to setp  on what we do afterwards.
+
+add a samll conclusion to Backgorund:
+say just to recap why we do waht we do.
+
+avoid focusing the reader on problem where we do not have a solution.
+
+maybe on the recap look at the review questions we set up on Chapter 1 and see how they align with what we wrote.
+
+
+e.g. topic modelling -> lack of resources.
+
+e.g. fake news spreaders.
 
 % By addressing these core areas, your thesis will effectively demonstrate its contribution to advancing the state of the art in NLP for social media analysis. Remember to cite relevant foundational and recent works for each point you make. Good luck!
 
