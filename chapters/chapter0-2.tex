@@ -159,8 +159,8 @@ Bernice \cite{delucia2022bernice} a multilingual social media model designed to 
 
 \section{NLP Applications for Social Media}
 
-\ac{NLP} applications for social media ...
-\ac{NLP} tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
+% \ac{NLP} applications for social media ...
+% \ac{NLP} tasks applied to social media data extract valuable insights from the vast amount of user-generated content.
 
 
 In this section, we explore core \ac{NLP} tasks applied to social media data and that are significant for this thesis, highlighting their importance and the unique challenges they present. These applications include sentiment analysis, emotion detection, topic classification, hate speech detection, and misinformation analysis (Table \ref{tab:task_examples}). Each of them plays a crucial role in understanding user-generated content and extracting valuable insights from the vast amount of data available on social media platforms.
@@ -188,7 +188,7 @@ Topic Classification & The new iPhone cam is insane but battery still trash lol 
 
 
 \subsection{Sentiment Analysis}
-Sentiment analysis aims to determine the emotional tone or overall sentiment expressed in a piece of text. It is commonly framed as a multi-class classification task, where a model classifies a given text as negative, neutral, or positive based on its sentiment \cite{mejova2009sentiment}. Alternative approaches include aspect-based sentiment analysis, where the model assesses the sentiment of a text towards a specific target or entity \cite{zhang2022survey}. Sentiment analysis can also be modeled as an ordinal regression task, where the model assigns a score on a predefined scale (e.g., 0 to 5), with 0 representing the most negative and 5 the most positive sentiment \cite{saad2019twitter}.
+Sentiment analysis aims to determine the emotional tone or overall sentiment expressed in a piece of text. It is commonly framed as a multi-class classification task, where a model classifies a given text as negative, neutral, or positive based on its sentiment \cite{mejova2009sentiment}. Alternative approaches include aspect-based sentiment analysis, where the model assesses the sentiment of a text towards a specific target or entity \cite{zhang2022survey}. Sentiment analysis can also be modeled as an ordinal regression task, where the model assigns a score on a predefined scale (e.g. 0 to 5), with 0 representing the most negative and 5 the most positive sentiment \cite{saad2019twitter}.
 
 On social media, sentiment analysis is crucial for understanding public opinion toward brands, products, events, or political figures. For example, \citet{matalon2021using} applied sentiment analysis to examine opinion inversion in political tweets related to the Israeli-Palestinian conflict. Similarly, \citet{rodriguez2021sentiment} analyzed Twitter posts mentioning Spanish political parties to study sentiment dynamics over time. \citet{alaparthi2021bert} used sentiment analysis to investigate public attitudes toward COVID-19 vaccines on Twitter.
 
@@ -199,122 +199,42 @@ Sentiment analysis has also been employed to assess public reactions to major ev
 In this thesis, sentiment analysis, framed as a multi-class problem,  is used extensively to extract insights into users' opinions and attitudes on various topics discussed on social media. This is particularly prominent in Chapters~\ref{ch:political}, \ref{ch:spreaders}, and \ref{ch:triggers}.
 
 \subsection{Emotion Detection}
+Emotion detection while similar to sentiment analysis it is more complex and  challenging task as it aims to identify more granular human emotions rather than overall negative, neutral, and positive emotional state. Specifically, an emotion detection model provided a text will highlight specific emotions like anger, joy, sadness, fear, surprise, disgust, etc that are present in it. Emotion detection can be framed as a multi-class classification task \cite{balabantaray2012multi}, where each class corresponds to a specific emotion, or as a multi-label classification task \cite{zhang2020emotion}, where multiple emotions can be detected simultaneously in a single text. It can also be approached as an ordinal regression task, where the model assigns a score to each emotion (e.g. 0-5) based on its intensity or relevance to the text \cite{muhammad-etal-2025-brighter}.
 
+Emotion detection is important for social media analysis particularly relevant when there is need for more fine-grained understanding of emotional responses to events or content on social media. Researchers have utilised emotion detection to study political discourse, marketing campaigns, and hate speech studies among others. For example \citet{bhaumik2023adapting} apply emotion detection techniques on Twitter posts related to the 2017 French presidential elections and study the effect of emotional content as influence indicators in online political discussions.Researchers \cite{rahib2022emotion}, have also used emotion detection to explore the effect  of the COVID-19 pandemic to the general population and study how they are responding to and dealing with evolving circumstances. Finally, \citet{schafer2023hs} investigate the connection between hate speech and emotions and propose a method for jointly modeling both phenomena.
 
-Examples, ...
-
-In this thesis, emotion detection, framed as multi-label task, is utilised in Chapters \ref{ch:spreaders}, and \ref{ch:triggers} as part of our analysis to extract isnights from users about the emotional status.
+In this thesis, emotion detection, framed as multi-label task, is utilised in Chapters \ref{ch:spreaders}, and \ref{ch:triggers} as part of our analysis to extract insights from users about the emotional status.
 
 \subsection{Topic Modelling}
+Topic modelling is focuses on identifying the underlying themes or topics present in a collection of texts. It is often framed as an unsupervised learning task, where the model discovers latent topics without predefined labels. Common approaches include \ac{LDA} \cite{lda}, \ac{NMF} \cite{lee1999learning}, and more recent methods like BERT-based topic models such as BertTopic \cite{bertopic} and Top2Vec \cite{angelov2020top2vec}. These methods aim to group similar documents based on their content, allowing for the identification of prevalent themes within a corpus.
 
-Topic modelling, unsupervised, lda and variations, BertTOpic, top2vec... why bad?
+The unsupervised nature of topic modelling while beneficial in many cases, can also be a limitation when specific topics or categories are of interest. In such cases, supervised topic classification is often used, where a model is trained on labeled data to predict predefined topics for new texts. This approach is particularly useful when performing targeted analysis where specific specific categories, such as politics, technology, and sports are of interest. This is particular important on social media, as it helps in organizing vast amounts of information, identifying trending discussions that are of interest and filter content based on specific themes.Applications of topic classification on social media focus on identifying trending topics \cite{lee2011twitter,bouadjenek2022longitudinal} but have also been utilised often in parallel with sentiment analysis to gain insights into public opinion and discourse \cite{huang2013sentiment,rodrigues2022new}.
 
-Topic classification (or text categorization) assigns one or more predefined categories or topics to a given text. On social media, this helps in organizing vast amounts of information, identifying trending discussions, or filtering content based on specific themes.
-
-Topic classification assigns thematic labels to texts. On social media, this task supports content moderation, trend analysis, and community profiling. Traditional approaches rely on supervised classification, while unsupervised methods like topic modeling (e.g., LDA) remain useful in low-resource contexts.
-
-Challenges on Social Media:
-
-    Short Text: Tweets or short posts often don't provide enough information for accurate topic classification using traditional methods.
-
-    Dynamic Topics: Topics on social media can emerge and disappear quickly.
-
-    Multilingual Content: Discussing the same topic across different languages.
-
-
-Chapters \ref{ch:tweettopic}, \ref{ch:x-topic},\ref{ch:spreaders},
+In this thesis we utilise topic classification in Chapters \ref{ch:tweettopic}, \ref{ch:x-topic},\ref{ch:spreaders} with the aim of community profiling and identifying topics of interest for specific groups of users.
 
 \subsection{Hate Speech Detection}
+% binary, multiclass, multilabel
+Hate speech detection involves identifying offensive, threatening, or discriminatory language. It is a critical application of \ac{NLP} on social media, aiming to identify content that expresses hatred or encourages violence towards individuals or groups based on attributes like race, ethnicity, religion, gender, and sexual orientation. 
+This is a highly sensitive and challenging task that is crucial for moderation and creating safer online environments. Hate speech detection can be framed as a binary classification task, where the model predicts whether a given text contains hate speech or not \cite{saleh2023detection} but can an also be approached as a multi-class classification task where the model identifies specific types of hate speech (e.g., racism, sexism, homophobia) \cite{qureshi2021compromised}, or as a multi-label classification task, where multiple forms of hate speech can be present in a single text \cite{dirting2022multi}.
 
-binary, multiclass, multilabel
+Hate speech detection is particularly important on social media platforms, where the rapid spread of harmful content can have significant real-world consequences as was the case during the Rohingya crisis in Myanmar \cite{nourooz2023transitional}. Researchers have applied hate speech detection to various social media platforms, including Twitter and Reddit, to study the prevalence and impact of hate speech in online discourse. For example, \citet{kim2021misinformation} investigates relations between misinformation and hate speech specifically in the case of the COVID-19 pandemic and hate speech target to Asian communities. Other researchers \cite{agarwal2021hate} have explore the nature and prevalence of hate speech in political dialogue in Twitter and also sutdies that focus on specific expressions of hate speech like misogyny and abuse of female politicians on Twitter \cite{fuchs2021normalizing}.
 
-Hate speech detection is a critical application of NLP on social media, aiming to identify content that expresses hatred or encourages violence towards individuals or groups based on attributes like race, ethnicity, religion, gender, sexual orientation, etc. This is a highly sensitive and challenging task due to its subjective nature and the evolving tactics of hate speech perpetrators.
-
-Hate speech detection involves identifying offensive, threatening, or discriminatory language. Prior work uses keyword matching, lexical features, and deep learning-based classifiers. Recent benchmarks such as HatEval and datasets like HASOC provide resources for multilingual and cross-platform evaluation.
-
-Challenges on Social Media:
-
-    Ambiguity and Context: Distinguishing genuine hate speech from offensive language, sarcasm, or legitimate criticism.
-
-    Evolving Language: Hate speech uses slang, coded language (dog whistles), and novel expressions to evade detection.
-
-    Imbalance in Data: Hate speech is typically a minority class, leading to skewed datasets and model bias towards the majority (non-hate speech) class.
-
-    Subjectivity of Definitions: What constitutes "hate speech" can vary across jurisdictions and cultural contexts.
-
-    Multilingualism: Hate speech manifests differently in various languages and cultures.
-
-
+In this thesis, hate speech detection is framed as a multi-class classification task and is used in Chapters \ref{ch:hate-speech}, \ref{ch:spreaders}, and \ref{ch:triggers} to identify harmful content and understand the dynamics of online hate speech.
 
 \subsection{Misinformation \& Polarisation}
+\todo[inline]{WIP}
 
-detection, fact checkinng/verification
+Misinformation and disinformation analysis is a critical area of \ac{NLP} research, particularly in the context of social media platforms where the rapid spread of false or misleading information can have significant societal impacts. The spread of misinformation on social media contributes to public harm, especially in contexts like health communication and political discourse. Identifying false or misleading content is complicated by subtle rhetorical strategies and the rapid evolution of narratives.
 
-The spread of misinformation (unintentional falsehoods) and disinformation (intentional falsehoods) and its role in fostering polarisation on social media platforms pose significant societal challenges. NLP plays a crucial role in analyzing and combating these phenomena.
-
-The spread of misinformation on social media contributes to public harm, especially in contexts like health communication and political discourse. Identifying false or misleading content is complicated by subtle rhetorical strategies and the rapid evolution of narratives.
-
-Polarisation further exacerbates misinformation spread, as users form echo chambers and engage in selective exposure. Language models can help identify linguistic signals of polarisation and frame detection. However, challenges remain in detecting emerging misinformation, handling multimodal content, and mitigating algorithmic biases.
+Misinformation analysis includes tasks such as misinformation detection, stance detection, propaganda detection, source credibility assessment, and linguistic feature analysis. These tasks are essential for understanding how misinformation spreads, its impact on public opinion, and how to counteract it through fact-checking and verification efforts.
+Misinformation detection involves identifying false or misleading content, often framed as a binary classification task where the model predicts whether a given text contains misinformation or not \cite{}. Stance detection, on the other hand, determines whether a text agrees, disagrees, discusses, or is unrelated to a given claim, and can be framed as a multi-class classification task \cite{}. Propaganda detection focuses on identifying rhetorical techniques used to manipulate public opinion, often framed as a multi-class classification task where the model identifies specific propaganda techniques used in a text \cite{}. Source credibility assessment involves evaluating the reliability of the source of information, which can be framed as a binary classification task where the model predicts whether a source is credible or not \cite{}. Finally, linguistic feature analysis involves analyzing linguistic patterns (e.g., sensationalist language, emotional intensity, specific vocabulary) often associated with misinformation, which can be framed as a feature extraction task where the model identifies specific linguistic features in a text \cite{}. 
 
 
-Misinformation and Disinformation Analysis:
-
-Detection: Identifying false or misleading content. This often involves:
-
-        Fact-checking: Verifying claims against reliable sources (challenging to automate fully).
-
-        Stance Detection: Determining if a text agrees, disagrees, discusses, or is unrelated to a given claim.
-
-        Propaganda Detection: Identifying rhetorical techniques used to manipulate public opinion.
-
-        Source Credibility: Assessing the reliability of the source of information.
-
-        Linguistic Features: Analyzing linguistic patterns (e.g., sensationalist language, emotional intensity, specific vocabulary) often associated with misinformation.
-
-    Propagation Analysis: Understanding how misinformation spreads across networks, often leveraging network science alongside NLP to analyze user interactions, sharing patterns, and community structures.
-
-    Debunking and Intervention: Developing NLP-powered systems to identify and flag misinformation, or to generate counter-narratives and provide accurate information.
-
-Polarisation Analysis:
-
-    Echo Chambers and Filter Bubbles: NLP can identify communities with shared beliefs and analyze how information flows within and between these groups.
-
-    Opinion Dynamics: Tracking how opinions evolve over time and how they are influenced by social interactions and exposure to different narratives.
-
-    Stance and Ideology Detection: Classifying users or content based on their political or social leanings.
-
-    Linguistic Markers of Polarisation: Analyzing specific language choices (e.g., divisive rhetoric, "us vs. them" framing, emotional language) that indicate or contribute to polarization.
-
-    Disagreement and Deliberation: Studying how online discussions devolve into unproductive arguments versus constructive dialogue.
-
-Challenges in Misinformation \& Polarisation:
-
-    "Truth" Definition: The ground truth for misinformation can be ambiguous or rapidly change.
-
-    Evolving Tactics: Misinformation campaigns constantly adapt their language and dissemination strategies.
-
-    Subtlety: Misinformation can be subtle, relying on implications or omissions rather than outright falsehoods.
-
-    Emotional Resonance: Misinformation often leverages strong emotions, making it highly shareable.
-
-    Cross-platform Coordination: Campaigns often span multiple social media platforms.
-
-    Attribution: Identifying the source and intent behind misinformation is complex.
-
-    Ethical Implications: The risk of suppressing legitimate dissent or creating "thought police" when developing automated detection systems.
-
-Approaches:
-
-    Hybrid Models: Combining NLP techniques with network analysis, computer vision (for multimodal misinformation), and knowledge graphs.
-
-    Adversarial Training: Developing models robust to subtle manipulations designed to evade detection.
-
-    Explainable AI (XAI): Making models more transparent to understand why they classify certain content as misinformation or polarizing.
-
-    Large Language Models: Their ability to reason, summarize, and understand complex contexts is being explored for tasks like fact-checking assistance and generating counter-narratives. However, LLMs can also generate convincing misinformation, highlighting the dual-use nature of the technology.
+On the other hand polarisation analysis focuses on understanding the strong division of the populace in two or more sides \cite{}, and the formation of echo chambers and selective exposure, where users are exposed only to information that aligns with their existing beliefs. Polarisation often leads to the reinforcement of biases, the spread of misinformation, and the deterioration of constructive discourse \cite{}.
+Tasks related to polarisation can include echo chamber detection, opinion dynamics tracking, stance and ideology detection, linguistic markers of polarisation, and studying disagreement and deliberation in online discussions. Echo Chambers and Filter Bubbles: NLP can identify communities with shared beliefs and analyze how information flows within and between these groups. Opinion Dynamics: Tracking how opinions evolve over time and how they are influenced by social interactions and exposure to different narratives. Linguistic Markers of Polarisation: Analyzing specific language choices (e.g., divisive rhetoric, "us vs. them" framing, emotional language) that indicate or contribute to polarization. Disagreement and Deliberation: Studying how online discussions devolve into unproductive arguments versus constructive dialogue.
 
 
-work based on misinformation is done in chapter \ref{ch:spreaders} while Chapters \ref{ch:political} \ref{ch:triggers} focuses on polarisation in social discourse.
+In this thesis we look at both misinformation and polarisation effects, specifically in Chapter \ref{ch:spreaders} by investigating user profiles likely to share misinformation, and in Chapters \ref{ch:political} \ref{ch:triggers} focuses on polarisation in social discourse.
 
 % By addressing these core areas, your thesis will effectively demonstrate its contribution to advancing the state of the art in NLP for social media analysis. Remember to cite relevant foundational and recent works for each point you make. Good luck!
 
