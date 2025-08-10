@@ -182,31 +182,21 @@ Tasks related to polarisation can include echo chamber detection, opinion dynami
 In this thesis we look at both misinformation and polarisation effects, specifically in Chapter \ref{ch:spreaders} by investigating user profiles likely to share misinformation, and in Chapters \ref{ch:political} \ref{ch:triggers} focuses on polarisation in social discourse.
 
 
-\section{Research Alignment} % Change tile probalby
+\section{Objectives and Research Alignment} % Change tile probalby
 \todo[inline]{title WIP}
-In this chapter we outlined the theoretical and methodological foundations this thesis is based on. Specifically, a focus on \ac{LM} architectures, their adaptation to social media, and the \ac{NLP} applications most relevant to our research aims. 
+In this chapter, we outlined the theoretical and methodological foundations on which this thesis is built, focusing on \ac{LM} architectures, their adaptation to social media, and the \ac{NLP} applications most relevant to our research aims.
 
-We discussed the prevalence of \acp{LM} in recent \ac{NLP} research and highlighted the distinctive characteristics of social media text, it's informality, multilinguality, and rapid evolution, and discussed the importance of development of specialised models to address these challenges.
+We discussed the prevalence of \acp{LM} in recent \ac{NLP} research and highlighted the distinctive characteristics of social media text, its informality, multilinguality, and rapid evolution, and discussed the importance of development of specialised models to address these challenges.
 
-We also introduced NLP tasks that are central to the contributions presented in later chapters. Sentiment and emotion analysis provide the basis for extracting public insights and emotional responses in Chapters \ref{ch:political}, \ref{ch:spreaders}, and \ref{ch:triggers}. Topic classification, introduced in Chapters \ref{ch:tweettopic} and \ref{ch:x-topic}, is approached through a multi-label model tailored for community profiling and the identification of topics of interest for specific user groups, as later demonstrated in Chapter \ref{ch:spreaders}. The hate speech resources introduced in Chapter \ref{ch:hate-speech}, are applied in Chapters \ref{ch:spreaders} and \ref{ch:triggers} to study the presence and dynamics of harmful discourse. Finally, misinformation and polarisation are examined through the identification of linguistic characterstics of likely misinformation spreaders in Chapter \ref{ch:spreaders} and the analysis of polarised discourse in Chapters \ref{ch:political} and \ref{ch:triggers}.
+We also introduced \ac{NLP} tasks that are central to the contributions presented in later chapters. Sentiment and emotion analysis support the extraction of public insights and emotional responses in Chapters \ref{ch:political}, \ref{ch:spreaders}, and \ref{ch:triggers}. We address the lack of large, in-domain datasets for social media by introducing multi-label and multilingual topic classification resources in Chapters \ref{ch:tweettopic} and \ref{ch:x-topic}, tailored for community profiling and the identification of topics of interest for specific user groups, as later demonstrated in Chapter \ref{ch:spreaders}. Similarly, the hate speech resources introduced in Chapter \ref{ch:hate-speech} are designed to offer a more robust and generalisable alternative to existing datasets, and are applied in Chapters \ref{ch:spreaders} and \ref{ch:triggers} to study the presence and dynamics of harmful discourse. These resources also form the basis of the {\DATASET} benchmark introduced in Chapter \ref{ch:super-tweeteval}, which provides a challenging evaluation framework for recent \acp{LM} on social media–focused tasks. Finally, misinformation and polarisation are examined through the identification of linguistic characterstics of likely misinformation spreaders in Chapter \ref{ch:spreaders} and the analysis of polarised discourse in Chapters \ref{ch:political} and \ref{ch:triggers}.
 
 While this thesis does not provide solutions to all the challenges presented in this chapter, it contribures in specific subproblems  by introducing novel datasets, models, and methodologies that address specific gaps in the literature aiming on advancing the sota in \ac{NLP} for social media analysis.
 
-% in Backgorund make an observation about the end of each section to setp  on what we do afterwards.
+The next part of the thesis, Part \ref{part:part1}, resents the new resources introduceed which subsequently are utilised in Part \ref{part:part2}.
 
-% add a samll conclusion to Backgorund:
-% say just to recap why we do waht we do.
 
-% avoid focusing the reader on problem where we do not have a solution.
+% This thesis builds on the theoretical and methodological foundations outlined in this chapter, focusing on \ac{LM} architectures, their adaptation to social media, and the \ac{NLP} applications most relevant to our research aims. The challenges identified here, such as the informality, multilinguality, and rapid evolution of social media text, motivate the development of domain-specific resources and methods that can address gaps in current approaches.
 
-% maybe on the recap look at the review questions we set up on Chapter 1 and see how they align with what we wrote.
+% Our work contributes in three key areas. First, we address the lack of large, in-domain datasets for social media by introducing multi-label and multilingual topic classification resources (Chapters \ref{ch:tweettopic} and \ref{ch:x-topic}) for community profiling and trend detection. Second, we tackle the need for more robust hate speech detection by creating robust, multi-class annotated datasets (Chapter \ref{ch:hate-speech}) and applying them to study harmful discourse dynamics (Chapters \ref{ch:spreaders} and \ref{ch:triggers}). These resources are used as basis to building a challenging benchmark for social media \DATASET  in Chapter \ref{ch:super-tweeteval}.  Third, we fill the gap in user-focused misinformation and polarisation research by developing methods to identify likely misinformation spreaders and to quantify polarised discourse through linguistic and behavioural analysis (Chapters \ref{ch:spreaders}, \ref{ch:political}, and \ref{ch:triggers}).
 
-% e.g. topic modelling -> lack of resources.
-
-% e.g. fake news spreaders.
-
-% By addressing these core areas, your thesis will effectively demonstrate its contribution to advancing the state of the art in NLP for social media analysis. Remember to cite relevant foundational and recent works for each point you make. Good luck!
-
-% % TODO examples of task
-% * section
-% Introduce to the people what the task is a about (link to chapters).
+% Part \ref{part:part1} introduces these new resources and models, and Part \ref{part:part2} applies them to the downstream tasks outlined above, demonstrating how targeted, domain-adapted solutions can advance the state of the art in \ac{NLP} for social media analysis.
