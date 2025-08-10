@@ -84,3 +84,28 @@ nlp applicaitons fror social media.
 
 rethink intro of background introduce each section (of the three).
 
+
+
+
+######
+\chapter{Conclusions and Future Work} 
+\label{ch:conclusion} 
+
+\section{Summary of Thesis} \label{ch7:summary}
+
+\section{Contributions} \label{ch7:contributions}
+
+we did A,B,C the next step is to do D,E,F
+
+\section{Future Work} \label{ch7:future-work}
+
+do not do bullet pointss.
+
+# in Backgorund make an observation about the end of each section to setup  on what we do afterwards.
+
+add a samll conclusion to Backgorund:
+say just to recap why we do waht we do.
+
+avoid focusing the reader on problem where we do not have a solution.
+
+maybe on the recap look at the review questions we set up on Chapter 1 and see how they align with what we wrote.

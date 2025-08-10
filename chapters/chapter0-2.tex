@@ -23,11 +23,11 @@ For example, the embedding for the word bank in “he sat by the river bank” w
     \centering
      \scalebox{0.8}{
     \includegraphics[width=\textwidth]{../figures/chapter2/bert_architecture.jpg}}
-    \caption{Example of \ac{MLM} objective for training in \ac{BERT}.}
+    \caption{Example of \ac{MLM} objective for training in BERT.}
     \label{fig:bert_architecture}
 \end{figure}
 
-Most contemporary \acp{MLM} are based on the \ac{BERT} architecture, which is an encoder-based model leveraging bidirectional self-attention mechanisms to capture contextual information from both the left and right of each token \cite{BERT}. Extensions to \ac{BERT} include \ac{RoBERTa}, which optimises the pre-training process and introduces larger datasets, longer training, and XLM-R, which extends \ac{RoBERTa} to multilingual settings \cite{liu2019roberta, conneau2019unsupervised}.
+Most contemporary \acp{MLM} are based on the BERT architecture, which is an encoder-based model leveraging bidirectional self-attention mechanisms to capture contextual information from both the left and right of each token \cite{BERT}. Extensions to BERT include \ac{RoBERTa}, which optimises the pre-training process and introduces larger datasets, longer training, and XLM-R, which extends \ac{RoBERTa} to multilingual settings \cite{liu2019roberta, conneau2019unsupervised}.
 
 One of the main benefits of these models is that their knowledge can be utilised in various downstream tasks with minimal modifications. Also, due to their encoder architecture which allows them to understand context from both left and right, they display significantly improved performance when fine-tuned on tasks like text classification, question answering, and named entity recognition \cite{yang-etal-2023-glue}. \acp{MLM} have become the backbone of many state-of-the-art \ac{NLP} systems, enabling significant advancements in understanding and generating human language. They are particularly effective for tasks that require deep contextual understanding, such as sentiment analysis \cite{alaparthi2021bert}, hate speech detection \cite{mozafari2019bert}, and misinformation detection \cite{kaliyar2021fakebert}.
 
@@ -52,75 +52,21 @@ Encoder-decoder models are widely used in tasks where the input and output diffe
 \subsection{Large Language Models}
 \acp{LLM} represent the most recent advancement in language modeling, building upon the foundations laid by \acp{MLM} and encoder-decoder models. They are characterized by their massive scale, often containing hundreds of billions of parameters, and their ability to perform a wide range of tasks with remarkable performamce, often in a zero-shot or few-shot learning setting \cite{wang2020generalizing}. Unlike traditional \acp{LM}, which are typically trained on specific tasks or datasets, \acp{LLM} are pretrained on vast and diverse datasets encompassing text, code, and other modalities like images.
 
-Architecturally, most \acp{LLM} are based on the Transformer decoder-only design and are trained using an autoregressive objective \cite{GPT3}where, given a sequence of tokens, the model learns to predict the next token in a left-to-right manner. In contrast to bidirectional models like \ac{BERT}, decoder-only models do not have access to future tokens during training, which makes them suited for generative tasks such as text completion, dialogue, summarization, and code generation.
+Architecturally, most \acp{LLM} are based on the Transformer decoder-only design and are trained using an autoregressive objective \cite{GPT3}where, given a sequence of tokens, the model learns to predict the next token in a left-to-right manner. In contrast to bidirectional models like BERT, decoder-only models do not have access to future tokens during training, which makes them suited for generative tasks such as text completion, dialogue, summarization, and code generation.
 
 Modern \acp{LLM} are capable to perform tasks based purely on natural language instructions, making \textit{prompt engineering} a critical aspect of their effective use \cite{reynolds2021prompt}. % Prompt engineering involves crafting input prompts that guide the model's behaviour toward producing the desired output. This technique has become increasingly important. The quality and structure of prompts can significantly affect model performance, especially in open-ended or multi-step reasoning tasks \cite{reynolds2021prompt}. 
 Moreover, similarly to smaller \acp{LM} their performance on specific tasks can often be further improved through finetuning. This is typically applied to smaller versions of the models using techniques like \ac{QLoRA} \cite{dettmers2023qlora}, which enables efficient adaptation with limited computational resources.
 
 Several notable \acp{LLM} have significantly advanced the field of \ac{NLP}. For example, OpenAI's GPT series, starting with GPT-2 \cite{radford2019language}, demonstrated the potential of large-scale unsupervised pretraining and autoregressive text generation. Its succesors, GPT-3 \cite{brown2020language} and GPT-4 \cite{achiam2023gpt} further scaled up the model size and training data, achieving impressive performance on a wide range of tasks with few-shot and zero-shot learning capabilities. 
 
-Alongside proprietary models, several open-sourced \acp{LLM} have been introduceded. Meta's \ac{LLaMA} family \cite{touvron2023llama,touvron2023llama2} offers models that are computationally efficient and accessible to the research community, with versions as small as 1 billion parameters. Other prominent open-source alternatives include Mistral 7B and Mixtral \cite{jiang2024mixtral}—a mixture-of-experts model using sparse attention to activate only a subset of its parameters during inference—and Qwen \cite{qwen}, a high-performing model widely adopted in academia due to its open availability and strong benchmark results.
+Alongside proprietary models, several open-sourced \acp{LLM} have been introduceded. Meta's LLAMA family \cite{touvron2023llama,touvron2023llama2} offers models that are computationally efficient and accessible to the research community, with versions as small as 1 billion parameters. Other prominent open-source alternatives include Mistral 7B and Mixtral \cite{jiang2024mixtral}—a mixture-of-experts model using sparse attention to activate only a subset of its parameters during inference—and Qwen \cite{qwen}, a high-performing model widely adopted in academia due to its open availability and strong benchmark results.
 
 These models showcase that decoder-only architectures when scaled massively are able to achieve broad generalization across \ac{NLP} tasks with minimal supervision.
 
-However, despite their impressive capabilities, \acp{LLM} pose significant challenges. These include high computational costs, issues related to interpretability, and the risk of generating biased or harmful content \cite{ferrara2023should,george2023environmental}. While decoder-only \acp{LLM} excel in generative and open-ended tasks, encoder-only models, such as those based on the \ac{BERT} architecture, remain highly competitive and often superior for certain structured tasks, like text classification and \ac{NER}, where their bidirectional context is advantageous. Moreover, encoder-based models tend to be more efficient to train and deploy for such applications.
+However, despite their impressive capabilities, \acp{LLM} pose significant challenges. These include high computational costs, issues related to interpretability, and the risk of generating biased or harmful content \cite{ferrara2023should,george2023environmental}. While decoder-only \acp{LLM} excel in generative and open-ended tasks, encoder-only models, such as those based on the BERT architecture, remain highly competitive and often superior for certain structured tasks, like text classification and \ac{NER}, where their bidirectional context is advantageous. Moreover, encoder-based models tend to be more efficient to train and deploy for such applications.
 
 
 \section{Social media platforms}
-% Social media platforms have become a primary source of real-time, user-generated content, offering rich data for \ac{NLP} applications. Platforms like Twitter and Reddit provide unique linguistic characteristics and challenges due to their informal nature, user-generated content, character limits, and prevalent use of slang, emojis, hashtags, mentions, and often noisy data.... Give examples of existing platforms why we select Twitter and Reddit as case studies?
-
-% Social media platforms like Reddit and Twitter serve as rich sources of real-time, user-generated content. In general Twitter is based a form where each user can reply to another using things like posts, retweets, replies, threads, .. and is  characterized by short texts (280 characters). On the other hand Reddit consists of longer, threaded discussions across topic-specific communities (subreddits), offering more contextual and hierarchical information. Despite these differences, both platforms exhibit domain-specific language and are often used to study online discourse, opinion dynamics, and harmful content.
-
-% At the same time these platforms present unique linguistic characteristics and challenges for \acp{NLP} due to their informal nature, user-generated content, character limits, prevalent use of slang, emojis, hashtags, mentions, and often noisy data.
-
-
-% \subsection{Specialised Language Models for Social Media}
-% The direct application of \acp{LM} trained on standard, clean text (like books or news articles) often underperforms on social media data. This necessitates either extensive data preprocessing or, more effectively, the development of Specialised Language Models \cite{}.
-
-% Such models are typically  pre-trained or fine-tuned on large corpora of social media data which allows the models to learn the specific linguistic patterns, vocabulary, and nuances prevalent on these platforms. Specifically they are designed to handle noise and they might incorporate specific strategies to deal with typos, grammatical errors, abbreviations, and informal language. Aware of platform-specific features Models can be designed to explicitly leverage hashtags, mentions, retweets, replies, and other structural elements of social media posts.
-
-% Examples of specialised LMs:
-% \begin{itemize}
-%     \item BERTweet \cite{nguyen2020bertweet}, a RoBERTa-based model pretrained on 850M English tweets, achieving strong results on sentiment analysis and hate speech detection.
-    
-%     \item RedBERT, pretrained on Reddit data, captures stylistic and topical nuances of Reddit posts.
-
-%     \item   TwitterRoberta
-
-%     \item Bernice 
-% \end{itemize}
-
-% Models trained on domain-specific social media datasets: Many researchers pre-train or fine-tune models on large collections of tweets, Reddit posts, or other platform-specific data to improve performance on tasks relevant to those platforms, such as hate speech detection or stance detection.
-
-% The challenges of noisy, heterogeneous social media text include:
-
-% Informal Language: Slang, abbreviations (e.g., "lol", "brb"), typos, and non-standard grammar.
-
-% Contextual Ambiguity: Short posts often lack sufficient context for accurate interpretation. Sarcasm and irony are particularly difficult to detect.
-
-% Emojis and Emoticons: These visual cues carry significant emotional and semantic information.
-
-% Hashtags and Mentions: These serve as both content and metadata, indicating topics or directed communication.
-
-% Multilinguality and Code-Switching: Users often mix languages within a single post.
-
-% Data Volume and Velocity: The sheer volume and speed of social media data generation make real-time processing and analysis challenging.
-
-% Evolving Language: New slang, trends, and memes emerge rapidly, requiring models to constantly adapt.
-
-% Bias in Data: Social media data can reflect societal biases, leading to biased model outputs if not addressed carefully.
-
-% Sarcasm and Irony: Difficult to detect as the literal meaning contradicts the intended sentiment.
-
-% Implicit Sentiment: Sentiment can be expressed subtly rather than explicitly through sentiment-laden words.
-
-% Context Dependency: The same word can have different sentiment in different contexts.
-
-% Short and Noisy Text: Limited text length and informal language make it harder to extract clear sentiment signals.
-
-% Emojis and Hashtags: These often convey strong sentiment and need to be incorporated into analysis.
-
-
 Social media platforms have become central to the study of natural language in real world environments, offering vast amounts of real-time, user-generated content. These platforms differ significantly from traditional text sources such as books, news articles, or formal documents. Their informal, dynamic, and highly contextual nature presents unique opportunities and challenges for \ac{NLP} research and applications \cite{mustofa2025use}. A lot of these paltforms focus on different modalities, for example, Instagram emphasises photos and videos, while others like Snapchat are inherently multimodal. In contrast, Twitter and Reddit have emerged as particularly rich sources of linguistic data and are widely used in computational social science and NLP research \cite{}. This is primarily because text is the dominant medium of communication on these platforms, and they used to offer relatively easy access to data through official \acp{API} \footnote{Twitter's Academic \ac{API} shut down on XXX. Reddit's \ac{API} shutdown on XXX}. This thesis focuses on these two platforms due to their complementary structures and modes of interaction.
 
 \begin{figure}[h]
@@ -147,14 +93,14 @@ Although Reddit and Twitter differ in format and interaction design, they displa
 \subsection{Specialised Language Models for Social Media}
 \todo[inline]{add some citations}
 
-The direct application of \acp{LM} trained on formal or curated text corpora often fails to generalize effectively to social media data. Social media text presents a wide range of linguistic challenges for \ac{NLP} due to its informal and dynamic nature. It often features slang, abbreviations (e.g., "brb", "imo"), and non-standard grammar, which deviate from conventional language norms. Posts frequently lack sufficient context, leading to ambiguity in interpretation, particularly when sarcasm or irony is involved. Additionally, platform-specific metadata such as emojis, hashtags, and mentions play an important role in conveying meaning and identifying topics. Multilinguality and code-switching are also common, with users often blending languages or dialects within a single post. Language on these platforms evolves rapidly, with new slang and trends emerging constantly, requiring models to adapt over time. Social media content also reflects societal biases and may include toxic or harmful language, posing ethical and technical challenges. Finally, the short and often noisy nature of posts, particularly on platforms like Twitter, often requires careful pre-processing or tailored model architectures. 
+The direct application of \acp{LM} trained on formal or curated text corpora often fails to generalize effectively to social media data. Social media text presents a wide range of linguistic challenges for \ac{NLP} due to its informal and dynamic nature. It often features slang, abbreviations (e.g., "brb": "be right back", "imo": "in my opinion"), and non-standard grammar, which deviate from conventional language norms \cite{bashlovkina2023smile}. Posts frequently lack sufficient context, leading to ambiguity in interpretation, particularly when sarcasm or irony is involved \cite{khan2025textual}. Additionally, platform-specific metadata such as emojis, hashtags, and mentions play an important role in conveying meaning and identifying topics. Multilinguality and code-switching are also common, with users often blending languages or dialects within a single post. Language on these platforms evolves rapidly, with new slang and trends emerging constantly, requiring models to adapt over time. Social media content also reflects societal biases and may include toxic or harmful language, posing ethical and technical challenges. Finally, the short and often noisy nature of posts, particularly on platforms like Twitter, often requires careful pre-processing or tailored model architectures. 
 
 These challenges have led to the development of specialised language models that are pre-trained or fine-tuned on large-scale social media corpora to capture the idiosyncrasies of online discourse \cite{nguyen2020bertweet}.
 
 These models are explicitly designed to handle the noise and variability inherent in social media and they often incorporate strategies for addressing spelling errors, abbreviations, emojis, and platform-specific syntax (e.g., hashtags, mentions, retweet markers). By learning from in-domain data, these models are better equipped to understand the linguistic norms, stylistic features, and emergent expressions characteristic of social platforms.
 
 Popular examples of specialised language models include: (i) BERTweet \cite{nguyen2020bertweet}, a RoBERTa-based model trained exclusively on 850M English tweets; (ii) Twitter-RoBERTa \cite{loureiro-etal-2022-timelms}, which continues training from the RoBERTa checkpoint using a large tweet corpora; (iii) 
-Bernice \cite{delucia2022bernice} a multilingual social media model designed to handle cross-lingual and code-switched content; and  (iv) DialoGPT \cite{zhang2019dialogpt} A conversational response generation model built by fine‑tuning GPT‑2 on approximately 147 million Reddit comment exchanges. These examples reflect a common trend: RoBERTa is the backbone architecture for many social media-specific models. This is largely due to its robustness, relatively low computational requirements for large-scale pretraining, and the fact that its main limitation, a short maximum context length of 512 tokens, is not a major drawback for short-form social media text. Specialized models trained on domain-specific social media data consistently outperform their general-purpose counterparts and, in some tasks, match or surpass \acp{LLM} in downstream applications such as hate speech detection, stance classification, and misinformation detection \cite{}.
+Bernice \cite{delucia2022bernice} a multilingual social media model designed to handle cross-lingual and code-switched content; and  (iv) DialoGPT \cite{zhang2019dialogpt} A conversational response generation model built by fine‑tuning GPT‑2 on approximately 147 million Reddit comment exchanges. These examples reflect a common trend: RoBERTa is the backbone architecture for many social media-specific models. This is largely due to its robustness, relatively low computational requirements for large-scale pretraining, and the fact that its main limitation, a short maximum context length of 512 tokens, is not a major drawback for short-form social media text. Specialized models trained on domain-specific social media data consistently outperform their general-purpose counterparts and, in some tasks, match or surpass \acp{LLM} in downstream applications such as hate speech detection, stance classification, and misinformation detection \cite{monnar2024cross}.
 
 
 \section{NLP Applications for Social Media}
@@ -169,7 +115,7 @@ In this section, we explore core \ac{NLP} tasks applied to social media data and
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|p{8cm}|c|}
+\begin{tabular}{|l|p{8cm}|c|}
 \hline
 \textbf{Task} & \centering \textbf{Post} & \textbf{Label} \\
 \hline
@@ -196,7 +142,7 @@ Other researchers have explored the use of sentiment analysis in brand monitorin
 
 Sentiment analysis has also been employed to assess public reactions to major events, such as natural disasters or political elections. For instance, \citet{willson2021twitter} used sentiment analysis to examine Twitter reactions to the 2019–2020 Australian bushfires, revealing regional and temporal variations in sentiment. Similarly, \citet{behl2021twitter} applied sentiment analysis to tweets related to the COVID-19 pandemic, helping identify user concerns and needs during the crisis and illustrating how social media can inform disaster response strategies.
 
-In this thesis, sentiment analysis, framed as a multi-class problem,  is used extensively to extract insights into users' opinions and attitudes on various topics discussed on social media. This is particularly prominent in Chapters~\ref{ch:political}, \ref{ch:spreaders}, and \ref{ch:triggers}.
+In this thesis, sentiment analysis, framed as a multi-class problem,  is used extensively to extract insights into users' opinions and attitudes on various topics discussed on social media. This is particularly significant in  Chapter \ref{ch:political}, where we introduce a custom domain-specific classifier, and in Chapters \ref{ch:spreaders} and \ref{ch:triggers}, where we employ \acp{PLM} fine-tuned on social media data.
 
 \subsection{Emotion Detection}
 Emotion detection while similar to sentiment analysis it is more complex and  challenging task as it aims to identify more granular human emotions rather than overall negative, neutral, and positive emotional state. Specifically, an emotion detection model provided a text will highlight specific emotions like anger, joy, sadness, fear, surprise, disgust, etc that are present in it. Emotion detection can be framed as a multi-class classification task \cite{balabantaray2012multi}, where each class corresponds to a specific emotion, or as a multi-label classification task \cite{zhang2020emotion}, where multiple emotions can be detected simultaneously in a single text. It can also be approached as an ordinal regression task, where the model assigns a score to each emotion (e.g. 0-5) based on its intensity or relevance to the text \cite{muhammad-etal-2025-brighter}.
@@ -210,7 +156,7 @@ Topic modelling is focuses on identifying the underlying themes or topics presen
 
 The unsupervised nature of topic modelling while beneficial in many cases, can also be a limitation when specific topics or categories are of interest. In such cases, supervised topic classification is often used, where a model is trained on labeled data to predict predefined topics for new texts. This approach is particularly useful when performing targeted analysis where specific specific categories, such as politics, technology, and sports are of interest. This is particular important on social media, as it helps in organizing vast amounts of information, identifying trending discussions that are of interest and filter content based on specific themes.Applications of topic classification on social media focus on identifying trending topics \cite{lee2011twitter,bouadjenek2022longitudinal} but have also been utilised often in parallel with sentiment analysis to gain insights into public opinion and discourse \cite{huang2013sentiment,rodrigues2022new}.
 
-In this thesis we utilise topic classification in Chapters \ref{ch:tweettopic}, \ref{ch:x-topic},\ref{ch:spreaders} with the aim of community profiling and identifying topics of interest for specific groups of users.
+In this thesis we introduce a multi-label  topic classification dataset and model in Chapter \ref{ch:tweettopic}, along with a multilingual extension in \ref{ch:x-topic}, tailored for social media applications. The aim is to support community profiling and to identify topics of interest for specific user groups, as we demonstrate in Chapter \ref{ch:spreaders}.
 
 \subsection{Hate Speech Detection}
 % binary, multiclass, multilabel
@@ -219,42 +165,45 @@ This is a highly sensitive and challenging task that is crucial for moderation a
 
 Hate speech detection is particularly important on social media platforms, where the rapid spread of harmful content can have significant real-world consequences as was the case during the Rohingya crisis in Myanmar \cite{nourooz2023transitional}. Researchers have applied hate speech detection to various social media platforms, including Twitter and Reddit, to study the prevalence and impact of hate speech in online discourse. For example, \citet{kim2021misinformation} investigates relations between misinformation and hate speech specifically in the case of the COVID-19 pandemic and hate speech target to Asian communities. Other researchers \cite{agarwal2021hate} have explore the nature and prevalence of hate speech in political dialogue in Twitter and also sutdies that focus on specific expressions of hate speech like misogyny and abuse of female politicians on Twitter \cite{fuchs2021normalizing}.
 
-In this thesis, hate speech detection is framed as a multi-class classification task and is used in Chapters \ref{ch:hate-speech}, \ref{ch:spreaders}, and \ref{ch:triggers} to identify harmful content and understand the dynamics of online hate speech.
+In this thesis, hate speech detection is framed as a multi-class classification task, and we introduce a robust dataset and model in Chapter \ref{ch:hate-speech}. This model is applied in Chapters \ref{ch:spreaders} and \ref{ch:triggers} to identify harmful content and to analyze the dynamics of online hate speech.
 
 \subsection{Misinformation \& Polarisation}
-\todo[inline]{WIP}
 
 Misinformation and disinformation analysis is a critical area of \ac{NLP} research, particularly in the context of social media platforms where the rapid spread of false or misleading information can have significant societal impacts. The spread of misinformation on social media contributes to public harm, especially in contexts like health communication and political discourse. Identifying false or misleading content is complicated by subtle rhetorical strategies and the rapid evolution of narratives.
 
-Misinformation analysis includes tasks such as misinformation detection, stance detection, propaganda detection, source credibility assessment, and linguistic feature analysis. These tasks are essential for understanding how misinformation spreads, its impact on public opinion, and how to counteract it through fact-checking and verification efforts.
-Misinformation detection involves identifying false or misleading content, often framed as a binary classification task where the model predicts whether a given text contains misinformation or not \cite{}. Stance detection, on the other hand, determines whether a text agrees, disagrees, discusses, or is unrelated to a given claim, and can be framed as a multi-class classification task \cite{}. Propaganda detection focuses on identifying rhetorical techniques used to manipulate public opinion, often framed as a multi-class classification task where the model identifies specific propaganda techniques used in a text \cite{}. Source credibility assessment involves evaluating the reliability of the source of information, which can be framed as a binary classification task where the model predicts whether a source is credible or not \cite{}. Finally, linguistic feature analysis involves analyzing linguistic patterns (e.g., sensationalist language, emotional intensity, specific vocabulary) often associated with misinformation, which can be framed as a feature extraction task where the model identifies specific linguistic features in a text \cite{}. 
+Misinformation analysis includes tasks such as misinformation detection, stance detection, propaganda detection, and linguistic feature analysis. These tasks are essential for understanding how misinformation spreads, its impact on public opinion, and how to counteract it through fact-checking and verification efforts.
+Misinformation detection involves identifying false or misleading content, often framed as a binary classification task where the model predicts whether a given text contains misinformation or not \cite{oshikawa-etal-2020-survey}. Stance detection, on the other hand, determines whether a text agrees, disagrees, discusses, or is unrelated to a given claim, and can be framed as a multi-class classification task \cite{hardalov2022survey}. Propaganda detection focuses on identifying rhetorical techniques used to manipulate public opinion, often framed as a multi-class classification task where the model identifies specific propaganda techniques used in a text \cite{da2020survey}. Finally, linguistic feature analysis involves analyzing linguistic patterns (e.g., sensationalist language, emotional intensity, specific vocabulary) often associated with misinformation, which can be framed as a feature extraction task where the model identifies specific linguistic features in a text \cite{chang2025sens}. 
 
 
-On the other hand polarisation analysis focuses on understanding the strong division of the populace in two or more sides \cite{}, and the formation of echo chambers and selective exposure, where users are exposed only to information that aligns with their existing beliefs. Polarisation often leads to the reinforcement of biases, the spread of misinformation, and the deterioration of constructive discourse \cite{}.
+On the other hand polarisation analysis focuses on understanding the strong division of the populace in two or more sides \cite{del2016echo}, and the formation of echo chambers and selective exposure, where users are exposed only to information that aligns with their existing beliefs. Polarisation often leads to the reinforcement of biases, the spread of misinformation, and the deterioration of constructive discourse \cite{wang-etal-2025-decoding}.
 Tasks related to polarisation can include echo chamber detection, opinion dynamics tracking, stance and ideology detection, linguistic markers of polarisation, and studying disagreement and deliberation in online discussions. Echo Chambers and Filter Bubbles: NLP can identify communities with shared beliefs and analyze how information flows within and between these groups. Opinion Dynamics: Tracking how opinions evolve over time and how they are influenced by social interactions and exposure to different narratives. Linguistic Markers of Polarisation: Analyzing specific language choices (e.g., divisive rhetoric, "us vs. them" framing, emotional language) that indicate or contribute to polarization. Disagreement and Deliberation: Studying how online discussions devolve into unproductive arguments versus constructive dialogue.
 
 
 In this thesis we look at both misinformation and polarisation effects, specifically in Chapter \ref{ch:spreaders} by investigating user profiles likely to share misinformation, and in Chapters \ref{ch:political} \ref{ch:triggers} focuses on polarisation in social discourse.
 
 
-\section{Conclusion?}
-% Change tile probalby
+\section{Research Alignment} % Change tile probalby
+\todo[inline]{title WIP}
+In this chapter we outlined the theoretical and methodological foundations this thesis is based on. Specifically, a focus on \ac{LM} architectures, their adaptation to social media, and the \ac{NLP} applications most relevant to our research aims. 
 
-do not do bullet pointss.
+We discussed the prevalence of \acp{LM} in recent \ac{NLP} research and highlighted the distinctive characteristics of social media text, it's informality, multilinguality, and rapid evolution, and discussed the importance of development of specialised models to address these challenges.
 
-in Backgorund make an observation about the end of each section to setp  on what we do afterwards.
+We also introduced NLP tasks that are central to the contributions presented in later chapters. Sentiment and emotion analysis provide the basis for extracting public insights and emotional responses in Chapters \ref{ch:political}, \ref{ch:spreaders}, and \ref{ch:triggers}. Topic classification, introduced in Chapters \ref{ch:tweettopic} and \ref{ch:x-topic}, is approached through a multi-label model tailored for community profiling and the identification of topics of interest for specific user groups, as later demonstrated in Chapter \ref{ch:spreaders}. The hate speech resources introduced in Chapter \ref{ch:hate-speech}, are applied in Chapters \ref{ch:spreaders} and \ref{ch:triggers} to study the presence and dynamics of harmful discourse. Finally, misinformation and polarisation are examined through the identification of linguistic characterstics of likely misinformation spreaders in Chapter \ref{ch:spreaders} and the analysis of polarised discourse in Chapters \ref{ch:political} and \ref{ch:triggers}.
 
-add a samll conclusion to Backgorund:
-say just to recap why we do waht we do.
+While this thesis does not provide solutions to all the challenges presented in this chapter, it contribures in specific subproblems  by introducing novel datasets, models, and methodologies that address specific gaps in the literature aiming on advancing the sota in \ac{NLP} for social media analysis.
 
-avoid focusing the reader on problem where we do not have a solution.
+% in Backgorund make an observation about the end of each section to setp  on what we do afterwards.
 
-maybe on the recap look at the review questions we set up on Chapter 1 and see how they align with what we wrote.
+% add a samll conclusion to Backgorund:
+% say just to recap why we do waht we do.
 
+% avoid focusing the reader on problem where we do not have a solution.
 
-e.g. topic modelling -> lack of resources.
+% maybe on the recap look at the review questions we set up on Chapter 1 and see how they align with what we wrote.
 
-e.g. fake news spreaders.
+% e.g. topic modelling -> lack of resources.
+
+% e.g. fake news spreaders.
 
 % By addressing these core areas, your thesis will effectively demonstrate its contribution to advancing the state of the art in NLP for social media analysis. Remember to cite relevant foundational and recent works for each point you make. Good luck!
 
