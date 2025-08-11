@@ -1137,150 +1137,239 @@ Figures \ref{fig:hate-distribution-xgb}, \ref{fig:sentiment-distribution-xgb}, a
 
 
 \section{Trigger points}
-% \subsection{Model Categories}
-% \subsubsection{Emotion Categories}
-% \label{sec:emotion-list}
-% The \textit{twitter-roberta-base-emotion-multilabel} model classifies each entry in one or more of the following classes:
-% \textit{anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust}.
+\subsection{Model Selection}
+\subsection{Emotion Categories}
+\label{sec:emotion-list}
+The \textit{twitter-roberta-base-emotion-multilabel} model classifies each entry in one or more of the following classes:
+\textit{anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust}.
 
-% \subsubsection{Hate Speech Categories.}
-% \label{sec:hate-list}
-% The \textit{twitter-roberta-base-hate-multiclass}  model classifies each entry in one of the following classes: \textit{not\_hate, sexism, racism, religion, other, sexual\_orientation, disability}
+\subsubsection{Hate Speech Categories.}
+\label{sec:hate-list}
+The \textit{twitter-roberta-base-hate-multiclass}  model classifies each entry in one of the following classes: \textit{not\_hate, sexism, racism, religion, other, sexual\_orientation, disability}
+
+\subsubsection{Validation Setting}
+\label{sec:validation}
+Table \ref{tab:annotated_data} displays the distribution of comments in regards to emotion, sentiment and hate speech for the manually annotated dataset collected.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llll|ll}
+\multicolumn{2}{c|}{Emotion}            & \multicolumn{2}{c|}{Hate Speech}       & \multicolumn{2}{c}{Sentiment}         \\ \hline
+no emotion & \multicolumn{1}{l|}{29} & not hate     & 88     & negative     & 56    \\
+anger      & \multicolumn{1}{l|}{26} & sexism       & 7      & neutral      & 37    \\
+disgust    & \multicolumn{1}{l|}{23} & racism       & 3      & positive     & 7     \\
+pessimism    & \multicolumn{1}{l|}{19} & other                & 2               & \multicolumn{2}{l}{\multirow{6}{*}{}} \\
+anticipation & \multicolumn{1}{l|}{15} & \multicolumn{2}{l|}{\multirow{5}{*}{}} & \multicolumn{2}{l}{}                  \\
+sadness    & \multicolumn{1}{l|}{9}  & \multicolumn{2}{l|}{} & \multicolumn{2}{l}{} \\
+surprise   & \multicolumn{1}{l|}{5}  & \multicolumn{2}{l|}{} & \multicolumn{2}{l}{} \\
+optimism   & \multicolumn{1}{l|}{5}  & \multicolumn{2}{l|}{} & \multicolumn{2}{l}{} \\
+joy        & \multicolumn{1}{l|}{2}  & \multicolumn{2}{l|}{} & \multicolumn{2}{l}{}
+\end{tabular}
+\caption{Distribution of comments regarding emotion, sentiment, and hate speech categories on the manually annotated dataset.}
+\label{tab:annotated_data}
+\end{table}
+
+\subsubsection{Annotation Guidelines}
+\label{sec:appendix_guidelines}
+Below we present the guidelines presented to annotators for the Sentiment Analysis, Emtion classification, and Hate Speech detection tasks.
+
+\subsubsection*{Sentiment Analysis}
+We will show you Reddit comments that can be positive, negative, or neutral based on their sentiment. 
+
+\noindent \textbf{Sentiment Categories}
+\begin{itemize}
+    \item Positive comments should be labelled: \textbf{Positive}
+    \item Neutral comments should be labelled:  \textbf{Neutral}
+    \item Negative comments should be labelled: \textbf{Negative}
+\end{itemize}
+
+\noindent \textbf{Examples}
+\begin{itemize}
+    \item ```Just finished my morning workout and feeling fantastic!  \#HealthyLiving \#FitnessGoals``` is a positive sentence.
+    \item ```Stuck in traffic again!  Late for work and already stressed out. \#TrafficJam``` \#MondayBlues is a negative  sentence.
+    \item Factual sentences such as ```The party was in front of the house``` are neutral  sentences.
+\end{itemize}
+
+\noindent \textbf{Notes:}
+\noindent We have also added a comment column where you can share your thoughts, comments, or doubts. If you are unsure whether you should annotate the tweet as positive, negative or neutral, you may choose the label that suits it best and a comment about that in the comment column. 
+
+\noindent  The annotation of an ironic comments depends on the context. While we acknowledge the lack of context, if you think the tweet is mocking someone (or a group of people), you should label it negative.
+
+
+\subsubsection*{Emotion Classification}
+You will be presented with Reddit comments and asked to select the option that best describes the text.
+You may choose as many emotions as you believe are present — from 0 to 11 — based on the content and tone of the comment.
+
+
+\noindent\textbf{Emotion Categories:}
+\begin{itemize}
+    \item \textbf{Anger} – includes annoyance, rage
+    \item \textbf{Anticipation} – includes interest, vigilance
+    \item \textbf{Disgust} – includes disinterest, dislike, loathing
+    \item \textbf{Fear} – includes apprehension, anxiety, terror
+    \item \textbf{Joy} – includes serenity, ecstasy
+    \item \textbf{Love} – includes affection
+    \item \textbf{Optimism} – includes hopefulness, confidence
+    \item \textbf{Pessimism} – includes cynicism, no confidence
+    \item \textbf{Sadness} – includes pensiveness, grief
+    \item \textbf{Surprise} – includes distraction, amazement
+    \item \textbf{Trust} – includes acceptance, liking, admiration
+\end{itemize}
+
+
+\noindent\textbf{Notes:}
+\noindent If no emotion is clearly present, you may leave all options unchecked. Choose all emotions that are clearly expressed or implied in the comment. If you're unsure, use the comment column to share your reasoning or highlight ambiguity. Comments may express multiple emotions simultaneously, for example, both sadness and anger.
+
+\subsubsection*{Hate Speech Detection}
+You will be presented with Reddit comments and asked to identify whether they contain hate speech, and if so, which target group is being attacked or discriminated against.
+Please choose \textbf{only one} of the following categories that best represents the nature of the content:
+
+\noindent\textbf{Hate Speech Categories:}
+\begin{itemize}
+    \item \textbf{Sexism}: Content that targets or demeans people based on their gender (e.g., women, men, non-binary individuals) or reinforces harmful gender stereotypes. Example: ``Women should stay in the kitchen where they belong."
+    
+    \item \textbf{Racism}: Content that expresses hostility, prejudice, or dehumanization based on race, ethnicity, or national origin. Example: ``All [ethnic group] are criminals and should be deported."
+    
+    \item \textbf{Disability}: Content that mocks, belittles, or degrades people with physical, mental, or developmental disabilities. Example: ``You're so stupid, you must be on the spectrum."
+    
+    \item \textbf{Sexual Orientation}: Hate directed toward someone because of their actual or perceived sexual orientation (e.g., gay, lesbian, bisexual, etc.). Example: ``Being gay is a disease that should be cured."
+    
+    \item \textbf{Religion}: Disparagement, dehumanization, or threats against individuals or groups based on religious beliefs or identities. Example: ``All Muslims are terrorists."
+    
+    \item \textbf{Other}: Use this label for hate speech that targets a group not covered above, such as socioeconomic status, age, appearance, political affiliation, etc. Example: ``Old people are useless and should just die already."
+    
+    \item \textbf{Not Hate}: Use this label if the comments does not contain hate speech. Comments that are neutral or non-discriminatory.
+\end{itemize}
+
+\noindent \textbf{Notes:}
+If you are unsure, select the label you think fits best and add a comment explaining your reasoning. A single post may mention multiple groups in such a case, select the one that is most explicit or harmful, and explain in the comment column.
+
+
 
 \subsection{Extended Results}
 \label{sec:appendix_counts}
 
+Table \ref{tab:trigger_counts} presents the total number of comments and threads extracted from Reddit for each keyword, along with the corresponding time periods during which the data was collected.
+
+Table \ref{tab:comment_count} presents the number of comments included in each experiment for both the treatment and control groups.
+
 Figure \ref{fig:absolute_counts_overall} displays the number of comments posted before and after the introduction of each trigger point on the data collected.
 
-Figure \ref{fig:rwanda_controv_temporal_semantic} displays the average controversiality per thread before and after the introduction of the \textit{Rwanda} trigger point in the Temporal and Semantic control settings.
+Figure \ref{fig:rwanda_controv_temporal_semantic} displays the average controversiality per thread before and after the introduction of the \textit{Rwanda} trigger point in the Temporal and Contextual control settings.
 
-Figure \ref{fig:rwanda_temporal_semantic} displays the distribution of comments posted before and after the introduction of the \textit{Rwanda} trigger point in the Temporal and Semantic control settings.
+Figure \ref{fig:rwanda_temporal_semantic} displays the distribution of comments posted before and after the introduction of the \textit{Rwanda} trigger point in the Temporal and Contextual control settings.
 
-Figure \ref{fig:sentiment_space} displays the distribution of negative comments, based on their sentiment, posted before and after the introduction of the \textit{Brexit, Feminism, Rwanda, and NHS} trigger points in the Space control setting.
+Figure \ref{fig:sentiment_space_Appendix} displays the distribution of negative comments, based on their sentiment, posted before and after the introduction of the \textit{Brexit, Feminism, Rwanda, and NHS} trigger points in the Space control setting.
 
 Figure \ref{fig:emotion_space_vaccine} displays the distribution of comments conveying anger and those that do not before and after the introduction of the \textit{Vaccine} trigger point in the Space control setting.
 
 
+\begin{table}[]
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{l|ccc}
+\textbf{}           & \textbf{Threads} & \textbf{Comments} & \textbf{Year} \\ \hline
+\textbf{Rwanda}     & 0.05             & 1.87              & 2020, 2022    \\ \hline
+\textbf{Brexit}     & 0.37             & 11.57             & 2020 - 2022   \\ \hline
+\textbf{NHS}        & 0.34             & 6.20              & 2020 - 2022   \\ \hline
+\textbf{Vaccine}    & 1.42             & 28.11             & 2019, 2022    \\ \hline
+\textbf{Feminism}   & 0.94             & 17.79             & 2020 - 2022   \\ \hline
+\textbf{EU}         & 0.2              & 12.4              & 2020 - 2022   \\ \hline
+\textbf{Red Cross}  & 0.02             & 0.2               & 2020 - 2022   \\ \hline
+\textbf{SubSaharan} & 0.08             & 1.5               & 2020, 2022    \\ \hline
+\textbf{Surgery}    & 0.5              & 3.9               & 2019, 2022    \\ \hline
+\textbf{Woman}      & 2.1              & 19.3              & 2020 - 2022  \\
+\bottomrule
+\end{tabular}}
+\caption{Numbers, in millions, of threads, comments, and time period for each trigger word.}
+\label{tab:trigger_counts}
+\end{table}
 
-\begin{figure*}[ht]
+\begin{table}[]
+\centering
+\begin{tabular}{l|lrr}
+\multicolumn{1}{c|}{\textbf{Trigger}} & \multicolumn{1}{c}{\textbf{Experiment}} & \textbf{Treatment} & \textbf{Control} \\ \hline
+\multirow{2}{*}{Feminist} & space    & \multirow{2}{*}{264,495} & 16,503,956 \\
+                          & contextual &                         & 163,740   \\ \hline
+\multirow{3}{*}{Rwanda}   & space    & \multirow{3}{*}{28,770}  & 668,641   \\
+                          & contextual &                         & 2,587     \\
+                          & temp     &                         & 5,896     \\ \hline
+\multirow{2}{*}{Brexit}   & space    & \multirow{2}{*}{688,600} & 10,793,036 \\
+                          & contextual &                         & 111,524   \\ \hline
+\multirow{3}{*}{vaccine}  & space    & \multirow{3}{*}{348,641} & 7,685,095  \\
+                          & contextual &                         & 12,986    \\
+                          & temp     &                         & 11,841    \\ \hline
+\multirow{2}{*}{NHS}      & space    & \multirow{2}{*}{509,458} & 5,275,917  \\
+                          & contextual &                         & 1,276    
+\end{tabular}
+\caption{Number of comments present for each trigger in each experiment for both the treatment and control subsets.}
+\label{tab:comment_count}
+\end{table}
+
+\begin{figure}[ht]
     \centering
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/counts/overall/brexit.png}
-        \caption{Brexit}
-        \label{fig:image1a}
-    \end{subfigure}
+    % Row 1
+    \includegraphics[width=0.49\textwidth]{../figures/triggers/counts/overall/brexit.png}
     \hfill
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/counts/overall/feminism.png}
-        \caption{Feminism}
-        \label{fig:image1b}
-    \end{subfigure}
+    \includegraphics[width=0.49\textwidth]{../figures/triggers/counts/overall/feminism.png}
     
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/counts/overall/nhs.png}
-        \caption{NHS}
-        \label{fig:image1c}
-    \end{subfigure}
+    % Row 2
+    \vspace{1em}
+    \includegraphics[width=0.49\textwidth]{../figures/triggers/counts/overall/nhs.png}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/counts/overall/rwanda.png}
-        \caption{Rwanda}
-        \label{fig:image1d}
-    \end{subfigure}
-        \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/counts/overall/vaccine.png}
-        \caption{Vaccine}
-        \label{fig:image1e}
-    \end{subfigure}
+    \includegraphics[width=0.49\textwidth]{../figures/triggers/counts/overall/rwanda.png}
     
-    \caption{Absolute count of posts before and after each trigger point.}
+    % Row 3
+    \vspace{1em}
+    \includegraphics[width=0.49\textwidth]{../figures/triggers/counts/overall/vaccine.png}
+    
+    \caption{Absolute count of comments before and after each trigger point.}
     \label{fig:absolute_counts_overall}
-\end{figure*}
+\end{figure}
 
 
-\begin{figure*}[ht]
+
+\begin{figure}[ht]
     \centering
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/controversiality/rwanda_temporal.png}
-        \caption{Temporal Setting}
-        \label{fig:image2a}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/controversiality/rwanda_semantics.png}
-        \caption{Semantic Setting}
-        \label{fig:image2b}
-    \end{subfigure}
-
+    % First image
+    \includegraphics[width=\textwidth]{../figures/triggers/controversiality/rwanda_temporal.png}
+    \vspace{1em} % vertical space
+    % Second image
+    \includegraphics[width=\textwidth]{../figures/triggers/controversiality/rwanda_semantics.png}
     
-    \caption{Average controversiality per thread in the Temporal and Semantic settings and their respective treatment groups, for the trigger point \textit{Rwanda}.}
+    \caption{Average controversiality per thread in the Temporal and Contextual settings and their respective treatment groups, for the trigger point \textit{Rwanda}.}
     \label{fig:rwanda_controv_temporal_semantic}
-\end{figure*}
+\end{figure}
 
 
-
-\begin{figure*}[ht]
+\begin{figure}[ht]
     \centering
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/counts/counts_sem/rwanda.png}
-        \caption{Semantic Comparison}
-        \label{fig:image3a}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/counts/counts_temp/rwanda.png}
-        \caption{Temporal Comparison}
-        \label{fig:image3b}
-    \end{subfigure}
+    % Contextual Comparison
+    \includegraphics[width=\textwidth]{../figures/triggers/counts/counts_sem/rwanda.png}
+    \vspace{1em} % space between plots
+    % Temporal Comparison
+    \includegraphics[width=\textwidth]{../figures/triggers/counts/counts_temp/rwanda.png}
 
-    \caption{Rwanda Treatment and Control distributions of comments in the Semantic and Temporal settings.}
+    \caption{Rwanda Treatment and Control distributions of comments in the Contextual and Temporal settings.}
     \label{fig:rwanda_temporal_semantic}
-\end{figure*}
+\end{figure}
 
 
-
-\begin{figure*}[ht]
+\begin{figure}[ht]
     \centering
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/sentiment/space/brexit.png}
-        \caption{Brexit}
-        \label{fig:image4a}
-    \end{subfigure}
+    % Row 1
+    \includegraphics[width=0.75\textwidth]{../figures/triggers/sentiment/space/brexit.png}
+    \vspace{1em}
+    % Row 2
+    \includegraphics[width=0.75\textwidth]{../figures/triggers/sentiment/space/feminism.png}
+    \vspace{1em}
+    % Row 3
+    \includegraphics[width=0.49\textwidth]{../figures/triggers/sentiment/space/rwanda.png}
     \hfill
-    \begin{subfigure}[b]{1\columnwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/sentiment/space/feminism.png}
-        \caption{Feminism}
-        \label{fig:image4b}
-    \end{subfigure}
-    
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/sentiment/space/rwanda.png}
-        \caption{Rwanda}
-        \label{fig:image4c}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{../figures/triggers/sentiment/space/nhs.png}
-        \caption{NHS}
-        \label{fig:image4d}
-    \end{subfigure}
-    
+    \includegraphics[width=0.49\textwidth]{../figures/triggers/sentiment/space/nhs.png}
+
     \caption{Distribution of negatively charged comments in the Treatment and Control (Space) groups.}
     \label{fig:sentiment_space_Appendix}
-\end{figure*}
+\end{figure}
 
 
 \begin{figure*}
@@ -1294,7 +1383,7 @@ Figure \ref{fig:emotion_space_vaccine} displays the distribution of comments con
 
 
 \subsection{Extended Test of Parallel Trends Assumption}
-
+Figures \ref{fig:parallel_trends} \textit{a \& b} display the results of the Parallel Trends Assumption testing for all experiments as described in H1 and H2.
 
 
 \begin{figure*}[ht]
@@ -1314,7 +1403,7 @@ Figure \ref{fig:emotion_space_vaccine} displays the distribution of comments con
     \end{subfigure}
     
     \caption{Testing the Parallel Trends Assumption with event studies. Individual studies in grey, their time-wise mean in purple.}
-    \label{fig:sentiment_space}
+    \label{fig:parallel_trends}
 \end{figure*}
 
 
@@ -1322,3 +1411,61 @@ Figure \ref{fig:emotion_space_vaccine} displays the distribution of comments con
 \label{sec:appendix-resources}
 An \textit{NVIDIA GeForce RTX 4090} GPU was utilised for the experiments conducted. 170 hours spent for the inference process of sentiment analysis, emotion detection, and hate speech detection models.
 
+\subsection{Selected Reddit Comments}\label{sec:appendix-example}
+Below we present a Reddit discussion and how it evolves when the trigger "feminism" appears. The comment containing the trigger is \textbf{bolded}.
+
+\vspace{0.5cm}
+
+\noindent\textbf{WARNING: the following comments contain sensitive and potentially offensive language. Reader discretion is advised.}
+
+\begin{quote}
+"This image though..."
+\end{quote}
+
+\begin{quote}
+"Haunting for us, isn't it? But not for the females."
+\end{quote}
+
+\begin{quote}
+"Well I'm sure most females would find this horrifying too."
+\end{quote}
+
+\begin{quote}
+"You a female? Why are you on this Sub?"
+\end{quote}
+
+\begin{quote}
+\textbf{"Because I'm against feminism?"}
+\end{quote}
+
+\begin{quote}
+"Well, it's better if these Posts are seen by all the Men out there. Get the taste of true Chameleon female nature."
+\end{quote}
+
+\begin{quote}
+"Too late. I already saw it."
+\end{quote}
+
+\begin{quote}
+"There are many women like us on this sub ."
+\end{quote}
+
+\begin{quote}
+"Yeah I’m a woman and I don’t like it. Women are not a hive mind."
+\end{quote}
+
+\begin{quote}
+"Women are not a hive mind. You should go out and talk to one maybe."
+\end{quote}
+
+\begin{quote}
+"My fucking eyes. Sometimes I wish I was blind."
+\end{quote}
+
+\begin{quote}
+"When Male dies, it's ""sometimes"" sad; when Female dies.............CRIMEEEEE!!!!
+\end{quote}
+
+\begin{quote}
+"The fucked up world we live in"
+\end{quote}
