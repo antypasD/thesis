@@ -97,7 +97,7 @@ In order to have a control group to compare in our experiments, we sampled tweet
 
 
 \begin{table*}[ht]
-\begin{adjustbox}{width=0.75\linewidth,center}
+\begin{adjustbox}{width=\textwidth,center}
 \begin{tabular}{cc|cc|cc|c}
 \multicolumn{2}{c|}{MBFC}  & \multicolumn{2}{c|}{FNN}   & PAN             &          & \multirow{2}{*}{Verified} \\ \cline{1-6}
 untrusted      & trusted           & untrusted        & trusted         & untrusted            & trusted     &                           \\ \hline
@@ -148,10 +148,10 @@ All the language models used are built upon the RoBERTa architecture \cite{liu20
 
 
 \begin{figure}[!ht]
-\begin{adjustbox}{width=\linewidth,center}
 \centering
-\includegraphics[scale=0.58]{../figures/spreaders/sentiment.png}
-\end{adjustbox}
+\scalebox{0.9}{
+  \includegraphics[width=\textwidth]{../figures/spreaders/sentiment.png}
+}
 \caption{Sentiment distribution in each dataset for \textit{trusted} and \textit{untrusted} users in Twitter.}
 \label{fig:sentiment-distribution}
 \end{figure}
@@ -168,7 +168,7 @@ All the specialised models described above are perform in line of the state of t
 
 \begin{table*}
 \centering
-\begin{adjustbox}{width=\linewidth,center}
+\begin{adjustbox}{width=\textwidth,center}
 \begin{tabular}{llll|ll|ll|l}
  & \multirow{2}{*}{} & \multicolumn{2}{c|}{MBFC} & \multicolumn{2}{c|}{PAN} & \multicolumn{2}{c|}{FNN} & \multicolumn{1}{c}{\multirow{2}{*}{verified}} \\ \cline{3-8}
  &  & \multicolumn{1}{c}{untrusted} & \multicolumn{1}{c|}{trusted} & \multicolumn{1}{c}{untrusted} & \multicolumn{1}{c|}{trusted} & \multicolumn{1}{c}{untrusted} & \multicolumn{1}{c|}{trusted} & \multicolumn{1}{c}{} \\ \hline
@@ -263,12 +263,15 @@ There does appear to be a variance in the types of hate speech across the subset
 \subsubsection{Topics}
 
 
-\begin{figure*}[!ht]
+\begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.4]{../figures/spreaders/topics.png}
+\scalebox{1}{
+  \includegraphics[width=\textwidth]{../figures/spreaders/topics.png}
+}
 \caption{Topic distribution in each dataset for \textit{trusted} and \textit{untrusted} users in Twitter.}
 \label{fig:topics-distribution}
-\end{figure*}
+\end{figure}
+
 
 Regarding the topics that \textit{untrusted} news spreaders and regular users typically discuss, the results appear to suggest a similar distribution of topics (Figure \ref{fig:topics-distribution}). \textit{Untrusted} news spreaders appear to engage more extensively in posting tweets related to news and social issues,  which are those related to politics, among others. This suggests that these accounts may be more socially active, and can create the illusion of a larger representation than that of the general population.
 

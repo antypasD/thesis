@@ -12,8 +12,6 @@ Our analysis indicates that politicians’ negatively charged tweets spread more
 
 \section{Introduction}
 
-\todo{Get some intro here}
-
 In recent years social media have come to resemble a `battleground' between politicians who constantly aim to reach out to people and win their votes. This behaviour is not surprising as the influx of people onto social media aiming to get updated on the latest news keeps growing, especially in the west, with 48\% of Europeans using social media on a regular basis \cite{cattaneo_2020}. More specifically, Twitter seems to have become established as the main online platform where politicians attempt to engage with the public in regards to social and political commenting \cite{stier2018election}, to such an extent that political accounts are often more active than non-political ones \cite{grant2010digital}. Due to their inherent interest and thanks to the openness of Twitter's API, political tweets have been extensively studied. Using tweets extracted from politicians and their followers, researchers have attempted to answer questions such as: is it possible to predict elections results \cite{tumasjan2010predicting}? or what makes a politician popular on social media \cite{vaccari2013drives}? 
 
 In general, discovering what makes a message viral has been a popular research topic. Sentiment analysis is one of the tools that have been extensively used to answer this question. Findings in related literature suggest that negatively charged tweets have a bigger network penetration than average \cite{tsugawa2017relation,naveed2011bad,jimenez2021sentiments}. However, even though there have been studies of sentiment in tweets revolving around politics/elections \cite{chung2011can,parmelee2011politics,llewellyn2016brexit}, to our knowledge there has not been a large-scale multilingual analysis of the relation between sentiment and the propagation of politicians' tweets.
@@ -420,9 +418,9 @@ On a final note, it is interesting to observe that the VOX and Greek Solution, t
 
 \begin{figure}[H]
 \centering
-\begin{adjustbox}{width=\columnwidth,center}
-\includegraphics{../figures/politics/mps_2021_sentiment_distribution_bars.jpeg}
-\end{adjustbox}
+\scalebox{0.8}{
+  \includegraphics[width=\textwidth]{../figures/politics/mps_2021_sentiment_distribution_bars.jpeg}
+}
 \caption{Sentiment distribution (Overall, Head, Tail) for tweets from the UK, Spanish, Greek parliaments in 2021. From left to right: Negative sentiment (red), Neutral sentiment (grey), Positive sentiment (blue).}
 \label{fig:2021_sentiment_distribution}
 \end{figure}
@@ -434,7 +432,9 @@ On a final note, it is interesting to observe that the VOX and Greek Solution, t
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width= 1\linewidth]{../figures/politics/mps_2021_parties.jpeg}
+\scalebox{0.8}{
+  \includegraphics[width=\textwidth]{../figures/politics/mps_2021_parties.jpeg}
+}
 \caption{Sentiment per party for tweets from the UK, Spanish, Greek parliaments 2021. Top five parties displayed, ordered from left to right by their seat number. }
 \label{fig:2021_parties}
 \end{figure}
@@ -657,7 +657,9 @@ In this section, we present four control experiments to test the robustness of o
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=\textwidth]{../figures/politics/mps_2021_sentiment_distribution_other_metrics_updated.jpeg}
+\scalebox{0.9}{
+  \includegraphics[width=\textwidth]{../figures/politics/mps_2021_sentiment_distribution_other_metrics_updated.jpeg}
+}
 \caption{Sentiment distribution for tweets from the UK, Spanish, Greek parliaments 2021 based on different definitions of
 \textit{tweet popularity}. (1) `number of retweets': pink -- left bar, (2) `number of retweets/ number of followers': purple -- middle bar,  (3) `viral $>= 2 *$ std retweet count`,  (4) `number of retweets/ number of average retweets': green -- right bar.}
 \label{fig:2021_sentiment_distribution_other_metrics}
@@ -679,7 +681,9 @@ The trends for the four metrics are largely similar, with negative-charged tweet
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{../figures/politics/mps_vs_general.jpeg}
+\scalebox{0.8}{
+  \includegraphics[width=\textwidth]{../figures/politics/mps_vs_general.jpeg}
+}
 \caption{Tweets distribution in `Head' and `Tail' based on sentiment for random and verified Twitter users and Members of Parliament. Bars from left to right: (1) Random users: pink, (2) Random users with more than 1000 followers: grey, (3) Verified users: purple, (4) Members of parliaments: fuchsia.}
 \label{fig:mps_vs_general}
 \end{figure}
@@ -718,7 +722,7 @@ On the other hand, in the distribution of tweets for the `Tail'  the opposite st
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{../figures/politics/uk_comparison_lineplot.jpeg}
+\includegraphics[width=\textwidth]{../figures/politics/uk_comparison_lineplot.jpeg}
 \caption{Sentiment in `Head' \& `Tail' for tweets from the UK 2014, 2016 and 2021 parliaments.}
 \label{fig:temporal_comparison}
 \end{figure}
