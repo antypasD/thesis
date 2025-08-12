@@ -109,3 +109,29 @@ say just to recap why we do waht we do.
 avoid focusing the reader on problem where we do not have a solution.
 
 maybe on the recap look at the review questions we set up on Chapter 1 and see how they align with what we wrote.
+
+
+#####################
+1.4 a more extended discussion. misinformation/hate speech/ aggragation analysis. Add in each of the chapters we put more details.
+ 
+reintroduce ethics in each chapter.  ( if i remove the details i should add a paragraph in 1.4 and point to each chapter).
+ 
+ 
+1.5 drop. Put twitter naming into social media section. Put sota in publication section/ maybe general comment not only about sota
+ 
+ 
+future work.
+
+evaluation, standarsiation/formulations
+
+zero/few-shot should be properly evaluated
+
+other paradigms?
+
+can have subsections
+ 
+ 
+titles should be upper case (e..g chapter 7)
+ 
+11.9 should remove/add a subsection.
+ 
