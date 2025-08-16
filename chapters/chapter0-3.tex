@@ -1,17 +1,53 @@
 \chapter{Conclusions and Future Work} 
 \label{ch:conclusion} 
-\todo{inline}{WIP}
+
+
+
+
+
 \section{Summary of Thesis} \label{ch7:summary}
-This thesis focuses on the development of domain-specific datasets, models, and evaluation frameworks tailored to the challenges of online discourse. We examined the limitations of applying general-purpose language models to social media, highlighting the role of informality, multilinguality, and rapid linguistic change. Our work improves on limitations on  core \ac{NLP} tasks specifically topic classification and hate speech detection as well as providing a robust benchamrk for evaualting models on social media content. Furthermore, we showcase the value of these resources by utilising them to perform in depth analysis on topics such as misinformation and polarisation by establishing clear and robust methodologies. The research was structured to first create new datasets and benchmarks, then apply them to downstream analyses, producing insights into user behaviour, discourse patterns, and the spread of harmful content online.
+The thesis was structured in two parts: \Autoref{part:part1} focuses on the creation of new datasets and benchmarks, while \Autoref{part:part2} demonstrates their value through downstream analyses that provide insights into user behaviour, discourse patterns, and the spread of harmful content online. Overall, this work centres on the development of domain-specific datasets, models, and evaluation frameworks tailored to the challenges of online discourse, while also applying these resources in empirical studies of polarisation and misinformation. We examined the limitations of general language models when applied to social media, highlighting the role of informality, multilinguality, and rapid linguistic change. Our work addresses these challenges by advancing core \ac{NLP} tasks, specifically topic classification and hate speech detection, and by providing a robust benchmark for evaluating models on social media content.
+
+Building on these methodological contributions, we showcased the value of these resources in through in-depth analyses of misinformation and polarisation, establishing clear and reproducible methodologies that advance interdisciplinary research in online communication.
+
+This chapter concludes the thesis by summarising the contributions presented in \Autoref{ch7:contributions}, and by outlining potential avenues for future work in \ac{NLP} for social media in \Autoref{ch7:future-work}.
+
+
+
+
 
 \section{Contributions}
 \label{ch7:contributions}
+This thesis set out to address key gaps in applying \ac{NLP} to social media by introducing new resources and improving existing ones, including datasets and \acp{LM} tailored to this domain. In addition to developing and evaluating these methodological contributions, we applied the resulting models and benchmarks to the study of polarisation and misinformation, demonstrating their value for empirical analyses of online discourse. To this end, the thesis makes several contributions to \ac{NLP} for social media.
 
-The thesis makes several contributions to \ac{NLP} for social media. We introduced new datasets for topic classification, including a multilingual extension, filling the gap in high-quality, in-domain resources for this task. We developed and evaluated robust hate speech detection models through large-scale cross-dataset experiments, showing how combining resources can improve generalisability. We proposed a unified benchmark, {\DATASET}, for evaluating language models across a diverse set of social media–specific tasks, enabling systematic comparison of general-purpose and domain-adapted models. 
 
-Additionaly, we applied these resources and models to investigate misinformation spreaders and polarised discourse, offering new perspectives on the linguistic and behavioural features that shape online debates. While these steps represent substantial progress, there is room to build on this work by extending ......
+In \Autoref{tweet-topic}, we introduced a large dataset for topic classification on Twitter, designed to capture the diversity of political and social discourse on the platform. We demonstrated that \acp{LM} trained on social media, when fine-tuned on our dataset, outperform general-purpose models. In addition, we conducted a temporal analysis that highlighted the importance of maintaining up-to-date datasets and revealed the effects of temporal drift in social media. This work was extended in \Autoref{x-topic}, where we developed a multilingual version of the dataset, adding Greek, Spanish, and Japanese alongside English from a more recent time period. Through extensive experiments, including cross-lingual and multilingual evaluations on \acp{LM} of different architectures and sizes, this chapter highlights the challenges of applying \ac{NLP} methods across diverse linguistic and cultural contexts. Together, these contributions provide a solid foundation for evaluating and improving topic classification in social media environments.
 
+
+In \Autoref{hate-speech}, we examined the challenges of hate speech detection on social media through a large-scale cross-dataset evaluation of existing resources. Our analysis showed that while models trained on a single dataset may perform reasonably well to others, they often struggle to generalise across different types of hate speech. To address this, we introduced a new dataset that integrates multiple resources, enabling more robust training and evaluation. Our experiments demonstrated that carefully standardising and combining datasets can significantly improve model performance, underscoring the importance of diverse training data for developing effective hate speech detection systems.
+
+
+In \Autoref{super-tweeteval}, we proposed a unified benchmark, {\DATASET}, for evaluating \acp{LM} across a diverse set of social media–specific tasks. This benchmark enables systematic comparison of models on 12 challenging \ac{NLP} tasks, providing a comprehensive framework for assessing performance in the context of social media. By establishing a common evaluation standard, it facilitates future research and promotes the development of more effective \acp{LM} for social media applications. Building on the topic classification dataset introduced in \Autoref{tweet-topic} and the hate speech dataset from \Autoref{hate-speech}, this work further underscores the importance of domain-specific training data, showing that models trained on social media consistently outperform general-purpose alternatives. Moreover, our results highlight the strong performance of encoder-based models, which in many cases match or surpass that of larger decoder-only models.
+%  {\DATASET} With its wide coverage of tasks—including topic classification, hate speech detection, and others—the benchmark provides a holistic basis for evaluating model capabilities in social media contexts.
+
+In \Autoref{politics}, we conducted a large-scale multilingual analysis of political discourse on Twitter. Using a tailored sentiment classifier, we examined tweets from members of parliament in the UK, Spain, and Greece, including their devolved administrations. Our findings show that negative sentiment is consistently associated with higher engagement, with tweets expressing negative sentiment receiving more attention and interaction. This pattern highlights the polarising nature of political discourse on social media.
+
+
+In \Autoref{spreaders} ....
+
+In \Autoref{triggers} we ....
 
 
 \section{Future Work} \label{ch7:future-work}
 The datasets introduced here could be expanded to include additional languages, domains. The unified benchmark can be expanded with new tasks and evaluation metrics.....
+
+
+evaluation, standarsiation/formulations
+
+zero/few-shot should be properly evaluated
+
+other paradigms?
+
+can have subsections
+ 
+identify trigger words
