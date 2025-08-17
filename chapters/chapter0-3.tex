@@ -21,6 +21,9 @@ This chapter concludes the thesis by summarising the contributions presented in 
 This thesis set out to address key gaps in applying \ac{NLP} to social media by introducing new resources and improving existing ones, including datasets and \acp{LM} tailored to this domain. In addition to developing and evaluating these methodological contributions, we applied the resulting models and benchmarks to the study of polarisation and misinformation, demonstrating their value for empirical analyses of online discourse. To this end, the thesis makes several contributions to \ac{NLP} for social media.
 
 
+\subsection{Resources and Benchmarks}
+Overall this thesis introduces three new datasets and a unified benchmark for evaluating \acp{LM} on social media, each addressing specific challenges in the field. We repeatedly demonstrate the importance of domain-specific training data, showing that models trained on social media consistently outperform general-purpose alternatives. In addition, we highlight the strong performance of encoder-based models, which in many cases match or surpass that of larger decoder-only models.
+
 In \Autoref{tweet-topic}, we introduced a large dataset for topic classification on Twitter, designed to capture the diversity of political and social discourse on the platform. We demonstrated that \acp{LM} trained on social media, when fine-tuned on our dataset, outperform general-purpose models. In addition, we conducted a temporal analysis that highlighted the importance of maintaining up-to-date datasets and revealed the effects of temporal drift in social media. This work was extended in \Autoref{x-topic}, where we developed a multilingual version of the dataset, adding Greek, Spanish, and Japanese alongside English from a more recent time period. Through extensive experiments, including cross-lingual and multilingual evaluations on \acp{LM} of different architectures and sizes, this chapter highlights the challenges of applying \ac{NLP} methods across diverse linguistic and cultural contexts. Together, these contributions provide a solid foundation for evaluating and improving topic classification in social media environments.
 
 
@@ -28,26 +31,48 @@ In \Autoref{hate-speech}, we examined the challenges of hate speech detection on
 
 
 In \Autoref{super-tweeteval}, we proposed a unified benchmark, {\DATASET}, for evaluating \acp{LM} across a diverse set of social media–specific tasks. This benchmark enables systematic comparison of models on 12 challenging \ac{NLP} tasks, providing a comprehensive framework for assessing performance in the context of social media. By establishing a common evaluation standard, it facilitates future research and promotes the development of more effective \acp{LM} for social media applications. Building on the topic classification dataset introduced in \Autoref{tweet-topic} and the hate speech dataset from \Autoref{hate-speech}, this work further underscores the importance of domain-specific training data, showing that models trained on social media consistently outperform general-purpose alternatives. Moreover, our results highlight the strong performance of encoder-based models, which in many cases match or surpass that of larger decoder-only models.
-%  {\DATASET} With its wide coverage of tasks—including topic classification, hate speech detection, and others—the benchmark provides a holistic basis for evaluating model capabilities in social media contexts.
+
+\subsection{Applications to Online Discourse }
+In addition to the introduction of new resources, this thesis applies the developed models to empirical studies of online discourse, focusing on polarisation and misinformation. These applications demonstrate the value of the datasets and models in providing insights into user behaviour and discourse patterns on social media.
 
 In \Autoref{politics}, we conducted a large-scale multilingual analysis of political discourse on Twitter. Using a tailored sentiment classifier, we examined tweets from members of parliament in the UK, Spain, and Greece, including their devolved administrations. Our findings show that negative sentiment is consistently associated with higher engagement, with tweets expressing negative sentiment receiving more attention and interaction. This pattern highlights the polarising nature of political discourse on social media.
 
 
-In \Autoref{spreaders} ....
+In \Autoref{spreaders}, we investigated linguistic differences between Twitter users likely to share misinformation and those who are not. We examined sentiment and emotion, as well as topic distributions and the presence of hate speech, the latter two drawing on resources from Chapters \ref{ch:tweet-topic} and \ref{ch:hate-speech}, to analyse the spread of misinformation on Twitter and to profile these two groups. Our results revealed relatively small linguistic differences, primarily in sentiment and emotional content. These findings suggest that while linguistic features can offer some valuable insights into user behaviour, misinformation mitigation efforts should be focused on the specific content shared, rather than in profiling individual accounts.
 
-In \Autoref{triggers} we ....
+Finally, in \Autoref{triggers}, we introduced the concept of trigger words, originating from qualitative research on political polarisation, into computational studies of online communication. We analysed over 100 million Reddit comments related to UK politics, focusing on a set of words suspected to act as triggers. Similar to \Autoref{spreaders}, we employed transformer-based models adapted for social media to measure sentiment, emotion, and the prevalence of hate speech before and after a trigger word appeared in a dialogue. Using a robust statistical framework, our findings showed that trigger words are associated with heightened engagement and increased animosity, reflected in more negative, hateful, and controversial comments. This work contributes to research on affective polarisation, online deliberation, and the dynamics of political discourse in digital environments.
+
 
 
 \section{Future Work} \label{ch7:future-work}
-The datasets introduced here could be expanded to include additional languages, domains. The unified benchmark can be expanded with new tasks and evaluation metrics.....
+% The datasets introduced here could be expanded to include additional languages, domains. The unified benchmark can be expanded with new tasks and evaluation metrics.....
+% evaluation, standarsiation/formulations
+% zero/few-shot should be properly evaluated
+% other paradigms?
+% can have subsections
+% identify trigger words
 
 
-evaluation, standarsiation/formulations
+While this thesis makes several contributions to \ac{NLP} for social media, it also opens up multiple directions for future research. We outline some of the most promising avenues below.
 
-zero/few-shot should be properly evaluated
+\subsection{Evaluation and Standarisation}
+A major challenge remains the lack of consistent standards for evaluating models on social media data. A lot of new research \cite{song2023globalbench} has focused on developing benchmarks and evaluation protocols for newer models, but these often do not account for the unique characteristics of social media text. In \Autoref{ch:super-tweeteval}, we introduced a unified benchmark, {\DATASET}, that provides a comprehensive framework for evaluating models across multiple tasks however, there is still room for improvemnt. The benchmark can be extended to include new tasks, particularly those focused on text generation, such as conversational response generation or content summarization. Furthermore, existing tasks could be reframed in a more challenging setting, such as using ordinal regression for emotion classification to capture the intensity of emotions rather than just their presence \cite{muhammad-etal-2025-brighter}. Our current benchmark is limited to English data. A critical direction for future research is to extend Super-Tweeteval to other languages and cultures. This would enable cross-lingual evaluation, helping to identify how well models generalize and adapt to the linguistic and cultural nuances inherent in global social media communication.
 
-other paradigms?
 
-can have subsections
- 
-identify trigger words
+
+A major challenge in this field is the lack of consistent standards for evaluating models on social media data. Recent research \cite{song2023globalbench} has advanced benchmarks and evaluation protocols for newer models, but these often overlook the unique characteristics of social media text. In \Autoref{ch:super-tweeteval}, we introduced a unified benchmark, {\DATASET}, which provides a comprehensive framework for evaluating models across multiple tasks. However, there is significant room for improvement. The benchmark could be extended to incorporate additional tasks, particularly those involving text generation, such as conversational response generation or content summarisation. Existing tasks could also be reformulated to increase difficulty, for example, reframing emotion classification as an ordinal regression task to capture the intensity of emotions rather than their mere presence \cite{muhammad-etal-2025-brighter}. Finall, the benchmark is limited to English data. An important future direction is to extend {\DATASET} to other languages and cultural contexts, enabling cross- and multi-lingual evaluation.
+
+% \subsection{Zero- and Few-Shot Learning}
+% Large language models have demonstrated remarkable zero- and few-shot capabilities.  Investigate task formulations that leverage in-context learning for social science applications. ...
+
+\subsection{Expanding Modelling Paradigms}
+This thesis has primarily focused on supervised classification, with some generative and regression tasks introduced during the development of the {\DATASET}, as discussed in \Autoref{ch:super-tweeteval}. As demonstrated in \Autoref{part:part2}, this approach offers valuable insights into online discourse. However, future research can benefit from including a broader range of modelling paradigms. For example, generative modelling could be employed to simulate the trajectory of online discussions. Such models can provide a deeper understanding of conversational dynamics within controlled environments, enabling the identification of critical inflection points where debates tend to escalate.
+
+Another direction, could be combining linguistic features with behavioural and network-level data, causal models could help disentangle whether certain linguistic markers drive engagement and division, or whether they are by-products of broader social and political dynamics. This perspective could provide more actionable insights for both researchers and policymakers.  
+
+Finally, the increasing prominence of multi-modal content in digital communication, such as memes, images, and video, highlights the need for integrated analytical frameworks. Text-based models alone may overlook critical signals embedded in visual  modalities. Future research should therefore aim to integrate multi-modal approaches to enhance the detection of hate speech, misinformation, and manipulative content, and to capture more accurately the ways in which emotion and sentiment operate across modalities.
+
+
+\subsection{Integration with Social Science Research}
+Future work should also focus on integrating computational methods with theories and approaches from the social sciences. While this thesis has demonstrated the value of computational tools for analysing social media, their value becomes apparent when combined with domain expertise. For example, in \Autoref{ch:triggers}, collaboration with a social science researcher was central to grounding the analysis in established theoretical frameworks. Engaging with experts from other fields such as policymakers and journalists is essential to ensure that computational research has meaningful real-world impact. Future work and technical advances should be aligned with the needs of those who study and report on online discourse, ensuring that computational methods are not only technically sound but also socially relevant and ethically responsible.
+
