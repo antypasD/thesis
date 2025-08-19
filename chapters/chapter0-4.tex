@@ -42,6 +42,8 @@ Figure \ref{fig:interface} presents our annotation interface. Figure \ref{fig:in
 
 \subsection{Evaluation Results}\label{appendix:TweetTopic-evaluation}
 
+\paragraph{Supplementary results.} Table \ref{tab:f1_temporal-random_appendix} displays the F1 scores for each class in the multi-label setting when using the temporal and random split. The best score for each model is highlighted in bold.
+
 \paragraph{Hyperparameters.} Language models are trained using a batch size of 8 for 20 epochs, while utilizing an Adam optimizer \cite{loshchilov2017decoupled} with learning rate $2e^-5$ and a weight decay of $0.01$. Furthermore, an early stop callback  terminates the training process after 3 epochs without performance improvement. Finally, for the single-label experiments cross entropy loss along with a softmax activation function were used, while for the multi-label setting binary cross entropy loss and a sigmoid activation for each of the 19 topics are used.
 
 
@@ -51,6 +53,47 @@ Figure \ref{fig:interface} presents our annotation interface. Figure \ref{fig:in
  %Figure \ref{fig:f1_over_time_single} illustrates the fluctuation of F1 score for each class through time, when using TimeLM-19 in a single-label setting. Figure \ref{fig:performance_diff_multi} illustrates the relative differences in F1 scores for each class in the multi-label setting, when TimeLM-19 is trained using the temporal split and when trained on the random split. a
 
 
+ 
+ \begin{table}[t]
+\centering
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{|l|cc|cc|cc|cc|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Class}}} &
+  \multicolumn{2}{c|}{\textbf{Random}} &
+  \multicolumn{2}{c|}{\textbf{SVM}} &
+  \multicolumn{2}{c|}{\textbf{BERT}} &
+  \multicolumn{2}{c|}{\textbf{RB}} \\ \cline{2-9} 
+\multicolumn{1}{|c|}{} &
+  \multicolumn{1}{c|}{\textbf{temp}} & \textbf{rand} &
+  \multicolumn{1}{c|}{\textbf{temp}} & \textbf{rand} &
+  \multicolumn{1}{c|}{\textbf{temp}} & \textbf{rand} &
+  \multicolumn{1}{c|}{\textbf{temp}} & \textbf{rand} \\ \hline
+\begin{tabular}[c]{@{}l@{}}arts \& \\ culture\end{tabular} & \multicolumn{1}{c|}{\textbf{8.6}} & 8.3 & \multicolumn{1}{c|}{3.6} & \textbf{27.7} & \multicolumn{1}{c|}{17.8} & \textbf{35.9} & \multicolumn{1}{c|}{20.9} & \textbf{41.2} \\ \hline
+\begin{tabular}[c]{@{}l@{}}business \& \\ entrepreneurs\end{tabular} & \multicolumn{1}{c|}{\textbf{8.7}} & 7.4 & \multicolumn{1}{c|}{18.0} & \textbf{28.7} & \multicolumn{1}{c|}{\textbf{53.3}} & 49.2 & \multicolumn{1}{c|}{56.7} & \textbf{57.1} \\ \hline
+\begin{tabular}[c]{@{}l@{}}celebrity \& \\ pop culture\end{tabular} & \multicolumn{1}{c|}{22.8} & 22.9 & \multicolumn{1}{c|}{22.3} & \textbf{41.7} & \multicolumn{1}{c|}{34.4} & \textbf{54.3} & \multicolumn{1}{c|}{47.2} & \textbf{52.7} \\ \hline
+\begin{tabular}[c]{@{}l@{}}diaries \& \\ daily life\end{tabular} & \multicolumn{1}{c|}{18.2} & \textbf{21.2} & \multicolumn{1}{c|}{25.8} & \textbf{34.4} & \multicolumn{1}{c|}{\textbf{45.2}} & 44.0 & \multicolumn{1}{c|}{46.2} & \textbf{50.3} \\ \hline
+family & \multicolumn{1}{c|}{3.5} & \textbf{6.3} & \multicolumn{1}{c|}{33.9} & \textbf{46.4} & \multicolumn{1}{c|}{47.2} & \textbf{48.3} & \multicolumn{1}{c|}{50.6} & \textbf{56.8} \\ \hline
+\begin{tabular}[c]{@{}l@{}}fashion \& \\ style\end{tabular} & \multicolumn{1}{c|}{\textbf{4.8}} & 4.1 & \multicolumn{1}{c|}{38.4} & \textbf{57.6} & \multicolumn{1}{c|}{52.8} & \textbf{74.8} & \multicolumn{1}{c|}{66.4} & \textbf{74.1} \\ \hline
+\begin{tabular}[c]{@{}l@{}}film tv \& \\ video\end{tabular} & \multicolumn{1}{c|}{\textbf{22.8}} & 22.0 & \multicolumn{1}{c|}{47.3} & \textbf{58.6} & \multicolumn{1}{c|}{62.8} & \textbf{68.2} & \multicolumn{1}{c|}{64.4} & \textbf{71.4} \\ \hline
+\begin{tabular}[c]{@{}l@{}}fitness \& \\ health\end{tabular} & \multicolumn{1}{c|}{6.6} & \textbf{9.3} & \multicolumn{1}{c|}{35.7} & \textbf{36.0} & \multicolumn{1}{c|}{\textbf{53.6}} & 52.2 & \multicolumn{1}{c|}{52.4} & \textbf{53.2} \\ \hline
+\begin{tabular}[c]{@{}l@{}}food \& \\ dining\end{tabular} & \multicolumn{1}{c|}{3.5} & \textbf{4.6} & \multicolumn{1}{c|}{25.0} & \textbf{41.7} & \multicolumn{1}{c|}{\textbf{70.1}} & 68.2 & \multicolumn{1}{c|}{\textbf{75.1}} & 75.3 \\ \hline
+gaming & \multicolumn{1}{c|}{6.9} & \textbf{7.5} & \multicolumn{1}{c|}{31.8} & \textbf{45.0} & \multicolumn{1}{c|}{57.4} & \textbf{61.2} & \multicolumn{1}{c|}{58.4} & \textbf{61.4} \\ \hline
+\begin{tabular}[c]{@{}l@{}}learning \& \\ educational\end{tabular} & \multicolumn{1}{c|}{4.2} & \textbf{4.5} & \multicolumn{1}{c|}{13.0} & \textbf{13.9} & \multicolumn{1}{c|}{38.2} & \textbf{43.2} & \multicolumn{1}{c|}{\textbf{49.5}} & 48.7 \\ \hline
+music & \multicolumn{1}{c|}{24.7} & \textbf{25.5} & \multicolumn{1}{c|}{76.1} & \textbf{81.8} & \multicolumn{1}{c|}{83.6} & \textbf{86.0} & \multicolumn{1}{c|}{86.0} & \textbf{87.1} \\ \hline
+\begin{tabular}[c]{@{}l@{}}news \& \\ social concern\end{tabular} & \multicolumn{1}{c|}{39.3} & \textbf{39.9} & \multicolumn{1}{c|}{69.8} & \textbf{76.9} & \multicolumn{1}{c|}{\textbf{83.8}} & \textbf{83.8} & \multicolumn{1}{c|}{83.9} & \textbf{84.6} \\ \hline
+other hobbies & \multicolumn{1}{c|}{\textbf{10.5}} & 9.6 & \multicolumn{1}{c|}{4.2} & \textbf{15.0} & \multicolumn{1}{c|}{\textbf{27.0}} & 23.6 & \multicolumn{1}{c|}{25.0} & \textbf{28.4} \\ \hline
+relationships & \multicolumn{1}{c|}{6.4} & \textbf{7.3} & \multicolumn{1}{c|}{13.7} & \textbf{36.3} & \multicolumn{1}{c|}{30.8} & \textbf{35.2} & \multicolumn{1}{c|}{37.6} & \textbf{51.8} \\ \hline
+\begin{tabular}[c]{@{}l@{}}science \& \\ technology\end{tabular} & \multicolumn{1}{c|}{8.3} & \textbf{9.3} & \multicolumn{1}{c|}{17.4} & \textbf{35.8} & \multicolumn{1}{c|}{45.9} & \textbf{50.3} & \multicolumn{1}{c|}{54.2} & \textbf{56.4} \\ \hline
+sports & \multicolumn{1}{c|}{\textbf{36.6}} & 34.8 & \multicolumn{1}{c|}{82.2} & \textbf{89.1} & \multicolumn{1}{c|}{93.1} & \textbf{93.2} & \multicolumn{1}{c|}{\textbf{94.8}} & 94.2 \\ \hline
+\begin{tabular}[c]{@{}l@{}}travel \& \\ adventure\end{tabular} & \multicolumn{1}{c|}{2.2} & \textbf{3.5} & \multicolumn{1}{c|}{\textbf{17.7}} & 9.8 & \multicolumn{1}{c|}{\textbf{21.7}} & 20.6 & \multicolumn{1}{c|}{41.5} & \textbf{47.7} \\ \hline
+\begin{tabular}[c]{@{}l@{}}youth \& \\ student life\end{tabular} & \multicolumn{1}{c|}{1.7} & \textbf{2.9} & \multicolumn{1}{c|}{2.9} & \textbf{12.4} & \multicolumn{1}{c|}{33.3} & \textbf{44.6} & \multicolumn{1}{c|}{49.2} & \textbf{52.4} \\ \hline
+\textbf{samples avg} & \multicolumn{1}{c|}{13.8} & \textbf{14.3} & \multicolumn{1}{c|}{57.0} & \textbf{63.7} & \multicolumn{1}{c|}{\textbf{70.3}} & 72.0 & \multicolumn{1}{c|}{73.1} & \textbf{74.2} \\ \hline
+\textbf{macro avg} & \multicolumn{1}{c|}{12.6} & \textbf{13.2} & \multicolumn{1}{c|}{30.5} & \textbf{41.5} & \multicolumn{1}{c|}{50.1} & \textbf{54.6} & \multicolumn{1}{c|}{55.8} & \textbf{60.3} \\ \hline
+\end{tabular}}
+\caption{  Average F1 scores for the multi-label setting when using temporal (temp) and random (rand) split. Highlighted with bold is the best score for each model}
+\label{tab:f1_temporal-random_appendix}
+\end{table}
 
 \begin{figure}[hbt!]
     \centering
@@ -75,6 +118,7 @@ Figure \ref{fig:interface} presents our annotation interface. Figure \ref{fig:in
     \caption{Confusion-matrix of TimeLM-19 (multi-label setting).}
     \label{fig:confusion_matrix_multi}
 \end{figure*}
+
 
 
 
