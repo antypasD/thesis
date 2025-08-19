@@ -25,7 +25,7 @@ The {\XTOPIC} dataset, as well as the topic classification models built upon it,
 
 \begin{table}[!ht]
 \centering
-\scalebox{0.6}{
+\scalebox{0.7}{
 \begin{tabular}{l|l}
 \multicolumn{1}{c|}{\textbf{Tweet}} & \multicolumn{1}{c}{\textbf{Topics}} \\
 \begin{tabular}[c]{@{}l@{}}\textbf{en}: I don’t think I really want to go to  Coachella  unless Taylor Swift is headlining\end{tabular} & Celebrity \& Pop Culture, Music \\ \hline
@@ -89,7 +89,7 @@ The actual annotation was performed through an interface created with qualtrics\
 
 \begin{figure}
     \centering
-    \scalebox{0.8}{
+    \scalebox{0.75}{
     \includegraphics[width=\textwidth]{../figures/x-topic/topic_distribution.png}}
     \caption{Number of tweets per topic and language.}
     \label{fig:topic-distribution}
@@ -101,16 +101,16 @@ To assess the quality of our annotation process, we report the following three a
 
 
 \begin{table}[ht]
-\begin{adjustbox}{width=\linewidth,center}
+\centering
+\scalebox{1}{
 \begin{tabular}{l|c|c|c|c}
                     & \textbf{Alpha} & \textbf{ PA } & \textbf{Overlap}  & \textbf{AVG Topics}\\ \hline%(at least 1 class)
 \textbf{English}    & 0.23                                                                   & 0.87     & 0.60  & 2.0 \\
 \textbf{Spanish}    & 0.23                                                                   & 0.89     & 0.63  & 1.8\\
 \textbf{Japanese}   & 0.21                                                                   & 0.87     & 0.48  & 1.7\\
 \textbf{Greek}      & 0.26                                                                   & 0.89     & 0.74  & 1.9 \\ \hline\hline
-\textbf{TweetTopic} & 0.34                                                                   & 0.90     & 0.70  & 1.6                                                                        
-\end{tabular}
-\end{adjustbox}
+\textbf{TweetTopic} & 0.34                                                                   & 0.90     & 0.70  & 1.6      
+\end{tabular}}
 
 \caption{Annotator agreement in each language subset of {\XTOPIC} and {\TweetTopic}, as well as the average number of topics (\textit{AVG Topics}) assigned to each tweet.}
 \label{tab:annotators-agreement}
@@ -303,7 +303,8 @@ When looking at examples where the models tend to struggle more, there are clear
 
 
 \begin{table}[]
-\begin{adjustbox}{width=\linewidth,center}
+\centering
+\scalebox{1}{
 \begin{tabular}{l|cccc|cccc}
  & \multicolumn{4}{c|}{\textbf{Precision}} & \multicolumn{4}{c}{\textbf{Recall}} \\
  & En & Es & Ja & Gr & En & Es & Ja & Gr \\ \hline
@@ -312,7 +313,7 @@ gpt-4o & 67.6  & 61.2  &  60.8 &  \textbf{63.0} & 58.2 & 53.4  & 52.6  & 47.6  \
 bernice & 65.9 & 61.9 & 57.6 & 50.0 & 58.8 & 56.3 & 54.5 & 43.1 \\
 xlm\_t & \textbf{69.2} & \textbf{67.7} & \textbf{62.1} & 61.1 & 58.1 & 57.9 & \textbf{58.4} & \textbf{48.2}
 \end{tabular}
-\end{adjustbox}
+}
 \caption{Average macro Precision and Recall scores. Results from the few-shot setting are considered for \textit{chat-gpt} and \textit{gpt-4o}. For the \textit{bernice} and \textit{xlm\_t} results we considered models trained on {\TweetTopic} and {\XTOPIC} }
 \label{tab:recall_scores}
 \end{table}
