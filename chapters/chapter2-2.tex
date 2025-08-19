@@ -9,8 +9,6 @@ Our aim in this chapter is to investigate the linguistic and behavioural pattern
 The findings suggest that, although certain distinctions emerge between users who share misinformation and those who do not, the overall content they post does not exhibit substantial differences. This highlights the complexity of identifying misinformation spreaders based solely on textual features and underscores the importance of considering behavioural and contextual signals alongside linguistic ones.
 
 \section{Introduction}
-
-\todo{Get some intro here}
 The emerging popularity of social platforms such as Facebook, Twitter, and WhatsApp has revolutionised the way information is disseminated and consumed \cite{FacebookWorldwide, murthy2018twitter, deshmukh2015analysis}. People are able to express their sentiments, share their opinions on multiple topics, and to discuss and influence each other %\cite{barbieri-etal-2020-tweeteval} 
 with ease and at a speed that has transformed not only how we communicate but also how we perceive the world around us. Unfortunately, the capacity to reach a vast audience within seconds, along with the challenges that arise with verifying an ever-expanding volume of content, has created fertile ground within social media for malicious actors, or unaware users, to spread misinformation. The recent examples of fake news related to the COVID-19 pandemic \cite{evanega2020coronavirus}, and the ongoing war in Ukraine \cite{pierri2023propaganda} demonstrate that misinformation in social media is a complex problem with far-reaching implications for society, democracy, and information integrity.
 
@@ -76,7 +74,7 @@ In order to have a control group to compare in our experiments, we sampled tweet
 
 \begin{table}[]
 \centering
-\begin{adjustbox}{width=\linewidth,center}
+\scalebox{1}{
 \begin{tabular}{llccccc}
 \textbf{}                      &      & \textbf{Tweets} & \textbf{Users} & \textbf{Size} & \textbf{TTR}  & \textbf{\#emoji}  \\ \hline
 \textbf{MBFC}                  & untrusted & 1,703,896       & 1,489          & 136             & 0.018     & 0.24      \\
@@ -88,7 +86,7 @@ In order to have a control group to compare in our experiments, we sampled tweet
 \multicolumn{2}{l}{\textbf{Verified users}} & 178,324         & 803            & 103             &  0.048    & 0.26      \\ \hline \hline
 \multicolumn{2}{l}{\textbf{Total}}    & 4,206,799       & 5,233          &  123               &   0.014   & 0.24         
 \end{tabular}
-\end{adjustbox}
+}
 \caption{Number of tweets and users present in each dataset studied. The average size of the tweet (number of characters), along with the Type Token Ratio (TTR) and average emoji presence, are also reported.}
 \label{tab:counts}
 \end{table}
