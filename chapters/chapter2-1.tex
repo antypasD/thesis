@@ -133,7 +133,7 @@ For our purposes, we select a number of \acp{PLM}, both monolingual and multilin
 \subsection{Sentiment Annotation}\label{sec:Politics-annotation}
 Tweets from the \textit{2021 Main Dataset} (Section \ref{sec:data_2021}) for each language included in the study were sampled from their respective parliaments. This way three datasets were collected and annotated based on their sentiment for the English, Spanish and Greek languages (will be referred to as: \textit{Annotated Set}).
 
-In sentiment annotation tasks, annotators are asked to either evaluate the overall polarity of the text on a scale, e.g., 1 to 5 \cite{al2017arasenti} or to distinct positive/neutral/negative classes \cite{patwa2020semeval}. For simplicity and to follow current \ac{SoTA} sentiment analysis models \cite{nguyen2020bertweet,barbieri2021xlm}, in our setting annotators were asked to indicate the sentiment of each tweet and classify it in one of the following classes:
+In sentiment annotation tasks, annotators are asked to either evaluate the overall polarity of the text on a scale, e.g., 1 to 5 \cite{al2017arasenti} or to distinct positive/neutral/negative classes \cite{patwa2020semeval}. For simplicity and to follow current \ac{SoTA} sentiment analysis models \cite{bertweet,barbieri2021xlm}, in our setting annotators were asked to indicate the sentiment of each tweet and classify it in one of the following classes:
 \begin{itemize}
     \item \textit{Positive}: Tweets which express happiness, praise a person, group, country or a product, or applaud something.
     \item \textit{Negative}: Tweets which attack a person, group, product or country, express disgust or unhappiness towards something, or criticise something.
@@ -200,7 +200,7 @@ This cross-validation experiment is set to complement the evaluation done in the
     \item XLM-T-Sent \cite{barbieri2021xlm}, similar training to XLM-T but further finetuned for multilingual sentiment analysis.
     \item Three different RoBERTa-Base implementations for each language studied: roberta-base \cite{ROBERTA},  roberta-base-bne \cite{gutierrezfandino2021spanish} and palobert-base-greek-uncased-v1 \cite{info12080331} for English, Spanish and Greek respectively.
     \item TweetEval-Sent \cite{barbieri2020tweeteval} trained on 58 million English tweets and finetuned for sentiment analysis with the English SemEval-2017 dataset \cite{rosenthal2017semeval}.
-    \item Bertweet-Sent, based on the Bertweet \cite{nguyen2020bertweet} implementation and further finetuned for sentiment analysis.
+    \item Bertweet-Sent, based on the Bertweet \cite{bertweet} implementation and further finetuned for sentiment analysis.
 \end{enumerate}
 
 All the models are based on the implementations of the uncased versions provided by Hugging Face \cite{wolf-etal-2020-transformers}, and further finetuned and tested for each language individually, as well as in a multilingual setting using the data collected.
