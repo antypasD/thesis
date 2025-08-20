@@ -54,7 +54,7 @@ Figure \ref{fig:interface} presents our annotation interface. Figure \ref{fig:in
 
 
  
- \begin{table}[t]
+\begin{table}[t]
 \centering
 \adjustbox{max width=\textwidth}{%
 \begin{tabular}{|l|cc|cc|cc|}
@@ -113,6 +113,7 @@ sports & \multicolumn{1}{c|}{\textbf{36.6}} & 34.8 & \multicolumn{1}{c|}{82.2} &
 \end{figure*}
 
 
+\clearpage
 
 
 
@@ -610,7 +611,7 @@ All the datasets used in this benchmark were carefully selected based on their d
 \end{table}
 
 \begin{table}[ht]
-\begin{adjustbox}{width=\linewidth,center}
+\scalebox{1}{
 \begin{tabular}{ll}
 1. arts \& culture           & 12. music                  \\
 2. business \& entrepreneurs & 13. news \& social concern \\
@@ -623,21 +624,21 @@ All the datasets used in this benchmark were carefully selected based on their d
 9. food \& dining            &                            \\
 10. gaming                   &                           
 \end{tabular}
-\end{adjustbox}
+}
 \caption{Topics present in {\TweetTopic}.}
 \label{appendix:SuperTweetEval-topics_list}
 \end{table}
 
 
 \begin{table}[ht]
-\begin{adjustbox}{width=0.75\linewidth,center}
+\scalebox{1}{
 \begin{tabular}{ll}
 1. hate\_gender & 5.  hate\_origin \\
 2. hate\_race &  6. hate\_disability \\
 3. hate\_sexuality &  7. hate\_age \\
 4. hate\_religion &  8. not\_hate. \\                   
 \end{tabular}
-\end{adjustbox}
+}
 \caption{Classes present in {\TweetHate}.}
 \label{appendix:SuperTweetEval-hate_list}
 \end{table}
@@ -1173,6 +1174,7 @@ Figures \ref{fig:hate-distribution-xgb}, \ref{fig:sentiment-distribution-xgb}, a
 
 
 
+
 \section{Trigger points}
 \subsection{Model Selection}
 \subsection{Emotion Categories}
@@ -1302,7 +1304,8 @@ Figure \ref{fig:emotion_space_vaccine} displays the distribution of comments con
 
 
 \begin{table}[]
-\resizebox{\columnwidth}{!}{
+\centering
+\scalebox{1}{
 \begin{tabular}{l|ccc}
 \textbf{}           & \textbf{Threads} & \textbf{Comments} & \textbf{Year} \\ \hline
 \textbf{Rwanda}     & 0.05             & 1.87              & 2020, 2022    \\ \hline
