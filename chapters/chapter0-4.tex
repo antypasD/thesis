@@ -643,12 +643,6 @@ All the datasets used in this benchmark were carefully selected based on their d
 \label{appendix:SuperTweetEval-hate_list}
 \end{table}
 
-\begin{figure*}[!ht]
-\centering
-\includegraphics[scale=0.4]{../figures/super-tweeteval/emojis_dist.png}
-\caption{Emojis distribution for each split.}
-\label{appendix:SuperTweetEval-emojis-distribution}
-\end{figure*}
 
 \subsubsection{Annotator Guidelines of {\TweetSimilarity}}
 \label{appendix:SuperTweetEval-annotation}
@@ -881,6 +875,16 @@ How intimate is the following tweet? \\
 \includegraphics[height=0.32cm,width=0.32cm]{../figures/super-tweeteval/trophy.png}
 \includegraphics[height=0.32cm,width=0.32cm]{../figures/super-tweeteval/expressionless_face.png}
 
+
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[scale=0.4]{../figures/super-tweeteval/emojis_dist.png}
+\caption{Emojis distribution for each split.}
+\label{appendix:SuperTweetEval-emojis-distribution}
+\end{figure*}
+
+\clearpage
 
 
 \section{Politics and virality}\label{appendix:Politics}
@@ -1138,22 +1142,6 @@ text-set & 72          & 72                \\ \hline
 
 Figures \ref{fig:hate-distribution-xgb}, \ref{fig:sentiment-distribution-xgb}, and \ref{fig:emotion-distribution-xgb} illustrate that the discrepancies in the distribution of the examined features, sentiment, emotion and hate speech respectively\footnote{Results related to the topic distribution can be found in Appendix \ref{appendix:xgb}.}, between the XGB model's predictions and the \textit{PAN} dataset are negligible, indicating that they exhibit comparable trends.
 
-\begin{figure}[!ht]
-\begin{adjustbox}{width=\linewidth,center}
-\centering
-\includegraphics[scale=0.8]{../figures/spreaders/pan-xgb-sentiment.png}
-\end{adjustbox}
-\caption{Sentiment comparison between \textit{PAN} dataset and the \textit{XGB} models' predictions.}
-\label{fig:sentiment-distribution-xgb}
-\end{figure}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[scale=0.4]{../figures/spreaders/pan-xgb-topics.png}
-\caption{Topic distribution comparison between the \textit{PAN} dataset and the predictions from the \textit{XGB} model.}
-\label{fig:topics-distribution-xgb}
-\end{figure*}
-
 
 \begin{figure*}
   \begin{subfigure}{0.5\textwidth}
@@ -1172,7 +1160,25 @@ Figures \ref{fig:hate-distribution-xgb}, \ref{fig:sentiment-distribution-xgb}, a
 \end{figure*}
 
 
+\begin{figure*}[!ht]
+\centering
+\includegraphics[scale=0.45]{../figures/spreaders/pan-xgb-topics.png}
+\caption{Topic distribution comparison between the \textit{PAN} dataset and the predictions from the \textit{XGB} model.}
+\label{fig:topics-distribution-xgb}
+\end{figure*}
 
+
+\begin{figure}[!ht]
+\begin{adjustbox}{width=\linewidth,center}
+\centering
+\includegraphics[scale=0.8]{../figures/spreaders/pan-xgb-sentiment.png}
+\end{adjustbox}
+\caption{Sentiment comparison between \textit{PAN} dataset and the \textit{XGB} models' predictions.}
+\label{fig:sentiment-distribution-xgb}
+\end{figure}
+
+
+\clearpage
 
 
 \section{Trigger points}
