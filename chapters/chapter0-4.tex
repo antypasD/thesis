@@ -586,7 +586,7 @@ RoBERTa & multiclass & 8.1260E-06	 & 4 & 16 & 10 \\
 \label{appendix:SuperTweetEval-data_selection}
 All the datasets used in this benchmark were carefully selected based on their difficulty level, coverage they offer, and availability (licence). Below we discuss the selection process for tasks that a large selection of pre-existing datasets exists.
  
- \paragraph{{\TweetHate}} For this task we considered a list of 13 different hate speech detection datasets on Twitter \cite{sachdeva-etal-2022-measuring,samory2021call,grimminger-klinger-2021-hate,mathew2021hatexplain,zampieri-etal-2019-predicting,davidson2017automated,waseem-hovy-2016-hateful,waseem-2016-racist,ousidhoum-etal-2019-multilingual,basile-etal-2019-semeval,mandl2019overview,vidgen-etal-2020-detecting,founta2018large}. The final dataset contains five distinct hate-speech classes, in contrast to other available options, e.g. two hate classes present in SemEval's 2019 task 5 \cite{basile-etal-2019-semeval}, and also utilises a more clear taxonomy than other available datasets (e.g. HateXplain, Mathew et al. AAAI, 2021 \cite{mathew2021hatexplain}).
+ \paragraph{{\TweetHate}} For this task we considered a list of 13 different hate speech detection datasets on Twitter \cite{sachdeva-etal-2022-measuring,samory2021call,grimminger-klinger-2021-hate,mathew2021hatexplain,zampieri2019predicting,davidson2017automated,waseem-hovy-2016-hateful,waseem-2016-racist,ousidhoum-etal-2019-multilingual,basile-etal-2019-semeval,mandl2019overview,vidgen-etal-2020-detecting,founta2018large}. The final dataset contains five distinct hate-speech classes, in contrast to other available options, e.g. two hate classes present in SemEval's 2019 task 5 \cite{basile-etal-2019-semeval}, and also utilises a more clear taxonomy than other available datasets (e.g. HateXplain, Mathew et al. AAAI, 2021 \cite{mathew2021hatexplain}).
 
 \paragraph{{\TweetSentiment}} We opted out of using datasets that consider sentiment analysis as a classification \cite{8377739} or regression \cite{saad2019twitter} task and instead use \TweetSentiment (aspect based on a five point scale) as a more challenging setting for more recent models and architectures. Finally, as it was part of a SemEval competition \TweetSentiment is already well-known and tested dataset. 
 
@@ -671,19 +671,19 @@ Please note that only exact numbers should be used (e.g. 2 or 3) without any dec
 \begin{tabular}{@{}lcll@{}}
 \toprule
 Model & Parameters & Link & Citation \\ \midrule
-RoBERTa\textsubscript{BASE}   & 123M & \url{https://huggingface.co/roberta-base} & \multirow{2}{*}{\newcite{https://doi.org/10.48550/arxiv.2210.11416}} \\ \cmidrule{1-3}
+RoBERTa\textsubscript{BASE}   & 123M & \url{https://huggingface.co/roberta-base} & \multirow{2}{*}{\newcite{FLANT5}} \\ \cmidrule{1-3}
 RoBERTa\textsubscript{LARGE}  & 354M & \url{https://huggingface.co/roberta-large} & \\ \midrule
 TimeLM\textsubscript{BASE}    & 123M                    & \url{https://huggingface.co/cardiffnlp/twitter-roberta-base-2022-154m}  & \multirow{2}{*}{\newcite{loureiro-etal-2022-timelms}}                \\ \cmidrule{1-3}
 TimeLM\textsubscript{LARGE}   & 354M                    & \url{https://huggingface.co/cardiffnlp/twitter-roberta-large-2022-154m} &                                                                                    \\ \midrule
-OPT\textsubscript{125M}       & 125M                & \url{https://huggingface.co/facebook/opt-125m}                          & \multirow{2}{*}{\newcite{zhang2022opt}}                              \\ \cmidrule{1-3}
+OPT\textsubscript{125M}       & 125M                & \url{https://huggingface.co/facebook/opt-125m}                          & \multirow{2}{*}{\newcite{OPT}}                              \\ \cmidrule{1-3}
 OPT\textsubscript{350M}       & 350M                & \url{https://huggingface.co/facebook/opt-350m}                          &                                                                                    \\ \midrule
 OPT-IML\textsubscript{1.3B}   & 1.3B                & \url{https://huggingface.co/facebook/opt-iml-1.3b}                      & \newcite{iyer2023optiml}                                             \\ \midrule
-FlanT5\textsubscript{SMALL}  & 80M                 & \url{https://huggingface.co/google/flan-t5-small}                       & \multirow{4}{*}{\newcite{https://doi.org/10.48550/arxiv.2210.11416}} \\ \cmidrule{1-3}
+FlanT5\textsubscript{SMALL}  & 80M                 & \url{https://huggingface.co/google/flan-t5-small}                       & \multirow{4}{*}{\newcite{FLANT5}} \\ \cmidrule{1-3}
 FlanT5\textsubscript{BASE}   & 250M                & \url{https://huggingface.co/google/flan-t5-base}                        &                                                                                    \\ \cmidrule{1-3}
 FlanT5\textsubscript{XL}     & 3B                  & \url{https://huggingface.co/google/flan-t5-xl}                          &                                                                                    \\ \cmidrule{1-3}
 FlanT5\textsubscript{XXL}    & 11B                 & \url{https://huggingface.co/google/flan-t5-xxl}                         &                                                                                    \\ \midrule
-\texttt{text-ada-001}   & 350M                & \url{https://platform.openai.com/docs/models/gpt-3}                     & \newcite{brown2020language}                                          \\ \midrule
-\texttt{gpt-3.5-turbo}    & 175B                &\url{https://platform.openai.com/docs/models/gpt-3}                     & \newcite{brown2020language}                                          \\
+\texttt{text-ada-001}   & 350M                & \url{https://platform.openai.com/docs/models/gpt-3}                     & \newcite{GPT3}                                          \\ \midrule
+\texttt{gpt-3.5-turbo}    & 175B                &\url{https://platform.openai.com/docs/models/gpt-3}                     & \newcite{GPT3}                                          \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
