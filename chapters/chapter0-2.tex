@@ -39,7 +39,7 @@ Encoder-decoder models represent a distinct approach in language modelling, part
 
 Encoder-decoder models became popular with the introduction of T5 \cite{T5}. T5 casts  \ac{NLP} problems, such as summarisation, machine translation, and question answering, into a unified text-to-text format. It is pre-trained on the \ac{C4} corpus\cite{T5}  using a span corruption objective, where spans of text are masked and replaced with unique sentinel tokens, and the model learns to reconstruct the missing spans which enables it to develop robust representations for both understanding and generation (Figure \ref{fig:t5_architecture}). 
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \scalebox{0.8}{\includegraphics[width=\textwidth]{../figures/chapter2/t5_architecture.png}}
     \caption{Example of T5 finetuning for a summarisation task.}
@@ -71,19 +71,19 @@ However, despite their impressive capabilities, \acp{LLM} pose significant chall
 \section{Social media platforms}
 Social media platforms have become central to the study of natural language in real-world environments, offering vast amounts of real-time, user-generated content. These platforms differ significantly from traditional text sources such as books, news articles, or formal documents. Their informal, dynamic, and highly contextual nature presents unique opportunities and challenges for \ac{NLP} research and applications \cite{mustofa2025use}. A lot of these platforms focus on different modalities; for example, Instagram emphasises photos and videos, while others like Snapchat are inherently multimodal. In contrast, Twitter and Reddit have emerged as particularly rich sources of linguistic data and are widely used in computational social science and NLP research \cite{}. This is primarily because text is the dominant medium of communication on these platforms, and they used to offer relatively easy access to data through official \acp{API} \footnote{Twitter's Academic \ac{API} shut down on March 2023. Reddit's \ac{API} shutdown in June 2023}. This thesis focuses on these two platforms due to their complementary structures and modes of interaction.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \scalebox{0.6}{\includegraphics[width=\textwidth]{../figures/chapter2/twitter_example.png}}
     \caption{An example of a Twitter post and replies to it.}
     \label{fig:twitter_example}
 \end{figure}
 
-Twitter is structured around short, standalone messages called "tweets," which are constrained to 280 characters. Although tweets are restricted in length, they often convey substantial information and sentiment, enhanced by the use of hashtags, mentions, emojis, and embedded media. User interactions take the form of replies, retweets, and quote tweets, which together create loosely connected conversational threads (Figure \ref{fig:twitter_example}). The character limit encourages users to be linguistically inventive, resulting in the widespread use of slang, abbreviations, and non-standard grammatical constructions. \dimos{A lot of the data used in this thesis were collected from Twitter, now known as \textit{X}, through the use \dimos{of its now defunct academic} \ac{API}. In the thesis, we will refer to the platform as \textit{Twitter} to reflect the time of the data collection and research done. Exception being \Autoref{ch:xtopic} where the data was collected from \textit{X} and we will refer to the platform as \textit{X}.}
+Twitter is structured around short, standalone messages called "tweets," which are constrained to 280 characters. Although tweets are restricted in length, they often convey substantial information and sentiment, enhanced by the use of hashtags, mentions, emojis, and embedded media. User interactions take the form of replies, retweets, and quote tweets, which together create loosely connected conversational threads (Figure \ref{fig:twitter_example}). The character limit encourages users to be linguistically inventive, resulting in the widespread use of slang, abbreviations, and non-standard grammatical constructions. \dimos{A lot of the data used in this thesis were collected from Twitter, now known as \textit{X}, through the use \dimos{of its now defunct academic} \ac{API}. In the thesis, we will refer to the platform as \textit{Twitter} to reflect the time of the data collection and research done. Exception being \Autoref{ch:x-topic} where the data was collected from \textit{X} and we will refer to the platform as \textit{X}.}
 
 Reddit, in contrast, is a forum-based platform organised into topic-specific communities known as \textit{subreddits}. Posts on Reddit can be significantly longer than tweets and often initiate threaded discussions that allow for deeper, hierarchical conversations (\ref{fig:reddit_example}). This structure offers richer context and more coherent discourse patterns.
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \scalebox{0.6}{\includegraphics[width=\textwidth]{../figures/chapter2/reddit_example.png}}
     \caption{An example of a Reddit thread from r/learningprogramming subreddit.}
@@ -110,7 +110,7 @@ In this section, we explore core \ac{NLP} tasks applied to social media data and
 
 
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{|l|p{8cm}|c|}
 \hline
@@ -153,7 +153,7 @@ Topic modelling focuses on identifying the underlying themes or topics present i
 
 The unsupervised nature of topic modelling, while beneficial in many cases, can also be a limitation when specific topics or categories are of interest. In such cases, supervised topic classification is often used, where a model is trained on labelled data to predict predefined topics for new texts. This approach is particularly useful when performing targeted analysis where specific categories, such as politics, technology, and sports, are of interest. This is particularly important on social media, as it helps in organising vast amounts of information, identifying trending discussions that are of interest and filtering content based on specific themes. Applications of topic classification on social media focus on identifying trending topics \cite{lee2011twitter,bouadjenek2022longitudinal} but have also been utilised often in parallel with sentiment analysis to gain insights into public opinion and discourse \cite{huang2013sentiment,rodrigues2022new}.
 
-In this thesis, we introduce a multi-label topic classification dataset and model in \Autoref{ch:tweet-topic}, along with a multilingual extension in \ref{ch:x-topic}, tailored for social media applications. The aim is to support community profiling and to identify topics of interest for specific user groups, as we demonstrate in \Autoref{ch:spreaders}.
+In this thesis, we introduce a multi-label topic classification dataset and model in \Autoref{ch:tweet-topic}, along with a multilingual extension in \Autoref{ch:x-topic}, tailored for social media applications. The aim is to support community profiling and to identify topics of interest for specific user groups, as we demonstrate in \Autoref{ch:spreaders}.
 
 \subsection{Hate Speech Detection}
 % binary, multiclass, multilabel

@@ -1,3 +1,4 @@
+\setlength{\headheight}{15pt} % NOTE: not sure if this needed.
 \chapter{Appendix} 
 \label{ch:appendix} 
 
@@ -1184,19 +1185,19 @@ Figures \ref{fig:hate-distribution-xgb}, \ref{fig:sentiment-distribution-xgb}, a
 \section{Trigger points}
 \subsection{Model Selection}
 \subsection{Emotion Categories}
-\label{sec:emotion-list}
+\label{sec:triggers-emotion-list}
 The \textit{twitter-roberta-base-emotion-multilabel} model classifies each entry in one or more of the following classes:
 \textit{anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust}.
 
 \subsubsection{Hate Speech Categories.}
-\label{sec:hate-list}
+\label{sec:triggers-hate-list}
 The \textit{twitter-roberta-base-hate-multiclass}  model classifies each entry in one of the following classes: \textit{not\_hate, sexism, racism, religion, other, sexual\_orientation, disability}
 
 \subsubsection{Validation Setting}
 \label{sec:validation}
 Table \ref{tab:annotated_data} displays the distribution of comments in regards to emotion, sentiment and hate speech for the manually annotated dataset collected.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{llll|ll}
 \multicolumn{2}{c|}{Emotion}            & \multicolumn{2}{c|}{Hate Speech}       & \multicolumn{2}{c}{Sentiment}         \\ \hline

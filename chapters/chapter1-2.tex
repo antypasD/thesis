@@ -1,5 +1,6 @@
+\setlength{\headheight}{15pt}
 \chapter{Multilingual Topic Classification in X: Dataset and Analysis}
-\label{ch:xtopic}
+\label{ch:x-topic}
 
 % added for thesis
 In the previous chapter, \Autoref{ch:tweet-topic}, we introduced the task of tweet topic classification, presented an English-language dataset, and evaluated several transformer-based models. In this chapter, we expand the scope of the task to include multiple languages. We introduce {\XTOPIC}, a multilingual dataset featuring content in four distinct languages (English, Spanish, Japanese, and Greek), crafted for the purpose of tweet topic classification. The dataset utilises the same taxonomy as {\TweetTopic}, ensuring direct comparability across languages and enabling consistent evaluation in both monolingual and multilingual settings, making it a valuable resource for scientists and professionals working on cross-linguistic analysis, the development of robust multilingual models, and computational scientists studying online dialogue. By providing parallel resources across multiple languages, {\XTOPIC} addresses the lack of high-quality, in-domain multilingual datasets for supervised topic classification in social media. We use {\XTOPIC} to conduct a comprehensive cross-linguistic and multilingual evaluation, comparing the performance of current general-purpose and domain-specific \acp{LM} and analysing the challenges that arise in this setting.
@@ -326,13 +327,13 @@ We explore different model architectures and experimental settings, including ze
 {\XTOPIC} can be a valuable resource for researchers and industry experts dealing with real-world applications in social media. It is a valuable tool that can help the development of multilingual solutions and encourages the exploration of new approaches. This dataset addresses the complexities inherent in the diffusion of information and news in the realm of social media. The results also highlight the need for more comprehensive datasets and improved models for languages with limited resources. Further research can focus on addressing these challenges and enhancing the performance of models in a cross-lingual and multilingual context.
 
 \section{Limitations}
-\label{sec:limitations}
+% \label{sec:limitations}
 In this paper, we introduce a valuable new resource that is expected to benefit a wide range of researchers and industry professionals. It is important to acknowledge that there may be differing opinions regarding the methodology used for aggregating the data in {\XTOPIC}, specifically the requirement for two annotators' agreement. In any case, we plan to release all the collected annotations, along with the dataset version used in our experiments, to facilitate transparency and further research. The number of languages included in {\XTOPIC} selected is relatively small given budget constraints.
 
 Finally, it is important to highlight that while we provide a comprehensive analysis of the cross-/multi-lingual capabilities of five different models, substantial research opportunities remain in exploring the potential of alternative classifiers. This includes investigating the performance and fine-tuning of larger models, considering diverse architectures, and optimising the prompts used for one-shot and few-shot learning.
 
 \section{Ethics Statement}
-\label{sec:ethics}
+% \label{sec:ethics}
 We acknowledge the importance of the ACL Code of Ethics, and are committed to following the guidelines in the proposed task. Given that our task includes user generated content we are committed to respect the privacy of the users, by replacing each user mention in the texts with a placeholder. 
 
 We also make sure to fairly treat the annotators who labelled the dataset, by 1) fairly compensating them with an average of £8 per hour; and 2) do not share or store their personal information. Overall, the total time of annotation was approximately 180 hours with a median time of 25 minutes for each "batch" of 50 tweets and each batch requiring 5 coders.
