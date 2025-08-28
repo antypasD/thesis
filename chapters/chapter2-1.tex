@@ -103,7 +103,7 @@ Table \ref{tab:control_stats} displays text statistics extracted from tweets of 
     \label{tab:control_stats}
 \end{table}
 
-
+\vspace{-14pt}
 \subsubsection{Devolved Parliaments}\label{sec:devolved_2021}
 Tweets from members of the devolved parliaments of the UK (N.Ireland, Scotland, Wales) and Spain (Basque Country, Catalonia) were also collected for the same time period.
 These subsets, will be referred to as: \textit{2021 Devolved Dataset}, are used to identify potential differences in tweets between the main and the devolved parliaments regarding the prevailing sentiments. Again, a manual search and verification was applied for every \ac{MP} in order to retrieve his/her Twitter handle. Specifically for Catalonia, care was taken when aggregating the \acp{MP} handles due to the elections that took place on February 14\textsuperscript{th}, 2021. Text statistics for tweets gathered from the devolved parliaments are presented in Table \ref{tab:Politics-control_stats_devolved} of the Appendix \ref{appendix:Politics}.
@@ -212,6 +212,7 @@ In order to assess the difference between these recent transformer models with m
 As our aim was not to necessarily find the best sentiment classifier but instead to acquire a robust classifier with good overall performance across all the languages studied no hyper-parameter tuning was performed.
 % RTR
 
+\vspace{-10pt}
 \subsubsection{Evaluation metrics} 
 
 We report results both in the usual macro-average F1 and the F1 average between positive and negative classes (F1\textsuperscript{PN} henceforth). For sentiment analysis tasks the average of the F1 scores of the Positive and Negative classes is often used as an evaluation measure \cite{rosenthal2017semeval} instead of other metrics such as Accuracy. This is mainly justified as firstly F1 scores are more robust to class imbalance, and secondly due to the fact that classifying correctly Positive and Negative classes is more crucial than the Neutral class, especially in our subsequent analysis.
@@ -404,6 +405,17 @@ To verify our regression results we also test Poisson regression \cite{coxe2009a
 To sum up, the results of the statistical tests and regression analysis show a strong correlation between negative sentiment and virality, which help us to answer RQ2. Specifically, model's coefficients show that the existence of negative sentiment in a tweet has a major positive impact on its popularity independently of the country from where it was posted. 
 % RTR
 
+
+\begin{figure}[H]
+\centering
+\scalebox{0.7}{
+  \includegraphics[width=\textwidth]{../figures/politics/mps_2021_sentiment_distribution_bars.jpeg}
+}
+\caption{Sentiment distribution (Overall, Head, Tail) for tweets from the UK, Spanish, Greek parliaments in 2021. From left to right: Negative sentiment (red), Neutral sentiment (grey), Positive sentiment (blue).}
+\label{fig:2021_sentiment_distribution}
+\end{figure}
+
+
 \subsubsection{Head and tail distribution analysis}
 
 For this extended analysis, we consider the tweets made from politicians of the main parliaments of the UK, Spain, and Greece separately, and compare them based on their popularity following the `Head' and `Tail' partitions presented at the beginning of the section. Figure \ref{fig:2021_sentiment_distribution} displays the normalised counts of positive, negative and neutral tweets in the \textit{2021 Main Dataset}. 
@@ -416,15 +428,6 @@ For the UK parliament when comparing the `Head' and `Tail' sets, the proportion 
 
 To answer the first part of the researcher question RQ3 we consider the sentiment distribution on the party level for each parliament. Figure \ref{fig:2021_parties} presents the difference in sentiment for the top five major parties (based on the number of \acp{MP}) in the UK's, Spain's and Greece's parliaments for 2021. Taking into account the governing parties of each country (UK: Conservatives, Spain: Spanish Socialist Workers' Party (PSOE) \& Unidas Podemos (UP), Greece: New Democracy) a distinctive trend appears. In each country, the main governing parties tweets tend to be significantly more positive than those of the opposition. In the UK, there are 46\% more positive tweets than negative posted by the ruling party (Conservatives) whereas only a 10\% difference for the main opposition (Labour party). The same pattern appears for Greece with positive charged tweets posted by New Democracy being 28\% more than the negative. At the same time, the opposition party, Syriza, being on the `attack' has 59\% of its total tweets posted classified as negative. Similarly, for Spain, even though to a smaller degree, PSOE display the biggest contrast between positive and negative tweets with only a 6\% difference in favour of positive. 
 On a final note, it is interesting to observe that the VOX and Greek Solution, two right-wing parties, display the largest percentages of negative tweets for their respective parliaments (60\% and 79\%).
-
-\begin{figure}[H]
-\centering
-\scalebox{0.8}{
-  \includegraphics[width=\textwidth]{../figures/politics/mps_2021_sentiment_distribution_bars.jpeg}
-}
-\caption{Sentiment distribution (Overall, Head, Tail) for tweets from the UK, Spanish, Greek parliaments in 2021. From left to right: Negative sentiment (red), Neutral sentiment (grey), Positive sentiment (blue).}
-\label{fig:2021_sentiment_distribution}
-\end{figure}
 
 
 
@@ -678,7 +681,7 @@ As the retweet count is an absolute measure that does not take into account the 
 Figure \ref{fig:2021_sentiment_distribution_other_metrics} displays the results of the sentiment distribution for `Head' and `Tail' for the UK's, Spanish and Greek parliaments using the different popularity metrics.
 The trends for the four metrics are largely similar, with negative-charged tweets being more popular in all cases. Having established that all four popularity metrics verify the underlying phenomenon, the total retweets count is used as a metric for the rest of our analysis.
 
-
+\vspace{-10pt}
 \paragraph{Discussion} As there is no clear definition of what a viral tweet is, it is challenging to investigate the effect of sentiment on the popularity of a tweet. By testing multiple popularity metrics we attempt to strengthen our analysis. The results provide further evidence on the effect of negative sentiment on tweet propagation, irrespective of the chosen popularity metric.
 
 
