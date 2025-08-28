@@ -278,15 +278,6 @@
 }
 
 
-@article{2019t5,
-  author        = {Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu},
-  title         = {Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer},
-  journal       = {arXiv e-prints},
-  year          = {2019},
-  archiveprefix = {arXiv},
-  eprint        = {1910.10683}
-}
-
 
 @inproceedings{8377739,
   author    = {Rane, Ankita and Kumar, Anand},
@@ -316,10 +307,11 @@
 
 
 @article{ADAM,
-  title   = {Adam: A method for stochastic optimization},
-  author  = {Kingma, Diederik P and Ba, Jimmy},
-  journal = {arXiv preprint arXiv:1412.6980},
-  year    = {2014}
+  title     = {Adam: A Method for Stochastic Optimization},
+  author    = {Kingma, Diederik P. and Ba, Jimmy},
+  booktitle = {Proceedings of the 3rd International Conference on Learning Representations (ICLR)},
+  year      = {2015},
+  url       = {https://arxiv.org/abs/1412.6980}
 }
 
 
@@ -367,15 +359,13 @@
 }
 
 
-@article{ALBERT,
-  title   = {Albert: A lite bert for self-supervised learning of language representations},
-  author  = {Lan, Zhenzhong and Chen, Mingda and Goodman, Sebastian and Gimpel, Kevin and Sharma, Piyush and Soricut, Radu},
-  journal = {arXiv preprint arXiv:1909.11942},
-  year    = {2019}
+@inproceedings{lan2020albert,
+  title     = {{ALBERT}: A Lite {BERT} for Self-supervised Learning of Language Representations},
+  author    = {Lan, Zhenzhong and Chen, Mingda and Goodman, Sebastian and Gimpel, Kevin and Sharma, Piyush and Soricut, Radu},
+  booktitle = {Proceedings of the 8th International Conference on Learning Representations (ICLR)},
+  year      = {2020},
+  url       = {https://openreview.net/forum?id=H1eA7AEtvS}
 }
-
-
-
 
 @article{ali2022hate,
   title     = {Hate speech detection on Twitter using transfer learning},
@@ -701,14 +691,33 @@
 }
 
 
-@article{barbieri2021xlm,
-  title   = {XLM-T: A Multilingual Language Model Toolkit for {Twitter}},
-  author  = {Barbieri, Francesco and Anke, Luis Espinosa and Camacho-Collados, Jose},
-  journal = {arXiv preprint arXiv:2104.12250},
-  year    = {2021}
+@inproceedings{barbieri2021xlm,
+    title = "{XLM}-{T}: Multilingual Language Models in {T}witter for Sentiment Analysis and Beyond",
+    author = "Barbieri, Francesco  and
+      Espinosa Anke, Luis  and
+      Camacho-Collados, Jose",
+    editor = "Calzolari, Nicoletta  and
+      B{\'e}chet, Fr{\'e}d{\'e}ric  and
+      Blache, Philippe  and
+      Choukri, Khalid  and
+      Cieri, Christopher  and
+      Declerck, Thierry  and
+      Goggi, Sara  and
+      Isahara, Hitoshi  and
+      Maegaard, Bente  and
+      Mariani, Joseph  and
+      Mazo, H{\'e}l{\`e}ne  and
+      Odijk, Jan  and
+      Piperidis, Stelios",
+    booktitle = "Proceedings of the Thirteenth Language Resources and Evaluation Conference",
+    month = jun,
+    year = "2022",
+    address = "Marseille, France",
+    publisher = "European Language Resources Association",
+    url = "https://aclanthology.org/2022.lrec-1.27/",
+    pages = "258--266",
+    abstract = "Language models are ubiquitous in current NLP, and their multilingual capacity has recently attracted considerable attention. However, current analyses have almost exclusively focused on (multilingual variants of) standard benchmarks, and have relied on clean pre-training and task-specific corpora as multilingual signals. In this paper, we introduce XLM-T, a model to train and evaluate multilingual language models in Twitter. In this paper we provide: (1) a new strong multilingual baseline consisting of an XLM-R (Conneau et al. 2020) model pre-trained on millions of tweets in over thirty languages, alongside starter code to subsequently fine-tune on a target task; and (2) a set of unified sentiment analysis Twitter datasets in eight different languages and a XLM-T model trained on this dataset."
 }
-
-
 
 @inproceedings{barbieri2022xlm,
   title     = {Xlm-t: Multilingual language models in twitter for sentiment analysis and beyond},
@@ -869,8 +878,6 @@
 }
 
 
-
-
 @misc{bertopic,
   doi       = {10.48550/ARXIV.2203.05794},
   url       = {https://arxiv.org/abs/2203.05794},
@@ -890,9 +897,6 @@
   pages     = {9--14},
   year      = {2020}
 }
-
-
-
 
 
 @article{bhaskaran2019good,
@@ -1007,13 +1011,14 @@
 
 
 
-
-@article{camacho2022tweetnlp,
-  title   = {TweetNLP: Cutting-Edge Natural Language Processing for Social Media},
-  author  = {Camacho-Collados, Jose and Rezaee, Kiamehr and Riahi, Talayeh and Ushio, Asahi and Loureiro, Daniel and Antypas, Dimosthenis and Boisson, Joanne and Espinosa-Anke, Luis and Liu, Fangyu and Mart{\'\i}nez-C{\'a}mara, Eugenio and others},
-  journal = {arXiv preprint arXiv:2206.14774},
-  year    = {2022}
+@inproceedings{camacho2022tweetnlp,
+  title={TweetNLP: Cutting-Edge Natural Language Processing for Social Media},
+  author={Camacho-Collados, Jose and Rezaee, Kiamehr and Riahi, Talayeh and Ushio, Asahi and Loureiro, Daniel and Antypas, Dimosthenis and Boisson, Joanne and Anke, Luis Espinosa and Liu, Fangyu and Mart{\'\i}nez-C{\'a}mara, Eugenio},
+  booktitle={Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: System Demonstrations},
+  pages={38--49},
+  year={2022}
 }
+
 
 
 %bbc
@@ -1051,15 +1056,13 @@
   year      = {1994}
 }
 
-
-
-@article{card2017neural,
-  title   = {Neural models for documents with metadata},
-  author  = {Card, Dallas and Tan, Chenhao and Smith, Noah A},
-  journal = {arXiv preprint arXiv:1705.09296},
-  year    = {2017}
+@inproceedings{card2017neural,
+  title={Neural Models for Documents with Metadata},
+  author={Card, Dallas and Tan, Chenhao and Smith, Noah A},
+  booktitle={Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages={2031--2040},
+  year={2018}
 }
-
 
 @inproceedings{castillo2011information,
   title     = {Information credibility on twitter},
@@ -1068,8 +1071,6 @@
   pages     = {675--684},
   year      = {2011}
 }
-
-
 
 
 @misc{cattaneo_2020,
@@ -1110,12 +1111,14 @@
 }
 
 
-@article{chalkidis2020legal,
-  title   = {LEGAL-BERT: The muppets straight out of law school},
-  author  = {Chalkidis, Ilias and Fergadiotis, Manos and Malakasiotis, Prodromos and Aletras, Nikolaos and Androutsopoulos, Ion},
-  journal = {arXiv preprint arXiv:2010.02559},
-  year    = {2020}
+@inproceedings{chalkidis2020legal,
+  title={LEGAL-BERT: The Muppets straight out of Law School},
+  author={Chalkidis, Ilias and Fergadiotis, Manos and Malakasiotis, Prodromos and Aletras, Nikolaos and Androutsopoulos, Ion},
+  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2020},
+  pages={2898--2904},
+  year={2020}
 }
+
 
 
 @article{Chandra:81,
@@ -1151,14 +1154,27 @@
 }
 
 
-
-@article{cho2023deep,
-  title   = {Deep RL with Hierarchical Action Exploration for Dialogue Generation},
-  author  = {Cho, Itsugun and Takahashi, Ryota and Yanase, Yusaku and Saito, Hiroaki},
-  journal = {arXiv preprint arXiv:2303.13465},
-  year    = {2023}
+@inproceedings{cho2023deep,
+    title = "Deep Reinforcement Learning with Hierarchical Action Exploration for Dialogue Generation",
+    author = "Cho, Itsugun  and
+      Takahashi, Ryota  and
+      Yanase, Yusaku  and
+      Saito, Hiroaki",
+    editor = "Calzolari, Nicoletta  and
+      Kan, Min-Yen  and
+      Hoste, Veronique  and
+      Lenci, Alessandro  and
+      Sakti, Sakriani  and
+      Xue, Nianwen",
+    booktitle = "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    month = may,
+    year = "2024",
+    address = "Torino, Italia",
+    publisher = "ELRA and ICCL",
+    url = "https://aclanthology.org/2024.lrec-main.408/",
+    pages = "4566--4579",
+    abstract = "Traditionally, approximate dynamic programming is employed in dialogue generation with greedy policy improvement through action sampling, as the natural language action space is vast. However, this practice is inefficient for reinforcement learning (RL) due to the sparsity of eligible responses with high action values, which leads to weak improvement sustained by random sampling. This paper presents theoretical analysis and experiments that reveal the performance of the dialogue policy is positively correlated with the sampling size. To overcome this limitation, we introduce a novel dual-granularity Q-function that explores the most promising response category to intervene in the sampling process. Our approach extracts actions based on a grained hierarchy, thereby achieving the optimum with fewer policy iterations. Additionally, we use offline RL and learn from multiple reward functions designed to capture emotional nuances in human interactions. Empirical studies demonstrate that our algorithm outperforms baselines across automatic metrics and human evaluations. Further testing reveals that our algorithm exhibits both explainability and controllability, as well as generates responses with higher expected rewards."
 }
-
 
 @inproceedings{chowdhury2020cross,
   title     = {Cross-lingual disaster-related multi-label tweet classification with manifold mixup},
@@ -1493,13 +1509,27 @@
 
 
 
-@article{ERNIE,
-  title   = {Ernie: Enhanced representation through knowledge integration},
-  author  = {Sun, Yu and Wang, Shuohuan and Li, Yukun and Feng, Shikun and Chen, Xuyi and Zhang, Han and Tian, Xin and Zhu, Danxiang and Tian, Hao and Wu, Hua},
-  journal = {arXiv preprint arXiv:1904.09223},
-  year    = {2019}
+@inproceedings{ERNIE,
+    title = "{ERNIE}: Enhanced Language Representation with Informative Entities",
+    author = "Zhang, Zhengyan  and
+      Han, Xu  and
+      Liu, Zhiyuan  and
+      Jiang, Xin  and
+      Sun, Maosong  and
+      Liu, Qun",
+    editor = "Korhonen, Anna  and
+      Traum, David  and
+      M{\`a}rquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2019",
+    address = "Florence, Italy",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/P19-1139/",
+    doi = "10.18653/v1/P19-1139",
+    pages = "1441--1451",
+    abstract = "Neural language representation models such as BERT pre-trained on large-scale corpora can well capture rich semantic patterns from plain text, and be fine-tuned to consistently improve the performance of various NLP tasks. However, the existing pre-trained language models rarely consider incorporating knowledge graphs (KGs), which can provide rich structured knowledge facts for better language understanding. We argue that informative entities in KGs can enhance language representation with external knowledge. In this paper, we utilize both large-scale textual corpora and KGs to train an enhanced language representation model (ERNIE), which can take full advantage of lexical, syntactic, and knowledge information simultaneously. The experimental results have demonstrated that ERNIE achieves significant improvements on various knowledge-driven tasks, and meanwhile is comparable with the state-of-the-art model BERT on other common NLP tasks. The code and datasets will be available in the future."
 }
-
 
 @misc{eurostat,
   author  = {Eurostat},
@@ -1549,14 +1579,6 @@
 }
 
 
-@article{FASTTEXT,
-  title   = {Enriching Word Vectors with Subword Information},
-  author  = {Bojanowski, Piotr and Grave, Edouard and Joulin, Armand and Mikolov, Tomas},
-  journal = {arXiv preprint arXiv:1607.04606},
-  year    = {2016}
-}
-
-
 
 @article{fink2018dangerous,
   title     = {Dangerous speech, anti-Muslim violence, and Facebook in Myanmar},
@@ -1567,18 +1589,6 @@
   pages     = {43--52},
   year      = {2018},
   publisher = {JSTOR}
-}
-
-
-@misc{FLANT5,
-  doi       = {10.48550/ARXIV.2210.11416},
-  url       = {https://arxiv.org/abs/2210.11416},
-  author    = {Chung, Hyung Won and Hou, Le and Longpre, Shayne and Zoph, Barret and Tay, Yi and Fedus, William and Li, Eric and Wang, Xuezhi and Dehghani, Mostafa and Brahma, Siddhartha and Webson, Albert and Gu, Shixiang Shane and Dai, Zhuyun and Suzgun, Mirac and Chen, Xinyun and Chowdhery, Aakanksha and Narang, Sharan and Mishra, Gaurav and Yu, Adams and Zhao, Vincent and Huang, Yanping and Dai, Andrew and Yu, Hongkun and Petrov, Slav and Chi, Ed H. and Dean, Jeff and Devlin, Jacob and Roberts, Adam and Zhou, Denny and Le, Quoc V. and Wei, Jason},
-  keywords  = {Machine Learning (cs.LG), Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title     = {Scaling Instruction-Finetuned Language Models},
-  publisher = {arXiv},
-  year      = {2022},
-  copyright = {Creative Commons Attribution 4.0 International}
 }
 
 
@@ -1881,12 +1891,18 @@
 
 
 
-@article{hamid2020fake,
-  title   = {Fake news detection in social media using graph neural networks and NLP Techniques: A COVID-19 use-case},
-  author  = {Hamid, Abdullah and Shiekh, Nasrullah and Said, Naina and Ahmad, Kashif and Gul, Asma and Hassan, Laiq and Al-Fuqaha, Ala},
-  journal = {arXiv preprint arXiv:2012.07517},
-  year    = {2020}
+@inproceedings{hamid2020fake,
+  title     = {Fake News Detection in Social Media Using Graph Neural Networks and NLP Techniques: A COVID-19 Use-Case},
+  author    = {Hamid, Abdullah and Shiekh, Nasrullah and Said, Naina and Ahmad, Kashif and Gul, Asma and Hassan, Laiq and Al-Fuqaha, Ala},
+  booktitle = {Proceedings of the MediaEval 2020 Workshop},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {2882},
+  year      = {2020},
+  address   = {Online},
+  url       = {https://ceur-ws.org/Vol-2882/paper54.pdf},
+  note      = {Also available as arXiv:2012.07517}
 }
+
 
 
 @article{han2020importance,
@@ -2082,12 +2098,15 @@
 }
 
 
-@article{imran2016twitter,
-  title   = {Twitter as a lifeline: Human-annotated twitter corpora for NLP of crisis-related messages},
-  author  = {Imran, Muhammad and Mitra, Prasenjit and Castillo, Carlos},
-  journal = {arXiv preprint arXiv:1605.05894},
-  year    = {2016}
+@inproceedings{imran2016twitter,
+  title={Twitter as a lifeline: Human-annotated Twitter corpora for NLP of crisis-related messages},
+  author={Imran, Muhammad and Mitra, Prasenjit and Castillo, Carlos},
+  booktitle={10th International Conference on Language Resources and Evaluation, LREC 2016},
+  pages={1638--1643},
+  year={2016},
+  organization={European Language Resources Association (ELRA)}
 }
+
 
 
 @online{independent2024nhs,
@@ -2438,14 +2457,15 @@
 }
 
 
-@article{li2018massively,
-  title   = {Massively parallel hyperparameter tuning},
-  author  = {Li, Liam and Jamieson, Kevin and Rostamizadeh, Afshin and Gonina, Ekaterina and Hardt, Moritz and Recht, Benjamin and Talwalkar, Ameet},
-  journal = {arXiv preprint arXiv:1810.05934},
-  volume  = {5},
-  year    = {2018}
-}
 
+@inproceedings{li2018massively,
+title={A System for Massively Parallel Hyperparameter Tuning},
+author={Li, Liam and Jamieson, Kevin and Rostamizadeh, Afshin and Gonina, Ekaterina and Hardt, Moritz and Recht, Benjamin and Talwalkar, Ameet},
+booktitle={Proceedings of the 2020 Conference on Machine Learning and Systems (MLSys)},
+volume={2},
+pages={230--246},
+year={2020}
+}
 
 
 @inproceedings{li2021improving,
@@ -2457,12 +2477,11 @@
 }
 
 
-
-@article{liaw2018tune,
-  title   = {Tune: A research platform for distributed model selection and training},
-  author  = {Liaw, Richard and Liang, Eric and Nishihara, Robert and Moritz, Philipp and Gonzalez, Joseph E and Stoica, Ion},
-  journal = {arXiv preprint arXiv:1807.05118},
-  year    = {2018}
+@inproceedings{liaw2018tune,
+  title={Tune: A research platform for distributed model selection and training},
+  author={Liaw, Richard and Liang, Eric and Nishihara, Robert and Moritz, Philipp and Gonzalez, Joseph E and Stoica, Ion},
+  booktitle={ICML 2018 AutoML Workshop},
+  year={2018}
 }
 
 
@@ -2506,13 +2525,12 @@
 }
 
 
-@article{loshchilov2017decoupled,
-  title   = {Decoupled weight decay regularization},
-  author  = {Loshchilov, Ilya and Hutter, Frank},
-  journal = {arXiv preprint arXiv:1711.05101},
-  year    = {2017}
+@inproceedings{loshchilov2017decoupled,
+  title={Decoupled Weight Decay Regularization},
+  author={Loshchilov, Ilya and Hutter, Frank},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2019}
 }
-
 
 @article{LSTM,
   title     = {{L}ong {S}hort-{T}erm {M}emory},
@@ -2524,8 +2542,6 @@
   year      = {1997},
   publisher = {MIT Press}
 }
-
-
 
 
 @inproceedings{mandl2019overview,
@@ -2717,10 +2733,12 @@
 
 
 @article{mishra2022tweetnerd,
-  title   = {TweetNERD--End to End Entity Linking Benchmark for Tweets},
-  author  = {Mishra, Shubhanshu and Saini, Aman and Makki, Raheleh and Mehta, Sneha and Haghighi, Aria and Mollahosseini, Ali},
-  journal = {arXiv preprint arXiv:2210.08129},
-  year    = {2022}
+  title={Tweetnerd-end to end entity linking benchmark for tweets},
+  author={Mishra, Shubhanshu and Saini, Aman and Makki, Raheleh and Mehta, Sneha and Haghighi, Aria and Mollahosseini, Ali},
+  journal={Advances in Neural Information Processing Systems},
+  volume={35},
+  pages={1419--1433},
+  year={2022}
 }
 
 
@@ -2742,13 +2760,12 @@
 }
 
 
-@article{muennighoff2022crosslingual,
-  title   = {Crosslingual generalization through multitask finetuning},
-  author  = {Muennighoff, Niklas and Wang, Thomas and Sutawika, Lintang and Roberts, Adam and Biderman, Stella and Scao, Teven Le and Bari, M Saiful and Shen, Sheng and Yong, Zheng-Xin and Schoelkopf, Hailey and others},
-  journal = {arXiv preprint arXiv:2211.01786},
-  year    = {2022}
+@inproceedings{muennighoff2022crosslingual,
+  title={Crosslingual Generalization through Multitask Finetuning},
+  author={Muennighoff, Niklas and Wang, Thomas and Sutawika, Lintang and Roberts, Adam and Biderman, Stella and Le Scao, Teven and Bari, M Saiful and Shen, Sheng and Yong, Zheng Xin and Schoelkopf, Hailey and others},
+  booktitle={The 61st Annual Meeting Of The Association For Computational Linguistics},
+  year={2023}
 }
-
 
 @inproceedings{muhammad2023semeval,
   title     = {SemEval-2023 Task 12: Sentiment Analysis for African Languages (AfriSenti-SemEval)},
@@ -2925,18 +2942,6 @@
 }
 
 
-
-@misc{OPTIML,
-  title         = {OPT-IML: Scaling Language Model Instruction Meta Learning through the Lens of Generalization},
-  author        = {Iyer, Srinivasan and Lin, Xi Victoria and Pasunuru, Ramakanth and Mihaylov, Todor and Simig, D{\'a}niel and Yu, Ping and Shuster, Kurt and Wang, Tianlu and Liu, Qing and Koura, Punit Singh and others},
-  year          = {2022},
-  eprint        = {2212.12017},
-  archiveprefix = {arXiv},
-  primaryclass  = {cs.CL}
-}
-
-
-
 @article{PALM,
   title   = {Palm: Scaling language modeling with pathways},
   author  = {Chowdhery, Aakanksha and Narang, Sharan and Devlin, Jacob and Bosma, Maarten and Mishra, Gaurav and Roberts, Adam and Barham, Paul and Chung, Hyung Won and Sutton, Charles and Gehrmann, Sebastian and others},
@@ -3016,12 +3021,14 @@
 
 
 
-@article{pei2022semeval,
-  title   = {SemEval 2023 Task 9: Multilingual Tweet Intimacy Analysis},
-  author  = {Pei, Jiaxin and Silva, V{\'\i}tor and Bos, Maarten and Liu, Yozon and Neves, Leonardo and Jurgens, David and Barbieri, Francesco},
-  journal = {arXiv preprint arXiv:2210.01108},
-  year    = {2022}
+@inproceedings{pei2023semeval,
+  title={SemEval-2023 Task 9: Multilingual Tweet Intimacy Analysis},
+  author={Pei, Jiaxin and Silva, V{\'\i}tor and Bos, Maarten and Liu, Yozen and Neves, Leonardo and Jurgens, David and Barbieri, Francesco},
+  booktitle={Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)},
+  pages={2235--2246},
+  year={2023}
 }
+
 
 
 
@@ -3146,19 +3153,6 @@
 
 
 
-
-@article{raffel2021exploring,
-  title   = {Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer},
-  author  = {Raffel, Colin and Shazeer, Noam and Roberts, Adam and Lee, Katherine and Narang, Sharan and Matena, Mateusz and Zhou, Yanqi and Li, Wei and Liu, Peter J.},
-  journal = {Journal of Machine Learning Research},
-  volume  = {22},
-  number  = {140},
-  pages   = {1--67},
-  year    = {2021}
-}
-
-
-
 @inproceedings{ramage2011partially,
   title     = {Partially labeled topic models for interpretable text mining},
   author    = {Ramage, Daniel and Manning, Christopher D and Dumais, Susan},
@@ -3262,12 +3256,10 @@
 }
 
 
-
-
 @article{roesslein2009tweepy,
   title   = {Tweepy Documentation},
   author  = {Roesslein, Joshua},
-  journal = {Online] http://tweepy. readthedocs. io/en/v3},
+  journal = {Online: http://tweepy. readthedocs. io/en/v3},
   year    = {2009}
 }
 
@@ -3299,14 +3291,6 @@
 
 
 
-@article{rosenthal2019semeval,
-  title   = {SemEval-2017 task 4: Sentiment analysis in Twitter},
-  author  = {Rosenthal, Sara and Farra, Noura and Nakov, Preslav},
-  journal = {arXiv preprint arXiv:1912.00741},
-  year    = {2019}
-}
-
-
 @article{roth2023s,
   title     = {What’s trending in difference-in-differences? A synthesis of the recent econometrics literature},
   author    = {Roth, Jonathan and Sant’Anna, Pedro HC and Bilinski, Alyssa and Poe, John},
@@ -3321,12 +3305,13 @@
 
 
 @article{rusliapplicability,
-  title   = {On the Applicability of Zero-Shot Cross-Lingual Transfer Learning for Sentiment Classification in Distant Language Pairs},
-  author  = {Rusli, Andre and Shishido, Makoto},
-  journal = {arXiv preprint arXiv:2412.18188},
-  year    = {2024}
+  title     = {On the Applicability of Zero-Shot Cross-Lingual Transfer Learning for Sentiment Classification in Distant Language Pairs},
+  author    = {Rusli, Andre and Shishido, Makoto},
+  booktitle = {Proceedings of the 28th Annual Meeting of the Association for Natural Language Processing (NLP2022)},
+  year      = {2022},
+  publisher = {The Association for Natural Language Processing},
+  url       = {https://arxiv.org/abs/2412.18188}
 }
-
 
 @article{saad2019twitter,
   title     = {Twitter sentiment analysis based on ordinal regression},
@@ -3358,15 +3343,12 @@
 }
 
 
-
-@article{samuel2020message,
-  title   = {That message went viral?! exploratory analytics and sentiment analysis into the propagation of tweets},
-  author  = {Samuel, Jim and Garvey, Myles and Kashyap, Rajiv},
-  journal = {arXiv preprint arXiv:2004.09718},
-  year    = {2020}
+@inproceedings{samuel2020message,
+  title={That Message Went Viral?! Exploratory Analytics and Sentiment Analysis into the Propagation of Tweets},
+  author={Samuel, Jim and Garvey, Myles D and Kashyap, Rajiv},
+  booktitle={Northeast Decision Sciences Institute Proceedings Annual Conference, 2019},
+  year={2020}
 }
-
-
 
 @inproceedings{sandoval2018facebook,
   title     = {Facebook impact and sentiment analysis on political campaigns},
@@ -3389,12 +3371,12 @@
 }
 
 
-@article{schlichtkrull2023intended,
-  title   = {The Intended Uses of Automated Fact-Checking Artefacts: Why, How and Who},
-  author  = {Schlichtkrull, Michael and Ousidhoum, Nedjma and Vlachos, Andreas},
-  journal = {arXiv preprint arXiv:2304.14238},
-  year    = {2023}
+@inproceedings{schlichtkrull2023intended,
+  title={The Intended Uses of Automated Fact-Checking Artefacts: Why, How and Who},
+  author={Schlichtkrull, Michael Sejr and OUSIDHOUM, Nedjma and Vlachos, Andreas},
+  booktitle={The 2023 Conference on Empirical Methods in Natural Language Processing}
 }
+
 
 
 @inproceedings{seabold2010statsmodels,
@@ -3458,14 +3440,6 @@
   pages     = {22--36},
   year      = {2017},
   publisher = {ACM New York, NY, USA}
-}
-
-
-@article{shu2018fakenewsnet,
-  title   = {Fakenewsnet: A data repository with news content, social context and spatialtemporal information for studying fake news on social media},
-  author  = {Shu, Kai and Mahudeswaran, Deepak and Wang, Suhang and Lee, Dongwon and Liu, Huan},
-  journal = {arXiv preprint arXiv:1809.01286},
-  year    = {2018}
 }
 
 
@@ -3537,13 +3511,11 @@
 }
 
 
-
-
 @article{srivastava2022beyond,
-  title   = {Beyond the imitation game: Quantifying and extrapolating the capabilities of language models},
-  author  = {Srivastava, Aarohi and Rastogi, Abhinav and Rao, Abhishek and Shoeb, Abu Awal Md and Abid, Abubakar and Fisch, Adam and Brown, Adam R and Santoro, Adam and Gupta, Aditya and Garriga-Alonso, Adri{\`a} and others},
-  journal = {arXiv preprint arXiv:2206.04615},
-  year    = {2022}
+  title={Beyond the imitation game: Quantifying and extrapolating the capabilities of language models},
+  author={Srivastava, Aarohi and Rastogi, Abhinav and Rao, Abhishek and Shoeb, Abu Awal and Abid, Abubakar and Fisch, Adam and Brown, Adam R and Santoro, Adam and Gupta, Aditya and Garriga-Alonso, Adri and others},
+  journal={Transactions on machine learning research},
+  year={2023}
 }
 
 
@@ -3655,13 +3627,13 @@
 }
 
 
-@article{T0,
-  title   = {Multitask prompted training enables zero-shot task generalization},
-  author  = {Sanh, Victor and Webson, Albert and Raffel, Colin and Bach, Stephen H and Sutawika, Lintang and Alyafeai, Zaid and Chaffin, Antoine and Stiegler, Arnaud and Scao, Teven Le and Raja, Arun and others},
-  journal = {arXiv preprint arXiv:2110.08207},
-  year    = {2021}
-}
 
+@inproceedings{T0,
+  title={Multitask Prompted Training Enables Zero-Shot Task Generalization},
+  author={Sanh, Victor and Webson, Albert and Raffel, Colin and Bach, Stephen H and Sutawika, Lintang and Alyafeai, Zaid and Chaffin, Antoine and Stiegler, Arnaud and Scao, Teven Le and Raja, Arun and others},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2022}
+}
 
 @article{T5,
   title     = {Exploring the limits of transfer learning with a unified text-to-text transformer},
@@ -3717,12 +3689,16 @@
 }
 
 
-@article{tedeschi2023s,
-  title   = {What's the Meaning of Superhuman Performance in Today's NLU?},
-  author  = {Tedeschi, Simone and Bos, Johan and Declerck, Thierry and Hajic, Jan and Hershcovich, Daniel and Hovy, Eduard H and Koller, Alexander and Krek, Simon and Schockaert, Steven and Sennrich, Rico and others},
-  journal = {arXiv preprint arXiv:2305.08414},
-  year    = {2023}
+@inproceedings{tedeschi2023s,
+  title={What's the Meaning of Superhuman Performance in Today's NLU?},
+  author={Tedeschi, Simone and Bos, Johan and Declerck, Thierry and Haji{\v{c}}, Jan and Hershcovich, Daniel and Hovy, Eduard and Koller, Alexander and Krek, Simon and Schockaert, Steven and Sennrich, Rico and others},
+  booktitle={PROCEEDINGS OF THE CONFERENCE-ASSOCIATION FOR COMPUTATIONAL LINGUISTICS. MEETING},
+  volume={1},
+  pages={12471--12491},
+  year={2023},
+  organization={Association for Computational Linguistics (ACL)}
 }
+
 
 
 @misc{thenationalThisMany,
@@ -4182,23 +4158,12 @@
 }
 
 
-
-
-
-@article{XLMR,
-  title   = {Unsupervised cross-lingual representation learning at scale},
-  author  = {Conneau, Alexis and Khandelwal, Kartikay and Goyal, Naman and Chaudhary, Vishrav and Wenzek, Guillaume and Guzm{\'a}n, Francisco and Grave, Edouard and Ott, Myle and Zettlemoyer, Luke and Stoyanov, Veselin},
-  journal = {arXiv preprint arXiv:1911.02116},
-  year    = {2019}
-}
-
-
-
-@article{XLMV,
-  title   = {XLM-V: Overcoming the Vocabulary Bottleneck in Multilingual Masked Language Models},
-  author  = {Liang, Davis and Gonen, Hila and Mao, Yuning and Hou, Rui and Goyal, Naman and Ghazvininejad, Marjan and Zettlemoyer, Luke and Khabsa, Madian},
-  journal = {arXiv preprint arXiv:2301.10472},
-  year    = {2023}
+@inproceedings{XLMV,
+  title={XLM-V: Overcoming the Vocabulary Bottleneck in Multilingual Masked Language Models},
+  author={Liang, Davis and Gonen, Hila and Mao, Yuning and Hou, Rui and Goyal, Naman and Ghazvininejad, Marjan and Zettlemoyer, Luke and Khabsa, Madian},
+  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages={13142--13152},
+  year={2023}
 }
 
 @article{XLNet,
@@ -4241,12 +4206,14 @@
   abstract  = {The recent {``}Text-to-Text Transfer Transformer{''} (T5) leveraged a unified text-to-text format and scale to attain state-of-the-art results on a wide variety of English-language NLP tasks. In this paper, we introduce mT5, a multilingual variant of T5 that was pre-trained on a new Common Crawl-based dataset covering 101 languages. We detail the design and modified training of mT5 and demonstrate its state-of-the-art performance on many multilingual benchmarks. We also describe a simple technique to prevent {``}accidental translation{''} in the zero-shot setting, where a generative model chooses to (partially) translate its prediction into the wrong language. All of the code and model checkpoints used in this work are publicly available.}
 }
 
-@article{xue2020mt5,
-  title   = {mT5: A massively multilingual pre-trained text-to-text transformer},
-  author  = {Xue, Linting and Constant, Noah and Roberts, Adam and Kale, Mihir and Al-Rfou, Rami and Siddhant, Aditya and Barua, Aditya and Raffel, Colin},
-  journal = {arXiv preprint arXiv:2010.11934},
-  year    = {2020}
+@inproceedings{xue2020mt5,
+  title={mT5: A Massively Multilingual Pre-trained Text-to-Text Transformer},
+  author={Xue, Linting and Constant, Noah and Roberts, Adam and Kale, Mihir and Al-Rfou, Rami and Siddhant, Aditya and Barua, Aditya and Raffel, Colin},
+  booktitle={Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+  pages={483--498},
+  year={2021}
 }
+
 
 
 @article{Yang_Wang_Pierce_Vaish_Shi_Shah_2021,
@@ -4282,13 +4249,14 @@
   organization = {Association for Computational Linguistics (ACL)}
 }
 
-
-@article{zhang2022twhin,
-  title   = {TwHIN-BERT: A Socially-Enriched Pre-trained Language Model for Multilingual Tweet Representations},
-  author  = {Zhang, Xinyang and Malkov, Yury and Florez, Omar and Park, Serim and McWilliams, Brian and Han, Jiawei and El-Kishky, Ahmed},
-  journal = {arXiv preprint arXiv:2209.07562},
-  year    = {2022}
+@inproceedings{zhang2022twhin,
+  title={Twhin-bert: A socially-enriched pre-trained language model for multilingual tweet representations at twitter},
+  author={Zhang, Xinyang and Malkov, Yury and Florez, Omar and Park, Serim and McWilliams, Brian and Han, Jiawei and El-Kishky, Ahmed},
+  booktitle={Proceedings of the 29th ACM SIGKDD conference on knowledge discovery and data mining},
+  pages={5597--5607},
+  year={2023}
 }
+
 
 @inproceedings{zhao2011comparing,
   title        = {Comparing twitter and traditional media using topic models},
@@ -4651,12 +4619,15 @@ DOI = {10.3390/su17114967}
     abstract = "We introduce the Measuring Hate Speech corpus, a dataset created to measure hate speech while adjusting for annotators' perspectives. It consists of 50,070 social media comments spanning YouTube, Reddit, and Twitter, labeled by 11,143 annotators recruited from Amazon Mechanical Turk. Each observation includes 10 ordinal labels: sentiment, disrespect, insult, attacking/defending, humiliation, inferior/superior status, dehumanization, violence, genocide, and a 3-valued hate speech benchmark label. The labels are aggregated using faceted Rasch measurement theory (RMT) into a continuous score that measures each comment{'}s location on a hate speech spectrum. The annotation experimental design assigned comments to multiple annotators in order to yield a linked network, allowing annotator disagreement (perspective) to be statistically summarized. Annotators' labeling strictness was estimated during the RMT scaling, projecting their perspective onto a linear measure that was adjusted for the hate speech score. Models that incorporate this annotator perspective parameter as an auxiliary input can generate label- and score-level predictions conditional on annotator perspective. The corpus includes the identity group targets of each comment (8 groups, 42 subgroups) and annotator demographics (6 groups, 40 subgroups), facilitating analyses of interactions between annotator- and comment-level identities, i.e. identity-related annotator perspective."
 }
 
-@article{parikh2019multi,
-  title={Multi-label categorization of accounts of sexism using a neural framework},
+
+@inproceedings{parikh2019multi,
+  title={Multi-label Categorization of Accounts of Sexism using a Neural Framework},
   author={Parikh, Pulkit and Abburi, Harika and Badjatiya, Pinkesh and Krishnan, Radhika and Chhaya, Niyati and Gupta, Manish and Varma, Vasudeva},
-  journal={arXiv preprint arXiv:1910.04602},
+  booktitle={Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  pages={1642--1652},
   year={2019}
 }
+
 
 @inproceedings{vidgen-etal-2020-detecting,
     title = "Detecting {E}ast {A}sian Prejudice on Social Media",
@@ -5142,9 +5113,10 @@ DOI = {10.3390/su17114967}
 @article{shen2025hatebench,
   title={HateBench: Benchmarking Hate Speech Detectors on LLM-Generated Content and Hate Campaigns},
   author={Shen, Xinyue and Wu, Yixin and Qu, Yiting and Backes, Michael and Zannettou, Savvas and Zhang, Yang},
-  journal={arXiv preprint arXiv:2501.16750},
-  year={2025}
+  year={2025},
+  publisher={CISPA}
 }
+
 
 @article{zimbra2018state,
   title={The state-of-the-art in Twitter sentiment analysis: A review and benchmark evaluation},
@@ -5344,11 +5316,13 @@ DOI = {10.3390/su17114967}
 }
 
 
-@article{mikolov2013efficient,
-  title={Efficient estimation of word representations in vector space},
-  author={Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeffrey},
-  journal={arXiv preprint arXiv:1301.3781},
-  year={2013}
+@inproceedings{mikolov2013efficient,
+  title     = {Efficient Estimation of Word Representations in Vector Space},
+  author    = {Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeffrey},
+  booktitle = {Proceedings of the International Conference on Learning Representations (ICLR)},
+  year      = {2013},
+  url       = {https://arxiv.org/abs/1301.3781},
+  note      = {arXiv:1301.3781}
 }
 
 
@@ -5362,20 +5336,24 @@ DOI = {10.3390/su17114967}
   year={2024}
 }
 
-@article{lewis2019bart,
-  title={BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension},
-  author={Lewis, Mike and Liu, Yinhan and Goyal, Naman and Ghazvininejad, Marjan and Mohamed, Abdelrahman and Levy, Omer and Stoyanov, Ves and Zettlemoyer, Luke},
-  journal={arXiv preprint arXiv:1910.13461},
-  year={2019}
+@inproceedings{lewis2019bart,
+  title={BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension},
+  author={Lewis, Mike and Liu, Yinhan and Goyal, Naman and Ghazvininejad, Marjan and Mohamed, Abdelrahman and Levy, Omer and Stoyanov, Veselin and Zettlemoyer, Luke},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  pages={7871},
+  year={2020},
+  organization={Association for Computational Linguistics}
 }
 
 
-@article{wei2021finetuned,
-  title={Finetuned language models are zero-shot learners},
-  author={Wei, Jason and Bosma, Maarten and Zhao, Vincent Y and Guu, Kelvin and Yu, Adams Wei and Lester, Brian and Du, Nan and Dai, Andrew M and Le, Quoc V},
-  journal={arXiv preprint arXiv:2109.01652},
-  year={2021}
+
+@inproceedings{wei2021finetuned,
+  title={Finetuned Language Models are Zero-Shot Learners},
+  author={Wei, Jason and Bosma, Maarten and Zhao, Vincent and Guu, Kelvin and Yu, Adams Wei and Lester, Brian and Du, Nan and Dai, Andrew M and Le, Quoc V},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year={2022}
 }
+
 
 @article{gasparetto2022survey,
   title={A survey on text classification algorithms: From text to predictions},
@@ -5417,11 +5395,13 @@ DOI = {10.3390/su17114967}
   publisher={ACM New York, NY, USA}
 }
 
+
 @article{wei2022emergent,
-  title={Emergent abilities of large language models},
+  title={Emergent Abilities of Large Language Models},
   author={Wei, Jason and Tay, Yi and Bommasani, Rishi and Raffel, Colin and Zoph, Barret and Borgeaud, Sebastian and Yogatama, Dani and Bosma, Maarten and Zhou, Denny and Metzler, Donald and others},
-  journal={arXiv preprint arXiv:2206.07682},
-  year={2022}
+  journal={Transactions on Machine Learning Research},
+  year={2022},
+  url={https://openreview.net/forum?id=yzkSU5zdwD}
 }
 
 @article{achiam2023gpt,
@@ -5518,12 +5498,14 @@ DOI = {10.3390/su17114967}
     pages = "1676--1683",
 }
 
+
 @article{ferrara2023should,
-  title={Should chatgpt be biased? challenges and risks of bias in large language models},
+  title={Should ChatGPT be Biased? Challenges and Risks of Bias in Large Language Models},
   author={Ferrara, Emilio},
-  journal={arXiv preprint arXiv:2304.03738},
+  journal={Challenges and Risks of Bias in Large Language Models (October 26, 2023)},
   year={2023}
 }
+
 
 @article{george2023environmental,
   title={The environmental impact of AI: a case study of water consumption by chat GPT},
@@ -5545,12 +5527,14 @@ DOI = {10.3390/su17114967}
   year={2025}
 }
 
-@article{zhang2019dialogpt,
-  title={Dialogpt: Large-scale generative pre-training for conversational response generation},
-  author={Zhang, Yizhe and Sun, Siqi and Galley, Michel and Chen, Yen-Chun and Brockett, Chris and Gao, Xiang and Gao, Jianfeng and Liu, Jingjing and Dolan, Bill},
-  journal={arXiv preprint arXiv:1911.00536},
-  year={2019}
+@inproceedings{zhang2019dialogpt,
+  title={DIALOGPT: Large-Scale Generative Pre-training for Conversational Response Generation},
+  author={Zhang, Yizhe and Sun, Siqi and Galley, Michel and Chen, Yen-Chun and Brockett, Chris and Gao, Xiang and Gao, Jianfeng and Liu, Jingjing and Dolan, William B},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: System Demonstrations},
+  pages={270--278},
+  year={2020}
 }
+
 
 @article{zhang2022survey,
   title={A survey on aspect-based sentiment analysis: Tasks, methods, and challenges},
@@ -6395,12 +6379,14 @@ keywords = {civil discourse, control experiment, digital journalism, online soci
 series = {CHI '20}
 }
 
-@article{song2023globalbench,
+@inproceedings{song2023globalbench,
   title={GlobalBench: A Benchmark for Global Progress in Natural Language Processing},
-  author={Song, Yueqi and Cui, Catherine and Khanuja, Simran and Liu, Pengfei and Faisal, Fahim and Ostapenko, Alissa and Winata, Genta Indra and Aji, Alham Fikri and Cahyawijaya, Samuel and Tsvetkov, Yulia and others},
-  journal={arXiv preprint arXiv:2305.14716},
+  author={Song, Yueqi and Khanuja, Simran and Liu, Pengfei and Faisal, Fahim and Ostapenko, Alissa and Winata, Genta Indra and Aji, Alham Fikri and Cahyawijaya, Samuel and Tsvetkov, Yulia and Anastasopoulos, Antonios and others},
+  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages={14157--14171},
   year={2023}
 }
+
 
 @inproceedings{zhang-etal-2023-dont,
     title = "Don{'}t Trust {C}hat{GPT} when your Question is not in {E}nglish: A Study of Multilingual Abilities and Types of {LLM}s",

@@ -11,7 +11,7 @@ Furthermore, social media data allows for tracking of user behaviour, discourse 
 
 Despite their potential, analysing social media data poses numerous challenges for the field of \ac{NLP}. User-generated content on these platforms often lacks context and is highly informal, containing slang, emojis, abbreviations, typos, and other forms of noisy data \cite{eisenstein2013bad,gain-etal-2023-reference}. Moreover, language usage on social media evolves rapidly, making it difficult for static models and lexicons to keep pace. These characteristics demand robust, adaptive, and context-aware approaches to effectively process and interpret the vast and dynamic stream of social media text.
 
-In order to tackle the limitations above, we explore existing methodologies and resources that work on understanding complex social interactions on social media. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpora collected from \textit{Twitter} and \textit{Reddit} to better understand human interactions regarding politics discourse, and misinformation and hate speech proliferation. The rest of this introductory Chapter is organised as follows: \Autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \Autoref{ch1:contributions} outlines the contribution of research, \Autoref{ch1:publications} lists publications that are peer-reviewed or currently under review, and \Autoref{ch1:outline} describes the structure of the thesis and summarises this introductory Chapter.
+In order to tackle the limitations above, we explore existing methodologies and resources that work on understanding complex social interactions on social media. Subsequently, we introduce new models and datasets that improve on previous work, apply them on large corpora collected from \textit{Twitter} and \textit{Reddit} to better understand human interactions regarding politics discourse, and misinformation and hate speech proliferation. The rest of this introductory Chapter is organised as follows: \Autoref{ch1:motivation} outlines the research aim and motivations for this thesis,  \Autoref{ch1:contributions} outlines the contribution of research, \Autoref{ch:intro:publications} lists publications that are peer-reviewed or currently under review, and \Autoref{ch1:outline} describes the structure of the thesis and summarises this introductory Chapter.
 
 \clearpage
 \section{Motivation} \label{ch1:motivation}
@@ -64,16 +64,16 @@ Throughout this work, we provide detailed and transparent methodologies and appr
 Finally, it is worth noting that there was a consistent effort to collaborate with experts from other fields, such as social sciences and healthcare, and to incorporate their feedback in order to address real-world problems through our research. These interdisciplinary collaborations,  as seen in \Autoref{ch1:sec:collaboration}, highlight the practical relevance of our work.
 
 
-\section{Publications} 
+\section{Publications} \label{ch:intro:publications}
 The majority of the material in this thesis have been published in peer-reviewed conferences and journals, while the remaining material are under review at peer-reviewed conferences. Below is a list of the core publications where the main contributions of the thesis have been published in chronological order.
 
 \dimos{It is important to note that certain claims made in the individual Chapters, such as statements regarding \ac{SoTA} performance, reflect the state of the field at the time the corresponding papers were written and published. Some of these statements may no longer hold true due to the rapid advancements in the field of \ac{NLP}.}
 
-\subsection{Core Publications} \label{ch:intro:publications}
+\subsection{Core Publications} 
 Below is a list of the core publications where the main contributions of the thesis
 have been published in chronological order. The majority of these publications have been led by myself. However, in two cases, specifically publications (1) and (7), the second co-author made substantial contributions. In publication (1), Asahi Ushio was responsible for collecting the raw data and designing the annotation guidelines used to create the {\TweetTopic} dataset (\Autoref{ch:tweet-topic}). In publication (7), Christian Arnold developed the statistical framework employed to examine the effect of trigger points (\Autoref{ch:triggers}).
 
-\subsubsection{Part 1: \PARTONE}
+\subsubsection{Part 1: \PARTONE} \label{ch:intro:publications:partone}
 \begin{enumerate}
     \item \label{publication:1} \underline{Dimosthenis Antypas}, Asahi Ushio, Jose Camacho-Collados, Vitor Silva, Leonardo Neves, and Francesco Barbieri. 2022. Twitter Topic Classification. In Proceedings of the 29th International Conference on Computational Linguistics, pages 3386–3400, Gyeongju, Republic of Korea. International Committee on Computational Linguistics. \Autoref{ch:tweet-topic}
     
@@ -85,7 +85,7 @@ have been published in chronological order. The majority of these publications h
 \end{enumerate}
 
 
-\subsubsection{Part 2: \PARTTWO}
+\subsubsection{Part 2: \PARTTWO} \label{ch:intro:publications:parttwo}
 \begin{enumerate}[start=5]
     \item \label{publication:5} \underline{Dimosthenis Antypas}, Alun Preece, and Jose Camacho-Collados. 2023. Negativity spreads faster: A large-scale multilingual Twitter analysis on the role of sentiment in political communication. Online Social Networks and Media, 33:100242. \Autoref{ch:political}
 

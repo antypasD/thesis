@@ -7,7 +7,7 @@ In the previous Chapter, \Autoref{ch:tweet-topic}, we introduced the task of twe
 
 This chapter reproduces verbatim our paper \textit{Multilingual Topic Classification in X: Dataset and
 Analysis}, published in the Proceedings of the Conference on Empirical Methods in
-Natural Language Processing, 2024 (\Autoref{ch:intro:publications}, \Autoref{publication:2}), with only minor modifications to presentation. It corresponds directly to the contributions outlined in \Autoref{ch:intro:contributions}, specifically \Autoref{contribution:1}, \textit{New Datasets for Topic Classification on Twitter}.
+Natural Language Processing, 2024 (\Autoref{ch:intro:publications:partone}, \Autoref{publication:2}), with only minor modifications to presentation. It corresponds directly to the contributions outlined in \Autoref{ch:intro:contributions}, specifically \Autoref{contribution:1}, \textit{New Datasets for Topic Classification on Twitter}.
 
 
 \selectlanguage{english}
@@ -143,7 +143,7 @@ In this section, we introduce the models that we evaluate using {\XTOPIC} and ou
 To investigate the robustness of our models and the quality of the collected data, we perform a multi-purpose evaluation in a cross-validation setting. For each language subset of {\XTOPIC}, we implement a 5-fold cross-validation approach, with each fold encompassing 720/80/200 tweets for the train/validation/test sets. We ensure, whenever possible, that at least one instance of each topic is represented in each split. Then, we evaluate the following settings in the test splits of {\XTOPIC}.
 
 
-\noindent{\textbf{Zero-shot (zero).}} No training data are provided. This setting aims to investigate the performance of zero-shot and unsupervised systems such as recent instruction tuning \cite{FLANT5} and generative \acp{LM} \cite{bubeck2023sparks} in low-resource settings.
+\noindent{\textbf{Zero-shot (zero).}} No training data are provided. This setting aims to investigate the performance of zero-shot and unsupervised systems such as recent instruction tuning \cite{chung2024scaling} and generative \acp{LM} \cite{bubeck2023sparks} in low-resource settings.
 
 \noindent{\textbf{Few-shot (few).}} Five entries selected from the validation set of each fold are provided as examples. We aimed to maximise the coverage of topics present when selecting the entries. The goal of this setting is to assess the model's ability to generalise to new tasks or domains with limited training examples. For both the zero and few-shot settings the prompts utilised are similar to the ones used for the training of the BLOOMz and MT0 models in  \citet{muennighoff2022crosslingual} (see Appendix \ref{appendix:XTopic-prompts}).
 
@@ -166,7 +166,7 @@ We consider five different multilingual models, both general-purpose and special
 
 \noindent \textbf{bernice} \cite{delucia2022bernice}, a RoBERTa-based model trained on a large corpus of 2.5 billion tweets employing a customised tweet-focused tokenizer. Its training data includes 66 different languages with English, Spanish, and Japanese being the first, second, and fourth most frequent languages, making it an ideal candidate for the task at hand.
 
-\noindent  \textbf{XLM-R (xlmr)} \cite{XLMR}, a RoBERTa-like model trained on the CommonCrawls corpus \cite{wenzek2020ccnet} on 100 languages; and \textbf{XLM-T (xlmt)} \cite{barbieri2022xlm}, another XLM-R based model that utilises the last XLM-R checkpoint and further trains on a diverse dataset of over 1 billion tweets spanning over 30 languages.
+\noindent  \textbf{XLM-R (xlmr)} \cite{conneau2019unsupervised}, a RoBERTa-like model trained on the CommonCrawls corpus \cite{wenzek2020ccnet} on 100 languages; and \textbf{XLM-T (xlmt)} \cite{barbieri2022xlm}, another XLM-R based model that utilises the last XLM-R checkpoint and further trains on a diverse dataset of over 1 billion tweets spanning over 30 languages.
 
 For models based on XLM-R, we evaluate both the base and large versions. The inclusion of non-social media specific models (\textit{xlmr}) is valuable as it offers insights into their performance in scenarios where the model is not specifically trained on social media content, shedding light on the inherent challenges of such settings. The implementation provided by Hugging Face \cite{wolf-etal-2020-transformers} is used for the fine-tuning of all the models. Hyper-parameter tuning, including batch size, epochs number, learning rate, and weight decay is conducted using Ray Tune \cite{liaw2018tune}\footnote{Details of the models used can be found in Appendix \ref{sec:appendix-models}.}.
 
@@ -176,7 +176,7 @@ In order to assess the zero/few-shot capabilities of \acp{LLM} in our task, we c
 
 \noindent \textbf{BLOOMZ (bloomz)} \cite{muennighoff2022crosslingual}, a decoder-only model based on the BLOOM models and trained with the xP3 dataset \cite{BLOOM} with 7 billion parameters.
 
-\noindent  \textbf{mt0} \cite{muennighoff2022crosslingual}, a multilingual variant of the multilingual Text-to-Text Transfer Transformer model \cite{xue2020mt5}. %trained on the mC4 corpus \cite{2019t5}, which encompasses more than 101 languages. 
+\noindent  \textbf{mt0} \cite{muennighoff2022crosslingual}, a multilingual variant of the multilingual Text-to-Text Transfer Transformer model \cite{xue2020mt5}. %trained on the mC4 corpus \cite{T5}, which encompasses more than 101 languages. 
 \textit{Mt0}, similarly to \textit{bloomz}, is further trained on the xP3 dataset using multitask prompted finetuning.% The 13 billion parameters version of the model is used.
 
 \noindent  \textbf{chat-gpt-3.5-turbo (chat-gpt)} from OpenaAI, \footnote{\url{https://openai.com/chatgpt}} an encoder/decoder model with approximately 175 billion parameters \cite{GPT3}.
