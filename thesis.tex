@@ -244,7 +244,7 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 
 \pagestyle{empty}
 \include{title}
-%  \clearpage  % Use clearpage instead of cleardoublepage to avoid empty pages
+ \clearpage  % Use clearpage instead of cleardoublepage to avoid empty pages
 \newpage       
 \thispagestyle{empty}
 \mbox{}   
@@ -262,19 +262,15 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 \begin{spacing}{1.5}
 % \onehalfspacing
 
-\addcontentsline{toc}{chapter}{Declaration} % Add the acknowledgements to the table of contents.
-\include{./chapters/declaration} 
-\clearpage
+% \addcontentsline{toc}{chapter}{Declaration} % Add the acknowledgements to the table of contents.
+% \include{./chapters/declaration} 
+% \clearpage
 
 \addcontentsline{toc}{chapter}{Abstract} % Add the abstract to the table of contents.
 \include{./chapters/abstract}
 \clearpage
 
 % Contents
-\addcontentsline{toc}{chapter}{Dedicate} % Add the acknowledgements to the table of contents.
-\include{./chapters/dedicate}
-\clearpage
-
 \tableofcontents
 \addcontentsline{toc}{chapter}{Contents} % Add the the table of contents to the table of contents.
 \clearpage
@@ -289,10 +285,14 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 
 \addcontentsline{toc}{chapter}{Acronyms} % Add the acknowledgements to the table of contents.
 \include{./chapters/Acronyms}
-\cleardoublepage   
-\newpage       
-\thispagestyle{empty}
-\mbox{}    
+% \cleardoublepage   
+% \newpage       
+% \thispagestyle{empty}
+% \mbox{}    
+\clearpage
+
+\addcontentsline{toc}{chapter}{Dedicate} % Add the acknowledgements to the table of contents.
+\include{./chapters/dedicate}
 \clearpage
 
 %% In the thesis, pages are numbered with arabic numerals in the top outer corners (left top corner on even numbered pages, and right top corner on odd numbered pages) and alternatively Author and Chapter: Chapter name in the other top corner.
