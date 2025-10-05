@@ -257,7 +257,7 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 % Abstract
 \pagenumbering{roman}
 \fancyhead[L]{\nouppercase Abstract}
-\include{./chapters/abstract} % HACK: manually setting page number inside chapter
+\include{./chapters/abstract} % HACK: manually setting page number inside Abstract chapter
 \clearpage
 
 % Contents
@@ -265,23 +265,23 @@ Language Models for Analysing Social Media Discourse: Resources and Applications
 \tableofcontents
 \setcounter{page}{3}  % HACK: manually setting page number
 \addcontentsline{toc}{chapter}{Contents} % Add the the table of contents to the table of contents.
+\setcounter{page}{13}
 \clearpage
 
+\setcounter{page}{14}  % HACK: manually setting page number 
 \fancyhead[L]{List of Figures}
 \listoffigures
-\setcounter{page}{14}  % HACK: manually setting page number 
-% ***************NOTE: PAGE NUMBERING IS WRONG ***********
 \addcontentsline{toc}{chapter}{List of Figures} % Add the list of figures to the table of contents.
 \clearpage
 
 \fancyhead[L]{List of Tables}
 \listoftables
-\setcounter{page}{19}  % HACK: manually setting page number
+% \setcounter{page}{19}  % HACK: manually setting page number
 \addcontentsline{toc}{chapter}{List of Tables} % Add the list of tables to the table of contents.
 \clearpage
 
 \fancyhead[L]{Acronyms}
-\setcounter{page}{26}  % HACK: manually setting page number
+% \setcounter{page}{26}  % HACK: manually setting page number
 \addcontentsline{toc}{chapter}{Acronyms} % Add the acknowledgements to the table of contents.
 \include{./chapters/Acronyms}
 \clearpage
