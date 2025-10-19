@@ -878,12 +878,43 @@ How intimate is the following tweet? \\
 
 
 
-\begin{figure*}[!ht]
+% \begin{figure*}[!ht]
+% \centering
+% \includegraphics[scale=0.4]{../figures/super-tweeteval/emojis_dist.png}
+% \caption{Emojis distribution for each split.}
+% \label{appendix:SuperTweetEval-emojis-distribution}
+% \end{figure*}
+
+
+% First half
+\begin{figure*}[!t]
 \centering
-\includegraphics[scale=0.4]{../figures/super-tweeteval/emojis_dist.png}
-\caption{Emojis distribution for each split.}
-\label{appendix:SuperTweetEval-emojis-distribution}
+\includegraphics[scale=0.65, trim=0 740 0 0, clip]{../figures/super-tweeteval/emojis_dist.png}
+\caption{Emojis distribution for each split (Part 1).}
+\label{appendix:fig:super-tweeteval-emojis-dist-2}
 \end{figure*}
+
+
+% Second half
+\begin{figure*}[!t]
+\centering
+{\setlength{\tabcolsep}{9pt}  % spacing between columns
+\tiny
+\begin{tabular}{@{}l@{\hspace{50pt}}c@{\hspace{8pt}}c@{\hspace{15pt}}c@{\hspace{20pt}}%
+                l@{\hspace{30pt}}c@{\hspace{8pt}}c@{\hspace{8pt}}c@{}}
+\textbf{gold\_label} & \textbf{train} & \textbf{validation} & \textbf{test} &
+\textbf{gold\_label} & \textbf{train} & \textbf{validation} & \textbf{test} \\
+\end{tabular}
+}
+\vspace{2pt} % small gap
+
+\includegraphics[scale=0.65, trim=0 0 0 740, clip]{../figures/super-tweeteval/emojis_dist.png}
+\caption{Emojis distribution for each split (Part 2).}
+\label{appendix:fig:super-tweeteval-emojis-dist-1}
+\end{figure*}
+
+
+
 
 \clearpage
 

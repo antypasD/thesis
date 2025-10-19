@@ -224,29 +224,52 @@ We consider each pair of collected datasets (\textit{untrusted} and \textit{trus
 Table \ref{tab:results} displays the aggregated results for the sentiment, emotion, hate speech and topic analysis. For each feature we consider each user independently by taking their mean value and then aggregate the results of users belonging in the same subset. Even though differences between \textit{untrusted} and \textit{trusted} subsets exist, it is challenging to identify trends that are consistent across the datasets. In the following sections we investigate each  characteristic individually. 
 
 
-
-
-\begin{figure*}
-  \begin{subfigure}{0.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{../figures/spreaders/emotions.png}
-    \caption{Emotion distribution in each dataset.}
-    \label{fig:emotion-distribution}
-  \end{subfigure}%
-  \begin{subfigure}{0.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{../figures/spreaders/hate.png}
-    \caption{Hateful entries in each dataset.}
-    \label{fig:hate-distribution}
-  \end{subfigure}
-  \caption{Emotion \& Hate speech results of \textit{trusted} and \textit{untrusted} users in Twitter.}
-\end{figure*}
-
-
+% \begin{figure*}
+%   \begin{subfigure}{0.5\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{../figures/spreaders/emotions.png}
+%     \caption{Emotion distribution in each dataset.}
+%     \label{fig:emotion-distribution}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.5\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{../figures/spreaders/hate.png}
+%     \caption{Hateful entries in each dataset.}
+%     \label{fig:hate-distribution}
+%   \end{subfigure}
+%   \caption{Emotion \& Hate speech results of \textit{trusted} and \textit{untrusted} users in Twitter.}
+% \end{figure*}
   
 \subsubsection{Sentiment}
 When evaluating the presence of sentiment in tweets, a noticeable trend emerges: tweets associated with \textit{untrusted} news spreaders tend to exhibit a higher degree of negativity compared to those posted by other users. The distribution of sentiment across the datasets is displayed in Figure \ref{fig:sentiment-distribution}. In the case of the \textit{FNN} dataset, however, this difference is almost not negligible. Finally, even though there is more negativity in \textit{untrusted} users, the distributions among negative, neutral and positive tweets are very similar in all cases except for the verified users that tend to be more positive overall.
 
+\begin{figure*}[!t]
+  \centering
+
+  % First subfigure
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{../figures/spreaders/emotions.png}
+    \caption{Emotion distribution in each dataset.}
+    \label{fig:emotion-distribution}
+  \end{subfigure}
+
+  \vspace{1em} % optional vertical space between figures
+
+  % Second subfigure
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{../figures/spreaders/hate.png}
+    \caption{Hateful entries in each dataset.}
+    \label{fig:hate-distribution}
+  \end{subfigure}
+
+  \caption{Emotion and hate speech results of \textit{trusted} and \textit{untrusted} users on Twitter.}
+  \label{fig:emotion-hate-results}
+\end{figure*}
+
+
+\clearpage
 
 \subsubsection{Emotion}
 Similarly to the findings in sentiment analysis, the analysis of affect reveals a consistent pattern where untrusted news spreaders tend to gravitate toward more negative emotions. Figure \ref{fig:emotion-distribution} provides insight into the distribution of the 11 emotions present across across all subsets.
@@ -262,17 +285,36 @@ There does appear to be a variance in the types of hate speech across the subset
 \subsubsection{Topics}
 
 
+% \begin{figure}[!ht]
+% \centering
+% \scalebox{1}{
+%   \includegraphics[width=\textwidth]{../figures/spreaders/topics.png}
+% }
+% \caption{Topic distribution in each dataset for \textit{trusted} and \textit{untrusted} users in Twitter.}
+% \label{fig:topics-distribution}
+% \end{figure}
+
+
 \begin{figure}[!ht]
 \centering
-\scalebox{1}{
-  \includegraphics[width=\textwidth]{../figures/spreaders/topics.png}
+\scalebox{0.7}{
+ \includegraphics[width=\textwidth]{../figures/spreaders/topics_1.png}
 }
-\caption{Topic distribution in each dataset for \textit{trusted} and \textit{untrusted} users in Twitter.}
-\label{fig:topics-distribution}
+\caption{Topic distribution for \textit{mbfc} and \textit{pan} users in Twitter.}
+\label{fig:topics-distribution1}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\scalebox{0.5}{
+  \includegraphics[width=\textwidth]{../figures/spreaders/topics_2.png}
+}
+\caption{Topic distribution for \textit{fnn} and \textit{verified} users in Twitter.}
+\label{fig:topics-distribution2}
 \end{figure}
 
 
-Regarding the topics that \textit{untrusted} news spreaders and regular users typically discuss, the results appear to suggest a similar distribution of topics (Figure \ref{fig:topics-distribution}). \textit{Untrusted} news spreaders appear to engage more extensively in posting tweets related to news and social issues,  which are those related to politics, among others. This suggests that these accounts may be more socially active, and can create the illusion of a larger representation than that of the general population.
+Regarding the topics that \textit{untrusted} news spreaders and regular users typically discuss, the results appear to suggest a similar distribution of topics (Figures \ref{fig:topics-distribution1} \& \ref{fig:topics-distribution2}). \textit{Untrusted} news spreaders appear to engage more extensively in posting tweets related to news and social issues,  which are those related to politics, among others. This suggests that these accounts may be more socially active, and can create the illusion of a larger representation than that of the general population.
 
 Conversely, there is no discernible distinction in the case of the remaining popular topics, with variations existing among the datasets. For instance, the topic "celebrity\_\&\_pop\_culture" is more prevalent in the \textit{Pan\-untrusted} dataset but less common in the other untrusted subsets. Again here we can observe more differences with respect to verified users, where \textit{sports} and \textit{diaries\_\&\_daily\_life} topics are much more prominent.
 
