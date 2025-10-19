@@ -571,7 +571,7 @@ Table \ref{tab:hyperparameters} lists the best hyperparameters for each of the m
 
 \begin{table}[ht]
 \centering
-\scalebox{0.7}{
+\scalebox{0.9}{
 \begin{tabular}{llrrp{10mm}p{15mm}}
 model & setting & learning rate & epochs & batch \newline size & warm-up\newline steps \\ \hline
 TimeLMs & binary & 1.5857E-05 & 2 & 16 & 50 \\ 
@@ -937,23 +937,48 @@ Table \ref{tab:Politics-control_stats_devolved} displays text statistics extract
 
 
 \begin{table*}[ht]
-\begin{adjustbox}{width=\textwidth,center}
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\centering
+\begin{subtable}{\textwidth}
+\centering
+\begin{adjustbox}{width=.98\textwidth,center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
 \hline
-             & Jan & Feb & Mar & Apr & May   & Jun  & Jul  & Aug & Sep & Oct & Nov & Dec & \textbf{Total} \\ \hline
-UK          & 47,296 & 47,606 & 38,965 & 29,336 & 34,215 & 31,081 & 31,970 & 22,044 & 27,509 & 29,557 & 31,330 & 29,026 & 399,935 \\ \hline
--Scotland  & 11,282 & 13,175 & 8,988  & 6,622  & 7,890  & 5,600  & 3,856  & 5,295  & 6,285  & 5,301  & 6,427  & 6,241  & 86,962  \\ \hline
--Wales     & 5,381  & 5,462  & 3,903  & 3,386  & 3,874  & 3,013  & 3,191  & 2,393  & 2,864  & 2,826  & 3,410  & 3,084  & 42,787  \\ \hline
--N.Ireland & 5,945  & 6,788  & 5,640  & 4,579  & 5,127  & 6,138  & 4,798  & 3,484  & 4,947  & 4,505  & 4,452  & 5,391  & 61,794  \\ \hline
-Spain        & 20,119   & 25,343    & 18,407 & 18,073 & 16,938 & 16,167 & 14,732 & 11,595  & 15,376     & 14,753   & 13,823    & 13,175    & 198,501         \\ \hline
--Catalonia & 9,512  & 8,386  & 6,463  & 5,537  & 6,389  & 6,030  & 6,047  & 3,729  & 5,940  & 5,856  & 5,376  & 5,255  & 74,520  \\ \hline
--Basque    & 2,103  & 2,299  & 1,478  & 1,287  & 1,230  & 989   & 685   & 843   & 1,040  & 1,118  & 1,161  & 1,091  & 15,324  \\ \hline
-Greece      & 7,234  & 9,298  & 7,421  & 7,136  & 6,345  & 6,140  & 6,239  & 4,300  & 6,060  & 5,458  & 5,941  & 5,083  & 76,655  \\ \hline
-\textbf{ALL} & 108,872  & 118,357   & 91,265 & 75,956 & 82,008 & 75,158 & 71,518 & 53,683  & 70,021     & 69,374   & 71,920    & 68,346    &    956,478            \\ \hline
+             & Jan & Feb & Mar & Apr & May   & Jun  & Jul  \\ \hline
+UK           & 47,296 & 47,606 & 38,965 & 29,336 & 34,215 & 31,081 & 31,970 \\ \hline
+-Scotland    & 11,282 & 13,175 & 8,988  & 6,622  & 7,890  & 5,600  & 3,856  \\ \hline
+-Wales       & 5,381  & 5,462  & 3,903  & 3,386  & 3,874  & 3,013  & 3,191  \\ \hline
+-N.Ireland   & 5,945  & 6,788  & 5,640  & 4,579  & 5,127  & 6,138  & 4,798  \\ \hline
+Spain        & 20,119 & 25,343 & 18,407 & 18,073 & 16,938 & 16,167 & 14,732 \\ \hline
+-Catalonia   & 9,512  & 8,386  & 6,463  & 5,537  & 6,389  & 6,030  & 6,047  \\ \hline
+-Basque      & 2,103  & 2,299  & 1,478  & 1,287  & 1,230  & 989    & 685    \\ \hline
+Greece       & 7,234  & 9,298  & 7,421  & 7,136  & 6,345  & 6,140  & 6,239  \\ \hline
+\textbf{ALL} & 108,872& 118,357& 91,265 & 75,956 & 82,008 &75,158 & 71,518 \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{subtable}
+
+\vspace{0.7em}
+
+\begin{subtable}{\textwidth}
+\centering
+\begin{adjustbox}{width=.98\textwidth,center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+             & Aug   & Sep    & Oct    & Nov    & Dec    & \textbf{Total} \\ \hline
+UK           & 22,044 & 27,509 & 29,557 & 31,330 & 29,026 & 399,935   \\ \hline
+-Scotland    & 5,295  & 6,285  & 5,301  & 6,427  & 6,241  & 86,962    \\ \hline
+-Wales       & 2,393  & 2,864  & 2,826  & 3,410  & 3,084  & 42,787    \\ \hline
+-N.Ireland   & 3,484  & 4,947  & 4,505  & 4,452  & 5,391  & 61,794    \\ \hline
+Spain        & 11,595 & 15,376 & 14,753 & 13,823 & 13,175 & 198,501   \\ \hline
+-Catalonia   & 3,729  & 5,940  & 5,856  & 5,376  & 5,255  & 74,520    \\ \hline
+-Basque      & 843    & 1,040  & 1,118  & 1,161  & 1,091  & 15,324    \\ \hline
+Greece       & 4,300  & 6,060  & 5,458  & 5,941  & 5,083  & 76,655    \\ \hline
+\textbf{ALL} & 53,683 & 70,021 & 69,374 & 71,920 & 68,346 & 956,478   \\ \hline
 \end{tabular}
 \end{adjustbox}
 \caption{Number of MP tweets collected through 2021.}
 \label{tab:Politics-tweets_collected}
+\end{subtable}
 \end{table*}
 
 
@@ -983,34 +1008,34 @@ Finally, our results demonstrate the importance that a specialised corpus can ha
 \begin{adjustbox}{width=\textwidth,center}
 \begin{tabular}{|l|l|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\multirow{3}{*}{Type} & \multirow{3}{*}{Model} & \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Train \\ Lang\end{tabular}} & \multicolumn{2}{c|}{\multirow{2}{*}{Train domain}} & \multicolumn{4}{c|}{United Kingdom} & \multicolumn{4}{c|}{Spain} & \multicolumn{4}{c|}{Greece} \\ \cline{6-17} 
+\multirow{3}{*}{Type} & \multirow{3}{*}{Model} & \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Train \\ Lang\end{tabular}} & \multicolumn{2}{c|}{\multirow{2}{*}{Domain}} & \multicolumn{4}{c|}{United Kingdom} & \multicolumn{4}{c|}{Spain} & \multicolumn{4}{c|}{Greece} \\ \cline{6-17} 
  &  &  & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{F1} & \multicolumn{2}{c|}{F1\textsuperscript{PN}} & \multicolumn{2}{c|}{F1} & \multicolumn{2}{c|}{F1\textsuperscript{PN}} & \multicolumn{2}{c|}{F1} & \multicolumn{2}{c|}{F1\textsuperscript{PN}} \\ \cline{4-17} 
  &  &  & Out & In & CV & split & CV & split & CV & split & CV & split & CV & split & CV & split \\ \hline
-\multirow{10}{*}{\rot{Multilingual}} & \multirow{3}{*}{XLM-T} & Mono &  & \checkmark & 70 & 72 & 78 & 75 & 67 & 66 & 80 & 80 & 74 & 76 & 73 & \textbf{74} \\ \cline{3-17} 
+\multirow{10}{*}{\rot{Multilingual}} & \multirow{3}{*}{XLMT} & Mono &  & \checkmark & 70 & 72 & 78 & 75 & 67 & 66 & 80 & 80 & 74 & 76 & 73 & \textbf{74} \\ \cline{3-17} 
  &  & Mono & \checkmark & \checkmark & 74 & 65 & 80 & 76 & 70 & 76 & 80 & 81 & 75 & 66 & 73 & 61 \\ \cline{3-17} 
  &  & Multi &  & \checkmark & 75 & 67 & 81 & 77 & \textbf{72} & 78 & 80 & 84 & 76 & \textbf{77} & 75 & 75 \\ \cline{2-17} 
- & \multirow{3}{*}{XLM-T-Sent} & Mono & \checkmark &  & 72 & 72 & 78 & 79 & 68 & 71 & 77 & 82 & 65 & 69 & 64 & 68 \\ \cline{3-17} 
+ & \multirow{3}{*}{XTS} & Mono & \checkmark &  & 72 & 72 & 78 & 79 & 68 & 71 & 77 & 82 & 65 & 69 & 64 & 68 \\ \cline{3-17} 
  &  & Mono & \checkmark & \checkmark & 74 & 67 & 80 & 74 & 70 & 70 & \textbf{81} & 78 & 77 & 76 & 75 & \textbf{74} \\ \cline{3-17} 
  &  & Multi & \checkmark & \checkmark & 74 & 68 & 80 & 75 & 70 & \textbf{79} & \textbf{81} & \textbf{87} & 76 & 70 & 77 & 70 \\ \cline{2-17} 
- & \multirow{4}{*}{XLM-R} & Mono &  & \checkmark & 69 & 72 & 77 & 75 & 60 & 65 & 75 & 80 & 74 & 75 & 73 & 73 \\ \cline{3-17} 
+ & \multirow{4}{*}{XLMR} & Mono &  & \checkmark & 69 & 72 & 77 & 75 & 60 & 65 & 75 & 80 & 74 & 75 & 73 & 73 \\ \cline{3-17} 
  &  & Mono & \checkmark & \checkmark & 70 & 67 & 74 & 74 & 66 & 65 & 80 & 78 & 74 & 74 & 73 & 70 \\ \cline{3-17} 
  &  & Multi &  & \checkmark & 74 & 66 & 80 & 73 & 69 & 70 & 80 & 80 & \textbf{78} & 72 & \textbf{78} & 70 \\ \cline{3-17} 
  &  & Multi & \checkmark & \checkmark & 70 & 57 & 78 & 67 & 67 & 70 & 76 & 80 & 76 & 72 & 76 & 72 \\ \hline
-\multirow{6}{*}{\rot{Monolingual}} & \multirow{2}{*}{RoBERTa-Base} & Mono &  & \checkmark & 68 & 73 & 78 & 77 & 64 & 70 & 78 & 86 & 56 & 57 & 50 & 52 \\ \cline{3-17} 
+\multirow{6}{*}{\rot{Monolingual}} & \multirow{2}{*}{RB} & Mono &  & \checkmark & 68 & 73 & 78 & 77 & 64 & 70 & 78 & 86 & 56 & 57 & 50 & 52 \\ \cline{3-17} 
  &  & Mono & \checkmark & \checkmark & 75 & 70 & 80 & 75 & 70 & 78 & 80 & \textbf{87} & 56 & 62 & 49 & 58 \\ \cline{2-17} 
- & \multirow{2}{*}{TweetEval-Sent} & Mono & \checkmark &  & 73 & 72 & 80 & 79 & \multicolumn{8}{c|}{\multirow{4}{*}{}} \\ \cline{3-9}
+ & \multirow{2}{*}{TW-S} & Mono & \checkmark &  & 73 & 72 & 80 & 79 & \multicolumn{8}{c|}{\multirow{4}{*}{}} \\ \cline{3-9}
  &  & Mono & \checkmark & \checkmark & 76 & 67 & 81 & 74 & \multicolumn{8}{c|}{} \\ \cline{2-9}
- & \multirow{2}{*}{Bertweet-Sent} & Mono & \checkmark &  & 77 & \textbf{76} & \textbf{83} & \textbf{83} & \multicolumn{8}{c|}{} \\ \cline{3-9}
+ & \multirow{2}{*}{BT-S} & Mono & \checkmark &  & 77 & \textbf{76} & \textbf{83} & \textbf{83} & \multicolumn{8}{c|}{} \\ \cline{3-9}
  &  & Mono & \checkmark & \checkmark & \textbf{78} & 75 & 82 & 78 & \multicolumn{8}{c|}{} \\ \hline
 - & \multirow{2}{*}{SVM} & Mono &  & \checkmark &  33 &  36 & 50 & 47 & 40 & 40  & 60 & 61 & 60 & 63 & 56 & 60 \\ \cline{1-1}  \cline{3-17} 
 - &  & Mono & \checkmark & \checkmark &  47 & 47 & 61 & 57 & 42 & 38 & 58 & 57 & 52 & 55 &  44 &  51 \\ \hline
 - &  \multirow{2}{*}{LSTM} & Mono  &  & \checkmark & 52  & 48 &  66 & 55 & 51 & 48 & 60 & 61 & 59 & 62 & 56 &  61\\ \cline{1-1} \cline{3-17} 
 - & & Mono & \checkmark & \checkmark & 58 & 55 & 67 & 63 & 49  & 42  & 60 & 56 &  59 &60  & 57 & 59 \\ \hline
 - & VADER &  &  &  & 55 & 47 & 64  & 61  & 54 & 57 & 63 & 66 & 57  & 51 & 58 & 53  \\ \hline
-- & Baseline &  &  &  & 22 & 22 & 33 & 33 & 20 & 21 & 30 & 32 & 17 & 20 & 27 & 30 \\ \hline
+- & Base &  &  &  & 22 & 22 & 33 & 33 & 20 & 21 & 30 & 32 & 17 & 20 & 27 & 30 \\ \hline
 \end{tabular}
 \end{adjustbox}
-\caption{Average F1 scores along with the average of F1 scores of positive and negative classes (F1\textsuperscript{PN}) when trained/evaluated with cross-validation (CV) and on the $\sim$900/100 train/test split. The results displayed are the averages of three runs. Training domain indicates the data used for training the models. `In' domain indicates models trained on the labelled data collected (Section \ref{sec:annotation}), `Out' indicates the model has been finetuned on other sentiment analysis datasets (see Section \ref{sec:expsetting}). Finally, `Mono' indicates that the model was trained with data from only one language, while `Multi' shows models that were trained with data from all available languages.}
+\caption{Average F1 scores along with the average of F1 scores of positive and negative classes (F1\textsuperscript{PN}) when trained/evaluated with cross-validation (CV) and on the $\sim$900/100 train/test split. The results displayed are the averages of three runs. Domain indicates the data used for training the models. `In' domain indicates models trained on the labelled data collected (Section \ref{sec:annotation}), `Out' indicates the model has been finetuned on other sentiment analysis datasets (see Section \ref{sec:expsetting}). Finally, `Mono' indicates that the model was trained with data from only one language, while `Multi' shows models that were trained with data from all available languages. Models: XTS: XLM-T-Sent, RB: RoBERTa-Base, TW-S: TweetEval-Sent, BT-S: Bertweet-Sent, SVM: SVM, LSTM: LSTM, Base: Baseline.}
 \label{tab:Politics-f1_averages}
 \end{table*}
 
@@ -1021,17 +1046,37 @@ Table \ref{tab:Politics-poisson_results} displays the results (coefficients) of 
 
 \begin{table*}[hbp!]
 \centering
-\begin{tabular}{|l|c|c|c|c|}
+\begin{subtable}[t]{\textwidth}
+\centering
+\begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{variable} & \textbf{Overall} & \textbf{UK} & \textbf{Spain} & \textbf{Greece} \\ \hline
-const             & 72.8914*         & 75.9854*    & 96.6305*       & 96.6305*        \\ \hline
-emojis            & -5.1085*         & -7.9482*    & -9.7004*       & -9.7004*        \\ \hline
-has\_url          & -1.3613          & -17.524*    & 26.56*         & 26.56*          \\ \hline
-hashtags          & -20.0335*        & -7.811*     & -41.0476*      & -41.0476*       \\ \hline
-mentions          & -41.0511*        & -40.4977*   & -63.0461*      & -63.0461*       \\ \hline
-max\_score        & -43.16*          & -42.5478*   & -39.615*       & -39.615*        \\ \hline
+\textbf{variable} & \textbf{UK} & \textbf{Spain} & \textbf{Greece} \\ \hline
+const             & 75.9854*    & 96.6305*       & 96.6305*        \\ \hline
+emojis            & -7.9482*    & -9.7004*       & -9.7004*        \\ \hline
+has\_url          & -17.524*    & 26.56*         & 26.56*          \\ \hline
+hashtags          & -7.811*     & -41.0476*      & -41.0476*       \\ \hline
+mentions          & -40.4977*   & -63.0461*      & -63.0461*       \\ \hline
+max\_score        & -42.5478*   & -39.615*       & -39.615*        \\ \hline
 \end{tabular}
-\caption{Coefficients for the OLS model when using tweets from the combined 2021 UK, Spain, Greece parliaments and for each individual parliament. Dependent variable is the retweet count while XLM-T's softmax scores (negative and positive sentiment) are utilised (sent score) as independent variables.  $*$ indicates p-value $< 0.05$ }
+\end{subtable}
+
+\vspace{1em}
+
+\begin{subtable}[t]{0.45\textwidth}
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{variable} & \textbf{Overall} \\ \hline
+const             & 72.8914*         \\ \hline
+emojis            & -5.1085*         \\ \hline
+has\_url          & -1.3613          \\ \hline
+hashtags          & -20.0335*        \\ \hline
+mentions          & -41.0511*        \\ \hline
+max\_score        & -43.16*          \\ \hline
+\end{tabular}
+\end{subtable}
+
+\caption{Coefficients for the OLS model when using tweets from the combined 2021 UK, Spain, Greece parliaments (bottom) and for each individual parliament (top). Dependent variable is the retweet count while XLM-T's softmax scores (negative and positive sentiment) are utilised (sent score) as independent variables. $*$ indicates p-value $< 0.05$}
 \label{tab:Politics-ols_results}
 \end{table*}
 
@@ -1040,89 +1085,54 @@ Table \ref{tab:Politics-ols_results} shows the coefficients for each predictor w
 
 
 \begin{table*}[hbp!]
-\begin{adjustbox}{width=\textwidth,center}
-\begin{tabular}{|l|cc|cc|cc|cc|}
+\centering
+\begin{subtable}[t]{\textwidth}
+\centering
+\begin{adjustbox}{width=0.8\textwidth}
+\begin{tabular}{|l|cc|cc|cc|}
 \hline
 \multirow{2}{*}{\textbf{variable}} &
-  \multicolumn{2}{c|}{\textbf{Overall}} &
   \multicolumn{2}{c|}{\textbf{UK}} &
   \multicolumn{2}{c|}{\textbf{Spain}} &
-  \multicolumn{2}{c|}{\textbf{Greece}} \\ \cline{2-9} 
+  \multicolumn{2}{c|}{\textbf{Greece}} \\ \cline{2-7} 
  &
   \multicolumn{1}{c|}{\textbf{Poisson}} &
   \textbf{zero Poisson} &
   \multicolumn{1}{c|}{\textbf{Poisson}} &
   \textbf{zero Poisson} &
   \multicolumn{1}{c|}{\textbf{Poisson}} &
-  \textbf{zero Poisson} &
-  \multicolumn{1}{c|}{\textbf{Poisson}} &
   \textbf{zero Poisson} \\ \hline
-const &
-  \multicolumn{1}{c|}{3.4035*} &
-  4.0809* &
-  \multicolumn{1}{c|}{3.7006*} &
-  4.4486* &
-  \multicolumn{1}{c|}{3.61*} &
-  4.1586* &
-  \multicolumn{1}{c|}{2.3372*} &
-  2.8278* \\ \hline
-emojis &
-  \multicolumn{1}{c|}{-0.193*} &
-  -0.1769* &
-  \multicolumn{1}{c|}{-0.3277*} &
-  -0.2978* &
-  \multicolumn{1}{c|}{-0.2114*} &
-  -0.1946* &
-  \multicolumn{1}{c|}{-0.3298*} &
-  -0.3639* \\ \hline
-has\_url &
-  \multicolumn{1}{c|}{0.013*} &
-  -0.3695* &
-  \multicolumn{1}{c|}{-0.3798*} &
-  -0.8422* &
-  \multicolumn{1}{c|}{0.41*} &
-  0.0827* &
-  \multicolumn{1}{c|}{-0.1871*} &
-  -0.305* \\ \hline
-hashtags &
-  \multicolumn{1}{c|}{-0.5219*} &
-  -0.6281* &
-  \multicolumn{1}{c|}{-0.4001*} &
-  -0.5168* &
-  \multicolumn{1}{c|}{-0.5878*} &
-  -0.6266* &
-  \multicolumn{1}{c|}{-0.3372*} &
-  -0.41* \\ \hline
-mentions &
-  \multicolumn{1}{c|}{-1.0543*} &
-  -0.7944* &
-  \multicolumn{1}{c|}{-1.4615*} &
-  -0.8382* &
-  \multicolumn{1}{c|}{-0.929*} &
-  -0.8291* &
-  \multicolumn{1}{c|}{-0.9082*} &
-  -0.7696* \\ \hline
-neg &
-  \multicolumn{1}{c|}{1.4129*} &
-  1.1709* &
-  \multicolumn{1}{c|}{1.3014*} &
-  1.0566* &
-  \multicolumn{1}{c|}{1.1818*} &
-  1.0028* &
-  \multicolumn{1}{c|}{0.9232*} &
-  0.6859* \\ \hline
-pos &
-  \multicolumn{1}{c|}{0.2295*} &
-  0.1629* &
-  \multicolumn{1}{c|}{-0.1486*} &
-  -0.1855* &
-  \multicolumn{1}{c|}{0.5513*} &
-  0.4503* &
-  \multicolumn{1}{c|}{0.3229*} &
-  0.2315* \\ \hline
+const     & \multicolumn{1}{c|}{3.7006*} & 4.4486* & \multicolumn{1}{c|}{3.61*} & 4.1586* & \multicolumn{1}{c|}{2.3372*} & 2.8278* \\ \hline
+emojis    & \multicolumn{1}{c|}{-0.3277*} & -0.2978* & \multicolumn{1}{c|}{-0.2114*} & -0.1946* & \multicolumn{1}{c|}{-0.3298*} & -0.3639* \\ \hline
+has\_url  & \multicolumn{1}{c|}{-0.3798*} & -0.8422* & \multicolumn{1}{c|}{0.41*} & 0.0827* & \multicolumn{1}{c|}{-0.1871*} & -0.305* \\ \hline
+hashtags  & \multicolumn{1}{c|}{-0.4001*} & -0.5168* & \multicolumn{1}{c|}{-0.5878*} & -0.6266* & \multicolumn{1}{c|}{-0.3372*} & -0.41* \\ \hline
+mentions  & \multicolumn{1}{c|}{-1.4615*} & -0.8382* & \multicolumn{1}{c|}{-0.929*} & -0.8291* & \multicolumn{1}{c|}{-0.9082*} & -0.7696* \\ \hline
+neg       & \multicolumn{1}{c|}{1.3014*} & 1.0566* & \multicolumn{1}{c|}{1.1818*} & 1.0028* & \multicolumn{1}{c|}{0.9232*} & 0.6859* \\ \hline
+pos       & \multicolumn{1}{c|}{-0.1486*} & -0.1855* & \multicolumn{1}{c|}{0.5513*} & 0.4503* & \multicolumn{1}{c|}{0.3229*} & 0.2315* \\ \hline
 \end{tabular}
 \end{adjustbox}
-\caption{Coefficients for the Poisson Regression and zero inflated Poisson Regression when using tweets from the combined 2021 UK, Spain, Greece parliaments and for each individual parliament. Dependent variable is the retweet count while the independent variables \textit{neg} and \textit{pos} indicate the sentiment according to XLM-T results. $*$ indicates p-value $< 0.05$ }.
+\end{subtable}
+
+\vspace{1em}
+
+\begin{subtable}[t]{0.65\textwidth}
+\centering
+\begin{tabular}{|l|cc|}
+\hline
+\multirow{2}{*}{\textbf{variable}} & 
+  \multicolumn{2}{c|}{\textbf{Overall}} \\ \cline{2-3}
+ & \textbf{Poisson} & \textbf{zero Poisson} \\ \hline
+const     & 3.4035* & 4.0809* \\ \hline
+emojis    & -0.193* & -0.1769* \\ \hline
+has\_url  & 0.013* & -0.3695* \\ \hline
+hashtags  & -0.5219* & -0.6281* \\ \hline
+mentions  & -1.0543* & -0.7944* \\ \hline
+neg       & 1.4129* & 1.1709* \\ \hline
+pos       & 0.2295* & 0.1629* \\ \hline
+\end{tabular}
+\end{subtable}
+
+\caption{Coefficients for the Poisson Regression and zero inflated Poisson Regression when using tweets from the combined 2021 UK, Spain, Greece parliaments and for each individual parliament. Dependent variable is the retweet count while the independent variables \textit{neg} and \textit{pos} indicate the sentiment according to XLM-T results. $*$ indicates p-value $< 0.05$.}
 \label{tab:Politics-poisson_results}
 \end{table*}
 

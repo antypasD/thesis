@@ -20,6 +20,31 @@ The advent of general-purpose NLP systems (namely LMs) has led to a proliferatio
 
 In terms of social media research, there are many tasks that require modelling textual content. TweetEval \cite{barbieri2020tweeteval} was the first unified benchmark that agglutinated different tasks into the same benchmark. However, TweetEval is limited to tweet classification, including emotion recognition \cite{mohammad2018semeval}, emoji prediction \cite{barbieri-etal-2018-semeval}, irony detection \cite{van2018semeval}, hate speech detection \cite{basile2019semeval},  offensive language identification \cite{zampieri-etal-2019-semeval}, sentiment analysis \cite{rosenthal2017semeval}, and stance detection \cite{mohammad-etal-2016-semeval}. Similar to the evolution of GLUE into SuperGLUE, the aim of this Chapter and {\DATASET} is to construct a benchmark that is robust, large, and especially consisting of diverse tasks and settings for social media NLP research, and in particular, Twitter.
 
+\begin{table*}[t]
+  \begin{adjustbox}{width=\textwidth,center}
+  \begin{tabular}{llll}
+  \toprule
+  Task (Dataset) & Example Input & Example Output \\ \hline
+  \begin{tabular}[c]{@{}l@{}}NER\\ ({\TweetNER})\end{tabular}                            & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Winter solstice 2019 : A short day that's\\ long on ancient traditions url via @CNN\_Travel\end{tabular}                                                                                                 & \begin{tabular}[c]{@{}l@{}}Winter solstice 2019: event\\ @CNN\_Travel: product\end{tabular} \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Emotion Classification\\ ({\TweetEmotion})\end{tabular}     & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Whatever you decide to do make sure\\ it makes you \#happy.\end{tabular}                                                                                                                                 & joy, love, optimism                                                                         \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Question Generation\\ ({\TweetQG})\end{tabular}             & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth\\ (@darbooth) January 25, 2013\\ \textbf{Context}: vine\end{tabular}                                                                                                  & \begin{tabular}[c]{@{}l@{}}what site does the link\\ take you to?\end{tabular}                                                        \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Name Entity Disambiguation\\ ({\TweetNERD})\end{tabular}    & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: hella excited for ios 15 because siri\\ reads notifications out loud to you [...] \\ \textbf{Target}: siri\\ \textbf{Definition}: intelligent personal assistant on\\ various Apple devices\end{tabular} & True                                                                                        \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Sentiment Classification\\ ({\TweetSentiment})\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: \#ArianaGrande Ari By Ariana Grande\\ 80\% Full url \#Singer \#Actress url\\ \textbf{Target}: \#ArianaGrande\end{tabular}                                                                                & negative or neutral                                                                         \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Meaning Shift Detection\\ ({\TempoWiC})\end{tabular}        & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: The minute I can walk well I'm going\\ to delta pot\\ \textbf{Tweet 2}: Then this new delta variant out im\\ vaccinated but stilllll likeee'\\ \textbf{Target}: delta\end{tabular}                     & False                                                                                       \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Emoji Classification\\ ({\TweetEmoji})\end{tabular}         & \textbf{Tweet}: SpiderMAtS back at it                                                                                                                                                                                                               & \includegraphics[height=0.32cm,width=0.32cm]{../figures/super-tweeteval/fire.png}           \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Intimacy Analysis\\ ({\TweetIntimacy})\end{tabular}         & \textbf{Tweet}: @user SKY scored 4 less runs just lol                                                                                                                                                                                               & 1.20                                                                                        \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Question Answering\\ ({\TweetQA})\end{tabular}              & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth\\ (@user) January 25, 2013\\ \textbf{Question}: which measurements of time \\ are mentioned?\end{tabular}                                                             & years and seconds                                                                           \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Topic Classification\\ ({\TweetTopic})\end{tabular}         & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Sweet, \#IOWAvsISU is a nationally\\ televised night game! Nebraska \\ getting bumped to @FOX\_Business is just a bonus.\end{tabular}                                                                    & film\_tv\_\&\_video, sports                                                                 \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Hate Speech Detection\\ ({\TweetHate})\end{tabular}         & \textbf{Tweet}: Support Black Trans youth url                                                                                                                                                                                                       & not\_hate                                                                                   \\ \hline
+  \begin{tabular}[c]{@{}l@{}}Tweet Similarity\\ ({\TweetSimilarity})\end{tabular}        & \begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: I wish kayvee all the best \#bbnaija\\ \textbf{Tweet 2}: Sammie about to cry to the \\ housemates all night \#bbnaija\end{tabular}                                                                     & 2.33                                                                                        \\ \hline
+  \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \caption{Example input and output for each and dataset included in {\DATASET}.}
+  \label{tab:SuperTweetEval-examples}
+  \end{table*}
+  \clearpage
+
 \section{Datasets}
 {\DATASET} includes a variety of Twitter-specific NLP tasks. For each of them, we include a relevant dataset that can be used as a proxy to test the performance of models on that task\footnote{More details and justifications for the selection of datasets used in this benchmark are provided in Appendix \ref{appendix:SuperTweetEval-data_selection}.}. In this section, we describe the datasets used for each task, which we have split into three types: (1) existing datasets that have been included in the benchmark as they are; (2) datasets that have been adapted to suit the needs of the benchmark; and (3) datasets that we have constructed from scratch as part of this Chapter, which did not exist in previous literature. 
 
@@ -71,59 +96,63 @@ Given the importance of textual similarity dataset in NLP \cite{cer-etal-2017-se
 
 \paragraph{Annotation} All the tweet pairs were then rated with by Likert-like scale by three independent annotators\footnote{Guidelines are available in Appendix \ref{appendix:SuperTweetEval-annotation}.}. All the annotators were native English speakers and were paid fairly through our institutional student job provider\footnote{To avoid breaking anonymity rules, more details about the annotators and compensation will be provided upon acceptance.}. The final inter-annotator, as measured by annotator pairwise Spearman correlation, was 0.70.
 
+
+
 \section{{\DATASET}: The Unified Benchmark}
 We convert all datasets presented in the previous section to the same JSON format, unifying them with the same notation, preprocessing and style. Table \ref{tab:SuperTweetEval-examples} provides an overview of each task and dataset while also providing example entries.
 
 
-\begin{table*}[t]
-\begin{adjustbox}{width=\textwidth,center}
-\begin{tabular}{@{}lp{8cm}p{4.75cm}@{}}
-\toprule 
-Task (Dataset) & Example Input & Example Output \\
-\midrule
-\begin{tabular}[c]{@{}l@{}}NER\\({\TweetNER})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Winter solstice 2019 : A short day that 's long on ancient traditions\\ url via @CNN\_Travel\end{tabular}} &
-  \begin{tabular}[c]{@{}l@{}}Winter solstice 2019: event\\ @CNN\_Travel: product\end{tabular} \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Emotion Classification\\ ({\TweetEmotion})\end{tabular} &
-  \multicolumn{1}{l}{\textbf{Tweet}: Whatever you decide to do make sure it makes you \#happy.} &
-  joy, love, optimism \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Question Generation\\ ({\TweetQG})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth (@darbooth) January 25, 2013\\ \textbf{Context}: vine\end{tabular}} &
-  what site does the link take you to? \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Name Entity Disambiguation\\ ({\TweetNERD})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: hella excited for ios 15 because siri reads notifications out loud to you [...]%if you are wearing headphones
-  \\ \textbf{Target}: siri\\ \textbf{Definition}: intelligent personal assistant on various Apple devices \end{tabular}} &
-  True \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Sentiment Classification\\ ({\TweetSentiment})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: \#ArianaGrande Ari By Ariana Grande 80\% Full url \#Singer \#Actress url\\ \textbf{Target}: \#ArianaGrande\end{tabular}} &
-  negative or neutral \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Meaning Shift Detection\\ ({\TempoWiC})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: The minute I can walk well I'm going to delta pot\\ \textbf{Tweet 2}: Then this new delta variant out  im vaccinated but stilllll likeee'\\ \textbf{Target}: delta\end{tabular}} &
-    False \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Emoji Classification\\ ({\TweetEmoji})\end{tabular} &
-  \multicolumn{1}{l}{\textbf{Tweet}: SpiderMAtS back at it} &
-  \includegraphics[height=0.32cm,width=0.32cm]{../figures/super-tweeteval/fire.png} \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Intimacy Analysis\\ ({\TweetIntimacy})\end{tabular} &
-  \multicolumn{1}{l}{\textbf{Tweet}: @user SKY scored 4 less runs just lol} &
-  1.20 \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Question Answering\\ ({\TweetQA})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth (@user) January 25, 2013\\ \textbf{Question}: which measurements of time are mentioned?\end{tabular}} &
-  years and seconds \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Topic Classification\\ ({\TweetTopic})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Sweet, \#IOWAvsISU is a nationally televised night game! Nebraska \\ getting bumped to @FOX\_Business is just a bonus.\end{tabular}} &
-  film\_tv\_\&\_video, sports \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Hate Speech Detection\\ ({\TweetHate})\end{tabular} &
-  \multicolumn{1}{l}{\textbf{Tweet}: Support Black Trans youth url} &
-  not\_hate \\ \midrule
-\begin{tabular}[c]{@{}l@{}}Tweet Similarity\\ ({\TweetSimilarity})\end{tabular} &
-  \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: I wish kayvee all the best \#bbnaija\\ \textbf{Tweet 2}: Sammie about to cry to the housemates all night \#bbnaija\end{tabular}} &
-  2.33 \\
-\bottomrule
-\end{tabular}
-\end{adjustbox}
-\caption{Example input and output for each and dataset included in {\DATASET}.}
-\label{tab:SuperTweetEval-examples}
-\end{table*}
+% \begin{table*}[t]
+% \begin{adjustbox}{width=\textwidth,center}
+% \begin{tabular}{@{}lp{8cm}p{4.75cm}@{}}
+% \toprule 
+% Task (Dataset) & Example Input & Example Output \\
+% \midrule
+% \begin{tabular}[c]{@{}l@{}}NER\\({\TweetNER})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Winter solstice 2019 : A short day that 's\\ long on ancient traditions url via @CNN\_Travel\end{tabular}} &
+%   \begin{tabular}[c]{@{}l@{}}Winter solstice 2019: event\\ @CNN\_Travel: product\end{tabular} \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Emotion Classification\\ ({\TweetEmotion})\end{tabular} &
+%   \multicolumn{1}{l}{\textbf{Tweet}: Whatever you decide to do make sure it makes you \#happy.} &
+%   joy, love, optimism \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Question Generation\\ ({\TweetQG})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth (@darbooth) January 25, 2013\\ \textbf{Context}: vine\end{tabular}} &
+%   what site does the link take you to? \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Name Entity Disambiguation\\ ({\TweetNERD})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: hella excited for ios 15 because siri reads notifications out loud to you [...]%if you are wearing headphones
+%   \\ \textbf{Target}: siri\\ \textbf{Definition}: intelligent personal assistant on various Apple devices \end{tabular}} &
+%   True \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Sentiment Classification\\ ({\TweetSentiment})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: \#ArianaGrande Ari By Ariana Grande 80\% Full url \#Singer \#Actress url\\ \textbf{Target}: \#ArianaGrande\end{tabular}} &
+%   negative or neutral \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Meaning Shift Detection\\ ({\TempoWiC})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: The minute I can walk well I'm going to delta pot\\ \textbf{Tweet 2}: Then this new delta variant out  im vaccinated but stilllll likeee'\\ \textbf{Target}: delta\end{tabular}} &
+%     False \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Emoji Classification\\ ({\TweetEmoji})\end{tabular} &
+%   \multicolumn{1}{l}{\textbf{Tweet}: SpiderMAtS back at it} &
+%   \includegraphics[height=0.32cm,width=0.32cm]{../figures/super-tweeteval/fire.png} \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Intimacy Analysis\\ ({\TweetIntimacy})\end{tabular} &
+%   \multicolumn{1}{l}{\textbf{Tweet}: @user SKY scored 4 less runs just lol} &
+%   1.20 \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Question Answering\\ ({\TweetQA})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: 5 years in 5 seconds. Darren Booth (@user) January 25, 2013\\ \textbf{Question}: which measurements of time are mentioned?\end{tabular}} &
+%   years and seconds \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Topic Classification\\ ({\TweetTopic})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet}: Sweet, \#IOWAvsISU is a nationally televised night game! Nebraska \\ getting bumped to @FOX\_Business is just a bonus.\end{tabular}} &
+%   film\_tv\_\&\_video, sports \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Hate Speech Detection\\ ({\TweetHate})\end{tabular} &
+%   \multicolumn{1}{l}{\textbf{Tweet}: Support Black Trans youth url} &
+%   not\_hate \\ \midrule
+% \begin{tabular}[c]{@{}l@{}}Tweet Similarity\\ ({\TweetSimilarity})\end{tabular} &
+%   \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Tweet 1}: I wish kayvee all the best \#bbnaija\\ \textbf{Tweet 2}: Sammie about to cry to the housemates all night \#bbnaija\end{tabular}} &
+%   2.33 \\
+% \bottomrule
+% \end{tabular}
+% \end{adjustbox}
+% \caption{Example input and output for each and dataset included in {\DATASET}.}
+% \label{tab:SuperTweetEval-examples}
+% \end{table*}
+
+
 
 \subsection{Preprocessing} 
 A common preprocessing pipeline is applied to all the collected datasets aiming to standardise them and provide a uniform and easy-to-use format. Firstly, all URL links are masked as \textit{\{URL\}}, both for privacy reasons, and for concentrating the focus of our tasks to the main text context of each tweet. Furthermore, all mentions of non-verified users are masked with \textit{@user} to maintain their anonymity. Finally, an attempt is made to unify features  and label/score naming to increase the datasets' ease-of-use.
@@ -399,22 +428,45 @@ The difference in performance, particularly in the regression and ordinal classi
 
 \begin{table}[h]
 \begin{adjustbox}{width=\textwidth,center}
-\begin{tabular}{@{}llrrrrrrrrr@{}} \toprule
-Mode & Model  & Big-label & Disamb. & Generation & Multi-class & Multi-label & Regression & Target & Temporal & Temporal* \\ \midrule
-\multirow[t]{2}{*}{Zero-shot} & FlanT5\textsubscript{XXL} & - & 56.82 & 37.46 & 34.83 & 34.51 & 38.34 & 47.31 & - & 49.97 \\
- & OPT-IML\textsubscript{1.3B} & - & 58.42 & 35.59 & 23.65 & 16.70 & 21.38 & 45.23 & - & 43.42 \\
-& \texttt{chat-gpt-3.5-turbo} & - & 67.46 & 32.47 & 53.20 &  49.97 & 51.25 & 59.30 & - & 63.23 \\
+\begin{tabular}{@{}llrrrrr@{}} \toprule
+Mode & Model  & Big-label & Disamb. & Generation & Multi-class & Multi-label \\ \midrule
+\multirow[t]{2}{*}{Zero-shot} & FlanT5\textsubscript{XXL} & - & 56.82 & 37.46 & 34.83 & 34.51 \\
+ & OPT-IML\textsubscript{1.3B} & - & 58.42 & 35.59 & 23.65 & 16.70 \\
+ & \texttt{chat-gpt-3.5-turbo} & - & 67.46 & 32.47 & 53.20 &  49.97 \\
 \midrule
-\multirow[t]{2}{*}{Few-shot} & FlanT5\textsubscript{XXL} & - & 69.83 & 43.16 & 34.73 & 36.99 & 39.03 & 55.12 & - & 59.00 \\
- & OPT-IML\textsubscript{1.3B} & - & 56.56 & 34.01 & 17.09 & 16.62 & 8.09 & 41.41 & - & 40.57 \\
- & \texttt{chat-gpt-3.5-turbo} & - & 74.31 & 51.90 & 49.56 & 49.93 & 50.71 & 63.28 & - & 65.64 \\
+\multirow[t]{2}{*}{Few-shot} & FlanT5\textsubscript{XXL} & - & 69.83 & 43.16 & 34.73 & 36.99 \\
+ & OPT-IML\textsubscript{1.3B} & - & 56.56 & 34.01 & 17.09 & 16.62 \\
+ & \texttt{chat-gpt-3.5-turbo} & - & 74.31 & 51.90 & 49.56 & 49.93 \\
 \midrule
-\multirow[t]{3}{*}{F. tuning} & FlanT5\textsubscript{BASE} & 20.64 & 58.82 & \textbf{55.06} & 35.93 & 44.13 & 21.58 & 40.00 & 47.59 & 52.72 \\
- & OPT\textsubscript{350M} & 45.15 & 75.89 & 10.61 & 62.98 & 57.07 & 52.26 & 67.02 & 55.62 & 70.18 \\
- & TimeLM\textsubscript{LARGE} & \textbf{47.24} & \textbf{76.86} & - & \textbf{68.59} & \textbf{58.68} & \textbf{62.61} & \textbf{69.45} & \textbf{67.78} & \textbf{70.85} \\
+\multirow[t]{3}{*}{F. tuning} & FlanT5\textsubscript{BASE} & 20.64 & 58.82 & \textbf{55.06} & 35.93 & 44.13 \\
+ & OPT\textsubscript{350M} & 45.15 & 75.89 & 10.61 & 62.98 & 57.07 \\
+ & TimeLM\textsubscript{LARGE} & \textbf{47.24} & \textbf{76.86} & - & \textbf{68.59} & \textbf{58.68} \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
+
+\vspace{1em}
+\begin{center}
+\scalebox{0.9}{
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{@{}llrrrrr@{}}
+Mode & Model  & Regression & Target & Temporal & Temporal* \\ \midrule
+\multirow[t]{2}{*}{Zero-shot} & FlanT5\textsubscript{XXL} & 38.34 & 47.31 & - & 49.97 \\
+ & OPT-IML\textsubscript{1.3B} & 21.38 & 45.23 & - & 43.42 \\
+ & \texttt{chat-gpt-3.5-turbo} & 51.25 & 59.30 & - & 63.23 \\
+\midrule
+\multirow[t]{2}{*}{Few-shot} & FlanT5\textsubscript{XXL} & 39.03 & 55.12 & - & 59.00 \\
+ & OPT-IML\textsubscript{1.3B} & 8.09 & 41.41 & - & 40.57 \\
+ & \texttt{chat-gpt-3.5-turbo} & 50.71 & 63.28 & - & 65.64 \\
+\midrule
+\multirow[t]{3}{*}{F. tuning} & FlanT5\textsubscript{BASE} & 21.58 & 40.00 & 47.59 & 52.72 \\
+ & OPT\textsubscript{350M} & 52.26 & 67.02 & 55.62 & 70.18 \\
+ & TimeLM\textsubscript{LARGE} & \textbf{62.61} & \textbf{69.45} & \textbf{67.78} & \textbf{70.85} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+}
+\end{center}
 \caption{Aggregated results over each test cluster of the best zero-shot, few-shot and fine-tuning methods.}
 \label{tab:results_of_groups}
 \end{table}
