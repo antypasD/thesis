@@ -132,7 +132,7 @@ The data in both settings (binary \& multiclass) are divided into train and test
 
 \begin{table}[ht]
 \centering
-\scalebox{1}{
+\scalebox{0.85}{
 \begin{tabular}{|l|rr|rr|}
 \hline
 \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Dataset}}} & \multicolumn{2}{c|}{\textbf{train}}                                         & \multicolumn{2}{c|}{\textbf{test}}                                          \\ \cline{2-5} 
@@ -156,34 +156,22 @@ Offense*                                              & \multicolumn{1}{r|}{1003
 \label{tab:train_test_distributions}
 \end{table}
 
-\begin{table*}[ht]
-% \setlength{\tabcolsep}{2.8pt}
-\begin{adjustbox}{width=\textwidth,center}
-\begin{tabular}{lll|ccccccccccccc|c}
-\hline
-\multicolumn{1}{l|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{2}{c|}{\textbf{Train}} & \multirow{2}{*}{\textbf{HatE}} & \multirow{2}{*}{\textbf{MHS}} & \multirow{2}{*}{\textbf{DEAP}} & \multirow{2}{*}{\textbf{CMS}} & \multirow{2}{*}{\textbf{Off.}} & \multirow{2}{*}{\textbf{HateX}} & \multirow{2}{*}{\textbf{LSC}} & \multirow{2}{*}{\textbf{HASOC}} & \multirow{2}{*}{\textbf{AYR}} & \multirow{2}{*}{\textbf{AHSD}} & \multirow{2}{*}{\textbf{HTPO}} & \multirow{2}{*}{\textbf{HSHP}} & \multirow{2}{*}{\textbf{AVG}} & \multirow{2}{*}{\textbf{Indep}} \\ \cline{2-3}
-\multicolumn{1}{l|}{}                                & \textbf{Data}             & \textbf{Size}             &                                &                               &                                &                               &                                   &                                 &                               &                                 &                               &                                &                                &                                &                               &                                  \\ \hline
-\multicolumn{1}{l|}{\multirow{3}{*}{BERTweet}}                        & All              & 58213            & 57.1                           & 87.7                          & \textbf{57.7}                  & \textbf{82.4}                 & 59.4                              & \textbf{75.1}                   & 61.5                          & 59.4                            & 85.5                          & \textbf{90.2}                  & 59.5                           & \textbf{65.4}                  & \textbf{70.1}                 & 61.0                             \\
-\multicolumn{1}{l|}{}                                & All*            & 5290             & 51.1                           & 80.5                          & 53.7                           & 73.1                          & \textbf{60.8}                     & 67.3                            & 72.1                          & \textbf{63.9}                   & \textbf{85.6}                 & 85.4                           & 67.6                           & 62.1                           & 68.6                          & \textbf{69.2}                    \\
-\multicolumn{1}{l|}{}                                & MHS              & 5291             & \textbf{65.5}                  & \textbf{89.3}                 & 13.3                           & 50.6                          & 53.2                              & 69.6                            & 58.8                          & 58.0                            & 66.8                          & 78.8                           & \textbf{67.7}                  & 28.6                           & 58.3                          & 58.6                             \\ \hline
-\multicolumn{1}{l|}{\multirow{3}{*}{TimeLMs}}        & All              & 58213            & 54.2                           & \textbf{86.6}                 & \textbf{68.0}                  & \textbf{79.7}                 & \textbf{56.9}                     & \textbf{74.8}                   & 59.1                          & 63.2                            & 87.2                          & \textbf{89.4}                  & 65.2                           & \textbf{64.5}                  & \textbf{70.7}                 & 63.7                             \\
-\multicolumn{1}{l|}{}                                & All*            & 1146             & 48.3                           & 74.9                          & 49.3                           & 69.3                          & 54.7                              & 59.7                            & \textbf{63.8}                 & \textbf{63.8}                   & 82.3                          & 79.9                           & 59.6                           & 63.0                           & 64.0                          & \textbf{70.6}                    \\
-\multicolumn{1}{l|}{}                                & AYR              & 1147             & \textbf{61.0}                  & 71.4                          & 9.8                            & 63.5                          & 52.5                              & 56.3                            & 60.9                          & 63.6                            & \textbf{87.7}                 & 80.7                           & \textbf{66.8}                  & 57.9                           & 61.0                          & 59.3                             \\ \hline
-\multicolumn{1}{l|}{\multirow{3}{*}{RoBERTa}}        & All              & 58213            & 52.3                           & \textbf{85.9}                 & \textbf{66.6}                  & \textbf{79.9}                 & \textbf{54.7}                     & \textbf{73.8}                   & 59.5                          & 60.8                            & \textbf{87.0}                 & \textbf{89.8}                  & 64.4                           & 61.4                           & \textbf{69.7}                 & 56.2                             \\
-\multicolumn{1}{l|}{}                                & All*            & 1146             & \textbf{56.0}                  & 73.7                          & 53.2                           & 64.2                          & 53.0                              & 48.9                            & \textbf{70.2}                 & \textbf{65.8}                   & 74.3                          & 74.1                           & 58.9                           & 61.0                           & 62.8                          & \textbf{78.3}                    \\
-\multicolumn{1}{l|}{}                                & AYR              & 1147             & 54.8                           & 63.8                          & 17.5                           & 69.8                          & 55.2                              & 50.1                            & 57.7                          & 63.4                            & 86.3                          & 81.9                           & \textbf{64.6}                  & 55.6                           & 60.1                          & 53.8                             \\ \hline
-\multicolumn{1}{l|}{\multirow{3}{*}{BERT}}           & All              & 58213            & 52.3                           & \textbf{84.0}                 & 49.3                           & 79.7                          & \textbf{56.8}                     & \textbf{74.1}                   & 56.9                          & \textbf{60.9}                   & \textbf{85.2}                 & \textbf{89.6}                  & 60.5                           & \textbf{65.5}                  & \textbf{67.9}                 & 50.7                             \\
-\multicolumn{1}{l|}{}                                & All*            & 2098             & 44.7                           & 75.0                          & 49.2                           & \textbf{66.1}                 & 55.9                              & 59.1                            & \textbf{63.5}                 & 60.5                            & 71.1                          & 74.1                           & 57.0                           & 60.5                           & 61.4                          & \textbf{60.9}                    \\
-\multicolumn{1}{l|}{}                                & HTPO             & 2099             & 54.9                           & 77.5                          & 19.8                           & 52.1                          & 52.1                              & 58.6                            & 64.8                          & 55.9                            & 61.3                          & 78.1                           & \textbf{73.5}                  & 38.3                           & 57.2                          & 50.7                             \\ \hline
-\multicolumn{1}{l|}{\multirow{3}{*}{SVM}}            & All              & 58213            & 50.6                           & 77.0                          & \textbf{61.6}                  & 66.1                          & 48.5                              & 71.2                            & 47.8                          & 48.9                            & \textbf{86.9}                 & \textbf{87.3}                  & 47.3                           & 54.9                           & 61.2                          & 46.7                             \\
-\multicolumn{1}{l|}{}                                & All*            & 5290             & 44.5                           & 76.1                          & 55.7                           & \textbf{68.4}                 & \textbf{50.7}                     & 64.4                            & \textbf{57.0}                 & \textbf{56.2}                   & 81.0                          & 81.9                           & \textbf{52.7}                  & 57.4                           & \textbf{67.2}                 & \textbf{59.3}                    \\
-\multicolumn{1}{l|}{}                                & MHS              & 5291             & \textbf{57.9}                  & \textbf{80.0}                 & 4.8                            & 48.3                          & 48.4                              & \textbf{67.2}                   & 46.4                          & 46.4                            & 47.8                          & 75.0                           & 50.1                           & 22.7                           & 47.7                          & 51.8                             \\ \hline
-\multicolumn{3}{l|}{All hate baseline}                                                              & 29.0                           & 25.0                          & 49.0                           & 9.0                           & 8.0                               & 24.0                            & 29.0                          & 11.0                            & 19.0                          & 20.0                           & 9.0                            & 44.0                           & 23.0                          & 10.0                             \\ \hline
-\end{tabular}
-\end{adjustbox}
-\caption{Macro-averaged F1 scores across all hate speech test sets and our manually annotated set (Indep). For each model, the table includes:  (1) the performance of the model trained on all the datasets (All); (2) the performance of the model when trained on a balanced sample of all datasets of the same size as the best single-dataset baseline (All*); and (3) the best overall performing model trained on a single dataset (BERTweet: \textit{MHS}, TimeLMs: \textit{AYR}, RoBERTa: \textit{AYR}, BERT: \textit{HTPO}, SVM: \textit{MHS}). The best result for each dataset and model is bolded.}
-\label{tab:grouped_results}
-\end{table*}
+% \begin{table*}[ht]
+% % \setlength{\tabcolsep}{2.8pt}
+% \begin{adjustbox}{width=\textwidth,center}
+% \begin{tabular}{lll|ccccccccccccc|c}
+% \hline
+% \multicolumn{1}{l|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{2}{c|}{\textbf{Train}} & \multirow{2}{*}{\textbf{HatE}} & \multirow{2}{*}{\textbf{MHS}} & \multirow{2}{*}{\textbf{DEAP}} & \multirow{2}{*}{\textbf{CMS}} & \multirow{2}{*}{\textbf{Off.}} & \multirow{2}{*}{\textbf{HateX}} & \multirow{2}{*}{\textbf{LSC}} & \multirow{2}{*}{\textbf{HASOC}} & \multirow{2}{*}{\textbf{AYR}} & \multirow{2}{*}{\textbf{AHSD}} & \multirow{2}{*}{\textbf{HTPO}} & \multirow{2}{*}{\textbf{HSHP}} & \multirow{2}{*}{\textbf{AVG}} & \multirow{2}{*}{\textbf{Indep}} \\ \cline{2-3}
+% \multicolumn{1}{l|}{}                                & \textbf{Data}             & \textbf{Size}             &                                &                               &                                &                               &                                   &                                 &                               &                                 &                               &                                &                                &                                &                               &                                  \\ \hline
+% ... (rest of table omitted for brevity)
+% \end{tabular}
+% \end{adjustbox}
+% \caption{Macro-averaged F1 scores across all hate speech test sets and our manually annotated set (Indep). For each model, the table includes:  (1) the performance of the model trained on all the datasets (All); (2) the performance of the model when trained on a balanced sample of all datasets of the same size as the best single-dataset baseline (All*); and (3) the best overall performing model trained on a single dataset (BERTweet: \textit{MHS}, TimeLMs: \textit{AYR}, RoBERTa: \textit{AYR}, BERT: \textit{HTPO}, SVM: \textit{MHS}). The best result for each dataset and model is bolded.}
+% \label{tab:grouped_results}
+% \end{table*}
+
+% Combined table with both subtables stacked, using same caption; AVG and Indep columns moved to the bottom table
+
 
 \section{Evaluation}
 
@@ -231,16 +219,113 @@ For training and evaluation, we use the splits described in Section \ref{summary
 \paragraph{Independent test set (Indep).} This dataset was built by utilising a set of keywords related to the \textit{International Women's Day} and \textit{International Day Against Homophobia, Transphobia and Biphobia} and extracting tweets from the respected days of 2022. Then, these tweets were manually annotated by an expert. In total 200 tweets were annotated as hateful, not-hateful, or as "NA" in cases where the annotator was not sure whether a tweet contained hate speech or not. The \textit{Indep} test set consists of 151 non-hate and 20 hate tweets and due to its nature (specific content \& expert annotation) can be leveraged to perform a targeted evaluation on models trained on similar and unrelated data. While we acknowledge the limitations of the \textit{Indep} test set (i.e., relative small number of tweets and only one annotator present), our aim is to use these tweets, collected using relatively simple guidelines\footnote{Annotator guidelines are available in Appendix \ref{appendix:Hate-annotation_guidelines}.}, to test the overall generalisation ability of our models and how it aligns to what people think of hate speech. 
      
 
+\begin{table*}[ht]
+    \centering
+    \begin{adjustbox}{width=1\textwidth,center}
+    % First subtable: columns up to LSC (no AVG/Indep now)
+    \begin{tabular}{lll|cccccccc}
+    \hline
+    \multicolumn{1}{l|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{2}{c|}{\textbf{Train}} & \multirow{2}{*}{\textbf{HatE}} & \multirow{2}{*}{\textbf{MHS}} & \multirow{2}{*}{\textbf{DEAP}} & \multirow{2}{*}{\textbf{CMS}} & \multirow{2}{*}{\textbf{Off.}} & \multirow{2}{*}{\textbf{HateX}} & \multirow{2}{*}{\textbf{LSC}} \\ \cline{2-3}
+    \multicolumn{1}{l|}{}                                & \textbf{Data}       & \textbf{Size}      &                        &                     &                        &                        &                        &                          &                        \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{BERTweet}}    & All         & 58213           & 57.1               & 87.7               & \textbf{57.7}      & \textbf{82.4}         & 59.4                  & \textbf{75.1}          & 61.5                   \\
+    \multicolumn{1}{l|}{}                             & All*        & 5290            & 51.1               & 80.5               & 53.7               & 73.1                  & \textbf{60.8}          & 67.3                   & 72.1                   \\
+    \multicolumn{1}{l|}{}                             & MHS         & 5291            & \textbf{65.5}      & \textbf{89.3}      & 13.3               & 50.6                  & 53.2                   & 69.6                   & 58.8                   \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{TimeLMs}}     & All         & 58213           & 54.2               & \textbf{86.6}      & \textbf{68.0}      & \textbf{79.7}         & \textbf{56.9}          & \textbf{74.8}          & 59.1                   \\
+    \multicolumn{1}{l|}{}                             & All*        & 1146            & 48.3               & 74.9               & 49.3               & 69.3                  & 54.7                   & 59.7                   & \textbf{63.8}          \\
+    \multicolumn{1}{l|}{}                             & AYR         & 1147            & \textbf{61.0}      & 71.4               & 9.8                & 63.5                  & 52.5                   & 56.3                   & 60.9                   \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{RoBERTa}}     & All         & 58213           & 52.3               & \textbf{85.9}      & \textbf{66.6}      & \textbf{79.9}         & \textbf{54.7}          & \textbf{73.8}          & 59.5                   \\
+    \multicolumn{1}{l|}{}                             & All*        & 1146            & \textbf{56.0}      & 73.7               & 53.2               & 64.2                  & 53.0                   & 48.9                   & \textbf{70.2}          \\
+    \multicolumn{1}{l|}{}                             & AYR         & 1147            & 54.8               & 63.8               & 17.5               & 69.8                  & 55.2                   & 50.1                   & 57.7                   \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{BERT}}        & All         & 58213           & 52.3               & \textbf{84.0}      & 49.3               & 79.7                  & \textbf{56.8}          & \textbf{74.1}          & 56.9                   \\
+    \multicolumn{1}{l|}{}                             & All*        & 2098            & 44.7               & 75.0               & 49.2               & \textbf{66.1}         & 55.9                   & 59.1                   & \textbf{63.5}          \\
+    \multicolumn{1}{l|}{}                             & HTPO        & 2099            & 54.9               & 77.5               & 19.8               & 52.1                  & 52.1                   & 58.6                   & 64.8                   \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{SVM}}         & All         & 58213           & 50.6               & 77.0               & \textbf{61.6}      & 66.1                  & 48.5                   & 71.2                   & 47.8                   \\
+    \multicolumn{1}{l|}{}                             & All*        & 5290            & 44.5               & 76.1               & 55.7               & \textbf{68.4}         & \textbf{50.7}          & 64.4                   & \textbf{57.0}          \\
+    \multicolumn{1}{l|}{}                             & MHS         & 5291            & \textbf{57.9}      & \textbf{80.0}      & 4.8                & 48.3                  & 48.4                   & \textbf{67.2}          & 46.4                   \\ \hline
+    \multicolumn{3}{l|}{All hate baseline}                         & 29.0         & 25.0          & 49.0          & 9.0         & 8.0         & 24.0         & 29.0         \\ \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \vspace{0.5em}
+    
+    \begin{adjustbox}{width=0.95\textwidth,center}
+    % Second subtable: columns HASOC to HSHP, now with AVG and Indep at the end
+    \begin{tabular}{lll|ccccc|c|c}
+    \hline
+    \multicolumn{1}{l|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{2}{c|}{\textbf{Train}} 
+        & \multirow{2}{*}{\textbf{HASOC}} & \multirow{2}{*}{\textbf{AYR}} & \multirow{2}{*}{\textbf{AHSD}} 
+        & \multirow{2}{*}{\textbf{HTPO}} & \multirow{2}{*}{\textbf{HSHP}} 
+        & \multirow{2}{*}{\textbf{AVG}} & \multirow{2}{*}{\textbf{Indep}} \\ \cline{2-3}
+    \multicolumn{1}{l|}{}                                & \textbf{Data}       & \textbf{Size}    
+        &                          &                         &                          &                          &                         
+        &                          &                        \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{BERTweet}}    & All         & 58213           
+        & 59.4                     & 85.5                    & \textbf{90.2}           & 59.5                    & \textbf{65.4} 
+        & \textbf{70.1}          & 61.0                     \\
+    \multicolumn{1}{l|}{}                             & All*        & 5290            
+        & \textbf{63.9}            & \textbf{85.6}           & 85.4                    & 67.6                    & 62.1          
+        & 68.6                   & \textbf{69.2}          \\
+    \multicolumn{1}{l|}{}                             & MHS         & 5291            
+        & 58.0                     & 66.8                    & 78.8                    & \textbf{67.7}           & 28.6          
+        & 58.3                   & 58.6                     \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{TimeLMs}}     & All         & 58213           
+        & 63.2                     & 87.2                    & \textbf{89.4}           & 65.2                    & \textbf{64.5} 
+        & \textbf{70.7}          & 63.7                     \\
+    \multicolumn{1}{l|}{}                             & All*        & 1146            
+        & \textbf{63.8}            & 82.3                    & 79.9                    & 59.6                    & 63.0          
+        & 64.0                   & \textbf{70.6}            \\
+    \multicolumn{1}{l|}{}                             & AYR         & 1147            
+        & 63.6                     & \textbf{87.7}           & 80.7                    & \textbf{66.8}           & 57.9          
+        & 61.0                   & 59.3                     \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{RoBERTa}}     & All         & 58213           
+        & 60.8                     & \textbf{87.0}           & \textbf{89.8}           & 64.4                    & 61.4          
+        & \textbf{69.7}          & 56.2                     \\
+    \multicolumn{1}{l|}{}                             & All*        & 1146            
+        & \textbf{65.8}            & 74.3                    & 74.1                    & 58.9                    & 61.0          
+        & 62.8                   & \textbf{78.3}            \\
+    \multicolumn{1}{l|}{}                             & AYR         & 1147            
+        & 63.4                     & 86.3                    & 81.9                    & \textbf{64.6}           & 55.6          
+        & 60.1                   & 53.8                     \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{BERT}}        & All         & 58213           
+        & \textbf{60.9}            & \textbf{85.2}           & \textbf{89.6}           & 60.5                    & \textbf{65.5} 
+        & \textbf{67.9}          & 50.7                     \\
+    \multicolumn{1}{l|}{}                             & All*        & 2098            
+        & 60.5                     & 71.1                    & 74.1                    & 57.0                    & 60.5          
+        & 61.4                   & \textbf{60.9}            \\
+    \multicolumn{1}{l|}{}                             & HTPO        & 2099            
+        & 55.9                     & 61.3                    & 78.1                    & \textbf{73.5}           & 38.3          
+        & 57.2                   & 50.7                     \\ \hline
+    \multicolumn{1}{l|}{\multirow{3}{*}{SVM}}         & All         & 58213           
+        & 48.9                     & \textbf{86.9}           & \textbf{87.3}           & 47.3                    & 54.9          
+        & 61.2                   & 46.7                     \\
+    \multicolumn{1}{l|}{}                             & All*        & 5290            
+        & \textbf{56.2}            & 81.0                    & 81.9                    & \textbf{52.7}           & 57.4          
+        & \textbf{67.2}          & \textbf{59.3}            \\
+    \multicolumn{1}{l|}{}                             & MHS         & 5291            
+        & 46.4                     & 47.8                    & 75.0                    & 50.1                    & 22.7          
+        & 47.7                   & 51.8                     \\ \hline
+    \multicolumn{3}{l|}{All hate baseline}      
+        & 11.0                & 19.0                   & 20.0                    & 9.0                     & 44.0        
+        & 23.0        & 10.0 \\ \hline
+    \end{tabular}
+    \end{adjustbox}
+    
+    \caption{Macro-averaged F1 scores across all hate speech test sets and our manually annotated set (Indep). For each model, the table includes:  (1) the performance of the model trained on all the datasets (All); (2) the performance of the model when trained on a balanced sample of all datasets of the same size as the best single-dataset baseline (All*); and (3) the best overall performing model trained on a single dataset (BERTweet: \textit{MHS}, TimeLMs: \textit{AYR}, RoBERTa: \textit{AYR}, BERT: \textit{HTPO}, SVM: \textit{MHS}). The best result for each dataset and model is bolded.}
+    \label{tab:grouped_results_combined}
+    \end{table*}
+    
+    \clearpage
+    
 
 \subsection{Results}
 
 \subsubsection{Binary Setting}
-Table \ref{tab:grouped_results} displays the macro-F1 scores achieved by the models across all test sets when fine-tuned: (1) on all available datasets (\textit{All}), (2) on the best overall performing model trained on a single dataset, and (3) on a balanced sample of the unified dataset of the same data size as (2). When looking at the average performance of (1) and (2), it is clear that when utilising the combined data, all models perform considerably better overall. %with a minimum performance increase of 9.62 points for the RoBERTa-base model. 
+Table \ref{tab:grouped_results_combined} display the macro-F1 scores achieved by the models across all test sets when fine-tuned: (1) on all available datasets (\textit{All}), (2) on the best overall performing model trained on a single dataset, and (3) on a balanced sample of the unified dataset of the same data size as (2). When looking at the average performance of (1) and (2), it is clear that when utilising the combined data, all models perform considerably better overall. %with a minimum performance increase of 9.62 points for the RoBERTa-base model. 
 This increased performance may not be achieved across all the datasets tested, but it does provide evidence that the relatively limited scope of the individual datasets hinder the potential capabilities of our models. An even bigger constrast is observed when considering the performance difference on the \textit{DEAP} subset, which deals with a less common type of hate speech (prejudice towards Asian people),  where even the best performing single dataset model achieves barely 19.79\% F1 compared to the worst combined classifier with 49.27\% F1 (BERT All / BERT \textit{HTPO}).
 
 To further explore the importance of the size and diversity of the training data we train and evaluate our models in an additional settings. Considering the sample size of the best performing dataset for each model, an equally sized training set is extracted from all available data while enforcing a balanced distribution between hate and not-hate tweets (\textit{All*}). Finally, we make sure to sample proportionally across the available datasets.
 %and (2) enforcing a balanced distribution of the two classes (\textit{All**}). In both settings 
-The results (Table \ref{tab:grouped_results}) reveal the significance that a diverse dataset has in the models' performance. All models tested perform on average better when trained on the newly created subsets (\textit{All*}) when compared to the respective models trained only on the best performing individual dataset. Interestingly, this setting also achieves the best overall scores on the \textit{Indep.} set, which reinforces the importance of balancing the data. 
+The results (Table \ref{tab:grouped_results_combined}) reveal the significance that a diverse dataset has in the models' performance. All models tested perform on average better when trained on the newly created subsets (\textit{All*}) when compared to the respective models trained only on the best performing individual dataset. Interestingly, this setting also achieves the best overall scores on the \textit{Indep.} set, which reinforces the importance of balancing the data. 
 %. The performance difference is even greater when considering only the balanced training setting (\textit{All**}) where all the models achieve better average results, and
 Nonetheless, all the transformers models still achieve their best score when trained on all the combined datasets (\textit{All}) which suggests that even for these models, the amount of available training data remains an important factor of their performance.
 

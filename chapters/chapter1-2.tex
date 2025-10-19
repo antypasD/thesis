@@ -183,63 +183,119 @@ In order to assess the zero/few-shot capabilities of \acp{LLM} in our task, we c
 
 \noindent  \textbf{gpt-4o } the latest and best performing model from OpenAI which significantly outperforms its predecessors. 
 
-
-
-
-{
-\renewcommand{\arraystretch}{0.991}
-\begin{table*}[!ht]
-\centering
-\resizebox{\linewidth}{!}{%
-\addtolength{\tabcolsep}{-0.2em}
-\begin{tabular}{cc|lccccc|ccccc|ccccc|ccccc}
-\multicolumn{2}{c|}{\multirow{4}{*}{\textbf{}}} & \multicolumn{1}{c}{\textbf{}} & \multicolumn{5}{c|}{\textbf{English}} & \multicolumn{5}{c|}{\textbf{Spanish}} & \multicolumn{5}{c|}{\textbf{Japanese}} & \multicolumn{5}{c}{\textbf{Greek}} \\
-\multicolumn{2}{c|}{} & \textbf{TweetTopic} & \checkmark &  &  & \checkmark & \checkmark & \checkmark &  &  & \checkmark & \checkmark & \checkmark &  &  & \checkmark & \checkmark & \checkmark &  &  & \checkmark & \checkmark \\
-\multicolumn{2}{c|}{} & \textbf{Target} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} \\
-\multicolumn{2}{c|}{} & \textbf{All} &  &  & \checkmark &  & \checkmark &  &  & \checkmark &  & \checkmark &  &  & \checkmark &  & \checkmark &  &  & \checkmark &  & \checkmark \\ \hline
-\multirow{13}{*}{\rotatebox{90}{macro-F1}} & \multirow{5}{*}{\rotatebox{90}{finetuned}} & bernice & 55.9 & 42.7 & 55.2 & 58.7 & 60.3 & 52.0 & 26.6 & 51.5 & 55.8 & 55.9 & 45.8 & 39.9 & 55.2 & 53.3 & 54.3 & 41.4 & 26.4 & 40.1 & 43.4 & 44.0 \\
- &  & xlmr\_base & 47.0 & 25.1 & 45.9 & 58.0 & 57.6 & 42.4 & 11.6 & 35.1 & 48.4 & 49.1 & 34.4 & 2.7 & 39.9 & 50.1 & 52.5 & 29.5 & 12.3 & 34.2 & 40.0 & 39.7 \\
- &  & xlmr\_large & 57.2 & 51.1 & 58.7 & 60.8 & \textbf{\underline63.3} & 51.8 & 32.6 & 49.4 & 53.0 & 57.2 & 49.1 & 38.5 & 55.9 & 56.6 & 56.7 & 44.0 & 26.7 & 45.6 & 45.5 & 46.2 \\
- &  & xlmt\_base & 55.4 & 42.7 & 55.1 & 59.1 & 60.3 & 48.5 & 29.9 & 49.1 & 52.8 & 54.2 & 47.8 & 29.5 & 50.8 & 53.1 & 54.4 & 32.6 & 21.8 & 39.6 & 41.3 & 45.4 \\
- &  & xlmt\_large & 60.2 & 52.0 & 59.9 & 62.1 & 61.7 & 52.9 & 45.4 & 54.4 & 56.6 & \textbf{\underline60.0} & 50.9 & 50.9 & 57.3 & 57.2 & \textbf{\underline58.5} & 40.6 & 30.1 & 49.3 & 48.6 & 50.3 \\ \cline{2-23} 
- & \multirow{4}{*}{\rotatebox{90}{zero}} & bloomz & \multicolumn{5}{c|}{23.4} & \multicolumn{5}{c|}{15.5} & \multicolumn{5}{c|}{15.2} & \multicolumn{5}{c}{1.5} \\
- &  & mt0 & \multicolumn{5}{c|}{34.7} & \multicolumn{5}{c|}{29.2} & \multicolumn{5}{c|}{37.3} & \multicolumn{5}{c}{24.7} \\
- &  & chat-gpt & \multicolumn{5}{c|}{44.9} & \multicolumn{5}{c|}{37.2} & \multicolumn{5}{c|}{35.6} & \multicolumn{5}{c}{33.2} \\
- &  & gpt-4o & \multicolumn{5}{c|}{59.1} & \multicolumn{5}{c|}{52.4} & \multicolumn{5}{c|}{51.9} & \multicolumn{5}{c}{49.5} \\ \cline{2-23} 
- & \multirow{4}{*}{\rotatebox{90}{few}} & bloomz & \multicolumn{5}{c|}{21.0} & \multicolumn{5}{c|}{17.3} & \multicolumn{5}{c|}{14.0} & \multicolumn{5}{c}{5.2} \\
- &  & mt0 & \multicolumn{5}{c|}{35.7} & \multicolumn{5}{c|}{29.1} & \multicolumn{5}{c|}{39.0} & \multicolumn{5}{c}{25.1} \\
- &  & chat-gpt & \multicolumn{5}{c|}{54.1} & \multicolumn{5}{c|}{43.6} & \multicolumn{5}{c|}{43.9} & \multicolumn{5}{c}{39.5} \\
- &  & gpt-4o & \multicolumn{5}{c|}{60.0} & \multicolumn{5}{c|}{52.8} & \multicolumn{5}{c|}{53.3} & \multicolumn{5}{c}{\textbf{51.0}} \\ \hline
-\multirow{13}{*}{\rotatebox{90}{micro-F1}} & \multirow{5}{*}{\rotatebox{90}{finetuned}} & bernice & 63.5 & 63.1 & 67.6 & 67.1 & 66.8 & 64.9 & 68.2 & 71.8 & 72.5 & 72.4 & 52.8 & 55.3 & 59.7 & 59.9 & 59.3 & 64.4 & 68.6 & 71.1 & 71.9 & 70.8 \\
- &  & xlmr\_base & 57.3 & 51.9 & 62.6 & 65.0 & 64.0 & 59.5 & 57.8 & 68.5 & 69.4 & 70.3 & 43.8 & 20.1 & 52.7 & 55.8 & 56.4 & 53.8 & 60.3 & 68.1 & 69.0 & 67.8 \\
- &  & xlmr\_large & 64.4 & 66.2 & 67.5 & 67.2 & \textbf{68.8} & 65.4 & 69.2 & 71.6 & 71.7 & 72.4 & 52.3 & 52.5 & 59.6 & 59.2 & 58.6 & 64.4 & 68.7 & 72.6 & 72.1 & 71.2 \\
- &  & xlmt\_base & 63.5 & 63.5 & 66.6 & 66.9 & 66.2 & 63.3 & 68.7 & 71.7 & 72.5 & 71.5 & 51.8 & 49.5 & 57.8 & 57.5 & 58.7 & 58.5 & 67.0 & 70.0 & 69.8 & 70.1 \\
- &  & xlmt\_large & 66.3 & 66.3 & 68.7 & \textbf{68.8} & 67.8 & 67.0 & 72.5 & 73.9 & 73.9 & \textbf{\underline74.5} & 56.0 & 59.6 & \textbf{\underline61.4} & 60.5 & 61.3 & 65.8 & 70.6 & \textbf{\underline74.5} & 73.0 & 73.4 \\ \cline{2-23} 
- & \multirow{4}{*}{\rotatebox{90}{zero}} & bloomz & \multicolumn{5}{c|}{24.3} & \multicolumn{5}{c|}{15.2} & \multicolumn{5}{c|}{19.3} & \multicolumn{5}{c}{0.7} \\
- &  & mt0 & \multicolumn{5}{c|}{38.7} & \multicolumn{5}{c|}{24.7} & \multicolumn{5}{c|}{42.7} & \multicolumn{5}{c}{43.2} \\
- &  & chat-gpt & \multicolumn{5}{c|}{48.6} & \multicolumn{5}{c|}{49.8} & \multicolumn{5}{c|}{39.2} & \multicolumn{5}{c}{46.6} \\
- &  & gpt-4o & \multicolumn{5}{c|}{63.6} & \multicolumn{5}{c|}{65.6} & \multicolumn{5}{c|}{56.6} & \multicolumn{5}{c}{65.1} \\ \cline{2-23} 
- & \multirow{4}{*}{\rotatebox{90}{few}} & bloomz & \multicolumn{5}{c|}{23.5} & \multicolumn{5}{c|}{14.6} & \multicolumn{5}{c|}{17.4} & \multicolumn{5}{c}{4.4} \\
- &  & mt0 & \multicolumn{5}{c|}{38.8} & \multicolumn{5}{c|}{25.2} & \multicolumn{5}{c|}{41.8} & \multicolumn{5}{c}{45.5} \\
- &  & chat-gpt & \multicolumn{5}{c|}{57.2} & \multicolumn{5}{c|}{54.9} & \multicolumn{5}{c|}{44.3} & \multicolumn{5}{c}{53.9} \\
- &  & gpt-4o & \multicolumn{5}{c|}{63.2} & \multicolumn{5}{c|}{62.3} & \multicolumn{5}{c|}{57.8} & \multicolumn{5}{c}{68.6}
-\end{tabular}
-}
-\caption{F1 scores (macro \& micro average) for each setting tested in 5-fold cross validation. Fine-tuned models are evaluated on different settings depending on the used training data. \textit{TweetTopic:}  {\TweetTopic} was used for training; \textit{Target:} the respective language subset of {\XTOPIC} was used for training; \textit{All:} all language subsets of {\XTOPIC} were used. The best result for each language is bolded, and underlined scores indicate statistically significant difference with respect to the second best score.}
-\label{tab:results_overall}
-\end{table*}
-}
-
 \subsection{Evaluation Metrics}
 Due to the nature of {\XTOPIC}, we use the macro-F1 score, which assigns equal weights to each label, as the evaluation metric. This metric is often used for multi-label classification tasks \cite{tujnas.v6i6.1329, lipton-mldiscovery, mohammad2018semeval}. In order to better understand the performance of the models and due to the imbalanced nature, which can be a challenge for a model's performance evaluation \cite{tkde.2008.239}, micro-F1 is also reported.
 
 
+% \renewcommand{\arraystretch}{0.991}
+% \begin{table*}[!ht]
+% \centering
+% \resizebox{\linewidth}{!}{%
+% \addtolength{\tabcolsep}{-0.2em}
+% \begin{tabular}{cc|lccccc|ccccc|ccccc|ccccc}
+% ...
+% \end{tabular}
+% }
+% \caption{F1 scores (macro \& micro average) for each setting tested in 5-fold cross validation. Fine-tuned models are evaluated on different settings depending on the used training data. \textit{TweetTopic:}  {\TweetTopic} was used for training; \textit{Target:} the respective language subset of {\XTOPIC} was used for training; \textit{All:} all language subsets of {\XTOPIC} were used. The best result for each language is bolded, and underlined scores indicate statistically significant difference with respect to the second best score.}
+% \label{tab:results_overall}
+% \end{table*}
+% }
 
+% Splitting the original table into two: Table 1 for English and Spanish, Table 2 for Japanese and Greek.
+{
+\renewcommand{\arraystretch}{0.991}
+\begin{table*}[!ht]
+\centering
+\resizebox{1.0\linewidth}{!}{%
+\addtolength{\tabcolsep}{-0.2em}
+\begin{tabular}{cc|lccccc|ccccc}
+\multicolumn{2}{c|}{\multirow{4}{*}{\textbf{}}} & \multicolumn{1}{c}{\textbf{}} & \multicolumn{5}{c|}{\textbf{English}} & \multicolumn{5}{c}{\textbf{Spanish}} \\
+\multicolumn{2}{c|}{} & \textbf{TweetTopic} & \checkmark &  &  & \checkmark & \checkmark & \checkmark &  &  & \checkmark & \checkmark \\
+\multicolumn{2}{c|}{} & \textbf{Target} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} \\
+\multicolumn{2}{c|}{} & \textbf{All} &  &  & \checkmark &  & \checkmark &  &  & \checkmark &  & \checkmark \\ \hline
+\multirow{13}{*}{\rotatebox{90}{macro-F1}} & \multirow{5}{*}{\rotatebox{90}{finetuned}} & bernice & 55.9 & 42.7 & 55.2 & 58.7 & 60.3 & 52.0 & 26.6 & 51.5 & 55.8 & 55.9 \\
+ &  & xlmr\_base & 47.0 & 25.1 & 45.9 & 58.0 & 57.6 & 42.4 & 11.6 & 35.1 & 48.4 & 49.1 \\
+ &  & xlmr\_large & 57.2 & 51.1 & 58.7 & 60.8 & \textbf{\underline63.3} & 51.8 & 32.6 & 49.4 & 53.0 & 57.2 \\
+ &  & xlmt\_base & 55.4 & 42.7 & 55.1 & 59.1 & 60.3 & 48.5 & 29.9 & 49.1 & 52.8 & 54.2 \\
+ &  & xlmt\_large & 60.2 & 52.0 & 59.9 & 62.1 & 61.7 & 52.9 & 45.4 & 54.4 & 56.6 & \textbf{\underline60.0} \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{zero}} & bloomz & \multicolumn{5}{c|}{23.4} & \multicolumn{5}{c}{15.5} \\
+ &  & mt0 & \multicolumn{5}{c|}{34.7} & \multicolumn{5}{c}{29.2} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{44.9} & \multicolumn{5}{c}{37.2} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{59.1} & \multicolumn{5}{c}{52.4} \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{few}} & bloomz & \multicolumn{5}{c|}{21.0} & \multicolumn{5}{c}{17.3} \\
+ &  & mt0 & \multicolumn{5}{c|}{35.7} & \multicolumn{5}{c}{29.1} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{54.1} & \multicolumn{5}{c}{43.6} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{60.0} & \multicolumn{5}{c}{52.8} \\ \hline
+\multirow{13}{*}{\rotatebox{90}{micro-F1}} & \multirow{5}{*}{\rotatebox{90}{finetuned}} & bernice & 63.5 & 63.1 & 67.6 & 67.1 & 66.8 & 64.9 & 68.2 & 71.8 & 72.5 & 72.4 \\
+ &  & xlmr\_base & 57.3 & 51.9 & 62.6 & 65.0 & 64.0 & 59.5 & 57.8 & 68.5 & 69.4 & 70.3 \\
+ &  & xlmr\_large & 64.4 & 66.2 & 67.5 & 67.2 & \textbf{68.8} & 65.4 & 69.2 & 71.6 & 71.7 & 72.4 \\
+ &  & xlmt\_base & 63.5 & 63.5 & 66.6 & 66.9 & 66.2 & 63.3 & 68.7 & 71.7 & 72.5 & 71.5 \\
+ &  & xlmt\_large & 66.3 & 66.3 & 68.7 & \textbf{68.8} & 67.8 & 67.0 & 72.5 & 73.9 & 73.9 & \textbf{\underline74.5} \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{zero}} & bloomz & \multicolumn{5}{c|}{24.3} & \multicolumn{5}{c}{15.2} \\
+ &  & mt0 & \multicolumn{5}{c|}{38.7} & \multicolumn{5}{c}{24.7} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{48.6} & \multicolumn{5}{c}{49.8} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{63.6} & \multicolumn{5}{c}{65.6} \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{few}} & bloomz & \multicolumn{5}{c|}{23.5} & \multicolumn{5}{c}{14.6} \\
+ &  & mt0 & \multicolumn{5}{c|}{38.8} & \multicolumn{5}{c}{25.2} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{57.2} & \multicolumn{5}{c}{54.9} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{63.2} & \multicolumn{5}{c}{62.3}
+\end{tabular}
+}
+\captionsetup{format=hang,justification=justified}
+\caption{F1 scores (macro \& micro average) for English and Spanish under each setting, tested in 5-fold cross validation. Fine-tuned models are evaluated on different settings depending on the used training data. \textit{TweetTopic:}  {\TweetTopic} was used for training; \textit{Target:} the respective language subset of {\XTOPIC} was used for training; \textit{All:} all language subsets of {\XTOPIC} were used. The best result for each language is bolded, and underlined scores indicate statistically significant difference with respect to the second best score.}
+\label{tab:results_overall_english_spanish}
+\end{table*}
+
+
+\begin{table*}[!ht]
+\centering
+\resizebox{1.0\linewidth}{!}{%
+\addtolength{\tabcolsep}{-0.2em}
+\begin{tabular}{cc|lccccc|ccccc}
+\multicolumn{2}{c|}{\multirow{4}{*}{\textbf{}}} & \multicolumn{1}{c}{\textbf{}} & \multicolumn{5}{c|}{\textbf{Japanese}} & \multicolumn{5}{c}{\textbf{Greek}} \\
+\multicolumn{2}{c|}{} & \textbf{TweetTopic} & \checkmark &  &  & \checkmark & \checkmark & \checkmark &  &  & \checkmark & \checkmark \\
+\multicolumn{2}{c|}{} & \textbf{Target} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{} & \textbf{\checkmark} & \textbf{} & \textbf{\checkmark} & \textbf{} \\
+\multicolumn{2}{c|}{} & \textbf{All} &  &  & \checkmark &  & \checkmark &  &  & \checkmark &  & \checkmark \\ \hline
+\multirow{13}{*}{\rotatebox{90}{macro-F1}} & \multirow{5}{*}{\rotatebox{90}{finetuned}} & bernice & 45.8 & 39.9 & 55.2 & 53.3 & 54.3 & 41.4 & 26.4 & 40.1 & 43.4 & 44.0 \\
+ &  & xlmr\_base & 34.4 & 2.7 & 39.9 & 50.1 & 52.5 & 29.5 & 12.3 & 34.2 & 40.0 & 39.7 \\
+ &  & xlmr\_large & 49.1 & 38.5 & 55.9 & 56.6 & 56.7 & 44.0 & 26.7 & 45.6 & 45.5 & 46.2 \\
+ &  & xlmt\_base & 47.8 & 29.5 & 50.8 & 53.1 & 54.4 & 32.6 & 21.8 & 39.6 & 41.3 & 45.4 \\
+ &  & xlmt\_large & 50.9 & 50.9 & 57.3 & 57.2 & \textbf{\underline58.5} & 40.6 & 30.1 & 49.3 & 48.6 & 50.3 \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{zero}} & bloomz & \multicolumn{5}{c|}{15.2} & \multicolumn{5}{c}{1.5} \\
+ &  & mt0 & \multicolumn{5}{c|}{37.3} & \multicolumn{5}{c}{24.7} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{35.6} & \multicolumn{5}{c}{33.2} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{51.9} & \multicolumn{5}{c}{49.5} \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{few}} & bloomz & \multicolumn{5}{c|}{14.0} & \multicolumn{5}{c}{5.2} \\
+ &  & mt0 & \multicolumn{5}{c|}{39.0} & \multicolumn{5}{c}{25.1} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{43.9} & \multicolumn{5}{c}{39.5} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{53.3} & \multicolumn{5}{c}{\textbf{51.0}} \\ \hline
+\multirow{13}{*}{\rotatebox{90}{micro-F1}} & \multirow{5}{*}{\rotatebox{90}{finetuned}} & bernice & 52.8 & 55.3 & 59.7 & 59.9 & 59.3 & 64.4 & 68.6 & 71.1 & 71.9 & 70.8 \\
+ &  & xlmr\_base & 43.8 & 20.1 & 52.7 & 55.8 & 56.4 & 53.8 & 60.3 & 68.1 & 69.0 & 67.8 \\
+ &  & xlmr\_large & 52.3 & 52.5 & 59.6 & 59.2 & 58.6 & 64.4 & 68.7 & 72.6 & 72.1 & 71.2 \\
+ &  & xlmt\_base & 51.8 & 49.5 & 57.8 & 57.5 & 58.7 & 58.5 & 67.0 & 70.0 & 69.8 & 70.1 \\
+ &  & xlmt\_large & 56.0 & 59.6 & \textbf{\underline61.4} & 60.5 & 61.3 & 65.8 & 70.6 & \textbf{\underline74.5} & 73.0 & 73.4 \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{zero}} & bloomz & \multicolumn{5}{c|}{19.3} & \multicolumn{5}{c}{0.7} \\
+ &  & mt0 & \multicolumn{5}{c|}{42.7} & \multicolumn{5}{c}{43.2} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{39.2} & \multicolumn{5}{c}{46.6} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{56.6} & \multicolumn{5}{c}{65.1} \\ \cline{2-13} 
+ & \multirow{4}{*}{\rotatebox{90}{few}} & bloomz & \multicolumn{5}{c|}{17.4} & \multicolumn{5}{c}{4.4} \\
+ &  & mt0 & \multicolumn{5}{c|}{41.8} & \multicolumn{5}{c}{45.5} \\
+ &  & chat-gpt & \multicolumn{5}{c|}{44.3} & \multicolumn{5}{c}{53.9} \\
+ &  & gpt-4o & \multicolumn{5}{c|}{57.8} & \multicolumn{5}{c}{68.6}
+\end{tabular}
+}
+\captionsetup{format=hang,justification=justified}
+\caption{F1 scores (macro \& micro average) for Japanese and Greek under each setting, tested in 5-fold cross validation. Fine-tuned models are evaluated on different settings depending on the used training data. \textit{TweetTopic:}  {\TweetTopic} was used for training; \textit{Target:} the respective language subset of {\XTOPIC} was used for training; \textit{All:} all language subsets of {\XTOPIC} were used. The best result for each language is bolded, and underlined scores indicate statistically significant difference with respect to the second best score.}
+\label{tab:results_overall_japanese_greek}
+\end{table*}
+}
+
+\clearpage
 
 
 \section{Analysis of Results}
 \label{sec:results}
-The average macro and micro F1 scores for each model tested across various settings are presented in Table \ref{tab:results_overall}. Overall, the task presents a challenge for the tested models, with the top-performing classifier, \textit{xlmt-large}, achieving an average performance of 57.6\% macro-F1 when trained on all available data ({\TweetTopic} and {\XTOPIC}). The majority of models demonstrate better micro-F1 scores, as they are not penalised as heavily for errors in less frequent topics. 
+The average macro and micro F1 scores for each model tested across various settings are presented in Tables \ref{tab:results_overall_english_spanish} \& \ref{tab:results_overall_japanese_greek}. Overall, the task presents a challenge for the tested models, with the top-performing classifier, \textit{xlmt-large}, achieving an average performance of 57.6\% macro-F1 when trained on all available data ({\TweetTopic} and {\XTOPIC}). The majority of models demonstrate better micro-F1 scores, as they are not penalised as heavily for errors in less frequent topics. 
 
 
 \subsection{Setting Comparison}
