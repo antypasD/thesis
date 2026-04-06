@@ -9,7 +9,48 @@ Figure \ref{fig:trend_distribution} displays the weekly distribution of the top 
 
 \subsection{Annotation Interface}\label{appendix:TweetTopic-annotation}
 \label{sec:annotationinterface}
-Figure \ref{fig:interface} presents our annotation interface. Figure \ref{fig:instruction} displays the instructions provided to annotators along with a small description of each topic.
+Figure \ref{fig:interface} presents our annotation interface. Below we present the instructions provided to annotators along with a small description of each topic.%Figure \ref{fig:instruction} displays the instructions provided to annotators along with a small description of each topic.
+
+
+\subsubsection*{Annotation Instructions}
+\label{sec:appendix:tweet-topic-instructions}
+```
+\textit{Choose the appropriate topics expressed by the text. Do not work on this HIT if you have already done it before. You can work on the HIT only once, and if we find more than one job from a single worker, we have to reject it. There are three sentences (randomly located) in our HIT that are designed to qualify the annotations whether they give correct topic annotations or not. We can only accept jobs without any errors in those test sentences, and have to reject the job if it has any mistakes in these sentences.}
+
+\medskip
+
+\begin{enumerate}
+    \item \textbf{Arts \& Culture:} Content that focuses on the creation and appreciation of various art forms, which evinces some degree of talent, training, or professionalism.
+    \item \textbf{Diaries \& Daily Life:} Slice of life, everyday content that illustrates personal opinions, feelings, occasions, and lifestyles.
+    \item \textbf{Beauty:} Content focusing on beautification, products, treatments, and editing in order to improve aesthetics.
+    \item \textbf{Business \& Entrepreneurs:} Content that relates to money, the economy, and wealth creation broadly, including job tips, career advice, and day in the life.
+    \item \textbf{Celebrity \& Pop Culture:} Stars and celebrities, their lives, funny moments, relationships, and fan communities.
+    \item \textbf{Fashion \& Style:} Content about fashion, the industry, outfits, looks, shows, street style, collections, and designers, both amateur and professional.
+    \item \textbf{Film, TV \& Video:} Traditional media and entertainment, including film and TV, as well as content about Netflix and other streaming shows.
+    \item \textbf{Comedy:} Content intended to make the viewer laugh, either by capturing a funny moment, relaying a story, or contriving a situation.
+    \item \textbf{Gaming:} Games both real and virtual, the competition, culture, and gameplay itself.
+    \item \textbf{Pets \& Animals:} All pets and animals content not contemplated by a child category, including alternative pets (fish, reptiles, birds).
+    \item \textbf{Relationships:} Relationship dynamics, jokes, relatable moments, and the like between friend groups and romantic partners.
+    \item \textbf{Science \& Technology:} Content on cutting-edge technology, natural phenomena, as well as knowledge and theories about the future and the universe.
+    \item \textbf{Family:} Family dynamics, in-jokes, and everyday moments.
+    \item \textbf{Music:} Music performance, discussion, experiences, and the like.
+    \item \textbf{Travel \& Adventure:} Vacations, travel tips, lodgings, means of conveyance, and the experience of travel.
+    \item \textbf{Home Improvement \& Design:} Videos about designing and creating homes and buildings. Home improvement and design as an artistic and/or constructive process.
+    \item \textbf{Food \& Dining:} Cooking, restaurants, food visuals, reviews, secret spots, food deals, technique, and ASMR—anything related to food and food culture.
+    \item \textbf{Youth \& Student Life:} Moments and memes of life at school and in the classroom, including teachers, events, and the like.
+    \item \textbf{Learning \& Educational:} Instructive, informative, educational content that teaches a fact, skill, or topic.
+    \item \textbf{Fitness \& Health:} Healthy living and the components thereof, including nutrition, exercise, progress, and wellness.
+    \item \textbf{Sports:} All depictions of sports whether enumerated below or not.
+    \item \textbf{News \& Social Concern:} Awareness, activism, dialogue, and discussion of social and societal issues and injustices; content that focuses on coverage of newsworthy events, political and otherwise.
+    \item \textbf{Other Hobbies:} Pastimes, recreation, and subcultures around hobbies and personal interests.
+\end{enumerate}
+
+\medskip
+
+\textit{Please check all the relevant topics to the text when the topic is mixed. Make sure that you check at minimum one topic in each text. If you are unclear or have general feedback for us, feel free to use the comments box.}
+'''
+
+
 
 \begin{figure}[hbt]
     \centering
@@ -25,12 +66,12 @@ Figure \ref{fig:interface} presents our annotation interface. Figure \ref{fig:in
     \label{fig:trend_distribution}
 \end{figure}
 
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{../figures/tweet-topic/instruction.png}
-    \caption{The instructions shown to the annotators during the annotation phase.}
-    \label{fig:instruction}
-\end{figure*}
+% \begin{figure*}[t]
+%     \centering
+%     \includegraphics[width=\textwidth]{../figures/tweet-topic/instruction.png}
+%     \caption{The instructions shown to the annotators during the annotation phase.}
+%     \label{fig:instruction}
+% \end{figure*}
 
 \begin{figure}[t]
     \centering
