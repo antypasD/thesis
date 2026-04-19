@@ -25,6 +25,9 @@ Due to the heavily unstructured content often shared in social media content, ma
 
 The proliferation of social media platforms has created unprecedented challenges in political discourse and misinformation spread \cite{muhammed2022disaster}. Political polarisation and the rapid dissemination of false information have become major societal concerns, affecting democratic processes and public opinion formation \cite{allcott2017social}. These challenges are further complicated by the heavily unstructured nature of social media content, which can pose difficulties even for larger models \cite{eisenstein2013bad,gain-etal-2023-reference}. Finally, it is crucial to recognise both the potential biases in existing models, tools, and datasets, as well as the environmental impact associated with developing and deploying \acp{LLM} \cite{bender2021dangers}.
 
+Finally, apart from the computational and societal challenges mentioned, it is important to consider the impact on the researchers and annotators who develop resources for detecting harmful content, such as hate speech or sensitive trigger points. The development of such resources requires deep data immersion which can take a significant psychological toll on researchers, specifically regarding the risk of secondary trauma for researchers and annotators \cite{kirk2022handling}. This challenge underscores the importance of establishing comprehensive, standardised resources that reduce the need for repeated manual data collection, alongside highly capable models that minimise ongoing human exposure to toxic online discourse.
+
+
 \section{Contributions} \label{ch1:contributions}
  
 The main motivation of this thesis is to explore how \ac{NLP} techniques can be effectively applied to social media data in order to address complex societal questions. Social media platforms generate vast amounts of unstructured textual data that offer unique insights into public opinion, communication patterns, and societal events. However, leveraging this data poses significant challenges due to its informal language, high variability, and noise. This raises a central research question: How can NLP methodologies be adapted or developed to robustly analyse and interpret social media content for meaningful societal insights? This question branches into more specific problems concerning data representation, model design, annotation strategies, and evaluation practices.
@@ -160,6 +163,19 @@ The research included in the thesis has been approved by Cardiff University's et
 Specifically, as our research focuses on social media, we have taken caution while collecting data used in our experiments to adhere to the aforementioned ethic rules. Firstly, all the data were collected using the official \acp{API} provided by \textit{Twitter} and \textit{Reddit}. Moreover, the privacy of the users whose data is used is protected by masking user handles and \acp{URL} to prevent any potential identification of users. Exceptions are data collected from  verified\footnote{As defined by the legacy verified policy of Twitter in https://help.x.com/en/managing-your-account/legacy-verification-policy.} \textit{Twitter} users who are already public figures such as politicians, celebrities, and government employees.
 
 Finally, regarding the annotations conducted, all external coders\footnote{In Chapters \ref{ch:political} and \ref{ch:triggers}, annotations were conducted by members of the research team.} were paid at least minimum wage for their work, and no personal identifying information was collected. Further details on the ethical considerations and privacy measures taken in this research can be found in the Ethics section of individual Chapters.
+
+
+\section{Overarching Research Questions}
+Analysing social media discourse presents unique computational and linguistic hurdles. To address these, the research presented here bridges the gap between resource creation and practical downstream applications. While the following chapters detail specific methodological contributions and empirical applications, this thesis is driven by two overarching research questions that connect the methodological developments in \Autoref{part:part1} with the analytical applications in \Autoref{part:part2}.  
+
+ \paragraph{RQ1: What is the value of fine-tuning language models specifically on social media data compared to relying on general-purpose models?}
+
+General purpose \acp{LLM} have demonstrated broad utility, however, social media text is characterised by fast linguistic shifts, platform-specific syntax, and highly informal structures. This question explores whether the investment in domain-specific fine-tuning provides measurable improvements in capturing the nuances of online discourse. It investigates how models trained on these specific, noisy distributions perform against off-the-shelf alternatives when tasked with understanding complex social phenomena.
+
+
+\paragraph{RQ2: What are the trade-offs between decoder-only and encoder-only models in the context of social media text analysis?}
+
+As the volume of social media data grows, the computational cost of analysis becomes a critical factor. This research investigates the tension between the broad, generative capabilities of large decoder-only models and the targeted efficiency of smaller encoder-only architectures. Specifically, the thesis narrows its focus to discriminative tasks, such as text classification and sentiment analysis, which form the primary focus of computational social science. By evaluating the  conditions under which each architecture performs better at these discriminative tasks, this work provides a framework for selecting the most appropriate and efficient model for large-scale analytical pipelines.
 
 
 \section{Thesis Outline and Summary} \label{ch1:outline}
