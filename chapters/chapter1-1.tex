@@ -10,7 +10,7 @@
 \end{quote}
 % ---------------
 
-Social media platforms host discussions about a wide variety of topics that arise every day from breaking news and political debates to cultural trends and personal experiences. Making sense of all the content and organising it into categories is an arduous task. A common way to deal with this issue is relying on topic modelling, but topics discovered using this technique are difficult to interpret unstable over time, and highly dependent on the characteristics of the underlying corpus. These limitations make it less suitable for applications that require consistent, well-defined topic categories—particularly in social media settings where trends evolve quickly and content is often noisy.
+Social media platforms host discussions about a wide variety of topics that arise every day from breaking news and political debates to cultural trends and personal experiences. Making sense of all the content and organising it into categories is an arduous task. A common way to deal with this issue is relying on topic modelling, but topics discovered using this technique are difficult to interpret, unstable over time, and highly dependent on the characteristics of the underlying corpus. These limitations make it less suitable for applications that require consistent, well-defined topic categories—particularly in social media settings where trends evolve quickly and content is often noisy.
 
 As discussed in \Autoref{ch:background}, there is a lack of large, high-quality, in-domain resources for supervised topic classification in social media. Such datasets are crucial for enabling the development of models that can capture the nuances of online discourse and reliably identify topics across diverse contexts and time periods. To address this gap, in this Chapter, we present a new task based on tweet topic classification in the English language and release two associated datasets. Given a wide range of topics covering the most important discussion points in social media, we provide training and testing data from recent time periods that can be used to evaluate tweet classification models. Moreover, we perform a quantitative evaluation and analysis of current general- and domain-specific \acp{LM} on the task, which provide more insights on the challenges and nature of the task. 
 
@@ -115,8 +115,7 @@ Also, workers were not allowed to work on the assignment more than once.
 
 \paragraph{Post-aggregation.} 
 We followed \newcite{mohammad2018semeval} by assigning a label to a tweet provided that the label was suggested by at least two annotators. %were in agreement. 
-We opted out of a majority rule as this way our dataset can be used to develop more robust systems that can handle real-world data, which are rarely straightforward and instead can often contain complex linguistic phenomena \cite{mohammad2018semeval}. Tweets where none of the classes received at least two votes were discarded.
-The number of tweets in each process is summarized in Table~\ref{tab:num-tweets}.
+We opted out of a majority rule as this way our dataset can be used to develop more robust systems that can handle real-world data, which are rarely straightforward and instead can often contain complex linguistic phenomena \cite{mohammad2018semeval}. Tweets where none of the classes received at least two votes were discarded.\footnote{In total, 107 tweets were discarded during post-aggregation for failing to meet the "at least two votes" threshold.} The number of tweets in each process is summarized in Table~\ref{tab:num-tweets}.
 
 \begin{table}[t]
 \centering
@@ -143,7 +142,7 @@ These inter-annotator agreement results appear to be inline or slightly better t
 \label{settings}
 In order to investigate potential temporal differences in the corpus we split the datasets into two periods: (1) from September 2019 to August 2020 (referred to as training data) and (2) from September 2020 to August 2021 (test data). The motivation behind this temporal split is to make the task more realistic and evaluate the generalizability performance of the classifiers on future data.
 
-We established two classification settings: (1) multi-label and (2) single-label. Sample instances from both settings are displayed in Table \ref{table:tweet_examples}.\footnote{For readability, tweet examples have been slightly modified, removing links and usernames which are anonymized in the dataset.} With this distinction, we aim to provide flexibility to users, and increase the usability of the dataset for settings and analyses, where a more fine-grained classification of tweets is not required (i.e. single-label).
+We established two classification settings: (1) multi-label and (2) single-label. Sample instances from both settings are displayed in Table \ref{table:tweet_examples}.\footnote{In the dataset, usernames are replaced with the placeholder {{USER}} unless they belong to a public figure (e.g. politicians, celebrities, or government employees). For readability in this Chapter, tweet examples have been slightly modified by removing links and following these anonymisation conventions.} With this distinction, we aim to provide flexibility to users, and increase the usability of the dataset for settings and analyses, where a more fine-grained classification of tweets is not required (i.e. single-label).
 
 \begin{table}[t]
 \centering
@@ -492,7 +491,9 @@ The curated set of topics contains a diverse and broad set of categories that co
 
 Finally, {\TweetTopic} has been shown to be relatively resilient to temporal changes, and it offers easily interpretable results. Based on these contributions, we believe that this dataset will be useful for a significant number of researchers and practitioners working on social media, including Computational Social Science and Data Mining experts, given the relevance of the topic for extracting information and understanding online behaviour.
 
-Finally, while this first iteration of {\TweetTopic} focuses on English, our initial aim was to apply the same methodology to other languages. We subsequently carry this out in \Autoref{ch:x-topic}, utilising the guidelines and data construction process described in Section \ref{data} as a foundation.
+Despite the contributions of this work, certain limitations in the current dataset construction must be acknowledged, namely its restriction to the English language and the exclusion of tweets containing media. Our current methodology centres on scenarios where only textual data is available or prioritised. While this represents a substantial portion of standard social media analysis, it overlooks nuances in highly visual categories, such as \textit{fashion \& style} or \textit{arts \& culture}. However, the framework we present can easily be adapted and expanded in future iterations to incorporate multi-modal analysis.
+
+While this first iteration of {\TweetTopic} focuses on English, our initial aim was to apply the same methodology to other languages. We subsequently carry this out in \Autoref{ch:x-topic}, utilising the guidelines and data construction process described in Section \ref{data} as a foundation.
 
 
 
