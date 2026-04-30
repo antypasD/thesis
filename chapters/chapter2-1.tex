@@ -276,6 +276,8 @@ The above results, along with the fact that `XLM-T-Sent' has originally been tra
 
 It is important to note that while an annotated set of approximately 1,000 instances per language is relatively small, it is sufficient for fine-tuning transformer-based models pre-trained on massive multilingual corpora. Particularly, the high inter-annotator agreement and the consistency of the results during cross-validation suggest that these models are reliable for capturing the broad sentiment trends required for this large-scale analysis.
 
+\paragraph{Error Analysis} While our evaluation demonstrates the strong overall performance of \ac{PLM}, `XLM-T-Sent' can still struggle with heavily context-dependent phenomena, e.g. tweets with missing modalities like external links, for example ``Yes it does matter {\{URL\}}'' is classified as neutral by the model while labelled as negative by the annotators. Furthermore, political discourse frequently employs mixed polarity within a single tweet, for example  the tweet ``Canada urges UK 'do right thing' - China is to blame for Uighur genocide {\{URL\}}'' is classified by the model as negative while the annotators labelled it as neutral.
+
 \section{Analysis}\label{sec:analysis}
 
 Having acquired a suitable sentiment analysis classifier capable to successfully distinguish sentiment polarity in \ac{MP} tweets (see Section \ref{sec:modelselection}) we applied it to our collected Twitter corpora (see Section \ref{sec:datacollect}) and perform an in-depth analysis aiming to explore whether politicians' tweets containing negative sentiment have a bigger network penetration than tweets that are positive or neutral.
