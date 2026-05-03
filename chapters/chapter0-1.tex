@@ -165,17 +165,23 @@ Specifically, as our research focuses on social media, we have taken caution whi
 Finally, regarding the annotations conducted, all external coders\footnote{In Chapters \ref{ch:political} and \ref{ch:triggers}, annotations were conducted by members of the research team.} were paid at least minimum wage for their work, and no personal identifying information was collected. Further details on the ethical considerations and privacy measures taken in this research can be found in the Ethics section of individual Chapters.
 
 
-\section{Overarching Research Questions}
+\section{Overarching Research Questions}\label{ch1:new-rq}
 Analysing social media discourse presents unique computational and linguistic hurdles. To address these, the research presented here bridges the gap between resource creation and practical downstream applications. While the following chapters detail specific methodological contributions and empirical applications, this thesis is driven by two overarching research questions that connect the methodological developments in \Autoref{part:part1} with the analytical applications in \Autoref{part:part2}.  
 
- \paragraph{RQ1: What is the value of fine-tuning language models specifically on social media data compared to relying on general-purpose models?}
+\paragraph{RQ1: How can \ac{NLP} methodologies be adapted and evaluated robustly to capture the noisy, multilingual, and dynamic nature of social media discourse?}
 
-General purpose \acp{LLM} have demonstrated broad utility, however, social media text is characterised by fast linguistic shifts, platform-specific syntax, and highly informal structures. This question explores whether the investment in domain-specific fine-tuning provides measurable improvements in capturing the nuances of online discourse. It investigates how models trained on these specific, noisy distributions perform against off-the-shelf alternatives when tasked with understanding complex social phenomena.
+Social media text is characterised by rapid linguistic shifts, platform-specific syntax, and highly informal structures. To address these challenges, the material in this thesis investigates:
 
+a) The value of creating specialised resources for domain-specific fine-tuning, and whether this approach provides measurable improvements in capturing the nuances of online discourse.
 
-\paragraph{RQ2: What are the trade-offs between decoder-only and encoder-only models in the context of social media text analysis?}
+b) The architectural trade-offs between encoder and decoder models, and how massive, general-purpose \acp{LLM} perform compared to smaller, domain-specific fine-tuned models when tasked with understanding complex social phenomena.
 
-As the volume of social media data grows, the computational cost of analysis becomes a critical factor. This research investigates the tension between the broad, generative capabilities of large decoder-only models and the targeted efficiency of smaller encoder-only architectures. Specifically, the thesis narrows its focus to discriminative tasks, such as text classification and sentiment analysis, which form the primary focus of computational social science. By evaluating the  conditions under which each architecture performs better at these discriminative tasks, this work provides a framework for selecting the most appropriate and efficient model for large-scale analytical pipelines.
+c) The critical need for standardising evaluation methodologies and establishing social media-specific benchmarks to accurately assess and select the most appropriate models for distinct computational tasks.
+
+\paragraph{RQ2: What computational approaches are most suitable for addressing interdisciplinary problems involving complex social media dynamics?}
+
+Building upon the methodological foundations established in \Autoref{part:part1}, this overarching question explores the practical application of \ac{NLP} tools to understand human behaviour and societal challenges in social media. By examining a range of complex social phenomena, this thesis demonstrates the critical value of employing tailored computational resources to facilitate robust, interdisciplinary analysis.
+
 
 
 \section{Thesis Outline and Summary} \label{ch1:outline}
